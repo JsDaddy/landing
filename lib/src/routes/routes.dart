@@ -24,7 +24,6 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
       return res.render('main_landing');
     });
 
-
     // Mount static server at web in development.
     // This variant of `VirtualDirectory` also sends `Cache-Control` headers.
     //
