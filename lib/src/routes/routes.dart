@@ -21,7 +21,7 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     Map<String, List<String>> data = {'text': ['1','3','4']};
 
     app.get(
-        '/', (Db db ,RequestContext req, ResponseContext res) async {
+        '/', (RequestContext req, ResponseContext res) async {
 //          print(db);
 //          var coll = db.collection('user');
 //          var result = await coll.find(where.lt("age", "18")).toList();
@@ -30,7 +30,7 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     });
 
     app.get(
-        '/courses', (Db db ,RequestContext req, ResponseContext res) async {
+        '/courses', (RequestContext req, ResponseContext res) async {
 //      print(db);
 //      var coll = db.collection('user');
 //      var result = await coll.find(where.lt("age", "18")).toList();

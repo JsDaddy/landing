@@ -1,3 +1,5 @@
+@import "variables"
+
 @media only screen and (max-width: 1199px)
   header
     .container
@@ -12,7 +14,7 @@
       background: $grey-header
       top: 110px
       z-index: 10
-      box-shadow: 0px 2px 2px rgba(37, 25, 0, 0.1)
+      box-shadow: 0 2px 2px rgba(37, 25, 0, 0.1)
     nav
       margin-right: 0
       border-top: 1px solid #ccc
@@ -47,7 +49,6 @@
     padding-bottom: 60px
     .banner-content-wrapper
       flex-direction: column
-
   .header-section-wrapper
     .background-section-text
       font-size: 5.3rem
@@ -56,12 +57,10 @@
     h5
       min-height: 40px
       margin-bottom: 30px
-
   .technologies
     .img-wrapper
       width: 130px
       height: 70px
-
   .why-we-are
     background: #eff4f5
     .why-we-are-wrapper
@@ -75,6 +74,7 @@
           text-align: center
       .img-block
         width: 100%
+
 @media only screen and (max-width: 991px)
   .header-section-wrapper
     .background-section-text
@@ -91,12 +91,10 @@
         height: 80px
     p
       font-size: 0.9rem
-
   .technologies
     .img-wrapper
       width: 100px
       height: 50px
-
   .input-top-wrapper
     width: 100%
     flex-direction: column
@@ -110,7 +108,6 @@
       input
         width: 100%
         margin-bottom: 10px
-
   .contact-form-wrapper
     padding: 0 15px
     textarea
@@ -124,25 +121,21 @@
       width: 100%
       border: none
       text-align: center
-
     .email-block
       margin-bottom: 20px
       .social
         justify-content: center
         padding-top: 10px
-
     .address-block
       ul
         text-align: center
-@media only screen and (max-width: 767px)
 
+@media only screen and (max-width: 767px)
   h3
     margin-bottom: 76px
-
   .item-content-block
     h5
       margin-bottom: 15px
-
     .icon
       img
         width: 90px
@@ -150,18 +143,15 @@
     p
       font-size: 0.9rem
       margin-bottom: 30px
-
     .more-info
       margin-bottom: 100px
       .more-info-form-wrapper
         position: static
         transform: translate(0, 0)
-
   section
     padding: 120px 0
     &.services
       padding: 120px 0 40px 0
-
   .notification
     width: 300px
     right: 50%
@@ -177,6 +167,7 @@
         padding: 30px 20px
         margin: 0
         text-align: center
+
 @media only screen and (max-width: 575px)
   header
     display: inherit
@@ -192,7 +183,6 @@
         margin-bottom: 25px
       p
         font-size: 1.3rem
-
   section
     padding: 100px 0
 
