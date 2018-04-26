@@ -4,7 +4,7 @@ import 'package:angel_framework/angel_framework.dart';
 import 'package:angel_static/angel_static.dart';
 import 'package:file/file.dart';
 import 'package:mongo_dart/mongo_dart.dart';
-import 'controllers/controllers.dart' as controllers;
+import 'controllers/controllers.dart';
 
 /// Put your app routes here!
 ///
@@ -14,29 +14,16 @@ import 'controllers/controllers.dart' as controllers;
 AngelConfigurer configureServer(FileSystem fileSystem) {
   return (Angel app) async {
     // Typically, you want to mount controllers first, after any global middleware.
-    await app.configure(controllers.configureServer);
+    await app.configure(new CoursesController().configureServer);
 
-    // Render `views/hello.jl` when a user visits the application root.
-
-    Map<String, List<String>> data = {'text': ['1','3','4']};
-
-    app.get(
-        '/', (Db db ,RequestContext req, ResponseContext res) async {
+    app.get('/', (RequestContext req, ResponseContext res) async {
 //          print(db);
 //          var coll = db.collection('user');
 //          var result = await coll.find(where.lt("age", "18")).toList();
 //          print(result);
-          return res.render('main_landing');
+      return res.render('main_landing');
     });
 
-    app.get(
-        '/courses', (Db db ,RequestContext req, ResponseContext res) async {
-//      print(db);
-//      var coll = db.collection('user');
-//      var result = await coll.find(where.lt("age", "18")).toList();
-//      print(result);
-      return res.render('courses_landing');
-    });
 
     // Mount static server at web in development.
     // This variant of `VirtualDirectory` also sends `Cache-Control` headers.

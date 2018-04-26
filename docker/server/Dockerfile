@@ -12,13 +12,13 @@ RUN sudo apt-get install -y dart=1.24.2-1
 RUN export PATH="/usr/lib/dart/bin:$PATH"
 
 # Copy necessary files
-ADD bin/ bin/
-ADD config/ config/
-ADD lib/ lib/
-ADD tool/ tool/
-ADD views/ views/
-ADD web/ web/
-ADD pubspec.yaml pubspec.yaml
+ADD ../../bin bin/
+ADD ../../config config/
+ADD ../../lib lib/
+ADD ../../tool tool/
+ADD ../../views views/
+ADD ../../web web/
+ADD ../../pubspec.yaml pubspec.yaml
 
 # Install dependencies, pre-build
 RUN /usr/lib/dart/bin/pub get

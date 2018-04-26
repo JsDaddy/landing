@@ -2,6 +2,7 @@ library dart_jsdaddy_school.services;
 
 import 'dart:async';
 import 'package:angel_framework/angel_framework.dart';
+import 'package:mongo_dart/mongo_dart.dart';
 
 /// Configure our application to use *services*.
 /// Services must be wired to the app via `app.use`.
@@ -11,4 +12,12 @@ import 'package:angel_framework/angel_framework.dart';
 ///
 /// Read more here:
 /// https://github.com/angel-dart/angel/wiki/Service-Basics
-Future configureServer(Angel app) async {}
+Future connectDb(Angel app) async {
+  try {
+    var db = new Db(app.configuration['mongo_db']);
+    await db.open();
+    app.container.singleton(db);
+  } catch (err) {
+    print("Db ${err['errmsg']}");
+  }
+}

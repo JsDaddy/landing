@@ -1,5 +1,5 @@
 # Default server configuration.
 host: 127.0.0.1
-mongo_db: mongodb://localhost:27017/jsdaddy
+mongo_db: mongodb://root:JSDaddy2018@159.89.18.60:27017/jsdaddy
 port: 3000
 jwt_secret: "s0xn1oGsASUunsbeNwdrVkmV7L0jA8Ip"

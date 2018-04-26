@@ -16,8 +16,7 @@
                         </nav>
                         <div class="right-header-block">
                             <div class="tel-wrapper">
-                                <a href="tel:+380971235849">097-123-58-49</a>
-                                <a href="tel:+380971235849">095-465-12-65</a>
+                                <a for-each=phones as="phone" href="tel:+"+phone>{{phone}}</a>
                             </div>
                             <div class="contact-btn-wrapper">
                                 <a class="contact-btn scroll" href="#contacts">Записаться</a>
