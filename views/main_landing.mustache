@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/site.min.css">
   <link rel="icon" href="/images/favicon.png">
-  <script src="/js/bundle.min.js"></script>
+  <script src="/js/bundle.min.js"></script>  
 </head>
 <body>
 <div>
@@ -390,7 +390,8 @@
       <div class="row">
         <div class="contact-form-wrapper">
           <h6>fill out an application</h6>
-          <form>
+          <app-contacts></app-contacts>
+          {{! <form>
             <div class="input-top-wrapper">
               <div class="input-wrapper">
                 <input placeholder="Your name" type="text">
@@ -405,7 +406,7 @@
             </div>
             <textarea placeholder="Message"></textarea>
             <button class="contact-btn">Send a message</button>
-          </form>
+          </form> }}
         </div>
       </div>
       <div class="row">
@@ -457,6 +458,6 @@
   <div class="copyright">
     Copywriting &#9400; 2018 JSdaddy
   </div>
-</footer>
+</footer> 
 </body>
 </html>

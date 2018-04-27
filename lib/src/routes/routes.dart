@@ -5,6 +5,7 @@ import 'package:angel_static/angel_static.dart';
 import 'package:file/file.dart';
 import 'controllers/courses_landing_controller.dart';
 import 'controllers/main_landing_controller.dart';
+import 'controllers/mailer_controller.dart';
 
 /// Put your app routes here!
 ///
@@ -16,6 +17,8 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     // Typically, you want to mount controllers first, after any global middleware.
     await app.configure(new MainController().configureServer);
     await app.configure(new CoursesController().configureServer);
+    await app.configure(new MailerController().configureServer);
+    
 
     // Mount static server at web in development.
     // This variant of `VirtualDirectory` also sends `Cache-Control` headers.
