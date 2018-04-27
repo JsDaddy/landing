@@ -90,3 +90,4 @@ logs/
 server_log.txt
 web/css/
 .vscode
+.idea
