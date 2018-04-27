@@ -11,6 +11,7 @@ main() async {
   var hot = new HotReloader(() async {
     print('reloaded!!!!');
     await Process.run('pub', ['run', 'grinder', 'compile_sass']);
+    await Process.run('dart2js', ['-m', '-o', 'public/js/bundle.min.js', 'web/dart/main.dart']);
     app = new Angel()..lazyParseBodies = true;
     await app.configure(configureServer);
     app.logger = new Logger('angel');

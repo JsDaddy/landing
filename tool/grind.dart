@@ -26,5 +26,5 @@ clean() => defaultClean();
 @Task()
 compile_sass(){
   var result = sass.compile('web/sass/index.sass',style: sass.OutputStyle.compressed);
-  new File('web/css/site.min.css').writeAsStringSync(result);
+  new File('public/css/site.min.css').writeAsStringSync(result);
 }
