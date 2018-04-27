@@ -139,151 +139,83 @@
         {{/sliderTeaches}}
       </div>
     {{/ourTeaches}}
-
-    <!--
-     <div class="slider-teaches">
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-    </div>
-     -->
-
   </div>
 </section>
 <section id="contacts" class="contacts">
   <div class="container">
-    <div class="header-section-wrapper">
-      <h3>Контакты</h3>
-      <div class="background-section-text">Contacts school</div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="map-wrapper"></div>
+    {{#﻿contacts}}
+      <div class="header-section-wrapper">
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
-    </div>
-    <div class="row">
-      <div class="contact-form-wrapper">
-        <h6>СВЯЗАТЬСЯ С НАМИ</h6>
-        <form action="">
-          <div class="input-top-wrapper">
-            <div class="input-wrapper">
-              <input placeholder="Имя" type="text">
-              <span class="valid-message">sadasdas sadadsad asdasdasas</span>
-            </div>
-            <div class="input-wrapper">
-              <input placeholder="E-mail" type="email">
-            </div>
-            <div class="input-wrapper">
-              <input placeholder="Телефон" type="tel">
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="map-wrapper"></div>
+        </div>
+      </div>
+      <div class="row">
+        {{#﻿contactForm}}
+          <div class="contact-form-wrapper">
+            <h6>{{﻿formTitle}}</h6>
+            <form>
+              <div class="input-top-wrapper">
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeText}}" type="text">
+                  <span class="valid-message">{{﻿validMsg}}</span>
+                </div>
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeEmail}}" type="email">
+                </div>
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeTel}}" type="tel">
+                </div>
+              </div>
+              <textarea placeholder="{{﻿typeMessage}}"></textarea>
+              <button class="contact-btn">{{﻿formBtn}}</button>
+            </form>
           </div>
-          <textarea placeholder="Сообщение"></textarea>
-          <button class="contact-btn">Send a message</button>
-        </form>
+        {{/﻿contactForm}}
       </div>
-    </div>
-    <div class="row">
-      <div class="contact-details">
-        <div class="email-block">
-          <ul>
-            <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
-            <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
-          </ul>
-          <div class="social">
-            <ul>
-              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a class="github" href="#"><i class="fa fa-github"></i></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="tel-block">
-          <ul>
-            <li class="tel"><a href="tel:+35623157586">+38 (096) 226 40 32</a></li>
-            <li class="tel"><a href="tel:+35623157586">+38 (095) 202 46 03</a></li>
-          </ul>
-        </div>
-        <div class="address-block">
-          <ul>
-            <li>Kharkiv, Ukraine</li>
-            <li>67 Highhill Street., Apt. 20</li>
-          </ul>
+      <div class="row">
+        <div class="contact-details">
+          {{#﻿contactDetails}}
+            <div class="email-block">
+              <ul>
+                {{#﻿emailBlock}}
+                  <li class="{{﻿itemClass}}"><a href="{{itemHref}}">{{﻿itemText}}</a></li>
+                {{/﻿emailBlock}}
+              </ul>
+              <div class="social">
+                <ul>
+                  {{#﻿social}}
+                    <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
+                  {{/﻿social}}
+                </ul>
+              </div>
+            </div>
+            <div class="tel-block">
+              <ul>
+                {{#﻿telBlock}}
+                  <li class="{{﻿itemClass}}"><a href="{{﻿itemHref}}">{{﻿itemText}}</a></li>
+                {{/﻿telBlock}}
+              </ul>
+            </div>
+            <div class="address-block">
+              <ul>
+                <li>{{﻿city}}</li>
+                <li>{{﻿address}}</li>
+              </ul>
+            </div>
+          {{/﻿contactDetails}}
         </div>
       </div>
-    </div>
+    {{/﻿contacts}}
   </div>
 </section>
 <footer class="footer">
-  <div class="copyright">
-    Copywriting &#9400; 2018 JSdaddy
-  </div>
+  {{#﻿footer}}
+    <div class="copyright">{{﻿copyright}}</div>
+  {{/﻿footer}}
 </footer>
 </body>
 </html>

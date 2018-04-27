@@ -90,14 +90,14 @@
               <h5>{{﻿itemTitle}}</h5>
               <p>{{﻿itemText}}</p>
               <!--<div class="more-info">-->
-                <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
-                <!--<div class="more-info-form-wrapper">-->
-                  <!--<form>-->
-                    <!--<input placeholder="Name" type="text">-->
-                    <!--<input placeholder="Email" type="email">-->
-                    <!--<button>Request more info</button>-->
-                  <!--</form>-->
-                <!--</div>-->
+              <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+              <!--<div class="more-info-form-wrapper">-->
+              <!--<form>-->
+              <!--<input placeholder="Name" type="text">-->
+              <!--<input placeholder="Email" type="email">-->
+              <!--<button>Request more info</button>-->
+              <!--</form>-->
+              <!--</div>-->
               <!--</div>-->
             </div>
           </div>
@@ -114,20 +114,20 @@
         <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
       <div class="technologies-wrapper">
-      <div class="row">
-        {{#﻿technologiesImages}}
-          <div class="col-6 col-sm-4 col-md-2">
-            <div class="img-wrapper">
-              <img src="{{﻿technologiesImg}}" alt=""/>
+        <div class="row">
+          {{#﻿technologiesImages}}
+            <div class="col-6 col-sm-4 col-md-2">
+              <div class="img-wrapper">
+                <img src="{{﻿technologiesImg}}" alt=""/>
+              </div>
             </div>
-          </div>
-        {{/﻿technologiesImages}}
-      </div>
+          {{/﻿technologiesImages}}
+        </div>
       </div>
     {{/﻿technologies}}
   </div>
 </section>
-<section class="advantages">
+<section id="advantages" class="advantages">
   <div class="container">
     {{#advantages}}
       <div class="header-section-wrapper">
@@ -186,7 +186,7 @@
               <div class="input-top-wrapper">
                 <div class="input-wrapper">
                   <input placeholder="{{﻿typeText}}" type="text">
-                  <span class="valid-message">sadasdas sadadsad asdasdasas</span>
+                  <span class="valid-message">{{﻿validMsg}}</span>
                 </div>
                 <div class="input-wrapper">
                   <input placeholder="{{﻿typeEmail}}" type="email">
@@ -202,30 +202,34 @@
         {{/﻿contactForm}}
       </div>
       <div class="row">
-      <div class="contact-details">
-        {{#﻿contactDetails}}
-          <div class="email-block">
-            <ul><li class="{{﻿itemClass}}"><a href="{{itemHref}}">{{﻿itemText}}</a></li></ul>
-            <div class="social">
+        <div class="contact-details">
+          {{#﻿contactDetails}}
+            <div class="email-block">
               <ul>
-                {{#﻿social}}
-                  <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
-                {{/﻿social}}
+                <li class="{{﻿itemClass}}"><a href="{{itemHref}}">{{﻿itemText}}</a></li>
+              </ul>
+              <div class="social">
+                <ul>
+                  {{#﻿social}}
+                    <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
+                  {{/﻿social}}
+                </ul>
+              </div>
+            </div>
+            <div class="tel-block">
+              <ul>
+                <li class="tel"><p>{{﻿socTitle}}</p></li>
+                <li class="tel"><p>{{﻿socText}}</p></li>
               </ul>
             </div>
-          </div>
-          <div class="tel-block">
-            <ul>
-              <li class="tel"><p>{{﻿socTitle}}</p></li>
-              <li class="tel"><p>{{﻿socText}}</p></li>
-            </ul>
-          </div>
-          <div class="address-block">
-            <ul><li>{{﻿address}}</li></ul>
-          </div>
-        {{/﻿contactDetails}}
+            <div class="address-block">
+              <ul>
+                <li>{{﻿address}}</li>
+              </ul>
+            </div>
+          {{/﻿contactDetails}}
+        </div>
       </div>
-    </div>
     {{/﻿contacts}}
   </div>
 </section>
