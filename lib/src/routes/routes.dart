@@ -33,6 +33,7 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
       app,
       fileSystem,
       source: fileSystem.directory('public'),
+      noCache: true
     );
     app.use(vDir.handleRequest);
 

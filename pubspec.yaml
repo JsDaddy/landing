@@ -13,6 +13,8 @@ dependencies:
   angel_validate: "^1.0.0"
   angel_mongo: "^1.0.0"
   mailer: "^1.1.4"
+  redux: "^3.0.0"
+  http: "^0.11.3+16"
 dev_dependencies:
   angel_hot: "^1.1.0-alpha"
   angel_serialize_generator: "^2.0.0"
