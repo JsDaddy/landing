@@ -2,7 +2,7 @@ library dart_jsdaddy_school.src.config;
 
 import 'package:angel_configuration/angel_configuration.dart';
 import 'package:angel_framework/angel_framework.dart';
-import 'package:angel_jael/angel_jael.dart';
+import 'package:angel_mustache/angel_mustache.dart';
 import 'package:file/file.dart';
 import 'plugins/plugins.dart' as plugins;
 
@@ -17,7 +17,7 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     // Configure our application to render Jael templates from the `views/` directory.
     //
     // See: https://github.com/angel-dart/jael
-    await app.configure(jael(fileSystem.directory('views')));
+    await app.configure(mustache(fileSystem.directory('views')));
 
     // Apply another plug-ins, i.e. ones that *you* have written.
     //
