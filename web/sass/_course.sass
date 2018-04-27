@@ -1,0 +1,65 @@
+@import "variables"
+
+.banner-course
+    width: 100%
+    min-height: 250px
+    background: #ebf9fc
+    padding-top: 160px
+    padding-bottom: 60px
+    .banner-content
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        .img-banner-wrapper
+            width: 50%
+            img
+                width: auto
+                max-height: 260px
+        .banner-text
+            width: 50%
+            display: inline-flex
+            flex-direction: column
+            align-items: center
+            text-align: center
+            .date-wrapper
+                border-radius: 25px
+                background: rgba(255,255,255,1)
+                padding: 25px
+                margin-bottom: 40px
+                width: 100%
+                max-width: 400px
+                border: 1px solid $yellow
+                text-align: center
+            h1
+                font-weight: 700
+                margin-bottom: 30px
+            p
+                font-size: 1rem
+                max-width: 600px
+                margin-bottom: 15px
+                font-weight: 300
+                &.start
+                    font-weight: 700
+.about-course
+    p
+        margin-bottom: 40px
+        &:last-child
+            margin-bottom: 0
+.course-program-wrapper
+    background: #f7f9f9
+    padding-bottom: 120px
+    .background-section-text
+        color: #f1f2f2
+    .program-wrap
+        ul
+            margin-bottom: 60px
+            li
+                font-size: 0.87rem
+                padding-left: 25px
+                margin-bottom: 10px
+                &:first-child
+                    padding-left: 0
+                    margin-bottom: 15px
+                    font-weight: 700
+                    border-bottom: 2px solid $yellow

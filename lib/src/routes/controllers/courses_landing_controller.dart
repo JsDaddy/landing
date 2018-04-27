@@ -15,6 +15,7 @@ class CoursesController extends Controller {
   @Expose("/:id")
   Future getCourse(int id, ResponseContext res) async {
     var course_content = await app.service('api/course').index({"name": id});
-    await res.render('courses_landing', course_content.first);
+    await res.render('course_landing', course_content.first);
+
   }
 }
