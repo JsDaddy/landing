@@ -25,16 +25,6 @@ clean() => defaultClean();
 
 @Task()
 compile_sass(){
-
-
- // var systemTempDir = new Directory('web/sass');
-  var result = sass.compile('web/sass/index.sass');
-  new File('web/css/site.css').writeAsStringSync(result);
-  // List directory contents, recursing into sub-directories,
-  // but not following symbolic links.
-//  systemTempDir.list(recursive: false, followLinks: false)
-//      .listen((FileSystemEntity entity) {
-//    print(entity);
-//
-//  });
+  var result = sass.compile('web/sass/index.sass',style: sass.OutputStyle.compressed);
+  new File('web/css/site.min.css').writeAsStringSync(result);
 }
