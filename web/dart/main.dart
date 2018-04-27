@@ -17,7 +17,7 @@ main() {
   });
 
 
-  querySelectorAll('#menu li > a')
+  querySelectorAll('a[href^="#"]')
       .onClick
       .map((MouseEvent event) =>
           (event.target as AnchorElement).getAttribute('href'))
