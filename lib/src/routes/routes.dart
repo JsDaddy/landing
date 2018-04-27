@@ -29,7 +29,7 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     var vDir = new CachingVirtualDirectory(
       app,
       fileSystem,
-      source: fileSystem.directory('web'),
+      source: fileSystem.directory('public'),
     );
     app.use(vDir.handleRequest);
 
