@@ -13,7 +13,9 @@
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.min.css">
   <link rel="icon" href="/images/favicon.png">
 </head>
@@ -21,21 +23,29 @@
 <header id="home">
   <div class="container">
     <div class="row content-header-wrapper">
-      <div class="logo"><a href="#banner"><img src="img/logo.png" alt="js daddy"></a></div>
+      <div class="logo">
+        <a href="/#banner">
+          <img src="img/logo.png" alt="js daddy"/>
+        </a>
+      </div>
       <div class="navigation-wrapper">
         <nav>
           <ul id="menu">
             {{#menu}}
-              <li><a class="active" href={{link}}>{{title}}</a></li>
+              <li><a href={{link}}>{{title}}</a></li>
             {{/menu}}
           </ul>
         </nav>
         <div class="right-header-block">
           <div class="tel-wrapper">
-            <a for-each=phones as="phone" href="tel:+" +phone>{{phone}}</a>
+            {{#﻿phones}}
+              <a href="{{﻿phonesHref}}">{{﻿phones}}</a>
+            {{/﻿phones}}
           </div>
           <div class="contact-btn-wrapper">
-            <a class="contact-btn scroll" href="#contacts">Записаться</a>
+            {{#﻿headerBtn}}
+              <a class="contact-btn scroll" href="{{﻿btnHref}}">{{﻿btntext}}</a>
+            {{/﻿headerBtn}}
           </div>
         </div>
       </div>
@@ -51,187 +61,92 @@
   <div class="container">
     <div class="banner-content-wrapper">
       <div class="banner-content">
-        <h1>JAVASCRIPT</h1>
-        <p>Jsdaddy cares about you</p>
-        <a class="contact-btn" href="#contacts">Contact us</a>
+        {{#banner}}
+          <h1>{{﻿bannerTitle}}</h1>
+          <p>{{﻿bannerDesc}}</p>
+          <a class="contact-btn" href="{{﻿btnHref}}">{{﻿bannerBtn}}</a>
+        {{/banner}}
       </div>
     </div>
   </div>
 </section>
-<section class="about-school">
+<section id="aboutSchool" class="about-school">
   <div class="container">
-    <div class="header-section-wrapper">
-      <h3>Немного о нас</h3>
-      <div class="background-section-text">About school</div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <img src="img/about-school.png" alt="">
+    {{#﻿aboutSchool}}
+      <div class="header-section-wrapper">
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
-      <div class="col-lg-8">
-        <p>
-          На протяжении последних нескольких лет IT-индустрия является одной из самых прибыльных сфер во всем
-          мире. Учитывая то, доступ к Интернету сегодня имеется практически в любой точке мира, а современный
-          смартфон и страница в социальных сетях есть у каждого второго, возникает потребность в самых
-          разнообразных программных продуктах.
-        </p>
-        <p>
-          В конце курсов мы приглашаем HR специалиста, который помогает вам правильно составить резюме и
-          готовит вас к собеседованию. На этом занятии вы разберете все нюансы, возникающие при приеме на
-          работу. Будете готовы к самым неожиданным вопросам HRов. Узнаете как превратить свои недостатки в
-          преимущества и подать свою кандидатуру в выгодном свете.
-        </p>
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="{{﻿aboutSchoolImg}}" alt=""/>
+        </div>
+        <div class="col-lg-8">
+          {{#﻿aboutSchoolText}}
+            <p>{{﻿text}}</p>
+          {{/﻿aboutSchoolText}}
+        </div>
       </div>
-    </div>
+    {{/﻿aboutSchool}}
   </div>
 </section>
-<section class="courses">
+<section id="courses" class="courses">
   <div class="container">
-    <div class="header-section-wrapper">
-      <h3>Курсы</h3>
-      <div class="background-section-text">Our Curses</div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="item-wrapper">
-          <div class="start-course">Старат 2 марта!</div>
-          <img src="img/angular-logo.png" alt="angular">
-          <h3 class="name">Angular</h3>
-          <div class="button-block">
-            <h4>Подробный курс Angular JS</h4>
-            <span class="prices">Стоимость: 3000грн</span>
-            <div class="duration">Продолжительность 10 занятий (1 месяц)</div>
-          </div>
-          <a class="link" href="#">Узнать больше<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+    {{#courses}}
+      <div class="header-section-wrapper">
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
-      <div class="col-lg-4">
-        <div class="item-wrapper">
-          <div class="start-course">Старат 2 марта!</div>
-          <img src="img/html-css-logo.jpg" alt="markup">
-          <h3 class="name">Верстка</h3>
-          <div class="button-block">
-            <h4>Экспресс курс HTML&CSSS</h4>
-            <span class="prices">Стоимость: 3000грн</span>
-            <div class="duration">Продолжительность 10 занятий (1 месяц)</div>
+      <div class="row">
+        {{#courseItem}}
+          <div class="col-lg-4">
+            <div class="item-wrapper">
+              <div class="start-course">{{﻿startCourse}}</div>
+              <img src="{{﻿courseImg}}" alt="{{﻿altImg}}"/>
+              <h3 class="name">{{﻿courseTitle}}</h3>
+              <div class="button-block">
+                <h4>{{﻿subTitle}}</h4>
+                <span class="prices">{{﻿prices}}</span>
+                <div class="duration">{{﻿duration}}</div>
+              </div>
+              <a class="link" href="{{﻿linkHref}}">{{﻿linkText}} <i class="fa fa-arrow-right"></i></a>
+            </div>
           </div>
-          <a class="link" href="#">Узнать больше<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
+        {{/courseItem}}
       </div>
-      <div class="col-lg-4">
-        <div class="item-wrapper">
-          <div class="start-course">Старат 2 марта!</div>
-          <img src="img/photoshop.png" alt="web design">
-          <h3 class="name">WEB дизайн</h3>
-          <div class="button-block">
-            <h4>WEB дизайн - быстрый старт</h4>
-            <div class="prices">Стоимость: 3000грн (экв ~ $100)</div>
-            <div class="duration">Продолжительность 10 занятий (1 месяц)</div>
-          </div>
-          <a class="link" href="#">Узнать больше<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="item-wrapper">
-          <div class="start-course">Старат 2 марта!</div>
-          <img src="img/react-icon.png" alt="angular">
-          <h3 class="name">React JS</h3>
-          <div class="button-block">
-            <h4>Экспресс курс React JS</h4>
-            <span class="prices">Стоимость: 3000грн</span>
-            <div class="duration">Продолжительность 10 занятий (1 месяц)</div>
-          </div>
-          <a class="link" href="#">Узнать больше<i class="fa fa-arrow-right" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </div>
+    {{/courses}}
   </div>
 </section>
-<section class="our-teaches">
+<section id="ourTeaches" class="our-teaches">
   <div class="container">
-    <div class="header-section-wrapper">
-      <h3>Наши преподы</h3>
-      <div class="background-section-text">Our teaches</div>
-    </div>
-    <div class="slider-teaches">
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
+    {{#ourTeaches}}
+      <div class="header-section-wrapper">
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
+      <div class="slider-teaches">
+        {{#sliderTeaches}}
+          <div class="item-wrapper">
+            <div class="photo-wrapper">
+              <img src="{{﻿itemImg}}" alt=""/>
+            </div>
+            <div class="name"{{﻿itemName}}</div>
+            <div class="position">{{﻿position}}</div>
+            <div class="about">
+              <p>{{﻿about}}</p>
+            </div>
+          </div>
+        {{/sliderTeaches}}
       </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src="https://previews.123rf.com/images/martinussumbaji/martinussumbaji1608/martinussumbaji160800009/62244413-jesus-face-silhouette-art-design.jpg" alt="">
-        </div>
-        <div class="name">Лимаренко Денис</div>
-        <div class="position">Front-end developer</div>
-        <div class="about">
-          <p>
-            В разработке более 3.5 лет. Опыт в верстке сайтов различной сложности от лендингов и
-            одностраничных сайтов до интернет-магазинов. Разработка сайтов с использованием
-            СМS/Wordpress.
-          </p>
-        </div>
-      </div>
-    </div>
+    {{/ourTeaches}}
   </div>
 </section>
 <section id="contacts" class="contacts">
-    <div class="container">
+  <div class="container">
+    {{#﻿contacts}}
       <div class="header-section-wrapper">
-        <h3>Контакты</h3>
-        <div class="background-section-text">Contacts school</div>
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
       </div>
       <div class="row">
         <div class="col-12">
@@ -239,61 +154,68 @@
         </div>
       </div>
       <div class="row">
-        <div class="contact-form-wrapper">
-          <h6>СВЯЗАТЬСЯ С НАМИ</h6>
-          <form action="">
-            <div class="input-top-wrapper">
-              <div class="input-wrapper">
-                <input placeholder="Имя" type="text">
-                <span class="valid-message">sadasdas sadadsad asdasdasas</span>
+        {{#﻿contactForm}}
+          <div class="contact-form-wrapper">
+            <h6>{{﻿formTitle}}</h6>
+            <form>
+              <div class="input-top-wrapper">
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeText}}" type="text">
+                  <span class="valid-message">{{﻿validMsg}}</span>
+                </div>
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeEmail}}" type="email">
+                </div>
+                <div class="input-wrapper">
+                  <input placeholder="{{﻿typeTel}}" type="tel">
+                </div>
               </div>
-              <div class="input-wrapper">
-                <input placeholder="E-mail" type="email">
-              </div>
-              <div class="input-wrapper">
-                <input placeholder="Телефон" type="tel">
-              </div>
-            </div>
-            <textarea placeholder="Сообщение"></textarea>
-            <button class="contact-btn">Send a message</button>
-          </form>
-        </div>
+              <textarea placeholder="{{﻿typeMessage}}"></textarea>
+              <button class="contact-btn">{{﻿formBtn}}</button>
+            </form>
+          </div>
+        {{/﻿contactForm}}
       </div>
       <div class="row">
         <div class="contact-details">
-          <div class="email-block">
-            <ul>
-              <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
-              <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
-            </ul>
-            <div class="social">
+          {{#﻿contactDetails}}
+            <div class="email-block">
               <ul>
-                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a class="github" href="#"><i class="fa fa-github"></i></a></li>
+                {{#﻿emailBlock}}
+                  <li class="{{﻿itemClass}}"><a href="{{itemHref}}">{{﻿itemText}}</a></li>
+                {{/﻿emailBlock}}
+              </ul>
+              <div class="social">
+                <ul>
+                  {{#﻿social}}
+                    <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
+                  {{/﻿social}}
+                </ul>
+              </div>
+            </div>
+            <div class="tel-block">
+              <ul>
+                {{#﻿telBlock}}
+                  <li class="{{﻿itemClass}}"><a href="{{﻿itemHref}}">{{﻿itemText}}</a></li>
+                {{/﻿telBlock}}
               </ul>
             </div>
-          </div>
-          <div class="tel-block">
-            <ul>
-              <li class="tel"><a href="tel:+35623157586">+38 (096) 226 40 32</a></li>
-              <li class="tel"><a href="tel:+35623157586">+38 (095) 202 46 03</a></li>
-            </ul>
-          </div>
-          <div class="address-block">
-            <ul>
-              <li>Kharkiv, Ukraine</li>
-              <li>67 Highhill Street., Apt. 20</li>
-            </ul>
-          </div>
+            <div class="address-block">
+              <ul>
+                <li>{{﻿city}}</li>
+                <li>{{﻿address}}</li>
+              </ul>
+            </div>
+          {{/﻿contactDetails}}
         </div>
       </div>
-    </div>
-  </section>
-<footer class="footer">
-  <div class="copyright">
-    Copywriting &#9400; 2018 JSdaddy
+    {{/﻿contacts}}
   </div>
+</section>
+<footer class="footer">
+  {{#﻿footer}}
+    <div class="copyright">{{﻿copyright}}</div>
+  {{/﻿footer}}
 </footer>
 <script src="/js/bundle.min.js"></script>
 </body>
