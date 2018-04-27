@@ -10,7 +10,7 @@ main() async {
   var app;
   var hot = new HotReloader(() async {
     print('reloaded!!!!');
-    await Process.run('grind', ['compile_sass']);
+    await Process.run('pub', ['run', 'grinder', 'compile_sass']);
     app = new Angel()..lazyParseBodies = true;
     await app.configure(configureServer);
     app.logger = new Logger('angel');
