@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Js Daddy</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta property="og:image" content="path/to/image.jpg"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <link rel="shortcut icon" href="" type="image/x-icon"/>
+  <link rel="apple-touch-icon" href=""/>
+  <link rel="apple-touch-icon" sizes="72x72" href=""/>
+  <link rel="apple-touch-icon" sizes="114x114" href=""/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="icon" href="../images/favicon.png">
+</head>
+<body>
+<div>
+  <header id="home">
+    <div class="container">
+      <div class="row content-header-wrapper">
+        <div class="logo"><a href="#banner"><img src="../img/logo.png" alt="js daddy"></a></div>
+        <div class="navigation-wrapper">
+          <nav>
+            <ul id="menu">
+              {{#menu}}
+                <li><a href={{link}}>{{title}}</a></li>
+              {{/menu}}
+            </ul>
+          </nav>
+          <div class="right-header-block">
+            <div class="tel-wrapper">
+
+             {{#phones}}
+                <a href="tel:">{{phones}} is {{@index}}</a>
+              {{/phones}}
+
+            </div>
+            <div class="contact-btn-wrapper">
+              <a class="contact-btn scroll" href="#contacts">Записаться</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-burger">
+          <div class="line"></div>
+          <div class="text">Menu</div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section id="banner" class="banner">
+    <div class="container">
+      <div class="banner-content-wrapper">
+        <div class="banner-content">
+          <h1>JAVASCRIPT</h1>
+          <p>Jsdaddy cares about you</p>
+          <a class="contact-btn" href="#contacts">Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="about-school">
+    <div class="container">
+      <div class="header-section-wrapper">
+        <h3>Немного о нас</h3>
+        <div class="background-section-text">About school</div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="img/about-school.png" alt="">
+        </div>
+        <div class="col-lg-8">
+          <p>
+            На протяжении последних нескольких лет IT-индустрия является одной из самых прибыльных сфер во всем
+            мире. Учитывая то, доступ к Интернету сегодня имеется практически в любой точке мира, а современный
+            смартфон и страница в социальных сетях есть у каждого второго, возникает потребность в самых
+            разнообразных программных продуктах.
+          </p>
+          <p>
+            В конце курсов мы приглашаем HR специалиста, который помогает вам правильно составить резюме и
+            готовит вас к собеседованию. На этом занятии вы разберете все нюансы, возникающие при приеме на
+            работу. Будете готовы к самым неожиданным вопросам HRов. Узнаете как превратить свои недостатки в
+            преимущества и подать свою кандидатуру в выгодном свете.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacts" class="contacts">
+    <div class="container">
+      <div class="header-section-wrapper">
+        <h3>Контакты</h3>
+        <div class="background-section-text">Contacts school</div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="map-wrapper"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="contact-form-wrapper">
+          <h6>СВЯЗАТЬСЯ С НАМИ</h6>
+          <form action="">
+            <div class="input-top-wrapper">
+              <div class="input-wrapper">
+                <input placeholder="Имя" type="text">
+                <span class="valid-message">sadasdas sadadsad asdasdasas</span>
+              </div>
+              <div class="input-wrapper">
+                <input placeholder="E-mail" type="email">
+              </div>
+              <div class="input-wrapper">
+                <input placeholder="Телефон" type="tel">
+              </div>
+            </div>
+            <textarea placeholder="Сообщение"></textarea>
+            <button class="contact-btn">Send a message</button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="contact-details">
+          <div class="email-block">
+            <ul>
+              <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
+              <li class="email"><a href="mailto:hello@jsdaddy.com">hello@jsdaddy.com</a></li>
+            </ul>
+            <div class="social">
+              <ul>
+                <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a class="github" href="#"><i class="fa fa-github"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tel-block">
+            <ul>
+              <li class="tel"><a href="tel:+35623157586">+38 (096) 226 40 32</a></li>
+              <li class="tel"><a href="tel:+35623157586">+38 (095) 202 46 03</a></li>
+            </ul>
+          </div>
+          <div class="address-block">
+            <ul>
+              <li>Kharkiv, Ukraine</li>
+              <li>67 Highhill Street., Apt. 20</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<footer class="footer">
+  <div class="copyright">
+    Copywriting &#9400; 2018 JSdaddy
+  </div>
+</footer>
+</body>
+</html>
