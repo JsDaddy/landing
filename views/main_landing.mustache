@@ -14,11 +14,10 @@
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/site.min.css">
-  <link rel="icon" href="/images/favicon.png">
-  <script src="/js/bundle.min.js"></script>
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="/css/site.min.css"/>
+  <link rel="icon" href="/images/favicon.png"/>
 </head>
 <body>
 <header id="home">
@@ -230,13 +229,28 @@
           {{/﻿contactDetails}}
         </div>
       </div>
-    {{/﻿contacts}}
+      {{/﻿contacts}}
+    </div>
+  </section>
+  <div class="notification">
+    <div class="notification-message">
+      <div class="logo">
+        <img src="img/logo-notification.png" alt="">
+      </div>
+      <div class="message">
+        Your application is accepted, thank you! We will send more information to your mail
+        <div class="close-btn">
+
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 <footer class="footer">
   {{#﻿footer}}
     <div class="copyright">{{﻿copyright}}</div>
   {{/﻿footer}}
 </footer>
+<script src="/js/bundle.min.js"></script>
 </body>
 </html>
