@@ -13,7 +13,9 @@
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.css">
   <link rel="icon" href="/images/favicon.png">
 </head>
@@ -31,26 +33,22 @@
           <nav>
             <ul id="menu">
               {{#menu}}
-                <li><a class="active" href={{link}}>{{title}}</a></li>
+                <li><a href={{link}}>{{title}}</a></li>
               {{/menu}}
             </ul>
           </nav>
           <div class="right-header-block">
             <div class="social">
               <ul>
-                <li>
-                  <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                </li>
-                <li>
-                  <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a class="github" href="#"><i class="fa fa-github"></i></a>
-                </li>
+                {{#﻿social}}
+                  <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
+                {{/﻿social}}
               </ul>
             </div>
             <div class="contact-btn-wrapper">
-              <a class="contact-btn scroll" href="#contacts">Contact us</a>
+              {{#﻿btnHeader}}
+                <a class="contact-btn scroll" href="#contacts">{{﻿text}}</a>
+              {{/﻿btnHeader}}
             </div>
           </div>
         </div>
@@ -66,92 +64,46 @@
     <div class="container">
       <div class="banner-content-wrapper">
         <div class="banner-content">
-          <h1>JSDADDY</h1>
-          <p>Your software under our care</p>
-          <a class="contact-btn" href="#contacts">Contact us</a>
+          {{#banner}}
+            <h1>{{﻿bannerTitle}}</h1>
+            <p>{{﻿bannerDesc}}</p>
+            <a class="contact-btn" href="#contacts">{{﻿bannerBtn}}</a>
+          {{/banner}}
         </div>
       </div>
     </div>
   </section>
   <section id="services" class="services">
     <div class="container">
-      <div class="header-section-wrapper">
-        <h3>Ways to work with us</h3>
-        <div class="background-section-text">Ways to work with us</div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="item-content-block">
-            <div class="icon">
-              <img src="img/ico-complex-web.png" alt="complex-web">
-            </div>
-            <h5>Complex Web developement</h5>
-            <p>
-              JSDaddy offers you a quality, modern and unique product. In the design, we follow the principle of
-              purity and reasonable space,examine the trends and implement them in solutions.
-            </p>
-            <div class="more-info">
-              <a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>
-              <div class="more-info-form-wrapper">
-                <form>
-                  <input placeholder="Name" type="text">
-                  <input placeholder="Email" type="email">
-                  <button>Request more info</button>
-                </form>
+      {{#﻿weysSection}}
+        <div class="header-section-wrapper">
+          <h3>{{﻿sectionTitle}}</h3>
+          <div class="background-section-text">{{﻿sectionTitle}}</div>
+        </div>
+        <div class="row">
+          {{#﻿weysBox}}
+            <div class="col-md-4">
+              <div class="item-content-block">
+                <div class="icon">
+                  <img src="{{﻿itemContentImg}}" alt="complex-web">
+                </div>
+                <h5>{{﻿itemTitle}}</h5>
+                <p>{{﻿itemText}}</p>
+                <!--<div class="more-info">-->
+                  <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+                  <!--<div class="more-info-form-wrapper">-->
+                    <!--<form>-->
+                      <!--<input placeholder="Name" type="text">-->
+                      <!--<input placeholder="Email" type="email">-->
+                      <!--<button>Request more info</button>-->
+                    <!--</form>-->
+                  <!--</div>-->
+                <!--</div>-->
               </div>
             </div>
-          </div>
+          {{/﻿weysBox}}
         </div>
-        <div class="col-md-4">
-          <div class="item-content-block">
-            <div class="icon">
-              <img src="img/consulting.png" alt="complex-web">
-            </div>
-            <h5>Consulting</h5>
-            <p>
-              We have experience and skills in software development. Providing of consulting services is one of
-              aspects of our job, executing with various JavaScript frameworks and libraries including AngularJS,
-              ReactJS, NodeJS.
-            </p>
-            <div class="more-info">
-              <a class="more-info-btn">More info
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="more-info-form-wrapper">
-                <form>
-                  <input placeholder="Name" type="text">
-                  <input placeholder="Email" type="email">
-                  <button>Request more info</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="item-content-block">
-            <div class="icon">
-              <img src="img/support.png" alt="complex-web">
-            </div>
-            <h5>Migration and Support</h5>
-            <p>
-              Your solution will be migrate to the JavaScript based, using best practice, easily scalable
-              and maintainable technology. Usually we use NodeJs and AngularJS.
-            </p>
-            <div class="more-info">
-              <a class="more-info-btn">More info
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
-              </a>
-              <div class="more-info-form-wrapper">
-                <form>
-                  <input placeholder="Name" type="text">
-                  <input placeholder="Email" type="email">
-                  <button>Request more info</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/﻿weysSection}}
     </div>
   </section>
   <section id="technologies" class="technologies">
