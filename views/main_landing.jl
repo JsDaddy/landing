@@ -11,39 +11,17 @@
           <div class="navigation-wrapper">
             <nav>
               <ul id="menu">
-                <li>
-                  <a href="#banner">Home</a>
-                </li>
-                <li>
-                  <a href="#services">Services</a>
-                </li>
-                <li>
-                  <a href="#technologies">Technologies</a>
-                </li>
-                <li>
-                  <a href="#about">About Us</a>
-                </li>
-                <li>
-                  <a href="#contacts">Contacts</a>
-                </li>
+                <li for-each=menu as="m"><a class="active" href=m['link']>{{m['title']}}</a></li>
               </ul>
             </nav>
             <div class="right-header-block">
               <div class="social">
                 <ul>
-                  <li>
-                    <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
-                  </li>
-                  <li>
-                    <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
-                  </li>
-                  <li>
-                    <a class="github" href="#"><i class="fa fa-github"></i></a>
-                  </li>
+                  <li for-each=social as="s"><a class=s['soc'] href=s['link']><i class="fa " + s['icon']></i></a></li>
                 </ul>
               </div>
               <div class="contact-btn-wrapper">
-                <a class="contact-btn scroll" href="#contacts">Contact us</a>
+                <a for-each=btn as="b" class="contact-btn scroll">{{b['text']}}</a>
               </div>
             </div>
           </div>
