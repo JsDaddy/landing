@@ -10,13 +10,9 @@ import 'plugins/plugins.dart' as plugins;
 AngelConfigurer configureServer(FileSystem fileSystem) {
   return (Angel app) async {
     // Load configuration from the `config/` directory.
-    //
-    // See: https://github.com/angel-dart/configuration
     await app.configure(configuration(fileSystem));
 
-    // Configure our application to render Jael templates from the `views/` directory.
-    //
-    // See: https://github.com/angel-dart/jael
+    // Configure our application to render mustache templates from the `views/` directory.
     await app.configure(mustache(fileSystem.directory('views')));
 
     // Apply another plug-ins, i.e. ones that *you* have written.

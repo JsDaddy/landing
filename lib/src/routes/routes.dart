@@ -3,7 +3,6 @@ library dart_jsdaddy_school.src.routes;
 import 'package:angel_framework/angel_framework.dart';
 import 'package:angel_static/angel_static.dart';
 import 'package:file/file.dart';
-import 'package:mongo_dart/mongo_dart.dart';
 import 'controllers/courses_landing_controller.dart';
 import 'controllers/main_landing_controller.dart';
 
