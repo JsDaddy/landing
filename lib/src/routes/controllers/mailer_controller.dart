@@ -21,7 +21,7 @@ class MailerController extends Controller {
       await app.service('/api/contacts').create(body);
 
       await emailTransport.send(envelope);
-      return {'message': 'Email sent'};
+      return res.json({'message': 'Email sent'});
     } catch (err){
       return 'Something went wrong';
     }

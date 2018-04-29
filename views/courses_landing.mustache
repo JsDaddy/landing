@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.min.css">
   <link rel="icon" href="/images/favicon.png">
@@ -118,27 +118,27 @@
   </div>
 </section>
 <section id="ourTeaches" class="our-teaches">
-  <div class="container">
-    {{#ourTeaches}}
-      <div class="header-section-wrapper">
-        <h3>{{﻿sectionTitle}}</h3>
-        <div class="background-section-text">{{﻿sectionTitle}}</div>
+<div class="container">
+  {{#ourTeaches}}
+    <div class="header-section-wrapper">
+      <h3>{{﻿sectionTitle}}</h3>
+      <div class="background-section-text">{{﻿sectionTitle}}</div>
+    </div>
+  <div class="slider-teaches">
+    {{#sliderTeaches}}
+      <div class="item-wrapper">
+        <div class="photo-wrapper">
+          <img src="{{﻿itemImg}}" alt=""/>
+        </div>
+        <div class="name"{{﻿itemName}}</div>
+      <div class="position">{{﻿position}}</div>
+      <div class="about">
+        <p>{{﻿about}}</p>
       </div>
-      <div class="slider-teaches">
-        {{#sliderTeaches}}
-          <div class="item-wrapper">
-            <div class="photo-wrapper">
-              <img src="{{﻿itemImg}}" alt=""/>
-            </div>
-            <div class="name"{{﻿itemName}}</div>
-            <div class="position">{{﻿position}}</div>
-            <div class="about">
-              <p>{{﻿about}}</p>
-            </div>
-          </div>
-        {{/sliderTeaches}}
-      </div>
-    {{/ourTeaches}}
+    </div>
+    {{/sliderTeaches}}
+  </div>
+  {{/ourTeaches}}
   </div>
 </section>
 <section id="contacts" class="contacts">
@@ -217,6 +217,19 @@
     <div class="copyright">{{﻿copyright}}</div>
   {{/﻿footer}}
 </footer>
+<div class="notification none">
+  <div class="notification-message">
+    <div class="logo">
+      <img src="img/logo-notification.png" alt="">
+    </div>
+    <div class="message">
+      Your application is accepted, thank you! We will send more information to your mail
+      <div class="close-btn">
+
+      </div>
+    </div>
+  </div>
+</div>
 <script src="/js/bundle.min.js"></script>
 </body>
 </html>

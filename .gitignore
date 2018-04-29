@@ -88,6 +88,8 @@ logs/
 *.pem
 .DS_Store
 server_log.txt
-web/css/
+public/css/
+public/js/
 .vscode
 .idea
+
