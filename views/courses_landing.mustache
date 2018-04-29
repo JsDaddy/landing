@@ -38,14 +38,14 @@
         </nav>
         <div class="right-header-block">
           <div class="tel-wrapper">
-            {{#﻿phones}}
-              <a href="{{﻿phonesHref}}">{{﻿phones}}</a>
-            {{/﻿phones}}
+            {{#phones}}
+              <a href="{{phonesHref}}">{{phones}}</a>
+            {{/phones}}
           </div>
           <div class="contact-btn-wrapper">
-            {{#﻿headerBtn}}
-              <a class="contact-btn scroll" href="{{﻿btnHref}}">{{﻿btntext}}</a>
-            {{/﻿headerBtn}}
+            {{#headerBtn}}
+              <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>
+            {{/headerBtn}}
           </div>
         </div>
       </div>
@@ -62,9 +62,9 @@
     <div class="banner-content-wrapper">
       <div class="banner-content">
         {{#banner}}
-          <h1>{{﻿bannerTitle}}</h1>
-          <p>{{﻿bannerDesc}}</p>
-          <a class="contact-btn" href="{{﻿btnHref}}">{{﻿bannerBtn}}</a>
+          <h1>{{bannerTitle}}</h1>
+          <p>{{bannerDesc}}</p>
+          <a class="contact-btn" href="{{btnHref}}">{{bannerBtn}}</a>
         {{/banner}}
       </div>
     </div>
@@ -72,47 +72,47 @@
 </section>
 <section id="aboutSchool" class="about-school">
   <div class="container">
-    {{#﻿aboutSchool}}
+    {{#aboutSchool}}
       <div class="header-section-wrapper">
-        <h3>{{﻿sectionTitle}}</h3>
-        <div class="background-section-text">{{﻿sectionTitle}}</div>
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
       </div>
       <div class="row">
         <div class="col-lg-4">
-          <img src="{{﻿aboutSchoolImg}}" alt=""/>
+          <img src="{{aboutSchoolImg}}" alt=""/>
         </div>
         <div class="col-lg-8">
-          {{#﻿aboutSchoolText}}
-            <p>{{﻿text}}</p>
-          {{/﻿aboutSchoolText}}
+          {{#aboutSchoolText}}
+            <p>{{text}}</p>
+          {{/aboutSchoolText}}
         </div>
       </div>
-    {{/﻿aboutSchool}}
+    {{/aboutSchool}}
   </div>
 </section>
 <section id="courses" class="courses">
   <div class="container">
     {{#courses}}
       <div class="header-section-wrapper">
-        <h3>{{﻿sectionTitle}}</h3>
-        <div class="background-section-text">{{﻿sectionTitle}}</div>
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
       </div>
       <div class="row">
-        {{#courseItem}}
+        {{#courseItems}}
           <div class="col-lg-4">
             <div class="item-wrapper">
-              <div class="start-course">{{﻿startCourse}}</div>
-              <img src="{{﻿courseImg}}" alt="{{﻿altImg}}"/>
-              <h3 class="name">{{﻿courseTitle}}</h3>
+              <div class="start-course">{{start_date}}</div>
+              <img src="{{logo}}" alt="{{title}}"/>
+              <h3 class="name">{{title}}</h3>
               <div class="button-block">
-                <h4>{{﻿subTitle}}</h4>
-                <span class="prices">{{﻿prices}}</span>
-                <div class="duration">{{﻿duration}}</div>
+                <h4>{{sub_title}}</h4>
+                <span class="prices">{{price}}</span>
+                <div class="duration">{{duration}}</div>
               </div>
-              <a class="link" href="{{﻿linkHref}}">{{﻿linkText}} <i class="fa fa-arrow-right"></i></a>
+              <a class="link" href="courses/{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
-        {{/courseItem}}
+        {{/courseItems}}
       </div>
     {{/courses}}
   </div>
@@ -121,19 +121,19 @@
 <div class="container">
   {{#ourTeaches}}
     <div class="header-section-wrapper">
-      <h3>{{﻿sectionTitle}}</h3>
-      <div class="background-section-text">{{﻿sectionTitle}}</div>
+      <h3>{{sectionTitle}}</h3>
+      <div class="background-section-text">{{sectionTitle}}</div>
     </div>
   <div class="slider-teaches">
     {{#sliderTeaches}}
       <div class="item-wrapper">
         <div class="photo-wrapper">
-          <img src="{{﻿itemImg}}" alt=""/>
+          <img src="{{itemImg}}" alt=""/>
         </div>
-        <div class="name"{{﻿itemName}}</div>
-      <div class="position">{{﻿position}}</div>
+        <div class="name"{{itemName}}</div>
+      <div class="position">{{position}}</div>
       <div class="about">
-        <p>{{﻿about}}</p>
+        <p>{{about}}</p>
       </div>
     </div>
     {{/sliderTeaches}}
@@ -143,10 +143,10 @@
 </section>
 <section id="contacts" class="contacts">
   <div class="container">
-    {{#﻿contacts}}
+    {{#contacts}}
       <div class="header-section-wrapper">
-        <h3>{{﻿sectionTitle}}</h3>
-        <div class="background-section-text">{{﻿sectionTitle}}</div>
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
       </div>
       <div class="row">
         <div class="col-12">
@@ -154,68 +154,68 @@
         </div>
       </div>
       <div class="row">
-        {{#﻿contactForm}}
+        {{#contactForm}}
           <div class="contact-form-wrapper">
-            <h6>{{﻿formTitle}}</h6>
+            <h6>{{formTitle}}</h6>
             <form>
               <div class="input-top-wrapper">
                 <div class="input-wrapper">
-                  <input placeholder="{{﻿typeText}}" type="text">
-                  <span class="valid-message">{{﻿validMsg}}</span>
+                  <input placeholder="{{typeText}}" type="text">
+                  <span class="valid-message">{{validMsg}}</span>
                 </div>
                 <div class="input-wrapper">
-                  <input placeholder="{{﻿typeEmail}}" type="email">
+                  <input placeholder="{{typeEmail}}" type="email">
                 </div>
                 <div class="input-wrapper">
-                  <input placeholder="{{﻿typeTel}}" type="tel">
+                  <input placeholder="{{typeTel}}" type="tel">
                 </div>
               </div>
-              <textarea placeholder="{{﻿typeMessage}}"></textarea>
-              <button class="contact-btn">{{﻿formBtn}}</button>
+              <textarea placeholder="{{typeMessage}}"></textarea>
+              <button class="contact-btn">{{formBtn}}</button>
             </form>
           </div>
-        {{/﻿contactForm}}
+        {{/contactForm}}
       </div>
       <div class="row">
         <div class="contact-details">
-          {{#﻿contactDetails}}
+          {{#contactDetails}}
             <div class="email-block">
               <ul>
-                {{#﻿emailBlock}}
-                  <li class="{{﻿itemClass}}"><a href="{{itemHref}}">{{﻿itemText}}</a></li>
-                {{/﻿emailBlock}}
+                {{#emailBlock}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{/emailBlock}}
               </ul>
               <div class="social">
                 <ul>
-                  {{#﻿social}}
-                    <li><a class="{{soc}}" href="{{﻿link}}"><i class="fa {{﻿icon}}"></i></a></li>
-                  {{/﻿social}}
+                  {{#social}}
+                    <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                  {{/social}}
                 </ul>
               </div>
             </div>
             <div class="tel-block">
               <ul>
-                {{#﻿telBlock}}
-                  <li class="{{﻿itemClass}}"><a href="{{﻿itemHref}}">{{﻿itemText}}</a></li>
-                {{/﻿telBlock}}
+                {{#telBlock}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{/telBlock}}
               </ul>
             </div>
             <div class="address-block">
               <ul>
-                <li>{{﻿city}}</li>
-                <li>{{﻿address}}</li>
+                <li>{{city}}</li>
+                <li>{{address}}</li>
               </ul>
             </div>
-          {{/﻿contactDetails}}
+          {{/contactDetails}}
         </div>
       </div>
-    {{/﻿contacts}}
+    {{/contacts}}
   </div>
 </section>
 <footer class="footer">
-  {{#﻿footer}}
-    <div class="copyright">{{﻿copyright}}</div>
-  {{/﻿footer}}
+  {{#footer}}
+    <div class="copyright">{{copyright}}</div>
+  {{/footer}}
 </footer>
 <div class="notification none">
   <div class="notification-message">
