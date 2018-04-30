@@ -88,7 +88,7 @@ logs/
 *.pem
 .DS_Store
 server_log.txt
-public/css/
+public/css/site.min.css
 public/js/bundle.min.js
 public/js/bundle.min.js.map
 public/js/bundle.min.js.deps
