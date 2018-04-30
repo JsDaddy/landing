@@ -158,18 +158,6 @@
           <div class="contact-form-wrapper">
             <h6>{{formTitle}}</h6>
             <form>
-              <!--<div class="loader">-->
-                <!--<div id="floatingCirclesG">-->
-                  <!--<div class="f_circleG" id="frotateG_01"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_02"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_03"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_04"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_05"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_06"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_07"></div>-->
-                  <!--<div class="f_circleG" id="frotateG_08"></div>-->
-                <!--</div>-->
-              <!--</div>-->
               <div class="input-top-wrapper courses-form">
                 <div class="input-wrapper">
                   <input placeholder="{{typeText}}" type="text">
@@ -185,10 +173,7 @@
                   <div class="selects">
                     <span>Курс</span>
                     <ul class="select-drop">
-                      <li>Курс 1</li>
-                      <li>Курс 2</li>
-                      <li>Курс 3</li>
-                      <li>Курс 4</li>
+                      <contacts-form courses="{{coursesTypes}}"></contacts-form>
                     </ul>
                   </div>
                 </div>

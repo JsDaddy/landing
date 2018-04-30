@@ -6,11 +6,13 @@ import 'scroll.dart';
 import 'notify.dart';
 
 main() {
-  store.onChange.listen((data) {
+  var contacts_form = document.querySelector('contacts-form');  
 
+  store.onChange.listen((data) {
     renderNotify(data) ? new Timer(Duration(seconds: 3), () {
       store.dispatch(new HideNotify());
     }) : null;
+    contacts_form.setAttribute('loading', data['isLoading']);
   });
 
   querySelectorAll('a[href^="#"]')
