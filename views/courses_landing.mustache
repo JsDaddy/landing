@@ -165,35 +165,9 @@
         </div>
       </div>
       <div class="row">
-        {{#contactForm}}
-          <div class="contact-form-wrapper">
-            <h6>{{formTitle}}</h6>
-            <form>
-              <div class="input-top-wrapper courses-form">
-                <div class="input-wrapper">
-                  <input placeholder="{{typeText}}" type="text">
-                  <span class="valid-message">{{validMsg}}</span>
-                </div>
-                <div class="input-wrapper">
-                  <input placeholder="{{typeEmail}}" type="email">
-                </div>
-                <div class="input-wrapper">
-                  <input placeholder="{{typeTel}}" type="tel">
-                </div>
-                <div class="input-wrapper">
-                  <div class="selects">
-                    <span>Курс</span>
-                    <ul class="select-drop">
-                      <contacts-form courses="{{coursesTypes}}"></contacts-form>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <textarea placeholder="{{typeMessage}}"></textarea>
-              <button disabled class="contact-btn">{{formBtn}}</button>
-            </form>
-          </div>
-        {{/contactForm}}
+      {{#courses}}
+        <contacts-form courses={{coursesItems}}></contacts-form>      
+      {{/courses}}
       </div>
       <div class="row">
         <div class="contact-details">
@@ -250,5 +224,7 @@
   </div>
 </div>
 <script src="/js/bundle.min.js"></script>
+<script src="/js/contacts-form.js"></script>
+
 </body>
 </html>
