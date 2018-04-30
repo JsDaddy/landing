@@ -3,15 +3,35 @@ library dart_jsdaddy_school.src.routes.controllers;
 import 'dart:async';
 import 'package:angel_framework/angel_framework.dart';
 import '../../middleware/currency.dart';
+import '../../middleware/language_menu.dart';
 
-@Expose("/courses", middleware: const [addCurrencyRate])
+@Expose("/:lang/courses",
+    middleware: const [addLanguagesMenu, addCurrencyRate])
 class CoursesController extends Controller {
   @Expose("/")
-  Future getCourses(num rate, ResponseContext res) async {
-    var courses_content_array =
-        (await app.service('api/courses').index({"lang": 'ru'}));
+  Future getCourses(
+      String lang, languages, num rate, ResponseContext res) async {
+    var courses_content_array = await app.service('api/courses').index({
+      "query": {'lang': lang}
+    });
+
+    if (courses_content_array.isEmpty) {
+      return res.render('error');
+    }
+
     var courses_content = courses_content_array.first;
-    List course_content = await app.service('api/course').index({"lang": 'ru'});
+
+    var headerArr = await app.service('api/menu').index({
+      'query': {'section': 'courses', 'lang': lang}
+    });
+    //TODO try DRY
+    var header = headerArr.first;
+    header['languages'] = languages;
+    courses_content['header'] = header;
+
+    List course_content = await app.service('api/course').index({
+      "query": {'lang': lang}
+    });
     //TODO try use mongo projection
     courses_content['courses']['courseItems'] = course_content.map((data) {
       num uah = rate * int.parse(data["price"]);
@@ -24,7 +44,7 @@ class CoursesController extends Controller {
         'start_date': data['start_date'],
         'durations': data['durations'],
         'link_text': data['link_text'],
-        'link_href': data['link_href'],
+        'link_href': '/$lang/courses/${data['link_href']}',
       };
     }).toList();
 
@@ -32,8 +52,22 @@ class CoursesController extends Controller {
   }
 
   @Expose("/:id")
-  Future getCourse(int id, ResponseContext res) async {
-    var course_content = await app.service('api/course').index({"name": id});
-    await res.render('course_landing', course_content.first);
+  Future getCourse(String lang, languages, int id, ResponseContext res) async {
+    var course_content_arr = await app.service('api/course').index({
+      "query": {'lang': lang, "link_href": id}
+    });
+
+    if (course_content_arr.isEmpty) {
+      return res.render('error');
+    }
+    var course_content = course_content_arr.first;
+    var headerArr = await app.service('api/menu').index({
+      'query': {'section': 'course','lang': lang}
+    });
+    var header = headerArr.first;
+    header['languages'] = languages;
+    course_content['header'] = header;
+
+    await res.render('course_landing', course_content);
   }
 }

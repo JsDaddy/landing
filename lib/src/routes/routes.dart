@@ -18,7 +18,6 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     await app.configure(new MainController().configureServer);
     await app.configure(new CoursesController().configureServer);
     await app.configure(new MailerController().configureServer);
-    
 
     // Mount static server at web in development.
     // This variant of `VirtualDirectory` also sends `Cache-Control` headers.
@@ -29,12 +28,8 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     // Read the following two sources for documentation:
     // * https://medium.com/the-angel-framework/serving-static-files-with-the-angel-framework-2ddc7a2b84ae
     // * https://github.com/angel-dart/static
-    var vDir = new CachingVirtualDirectory(
-      app,
-      fileSystem,
-      source: fileSystem.directory('public'),
-      noCache: true
-    );
+    var vDir = new CachingVirtualDirectory(app, fileSystem,
+        source: fileSystem.directory('public'), noCache: true);
     app.use(vDir.handleRequest);
 
     // Throw a 404 if no route matched the request.
@@ -45,12 +40,12 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     // Read the following for documentation:
     // * https://github.com/angel-dart/angel/wiki/Error-Handling
     app.errorHandler = (e, req, res) async {
+      var errror_content_data = {'back': 'javascript:history.back()'};
       if (e.statusCode == 404) {
-        return await res
-            .render('error', {'message': 'No file exists at ${req.path}.'});
+        return await res.render('error', errror_content_data);
       }
 
-      return await res.render('error', {'message': e.message});
+      return await res.render('error', errror_content_data);
     };
   };
 }

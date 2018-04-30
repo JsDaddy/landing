@@ -20,15 +20,25 @@
   <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
+{{#header}}
 <header id="home">
   <div class="container">
     <div class="row content-header-wrapper">
       <div class="logo">
         <a href="/">
-          <img src="img/logo.png" alt="js daddy"/>
+          <img src="/img/logo.png" alt="js daddy"/>
         </a>
       </div>
       <div class="navigation-wrapper">
+        <div class="lang-checker">
+          <ul class="select">
+            {{#languages}}
+              <li class={{active}}>
+                <a href={{href}}>{{name}}</a>
+              </li>
+            {{/languages}}
+          </ul>
+        </div>
         <nav>
           <ul id="menu">
             {{#menu}}
@@ -57,6 +67,7 @@
     </div>
   </div>
 </header>
+{{/header}}
 <section id="banner" class="banner">
   <div class="container">
     <div class="banner-content-wrapper">
@@ -109,7 +120,7 @@
                 <span class="prices">{{price}}</span>
                 <div class="duration">{{duration}}</div>
               </div>
-              <a class="link" href="courses/{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
+              <a class="link" href="{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
             </div>
           </div>
         {{/courseItems}}
@@ -228,7 +239,7 @@
 <div class="notification none">
   <div class="notification-message">
     <div class="logo">
-      <img src="img/logo-notification.png" alt="">
+      <img src="/img/logo-notification.png" alt="">
     </div>
     <div class="message">
       Your application is accepted, thank you! We will send more information to your mail
