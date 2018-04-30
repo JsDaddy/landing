@@ -104,6 +104,10 @@ b
 button, form, fieldset
   border: none
 
+form,
+.form
+  position: relative
+
 input
   &[type="color"],
   &[type="date"],
@@ -183,3 +187,12 @@ h5
 
 .none
   display: none !important
+
+.contact-btn[disabled]
+  opacity: .4
+  cursor: auto
+  &:hover
+    text-decoration: none
+    letter-spacing: 0
+    background: #fc0
+    color: #000

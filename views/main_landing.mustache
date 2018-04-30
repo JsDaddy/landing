@@ -27,7 +27,7 @@
       <div class="row content-header-wrapper">
         <div class="logo">
           <a href="/#banner">
-            <img src="img/logo.png" alt="js daddy"/>
+            <img src="/img/logo.png" alt="js daddy"/>
           </a>
         </div>
         <div class="navigation-wrapper">
@@ -183,7 +183,21 @@
           {{#contactForm}}
             <div class="contact-form-wrapper">
               <h6>{{formTitle}}</h6>
-              <contacts-form></contacts-form>
+              <div class="form">
+                <div class="loader">
+                  <div id="floatingCirclesG">
+                    <div class="f_circleG" id="frotateG_01"></div>
+                    <div class="f_circleG" id="frotateG_02"></div>
+                    <div class="f_circleG" id="frotateG_03"></div>
+                    <div class="f_circleG" id="frotateG_04"></div>
+                    <div class="f_circleG" id="frotateG_05"></div>
+                    <div class="f_circleG" id="frotateG_06"></div>
+                    <div class="f_circleG" id="frotateG_07"></div>
+                    <div class="f_circleG" id="frotateG_08"></div>
+                  </div>
+                </div>
+                <contacts-form></contacts-form>
+              </div>
             </div>
           {{/contactForm}}
         </div>
@@ -224,7 +238,7 @@
 <div class="notification none">
   <div class="notification-message">
     <div class="logo">
-      <img src="img/logo-notification.png" alt="">
+      <img src="/img/logo-notification.png" alt="">
     </div>
     <div class="message">
       Your application is accepted, thank you! We will send more information to your mail

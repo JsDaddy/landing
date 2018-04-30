@@ -26,6 +26,10 @@
     height: 98px
     padding: 20px
     margin-bottom: 30px
+    font-size: 0.875rem
+    font-weight: 600
+    font-family: $montserrat-font
+    color: #827f7f
   textarea::-webkit-input-placeholder
     color: #827f7f
     opacity: 1
@@ -38,7 +42,6 @@
     font-size: 0.875rem
     font-weight: 600
     font-family: $montserrat-font
-
   textarea::-moz-placeholder
     color: #827f7f
     opacity: 1
@@ -53,6 +56,7 @@
     font-family: $montserrat-font
   form
     text-align: center
+    position: relative
   .contact-btn
     width: 200px
     outline: none
@@ -61,7 +65,7 @@
 
 .input-top-wrapper
   display: flex
-  flex-direction: row
+  flex-wrap: wrap
   justify-content: space-between
   .input-wrapper
     width: 290px
@@ -81,12 +85,21 @@
         border: 1px solid #FF0000
       .valid-message
         display: inline-block
+  &.courses-form
+    .input-wrapper
+      width: 48%
+    input
+      width: 100%
   input
-    padding: 0 20px
+    padding: 13px 20px
     background: #f4f4f4
     border: 1px solid $yellow
     width: 290px
     height: 52px
+    font-size: 0.875rem
+    font-weight: 600
+    font-family: $montserrat-font
+    color: #827f7f
   *::-webkit-input-placeholder
     color: #827f7f
     opacity: 1
@@ -111,6 +124,62 @@
     font-size: 0.875rem
     font-weight: 600
     font-family: $montserrat-font
+
+.selects
+  display: block
+  width: 100%
+  background: #f4f4f4
+  font-size: 0.875rem
+  font-weight: 600
+  font-family: $montserrat-font
+  color: #827f7f
+  box-shadow: inset 0 0 0 1px $yellow
+  height: 52px
+  line-height: 52px
+  border-radius: 0
+  -webkit-appearance: none
+  -webkit-border-radius: 0
+  position: relative
+  &:hover,
+  &:focus
+    outline: 0
+  span
+    cursor: pointer
+    display: block
+    width: 100%
+    line-height: 52px
+    padding: 0 20px
+    font-size: 0.875rem
+    font-weight: 600
+    font-family: $montserrat-font
+    color: #827f7f
+  .select-drop
+    cursor: pointer
+    position: relative
+    z-index: 100
+    left: 0
+    right: 0
+    display: none
+    background: #f4f4f4
+    border: 1px solid $yellow
+    border-top: 0
+    opacity: 1
+    margin-top: -5px
+    li
+      line-height: 52px
+      padding: 0 19px
+      font-size: 0.875rem
+      font-weight: 600
+      font-family: $montserrat-font
+      color: #827f7f
+      transition: all ease 0.15s
+      &:hover
+        background: lighten(#f4f4f4, 2%)
+
+  &:hover
+    .select-drop
+      display: block
+
 
 .contact-details
   width: 100%
