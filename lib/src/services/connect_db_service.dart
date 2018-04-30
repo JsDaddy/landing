@@ -15,7 +15,6 @@ import 'package:angel_mongo/angel_mongo.dart';
 /// https://github.com/angel-dart/angel/wiki/Service-Basics
 Future connectDb(Angel app) async {
   try {
-    print(app.configuration['mongo_db']);
     var db = new Db(app.configuration['mongo_db']);
     await db.open();
     app.container.singleton(db);

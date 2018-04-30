@@ -10,7 +10,6 @@ class MailerController extends Controller {
   Future sendEmail(SmtpTransport emailTransport, RequestContext req, ResponseContext res) async {
     try {
       Map<String,String> body = await req.lazyBody();
-      print(body);
       var envelope = new Envelope()
         ..from = 'icosupport@tokenize.exchange'
         ..recipients.add(body['email'])
