@@ -26,6 +26,31 @@ header
     margin-right: 25px
     width: 20%
     max-width: 142px
+  .lang-checker
+    display: inline-flex
+    margin-right: 40px
+    position: relative
+    cursor: pointer
+    .select
+      display: inline-flex
+      flex-direction: row
+      li
+        font-size: 0.87rem
+        font-weight: 400
+        width: 35px
+        height: 35px
+        margin-right: 5px
+        background: transparent
+        border-radius: 50%
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        text-transform: uppercase
+        border: 2px solid transparent
+        &:hover
+          background: $yellow
+        &.active
+          border: 2px solid $yellow
   .navigation-wrapper
     display: flex
     flex-direction: row
