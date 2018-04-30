@@ -34,17 +34,12 @@ class CoursesController extends Controller {
     //TODO try use mongo projection
     courses_content['courses']['courseItems'] = course_content.map((data) {
       num uah = rate * int.parse(data["price"]);
-      return {
-        'title': data['title'],
-        'sub_title': data['sub_title'],
-        'logo': data['logo'],
+      data.addAll({
         'price':
             'Стоимость: ${uah.round()}грн (экв. ${int.parse(data["price"])}\$)',
-        'start_date': data['start_date'],
-        'durations': data['durations'],
-        'link_text': data['link_text'],
         'link_href': '/$lang/courses/${data['link_href']}',
-      };
+      });
+      return data;
     }).toList();
 
     courses_content['ourTeachers']['sliderTeachers'] = course_content
