@@ -15,52 +15,54 @@
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.min.css">
   <link rel="icon" href="/images/favicon.png">
 </head>
 <body>
 <div>
-  <header id="home">
-    <div class="container">
-      <div class="row content-header-wrapper">
-        <div class="logo">
-          <a href="/#banner">
-            <img src="/img/logo.png" alt="js daddy"/>
-          </a>
-        </div>
-        <div class="navigation-wrapper">
-          <nav>
-            <ul id="menu">
-              {{#menu}}
-                <li><a href={{link}}>{{title}}</a></li>
-              {{/menu}}
-            </ul>
-          </nav>
-          <div class="right-header-block">
-            <div class="social">
-              <ul>
-                {{#social}}
-                  <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
-                {{/social}}
+  {{#header}}
+    <header id="home">
+      <div class="container">
+        <div class="row content-header-wrapper">
+          <div class="logo">
+            <a href="/#banner">
+              <img src="/img/logo.png" alt="js daddy"/>
+            </a>
+          </div>
+          <div class="navigation-wrapper">
+            <nav>
+              <ul id="menu">
+                {{#menu}}
+                  <li><a href={{link}}>{{title}}</a></li>
+                {{/menu}}
               </ul>
-            </div>
-            <div class="contact-btn-wrapper">
-              {{#btnHeader}}
-                <a class="contact-btn scroll" href="#contacts">{{text}}</a>
-              {{/btnHeader}}
+            </nav>
+            <div class="right-header-block">
+              <div class="social">
+                <ul>
+                  {{#social}}
+                    <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                  {{/social}}
+                </ul>
+              </div>
+              <div class="contact-btn-wrapper">
+                {{#btnHeader}}
+                  <a class="contact-btn scroll" href="#contacts">{{text}}</a>
+                {{/btnHeader}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="nav-burger">
-          <div class="line"></div>
-          <div class="text">Menu</div>
-          <div class="line"></div>
+          <div class="nav-burger">
+            <div class="line"></div>
+            <div class="text">Menu</div>
+            <div class="line"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  {{/header}}
   <section id="banner" class="banner">
     <div class="container">
       <div class="banner-content-wrapper">
@@ -91,14 +93,14 @@
                 <h5>{{itemTitle}}</h5>
                 <p>{{itemText}}</p>
                 <!--<div class="more-info">-->
-                  <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
-                  <!--<div class="more-info-form-wrapper">-->
-                    <!--<form>-->
-                      <!--<input placeholder="Name" type="text">-->
-                      <!--<input placeholder="Email" type="email">-->
-                      <!--<button>Request more info</button>-->
-                    <!--</form>-->
-                  <!--</div>-->
+                <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+                <!--<div class="more-info-form-wrapper">-->
+                <!--<form>-->
+                <!--<input placeholder="Name" type="text">-->
+                <!--<input placeholder="Email" type="email">-->
+                <!--<button>Request more info</button>-->
+                <!--</form>-->
+                <!--</div>-->
                 <!--</div>-->
               </div>
             </div>
@@ -115,15 +117,15 @@
           <div class="background-section-text">{{sectionTitle}}</div>
         </div>
         <div class="technologies-wrapper">
-        <div class="row">
-          {{#technologiesImages}}
-            <div class="col-6 col-sm-4 col-md-2">
-              <div class="img-wrapper">
-                <img src="{{technologiesImg}}" alt=""/>
+          <div class="row">
+            {{#technologiesImages}}
+              <div class="col-6 col-sm-4 col-md-2">
+                <div class="img-wrapper">
+                  <img src="{{technologiesImg}}" alt=""/>
+                </div>
               </div>
-            </div>
-          {{/technologiesImages}}
-        </div>
+            {{/technologiesImages}}
+          </div>
         </div>
       {{/technologies}}
     </div>
@@ -202,30 +204,34 @@
           {{/contactForm}}
         </div>
         <div class="row">
-        <div class="contact-details">
-          {{#contactDetails}}
-            <div class="email-block">
-              <ul><li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li></ul>
-              <div class="social">
+          <div class="contact-details">
+            {{#contactDetails}}
+              <div class="email-block">
                 <ul>
-                  {{#social}}
-                    <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
-                  {{/social}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                </ul>
+                <div class="social">
+                  <ul>
+                    {{#social}}
+                      <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                    {{/social}}
+                  </ul>
+                </div>
+              </div>
+              <div class="tel-block">
+                <ul>
+                  <li class="tel"><p>{{socTitle}}</p></li>
+                  <li class="tel"><p>{{socText}}</p></li>
                 </ul>
               </div>
-            </div>
-            <div class="tel-block">
-              <ul>
-                <li class="tel"><p>{{socTitle}}</p></li>
-                <li class="tel"><p>{{socText}}</p></li>
-              </ul>
-            </div>
-            <div class="address-block">
-              <ul><li>{{address}}</li></ul>
-            </div>
-          {{/contactDetails}}
+              <div class="address-block">
+                <ul>
+                  <li>{{address}}</li>
+                </ul>
+              </div>
+            {{/contactDetails}}
+          </div>
         </div>
-      </div>
       {{/contacts}}
     </div>
   </section>

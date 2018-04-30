@@ -19,6 +19,7 @@ Future connectDb(Angel app) async {
     await db.open();
     app.container.singleton(db);
     app.use('/api/languages', new MongoService(db.collection("languages")));
+    app.use('/api/menu', new MongoService(db.collection("menu")));
     app.use('/api/main', new MongoService(db.collection("main")));
     app.use('/api/courses', new MongoService(db.collection("courses")));
     app.use('/api/course', new MongoService(db.collection("course")));

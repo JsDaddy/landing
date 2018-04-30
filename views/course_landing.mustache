@@ -21,48 +21,50 @@
 </head>
 <body>
 <div>
-  <header id="home">
-    <div class="container">
-      <div class="row content-header-wrapper">
-        <div class="logo"><a href="#banner"><img src="/img/logo.png" alt="js daddy"></a></div>
-        <div class="navigation-wrapper">
-          <div class="lang-checker">
-            <ul class="select">
-              {{#languages}}
-                <li class={{active}}>
-                  <a href={{href}}>{{name}}</a>
-                </li>
-              {{/languages}}
-            </ul>
-          </div>
-          <nav>
-            <ul id="menu">
-              {{#menu}}
-                <li><a href={{link}}>{{title}}</a></li>
-              {{/menu}}
-            </ul>
-          </nav>
-          <div class="right-header-block">
-            <div class="tel-wrapper">
-
-              {{#phones}}
-                <a href="tel:">{{tel}}</a>
-              {{/phones}}
-
+  {{#header}}
+    <header id="home">
+      <div class="container">
+        <div class="row content-header-wrapper">
+          <div class="logo"><a href="#banner"><img src="/img/logo.png" alt="js daddy"></a></div>
+          <div class="navigation-wrapper">
+            <div class="lang-checker">
+              <ul class="select">
+                {{#languages}}
+                  <li class={{active}}>
+                    <a href={{href}}>{{name}}</a>
+                  </li>
+                {{/languages}}
+              </ul>
             </div>
-            <div class="contact-btn-wrapper">
-              <a class="contact-btn scroll" href="#contacts">Записаться</a>
+            <nav>
+              <ul id="menu">
+                {{#menu}}
+                  <li><a href=/{{lang}}{{link}}>{{title}}</a></li>
+                {{/menu}}
+              </ul>
+            </nav>
+            <div class="right-header-block">
+              <div class="tel-wrapper">
+                {{#phones}}
+                  <a href="{{phonesHref}}">{{phones}}</a>
+                {{/phones}}
+              </div>
+              <div class="contact-btn-wrapper">
+                {{#headerBtn}}
+                  <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>
+                {{/headerBtn}}
+              </div>
             </div>
           </div>
-        </div>
-        <div class="nav-burger">
-          <div class="line"></div>
-          <div class="text">Menu</div>
-          <div class="line"></div>
+          <div class="nav-burger">
+            <div class="line"></div>
+            <div class="text">Menu</div>
+            <div class="line"></div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
+  {{/header}}
   <section class="banner-course">
     <div class="container">
       <div class="banner-content-wrapper">
@@ -254,16 +256,16 @@
           <h6>СВЯЗАТЬСЯ С НАМИ</h6>
           <form action="">
             <!--<div class="loader">-->
-              <!--<div id="floatingCirclesG">-->
-                <!--<div class="f_circleG" id="frotateG_01"></div>-->
-                <!--<div class="f_circleG" id="frotateG_02"></div>-->
-                <!--<div class="f_circleG" id="frotateG_03"></div>-->
-                <!--<div class="f_circleG" id="frotateG_04"></div>-->
-                <!--<div class="f_circleG" id="frotateG_05"></div>-->
-                <!--<div class="f_circleG" id="frotateG_06"></div>-->
-                <!--<div class="f_circleG" id="frotateG_07"></div>-->
-                <!--<div class="f_circleG" id="frotateG_08"></div>-->
-              <!--</div>-->
+            <!--<div id="floatingCirclesG">-->
+            <!--<div class="f_circleG" id="frotateG_01"></div>-->
+            <!--<div class="f_circleG" id="frotateG_02"></div>-->
+            <!--<div class="f_circleG" id="frotateG_03"></div>-->
+            <!--<div class="f_circleG" id="frotateG_04"></div>-->
+            <!--<div class="f_circleG" id="frotateG_05"></div>-->
+            <!--<div class="f_circleG" id="frotateG_06"></div>-->
+            <!--<div class="f_circleG" id="frotateG_07"></div>-->
+            <!--<div class="f_circleG" id="frotateG_08"></div>-->
+            <!--</div>-->
             <!--</div>-->
             <div class="input-top-wrapper">
               <div class="input-wrapper">

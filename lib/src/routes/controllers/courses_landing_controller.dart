@@ -5,7 +5,8 @@ import 'package:angel_framework/angel_framework.dart';
 import '../../middleware/currency.dart';
 import '../../middleware/language_menu.dart';
 
-@Expose("/:lang/courses", middleware: const [addLanguagesMenu, addCurrencyRate])
+@Expose("/:lang/courses",
+    middleware: const [addLanguagesMenu, addCurrencyRate])
 class CoursesController extends Controller {
   @Expose("/")
   Future getCourses(
@@ -20,7 +21,13 @@ class CoursesController extends Controller {
 
     var courses_content = courses_content_array.first;
 
-    courses_content['languages'] = languages;
+    var headerArr = await app.service('api/menu').index({
+      'query': {'section': 'courses', 'lang': lang}
+    });
+    //TODO try DRY
+    var header = headerArr.first;
+    header['languages'] = languages;
+    courses_content['header'] = header;
 
     List course_content = await app.service('api/course').index({
       "query": {'lang': lang}
@@ -54,7 +61,12 @@ class CoursesController extends Controller {
       return res.render('error');
     }
     var course_content = course_content_arr.first;
-    course_content['languages'] = languages;
+    var headerArr = await app.service('api/menu').index({
+      'query': {'section': 'course','lang': lang}
+    });
+    var header = headerArr.first;
+    header['languages'] = languages;
+    course_content['header'] = header;
 
     await res.render('course_landing', course_content);
   }
