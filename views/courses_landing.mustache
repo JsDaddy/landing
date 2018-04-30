@@ -130,26 +130,26 @@
 </section>
 <section id="ourTeaches" class="our-teaches">
 <div class="container">
-  {{#ourTeaches}}
+  {{#ourTeachers}}
     <div class="header-section-wrapper">
       <h3>{{sectionTitle}}</h3>
       <div class="background-section-text">{{sectionTitle}}</div>
     </div>
   <div class="slider-teaches">
-    {{#sliderTeaches}}
+    {{#sliderTeachers}}
       <div class="item-wrapper">
         <div class="photo-wrapper">
-          <img src="{{itemImg}}" alt=""/>
+          <img src=/img/{{photo}} alt=""/>
         </div>
-        <div class="name"{{itemName}}</div>
+        <div class="name"> {{firstName}} {{lastName}}</div>
       <div class="position">{{position}}</div>
       <div class="about">
         <p>{{about}}</p>
       </div>
     </div>
-    {{/sliderTeaches}}
+    {{/sliderTeachers}}
   </div>
-  {{/ourTeaches}}
+  {{/ourTeachers}}
   </div>
 </section>
 <section id="contacts" class="contacts">
