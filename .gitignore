@@ -89,7 +89,9 @@ logs/
 .DS_Store
 server_log.txt
 public/css/
-public/js/
+public/js/bundle.min.js
+public/js/bundle.min.js.map
+public/js/bundle.min.js.deps
 .vscode
 .idea
 
