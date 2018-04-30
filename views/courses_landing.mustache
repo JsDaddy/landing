@@ -165,9 +165,11 @@
         </div>
       </div>
       <div class="row">
-      {{#courses}}
-        <contacts-form courses={{coursesItems}}></contacts-form>      
-      {{/courses}}
+        <div class="contact-form-wrapper">
+          {{#courses}}
+            <contacts-form courses="{{courseItems1}}"></contacts-form>
+          {{/courses}}
+        </div>
       </div>
       <div class="row">
         <div class="contact-details">

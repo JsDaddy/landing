@@ -24,6 +24,7 @@ main() {
   HtmlElement CSForm = querySelector('contacts-form');
   CSForm != null
       ? querySelector('contacts-form').addEventListener('form', (dynamic data) {
+          print(data.detail);
           store.dispatch(new PendingNotify(data.detail));
         })
       : null;

@@ -11,7 +11,7 @@ class MailerController extends Controller {
     try {
       Map<String,String> body = await req.lazyBody();
       var envelope = new Envelope()
-        ..from = 'limarenkodenis@gmail.com'
+        ..from = 'icosupport@tokenize.exchange'
         ..recipients.add(body['email'])
         ..subject = 'Testing the Dart Mailer library 語'
         ..text = 'This is a cool email message. Whats up? 語'

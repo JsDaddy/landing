@@ -1,6 +1,7 @@
 library dart_jsdaddy_school.src.routes.controllers;
 
 import 'dart:async';
+import 'dart:convert';
 import 'package:angel_framework/angel_framework.dart';
 import '../../middleware/currency.dart';
 import '../../middleware/language_menu.dart';
@@ -32,7 +33,7 @@ class CoursesController extends Controller {
       "query": {'lang': lang}
     });
     //TODO try use mongo projection
-    courses_content['courses']['courseItems'] = course_content.map((data) {
+    var courses = course_content.map((data) {
       num uah = rate * int.parse(data["price"]);
       return {
         'title': data['title'],
@@ -46,6 +47,11 @@ class CoursesController extends Controller {
         'link_href': '/$lang/courses/${data['link_href']}',
       };
     }).toList();
+
+
+    courses_content['courses']['courseItems'] = courses;
+    courses_content['courses']['courseItems1'] = json.encode(courses);
+
 
     courses_content['ourTeachers']['sliderTeachers'] = course_content
         .map((data) => data['teachers'])
