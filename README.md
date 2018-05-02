@@ -1,12 +1,10 @@
-JSDaddy - landing page
+# JSDaddy - landing page
 
+#### Installation
+- > pub get
 
-## Development
-```
-Install dart to local machine
-brew tap dart-lang/dart
-brew install dart --devel
+#### Development
+- > dart --enable-vm-service bin/dev.dart
 
-pub get - Install the package dependencies
-dart --enable-vm-service bin/dev.dart - run project
-```
+#### Start server on the 3000 port
+- > http://localhost:3000/
