@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
     integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">            
+  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.min.css">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="icon" href="/img/favicon.ico">
@@ -74,15 +74,17 @@
             <img src="/img/angular-logo-banner.png"/>
           </div>
           <div class="banner-text">
-            <h1>Курс Angular</h1>
-            <p>Курс посвящён профессиональной разработке веб-приложений с помощью Angular.</p>
+            <h1> {{title}}</h1>
+            <p>{{sub_title}}</p>
             <div class="date-wrapper">
-              <p class="start">Старт курса 18 марта</p>
+              <p class="start">{{start_date}}</p>
               <p class="schedule">
-                2 РАЗА В НЕДЕЛЮ 19.00-22.00
+                {{durations}}
               </p>
-              <p class="mentor">Преподаватель: Лимаренко Денис</p>
-              <p class="prices">Стоимость: 5000 грн</p>
+              {{#teachers}}
+                <p class="mentor">{{firstName}} {{lastName}}</p>
+              {{/teachers}}
+              <p class="prices">{{price}}</p>
             </div>
             <a class="contact-btn" href="#contacts">Записаться</a>
           </div>
@@ -90,155 +92,49 @@
       </div>
     </div>
   </section>
-  <section class="about-course">
-    <div class="container">
-      <div class="header-section-wrapper">
-        <h3>О курсе</h3>
-        <div class="background-section-text">About curse</div>
-      </div>
-      <div class="row">
-        <div class="col-lg-5">
-          <img src="/img/about-angular.png" alt="">
+  {{#about_course}}
+    <section class="about-course">
+      <div class="container">
+        <div class="header-section-wrapper">
+          <h3>{{title}}</h3>
+          <div class="background-section-text">{{title}}</div>
         </div>
-        <div class="col-lg-7">
-          <p>
-            Курс даст возможность быстро начать создавать свои приложения с использованием современного
-            фреймворка - Angular.
-            В процессе прохождения курса шаг за шагом вы сделаете реальное приложение, и хорошо разберетесь
-            в специфике Angular.
-            Вы будете получать информацию, писать код, показывать его, получать обратную связь и советы, и
-            затем – двигаться дальше.
-          </p>
-          <p>
-            В конце курсов мы приглашаем HR специалиста, который помогает вам правильно составить резюме и
-            готовит вас к собеседованию. На этом занятии вы разберете все нюансы, возникающие при приеме на
-            работу. Будете готовы к самым неожиданным вопросам HRов. Узнаете как превратить свои недостатки
-            в
-            преимущества и подать свою кандидатуру в выгодном свете.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="course-program-wrapper">
-    <div class="container">
-      <div class="header-section-wrapper">
-        <h3>Программа курса</h3>
-        <div class="background-section-text">Сourse program</div>
-      </div>
-      <div class="program-wrap">
         <div class="row">
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
+          <div class="col-lg-5">
+            <img src="/img/{{logo}}" alt="">
           </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>2. Компоненты</li>
-              <li>Знакомство с компонентами</li>
-              <li>Вложенные компоненты</li>
-              <li>Общение данных между компонентами</li>
-              <li>Жизненный цикл компонента</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>3. Директивы, Пайпы</li>
-              <li>Применение директив из коробки (ngIf, ngClass, ngFor..)
-              </li>
-              <li>Создание своей атрибутной директивы</li>
-              <li>Pipe и фильтрация данных
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
-          </div>
-          <div class="col-lg-4">
-            <ul>
-              <li>1. Знакомство и обзор фреймворка Angular</li>
-              <li>Быстрый старт с angular-cli</li>
-              <li>Введение в Typescript, базовым синтаксис, tslint</li>
-              <li>Обзор архитектуры</li>
-              <li>Разбор модулей</li>
-              <li>Разработка простого компонента</li>
-              <li>Специфика синтаксиса шаблонов Angular, отображение данных</li>
-            </ul>
+          <div class="col-lg-7">
+            {{description}}
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  {{/about_course}}
+  {{#programm}}
+    <section class="course-program-wrapper">
+      <div class="container">
+        <div class="header-section-wrapper">
+          <h3>{{title}}</h3>
+          <div class="background-section-text">{{title}}</div>
+        </div>
+
+        <div class="program-wrap">
+          <div class="row">
+            {{#modules}}
+              <div class="col-lg-4">
+                <ul>
+                  <li> {{title}}</li>
+                  {{#items}}
+                    <li>{{.}}</li>
+                  {{/items}}
+                </ul>
+              </div>
+            {{/modules}}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/programm}}
   <section class="advantages">
     <div class="container">
       <div class="header-section-wrapper">

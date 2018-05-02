@@ -22,6 +22,9 @@ getCourseContent(
       return data;
     }).toList());
 
+    num uah = rate * int.parse(course_content["price"]);
+    course_content['price'] = 'Стоимость: ${uah.round()}грн (экв. ${int.parse(course_content["price"])}\$)';
+
     req.params['course_content'] = course_content;
     return true;
   } catch (err) {
