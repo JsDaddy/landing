@@ -6,7 +6,7 @@ getMenu(String page) {
   return (Angel app, RequestContext req, res, {String lang, languages}) async {
     try {
       Map query = {'section': page};
-      lang != null ? query.addAll({'lang': 'ru'}) : null;
+      lang != null ? query.addAll({'lang': lang}) : null;
       var headerArr = await app.service('api/menu').index({'query': query});
       var header = headerArr.first;
       languages is Iterable ? header['languages'] = languages : null;
