@@ -24,7 +24,7 @@ getCoursesContent(
       num uah = rate * int.parse(data["price"]);
       data.addAll({
         'price':
-            'Стоимость: ${uah.round()}грн (экв. ${int.parse(data["price"])}\$)',
+            '${uah.round()}\₴ (~${int.parse(data["price"])}\$)',
         'link_href': '/$lang/courses/${data['link_href']}',
       });
       return data;
