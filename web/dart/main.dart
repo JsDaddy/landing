@@ -21,11 +21,20 @@ main() {
           (event.target as AnchorElement).getAttribute('href'))
       .listen((String selector) => startScroll(selector));
 
-  HtmlElement CSForm = querySelector('contacts-form');
+  HtmlElement CSForm = querySelector('.contact_us');
   CSForm != null
-      ? querySelector('contacts-form').addEventListener('form', (dynamic data) {
+      ? querySelector('.contact_us').addEventListener('form', (dynamic data) {
           print(data.detail);
-          store.dispatch(new PendingNotify(data.detail));
+          store.dispatch(new PendingNotify({'url': 'mail/contacts', 'data': data.detail }));
+        })
+      : null;
+
+
+  HtmlElement CSCForm = querySelector('.apply_course');
+  CSCForm != null
+      ? querySelector('.apply_course').addEventListener('form', (dynamic data) {
+          print(data.detail);
+          store.dispatch(new PendingNotify({'url': 'mail/course', 'data': data.detail }));
         })
       : null;
 }
