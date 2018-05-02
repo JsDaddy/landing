@@ -14,60 +14,62 @@
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">        
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">            
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.min.css">
-  <link rel="icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="/css/slick.css">
+  <link rel="stylesheet" href="/css/slick-theme.css">
+  <link rel="icon" href="/img/favicon.ico">
 </head>
 <body>
 {{#header}}
-<header id="home">
-  <div class="container">
-    <div class="row content-header-wrapper">
-      <div class="logo">
-        <a href="/">
-          <img src="/img/logo.png" alt="js daddy"/>
-        </a>
-      </div>
-      <div class="navigation-wrapper">
-        <div class="lang-checker">
-          <ul class="select">
-            {{#languages}}
-              <li class={{active}}>
-                <a href={{href}}>{{name}}</a>
-              </li>
-            {{/languages}}
-          </ul>
+  <header id="home">
+    <div class="container">
+      <div class="row content-header-wrapper">
+        <div class="logo">
+          <a href="/">
+            <img src="/img/logo.png" alt="js daddy"/>
+          </a>
         </div>
-        <nav>
-          <ul id="menu">
-            {{#menu}}
-              <li><a href={{link}}>{{title}}</a></li>
-            {{/menu}}
-          </ul>
-        </nav>
-        <div class="right-header-block">
-          <div class="tel-wrapper">
-            {{#phones}}
-              <a href="{{phonesHref}}">{{phones}}</a>
-            {{/phones}}
+        <div class="navigation-wrapper">
+          <div class="lang-checker">
+            <ul class="select">
+              {{#languages}}
+                <li class={{active}}>
+                  <a href={{href}}>{{name}}</a>
+                </li>
+              {{/languages}}
+            </ul>
           </div>
-          <div class="contact-btn-wrapper">
-            {{#headerBtn}}
-              <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>
-            {{/headerBtn}}
+          <nav>
+            <ul id="menu">
+              {{#menu}}
+                <li><a href={{link}}>{{title}}</a></li>
+              {{/menu}}
+            </ul>
+          </nav>
+          <div class="right-header-block">
+            <div class="tel-wrapper">
+              {{#phones}}
+                <a href="{{phonesHref}}">{{phones}}</a>
+              {{/phones}}
+            </div>
+            <div class="contact-btn-wrapper">
+              {{#headerBtn}}
+                <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>
+              {{/headerBtn}}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="nav-burger">
-        <div class="line"></div>
-        <div class="text">Menu</div>
-        <div class="line"></div>
+        <div class="nav-burger">
+          <div class="line"></div>
+          <div class="text">Menu</div>
+          <div class="line"></div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 {{/header}}
 <section id="banner" class="banner">
   <div class="container">
@@ -91,7 +93,7 @@
       </div>
       <div class="row">
         <div class="col-lg-4">
-          <img src="{{aboutSchoolImg}}" alt=""/>
+          <img src="/img/{{aboutSchoolImg}}" alt=""/>
         </div>
         <div class="col-lg-8">
           {{#aboutSchoolText}}
@@ -130,27 +132,51 @@
   </div>
 </section>
 <section id="ourTeaches" class="our-teaches">
-<div class="container">
-  {{#ourTeachers}}
+  <div class="container">
+    {{#ourTeachers}}
+      <div class="header-section-wrapper">
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
+      </div>
+      <div class="slider-teaches">
+        {{#sliderTeachers}}
+          <div class="item-wrapper">
+            <div class="photo-wrapper">
+              <img src=/img/{{photo}} alt=""/>
+            </div>
+            <div class="name"> {{firstName}} {{lastName}}</div>
+            <div class="position">{{position}}</div>
+            <div class="about">
+              <p>{{about}}</p>
+            </div>
+          </div>
+        {{/sliderTeachers}}
+      </div>
+    {{/ourTeachers}}
+  </div>
+</section>
+<section class="advantages">
+  <div class="container">
     <div class="header-section-wrapper">
-      <h3>{{sectionTitle}}</h3>
-      <div class="background-section-text">{{sectionTitle}}</div>
-    </div>
-  <div class="slider-teaches">
-    {{#sliderTeachers}}
-      <div class="item-wrapper">
-        <div class="photo-wrapper">
-          <img src=/img/{{photo}} alt=""/>
-        </div>
-        <div class="name"> {{firstName}} {{lastName}}</div>
-      <div class="position">{{position}}</div>
-      <div class="about">
-        <p>{{about}}</p>
+      <h3>Наши приемущества</h3>
+      <div class="background-section-text">
+        Our Advantages
       </div>
     </div>
-    {{/sliderTeachers}}
-  </div>
-  {{/ourTeachers}}
+    <div class="items-wrapper row">
+      {{#advantages}}
+        <div class="col-lg-2">
+          <div class="item">
+            <div class="ico-wrap">
+              <img src="/img/{{icon}}" alt="">
+            </div>
+            <p>
+              {{desc}}
+            </p>
+          </div>
+        </div>
+      {{/advantages}}
+    </div>
   </div>
 </section>
 <section id="contacts" class="contacts">
@@ -161,15 +187,10 @@
         <div class="background-section-text">{{sectionTitle}}</div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <div class="map-wrapper"></div>
-        </div>
-      </div>
-      <div class="row">
         <div class="contact-form-wrapper">
-          {{#courses}}
-            <contacts-form courses="{{courseItems1}}"></contacts-form>
-          {{/courses}}
+        {{#courses}}
+          <contacts-form courses="{{courseItems1}}" [selectedcourse]="'angular'"></contacts-form>
+        {{/courses}}
         </div>
       </div>
       <div class="row">
@@ -177,9 +198,7 @@
           {{#contactDetails}}
             <div class="email-block">
               <ul>
-                {{#emailBlock}}
-                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
-                {{/emailBlock}}
+                <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
               </ul>
               <div class="social">
                 <ul>
@@ -191,14 +210,12 @@
             </div>
             <div class="tel-block">
               <ul>
-                {{#telBlock}}
-                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
-                {{/telBlock}}
+                <li class="tel"><p>{{socTitle}}</p></li>
+                <li class="tel"><p>{{socText}}</p></li>
               </ul>
             </div>
             <div class="address-block">
               <ul>
-                <li>{{city}}</li>
                 <li>{{address}}</li>
               </ul>
             </div>
@@ -227,7 +244,10 @@
   </div>
 </div>
 <script src="/js/bundle.min.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/common.js"></script>
 <script src="/js/contacts-form.js"></script>
-
 </body>
 </html>
