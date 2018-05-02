@@ -1,6 +1,7 @@
 library dart_jsdaddy_school.src.routes.controllers;
 
 import 'dart:async';
+import 'dart:convert';
 import 'package:angel_framework/angel_framework.dart';
 import '../../middleware/currency.dart';
 import '../../middleware/language_menu.dart';
@@ -32,15 +33,21 @@ class CoursesController extends Controller {
       "query": {'lang': lang}
     });
     //TODO try use mongo projection
-    courses_content['courses']['courseItems'] = course_content.map((data) {
+    var courses = course_content.map((data) {
       num uah = rate * int.parse(data["price"]);
       data.addAll({
         'price':
             'Стоимость: ${uah.round()}грн (экв. ${int.parse(data["price"])}\$)',
         'link_href': '/$lang/courses/${data['link_href']}',
+        'id': data['link_href']
       });
       return data;
     }).toList();
+
+
+    courses_content['courses']['courseItems'] = courses;
+    courses_content['courses']['courseItems1'] = json.encode(courses);
+
 
     courses_content['ourTeachers']['sliderTeachers'] = course_content
         .map((data) => data['teachers'])
@@ -62,9 +69,21 @@ class CoursesController extends Controller {
       "query": {'lang': lang, "link_href": id}
     });
 
+    List courses_content = await app.service('api/course').index({
+      "query": {'lang': lang}
+    });
+
+    var courses = courses_content.map((data) {
+      data.addAll({
+        'id': data['link_href']
+      });
+      return data;    
+    }).toList();
+
     if (course_content_arr.isEmpty) {
       return res.render('error');
     }
+    print(course_content_arr);
     var course_content = course_content_arr.first;
     var headerArr = await app.service('api/menu').index({
       'query': {'section': 'course', 'lang': lang}
@@ -73,6 +92,8 @@ class CoursesController extends Controller {
     header['languages'] = languages;
     course_content['header'] = header;
 
+    course_content['courseItems'] = json.encode(courses);
+    
     await res.render('course_landing', course_content);
   }
 }
