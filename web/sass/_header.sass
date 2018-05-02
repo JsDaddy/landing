@@ -11,6 +11,7 @@ header
   position: fixed
   top: 0
   left: 0
+  transition: width 0.15s ease, box-shadow 0.15s ease
   &.fixed-header
     padding: 10px
     min-height: inherit
@@ -19,7 +20,6 @@ header
   .content-header-wrapper
     justify-content: space-between
     align-items: center
-
   .logo
     display: flex
     align-items: center
@@ -48,6 +48,7 @@ header
         text-transform: uppercase
         border: 2px solid transparent
         overflow: hidden
+        transition: all ease 0.15s
         a
           text-decoration: none
           color: $text-color
@@ -211,10 +212,10 @@ header
     &:first-child
       transform: rotate(45deg) translate(45px, -25px)
       right: 50px
-      top: 5px
+      top: 6px
     &:last-child
       transform: rotate(-45deg) translate(45px, -25px)
-      top: 32px
+      top: 34px
       right: 15px
   .text
     opacity: 0
