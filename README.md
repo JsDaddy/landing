@@ -1,6 +1,12 @@
 # JSDaddy - landing page
 
 #### Installation
+```
+## Install dart using brew to your local machine
+brew tap dart-lang/dart
+brew install dart --devel
+```
+
 - > pub get
 
 #### Development

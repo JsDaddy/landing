@@ -185,7 +185,14 @@
         </div>
         <div class="row">
           <div class="contact-form-wrapper">
-            <contacts-form class="contact_us"></contacts-form>
+          {{#form}}
+            <contacts-form 
+              class="contact_us" 
+              lang="lang"
+              schema="{{schema}}"
+              btnText="{{btn}}">
+            </contacts-form>          
+          {{/form}}
           </div>
         </div>
         <div class="row">
@@ -240,6 +247,7 @@
 <script src="/js/bundle.min.js"></script>
 <script src="/js/contacts-form.js"></script>
 <script src="/js/jquery.js"></script>
+<script src="/js/slick.min.js"></script>
 <script src="/js/common.js"></script>
 
 </body>

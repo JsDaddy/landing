@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:angel_framework/angel_framework.dart';
 
 getCoursesContent(
-    Angel app, header, rate, lang, RequestContext req, res) async {
+    Angel app, header, form, rate, lang, RequestContext req, res) async {
   try {
     List course_content = await app.service('api/course').index({
       "query": {'lang': lang}
@@ -14,6 +14,7 @@ getCoursesContent(
     });
     var courses_content = courses_content_array.first;
     courses_content['header'] = header;
+    courses_content['form'] = form;
 
     courses_content['courses']['courseList'] =
         json.encode(course_content.map((data) {

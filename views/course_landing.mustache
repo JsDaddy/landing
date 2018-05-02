@@ -170,7 +170,17 @@
         </div>
         <div class="row">
           <div class="contact-form-wrapper">
-            <contacts-form class="apply_course" courses="{{courseItems}}" selectedcourse="{{link_href}}"></contacts-form>
+            {{#form}}
+                <contacts-form 
+                  class="apply_course" 
+                  courses="{{courseItems}}" 
+                  selectedcourse="{{link_href}}"
+                  schema="{{schema}}"
+                  lang="{{lang}}"
+                  btnText="{{btn}}"
+                  >
+                </contacts-form>          
+            {{/form}}
           </div>
         </div>
         <div class="row">
