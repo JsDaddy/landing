@@ -9,7 +9,7 @@ getMenu(String page) {
       lang != null ? query.addAll({'lang': 'ru'}) : null;
       var headerArr = await app.service('api/menu').index({'query': query});
       var header = headerArr.first;
-      languages is List ? header['languages'] = languages : null;
+      languages is Iterable ? header['languages'] = languages : null;
       req.params['header'] = header;
       return true;
     } catch (err) {

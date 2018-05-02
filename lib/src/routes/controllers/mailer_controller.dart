@@ -9,13 +9,15 @@ import 'dart:io';
 @Expose('/mail')
 class MailerController extends Controller {
   @Expose('/contacts', method: 'POST')
-  Future sendEmail(SmtpTransport emailTransport, RequestContext req, ResponseContext res) async {
-    var file = await new File('views/email-templates/email.mustache').readAsString();
+  Future sendEmail(SmtpTransport emailTransport, RequestContext req,
+      ResponseContext res) async {
+    var file =
+        await new File('views/email-templates/email.mustache').readAsString();
     var template = new Template(file, name: 'template-filename.html');
     try {
-      Map<String,String> body = await req.lazyBody();
-      var output = template.renderString({'name': body['name'] });
-      
+      Map<String, String> body = await req.lazyBody();
+      var output = template.renderString({'name': body['name']});
+
       var envelope = new Envelope()
         ..from = 'icosupport@tokenize.exchange'
         ..recipients.add(body['email'])
@@ -27,19 +29,21 @@ class MailerController extends Controller {
 
       await emailTransport.send(envelope);
       return res.json({'message': 'Email sent'});
-    } catch (err){
+    } catch (err) {
       return 'Something went wrong';
     }
   }
 
-    @Expose('/course', method: 'POST')
-    Future sendCourseEmail(SmtpTransport emailTransport, RequestContext req, ResponseContext res) async {
-    var file = await new File('views/email-templates/course.mustache').readAsString();
+  @Expose('/course', method: 'POST')
+  Future sendCourseEmail(SmtpTransport emailTransport, RequestContext req,
+      ResponseContext res) async {
+    var file =
+        await new File('views/email-templates/course.mustache').readAsString();
     var template = new Template(file, name: 'template-filename.html');
     try {
-      Map<String,String> body = await req.lazyBody();
-      var output = template.renderString({'name': body['name'] });
-      
+      Map<String, String> body = await req.lazyBody();
+      var output = template.renderString({'name': body['name']});
+
       var envelope = new Envelope()
         ..from = 'icosupport@tokenize.exchange'
         ..recipients.add(body['email'])
@@ -51,7 +55,7 @@ class MailerController extends Controller {
 
       await emailTransport.send(envelope);
       return res.json({'message': 'Email sent'});
-    } catch (err){
+    } catch (err) {
       return 'Something went wrong';
     }
   }
