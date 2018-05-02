@@ -104,7 +104,9 @@
             <img src="/img/{{logo}}" alt="">
           </div>
           <div class="col-lg-7">
-            {{description}}
+            {{#description}}
+              <p>{{.}}</p>
+            {{/description}}
           </div>
         </div>
       </div>
