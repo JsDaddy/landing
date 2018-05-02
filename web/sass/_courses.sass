@@ -1,5 +1,8 @@
 @import "variables"
 
+.about-school
+  p
+    margin-bottom: 20px
 .courses
   background: #f7f9f9
   .background-section-text
@@ -8,13 +11,14 @@
     width: 100%
     margin: 0 auto 50px auto
     max-width: 320px
-    min-height: 400px
+    min-height: 500px
     position: relative
     cursor: pointer
     box-shadow: 1px 3px 4.7px 0.3px rgba(0, 0, 0, .24)
     transition: all .3s ease-in-out
     padding: 100px 15px 15px 15px
-    background: $white
+    background: $white url("/img/Yellow-polygonal-1.png") no-repeat 0 0
+    background-size: contain
     border-bottom: 3px solid #ffcc00
     &:hover
       box-shadow: 6px 11px 18.8px 1.2px rgba(0, 0, 0, .24)
@@ -26,29 +30,39 @@
       top: 15px
       float: right
       padding: 5px 15px
-      background: $yellow
-      color: $text-color
+      background: #276BA4
+      color: #fff
       font-family: $montserrat-font
       font-size: 0.9375rem
       font-weight: 600
       margin-bottom: 20px
     h3
-      margin-bottom: 20px
+      margin-bottom: 30px
       width: 100%
       font-size: 2.3rem
       text-align: center
-    img
-      display: block
-      max-height: 170px
-      width: auto
+    .img-wrapper
+      width: 220px
+      height: 220px
+      display: flex
+      align-items: center
+      justify-content: center
+      background: $white
       margin: 0 auto 30px auto
-    .button-block
+      border-radius: 50%
+      box-shadow: 0 0 30px rgba(0,0,0,0.1)
+      img
+        display: block
+        max-height: 120px
+        width: auto
+    .bottom-block
       display: inline-flex
       flex-direction: column
+      margin-bottom: 15px
       h4
         font-size: 1.7rem
-        margin-bottom: 10px
         min-height: 32px
+        margin-bottom: 25px
       .prices
         width: 100%
         font-size: 1rem
