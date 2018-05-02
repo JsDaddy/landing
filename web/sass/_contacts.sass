@@ -144,7 +144,7 @@
   &:hover,
   &:focus
     outline: 0
-  span
+  .mat-select-value-text
     cursor: pointer
     display: block
     width: 100%
@@ -154,19 +154,18 @@
     font-weight: 600
     font-family: $montserrat-font
     color: #827f7f
-  .select-drop
+  .mat-select-content
     cursor: pointer
-    position: relative
     z-index: 100
+    display: block
     left: 0
     right: 0
-    display: none
     background: #f4f4f4
     border: 1px solid $yellow
     border-top: 0
     opacity: 1
     margin-top: -5px
-    li
+    .mat-option
       line-height: 52px
       padding: 0 19px
       font-size: 0.875rem
@@ -174,12 +173,21 @@
       font-family: $montserrat-font
       color: #827f7f
       transition: all ease 0.15s
-      &:hover
-        background: lighten(#f4f4f4, 2%)
+      &.mat-active
+        .mat-option-ripple
+          background: lighten(#f4f4f4, 2%)
 
-  &:hover
-    .select-drop
-      display: block
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled)
+  color: $text-color
+
+.mat-form-field-wrapper
+  padding: 0
+  .mat-form-field-underline
+    display: none
+  .mat-form-field-infix
+    padding: 0
+    margin: 0
+    border-top: 1px solid $yellow
 
 
 .contact-details

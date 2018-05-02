@@ -7,3 +7,12 @@ $(document).ready(function () {
         autoplaySpeed: 2000
     });
 });
+
+$(window).scroll(function () {
+    if ($(window).scrollTop() >= 110) {
+        $('header').addClass('fixed-header');
+    }
+    else {
+        $('header').removeClass('fixed-header');
+    }
+});
