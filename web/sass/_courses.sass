@@ -110,15 +110,23 @@
     .item-wrapper
       display: inline-flex
       justify-content: center
+      align-items: center
       flex-direction: column
       padding: 0 15px
       .photo-wrapper
         display: inline-flex
         justify-content: center
+        align-items: center
         margin-bottom: 35px
+        width: 180px
+        filter: grayscale(100%)
+        &:hover
+          filter: grayscale(0%)
+          transition: grayscale 0.4s ease
         img
-          max-height: 250px
-          width: auto
+          width: 180px
+          height: 180px
+          border-radius: 50%
       .name
         width: 100%
         font-weight: 700
@@ -135,6 +143,8 @@
         font-weight: 400
       p
         text-align: center
+        font-weight: 300
+        font-size: 0.9rem
 
 .advantages
   background: #f7f9f9
