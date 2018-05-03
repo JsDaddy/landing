@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/site.min.css">
@@ -72,114 +72,114 @@
   </header>
 {{/header}}
 <section id="banner" class="banner">
-    <div class="container">
-        <div class="banner-content-wrapper">
-            <div class="banner-content">
-                {{#banner}}
-                    <h1>{{bannerTitle}}</h1>
-                    <p>{{bannerDesc}}</p>
-                    <a class="contact-btn" href="{{btnHref}}">{{bannerBtn}}</a>
-                {{/banner}}
-            </div>
-        </div>
+  <div class="container">
+    <div class="banner-content-wrapper">
+      <div class="banner-content">
+        {{#banner}}
+          <h1>{{bannerTitle}}</h1>
+          <p>{{bannerDesc}}</p>
+          <a class="contact-btn" href="{{btnHref}}">{{bannerBtn}}</a>
+        {{/banner}}
+      </div>
     </div>
+  </div>
 </section>
 <section id="aboutSchool" class="about-school">
-    <div class="container">
-        {{#aboutSchool}}
-            <div class="header-section-wrapper">
-                <h3>{{sectionTitle}}</h3>
-                <div class="background-section-text">{{sectionTitle}}</div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <img src="/img/{{aboutSchoolImg}}" alt=""/>
-                </div>
-                <div class="col-lg-8">
-                    {{#aboutSchoolText}}
-                        <p>{{text}}</p>
-                    {{/aboutSchoolText}}
-                </div>
-            </div>
-        {{/aboutSchool}}
-    </div>
+  <div class="container">
+    {{#aboutSchool}}
+      <div class="header-section-wrapper">
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="/img/{{aboutSchoolImg}}" alt=""/>
+        </div>
+        <div class="col-lg-8">
+          {{#aboutSchoolText}}
+            <p>{{text}}</p>
+          {{/aboutSchoolText}}
+        </div>
+      </div>
+    {{/aboutSchool}}
+  </div>
 </section>
 <section id="courses" class="courses">
-    <div class="container">
-        {{#courses}}
-            <div class="header-section-wrapper">
-                <h3>{{sectionTitle}}</h3>
-                <div class="background-section-text">{{sectionTitle}}</div>
+  <div class="container">
+    {{#courses}}
+      <div class="header-section-wrapper">
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
+      </div>
+      <div class="row">
+        {{#courseItems}}
+          <div class="col-lg-4">
+            <div class="item-wrapper">
+              <div class="start-course">{{start_date}}</div>
+              <div class="img-wrapper">
+                <img src="/img/{{logo}}" alt="{{title}}"/>
+              </div>
+              <h3 class="name">{{title}}</h3>
+              <div class="bottom-block">
+                <h4>{{sub_title}}</h4>
+                <span class="prices">{{price}}</span>
+                <div class="duration">{{duration}}</div>
+              </div>
+              <a class="link" href="{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
             </div>
-            <div class="row">
-                {{#courseItems}}
-                    <div class="col-lg-4">
-                        <div class="item-wrapper">
-                            <div class="start-course">{{start_date}}</div>
-                            <div class="img-wrapper">
-                                <img src="/img/{{logo}}" alt="{{title}}"/>
-                            </div>
-                            <h3 class="name">{{title}}</h3>
-                            <div class="bottom-block">
-                                <h4>{{sub_title}}</h4>
-                                <span class="prices">{{price}}</span>
-                                <div class="duration">{{duration}}</div>
-                            </div>
-                            <a class="link" href="{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                {{/courseItems}}
-            </div>
-        {{/courses}}
-    </div>
+          </div>
+        {{/courseItems}}
+      </div>
+    {{/courses}}
+  </div>
 </section>
 <section id="ourTeaches" class="our-teaches">
-    <div class="container">
-        {{#ourTeachers}}
-            <div class="header-section-wrapper">
-                <h3>{{sectionTitle}}</h3>
-                <div class="background-section-text">{{sectionTitle}}</div>
+  <div class="container">
+    {{#ourTeachers}}
+      <div class="header-section-wrapper">
+        <h3>{{sectionTitle}}</h3>
+        <div class="background-section-text">{{sectionTitle}}</div>
+      </div>
+      <div class="slider-teaches">
+        {{#sliderTeachers}}
+          <div class="item-wrapper">
+            <div class="photo-wrapper">
+              <img src=/img/{{photo}} alt=""/>
             </div>
-            <div class="slider-teaches">
-                {{#sliderTeachers}}
-                    <div class="item-wrapper">
-                        <div class="photo-wrapper">
-                            <img src=/img/{{photo}} alt=""/>
-                        </div>
-                        <div class="name"> {{firstName}} {{lastName}}</div>
-                        <div class="position">{{position}}</div>
-                        <div class="about">
-                            <p>{{about}}</p>
-                        </div>
-                    </div>
-                {{/sliderTeachers}}
+            <div class="name"> {{firstName}} {{lastName}}</div>
+            <div class="position">{{position}}</div>
+            <div class="about">
+              <p>{{about}}</p>
             </div>
-        {{/ourTeachers}}
-    </div>
+          </div>
+        {{/sliderTeachers}}
+      </div>
+    {{/ourTeachers}}
+  </div>
 </section>
 <section class="advantages">
-    <div class="container">
-        <div class="header-section-wrapper">
-            <h3>Наши приемущества</h3>
-            <div class="background-section-text">
-                Our Advantages
-            </div>
-        </div>
-        <div class="items-wrapper row">
-            {{#advantages}}
-                <div class="col-lg-2 col-md-6">
-                    <div class="item">
-                        <div class="ico-wrap">
-                            <img src="/img/{{icon}}" alt="">
-                        </div>
-                        <p>
-                            {{desc}}
-                        </p>
-                    </div>
-                </div>
-            {{/advantages}}
-        </div>
+  <div class="container">
+    <div class="header-section-wrapper">
+      <h3>Наши приемущества</h3>
+      <div class="background-section-text">
+        Our Advantages
+      </div>
     </div>
+    <div class="items-wrapper row">
+      {{#advantages}}
+        <div class="col-lg-2 col-md-6">
+          <div class="item">
+            <div class="ico-wrap">
+              <img src="/img/{{icon}}" alt="">
+            </div>
+            <p>
+              {{desc}}
+            </p>
+          </div>
+        </div>
+      {{/advantages}}
+    </div>
+  </div>
 </section>
 <section id="contacts" class="contacts">
   <div class="container">
@@ -192,14 +192,14 @@
         <div class="contact-form-wrapper">
           {{#courses}}
             {{#form}}
-                <contacts-form 
-                    class="apply_course" 
-                    courses="{{courseList}}"
-                    [selectedcourse]="'angular'"
-                    schema="{{schema}}"
-                    lang="{{lang}}"
-                    btnText="{{btn}}">
-                </contacts-form>          
+              <contacts-form
+                class="apply_course"
+                courses="{{courseList}}"
+                [selectedcourse]="'angular'"
+                schema="{{schema}}"
+                lang="{{lang}}"
+                btnText="{{btn}}">
+              </contacts-form>
             {{/form}}
           {{/courses}}
         </div>
@@ -237,26 +237,27 @@
   </div>
 </section>
 <footer class="footer">
-    {{#footer}}
-        <div class="copyright">{{copyright}}</div>
-    {{/footer}}
+  {{#footer}}
+    <div class="copyright">{{copyright}}</div>
+  {{/footer}}
 </footer>
 <div class="notification none">
-    <div class="notification-message">
-        <div class="logo">
-            <img src="/img/logo-notification.png" alt="">
-        </div>
-        <div class="message">
-            Your application is accepted, thank you! We will send more information to your mail
-            <div class="close-btn">
-
-            </div>
-        </div>
+  <div class="notification-message">
+    <div class="logo">
+      <img src="/img/logo-notification.png" alt="">
     </div>
+    <div class="message">
+      Your application is accepted, thank you! We will send more information to your mail
+      <div class="close-btn">
+
+      </div>
+    </div>
+  </div>
 </div>
 <script src="/js/bundle.min.js"></script>
 <script src="/js/jquery.js"></script>
 <script src="/js/slick.min.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
 <script src="/js/common.js"></script>
 <script src="/js/contacts-form.js"></script>
 </body>
