@@ -24,7 +24,6 @@ main() {
   HtmlElement CSForm = querySelector('.contact_us');
   CSForm != null
       ? querySelector('.contact_us').addEventListener('form', (dynamic data) {
-          print(data.detail);
           store.dispatch(new PendingNotify({'url': 'mail/contacts', 'data': data.detail }));
         })
       : null;
@@ -33,7 +32,6 @@ main() {
   HtmlElement CSCForm = querySelector('.apply_course');
   CSCForm != null
       ? querySelector('.apply_course').addEventListener('form', (dynamic data) {
-          print(data.detail);
           store.dispatch(new PendingNotify({'url': 'mail/course', 'data': data.detail }));
         })
       : null;
