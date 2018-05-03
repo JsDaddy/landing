@@ -14,10 +14,10 @@
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.min.css">
-  <link rel="stylesheet" href="/css/font-awesome.min.css">
   <link rel="icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -101,7 +101,9 @@
         </div>
         <div class="row">
           <div class="col-lg-5">
-            <img src="/img/{{logo}}" alt="">
+            <div class="about-course-img">
+              <img src="/img/{{logo}}" alt="">
+            </div>
           </div>
           <div class="col-lg-7">
             {{#description}}
@@ -119,13 +121,12 @@
           <h3>{{title}}</h3>
           <div class="background-section-text">{{title}}</div>
         </div>
-
         <div class="program-wrap">
           <div class="row">
             {{#modules}}
               <div class="col-lg-4">
                 <ul>
-                  <li> {{title}}</li>
+                  <li class="program-title"> {{title}}</li>
                   {{#items}}
                     <li>{{.}}</li>
                   {{/items}}
@@ -137,17 +138,18 @@
       </div>
     </section>
   {{/programm}}
-  <section class="advantages">
-    <div class="container">
+<section class="advantages">
+  <div class="container">
+    {{#advantages}}
       <div class="header-section-wrapper">
-        <h3>Наши приемущества</h3>
+        <h3>{{advantagesTitle}}</h3>
         <div class="background-section-text">
-          Our Advantages
+            {{advantagesTitle}}
         </div>
       </div>
       <div class="items-wrapper row">
-        {{#advantages}}
-          <div class="col-lg-2">
+        {{#descriptions}}
+          <div class="col-lg-2 col-md-6">
             <div class="item">
               <div class="ico-wrap">
                 <img src="/img/{{icon}}" alt="">
@@ -157,10 +159,11 @@
               </p>
             </div>
           </div>
-        {{/advantages}}
+        {{/descriptions}}
       </div>
-    </div>
-  </section>
+    {{/advantages}}
+  </div>
+</section>
   <section id="contacts" class="contacts">
     <div class="container">
       {{#contacts}}
@@ -170,7 +173,17 @@
         </div>
         <div class="row">
           <div class="contact-form-wrapper">
-            <contacts-form class="apply_course" courses="{{courseItems}}" selectedcourse="{{link_href}}"></contacts-form>
+            {{#form}}
+              <contacts-form
+                class="apply_course"
+                courses="{{courseItems}}"
+                selectedcourse="{{link_href}}"
+                schema="{{schema}}"
+                lang="{{lang}}"
+                btnText="{{btn}}"
+              >
+              </contacts-form>
+            {{/form}}
           </div>
         </div>
         <div class="row">
@@ -226,5 +239,9 @@
 </div>
 <script src="/js/bundle.min.js"></script>
 <script src="/js/contacts-form.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
+<script src="/js/common.js"></script>
 </body>
 </html>

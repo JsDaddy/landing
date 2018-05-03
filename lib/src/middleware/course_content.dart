@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:angel_framework/angel_framework.dart';
 
 getCourseContent(
-    Angel app, header, lang, int id, num rate, RequestContext req, res) async {
+    Angel app, header, form, advantages, lang, int id, num rate, RequestContext req, res) async {
   try {
     var course_content_arr = await app.service('api/course').index({
       "query": {'lang': lang, "link_href": id}
@@ -12,7 +12,9 @@ getCourseContent(
 
     var course_content = course_content_arr.first;
     course_content['header'] = header;
-
+    course_content['form'] = form;
+    course_content['advantages'] = advantages;
+    
     List all_courses_content = await app.service('api/course').index({
       "query": {'lang': lang}
     });

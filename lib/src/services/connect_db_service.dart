@@ -20,11 +20,13 @@ Future connectDb(Angel app) async {
     app.container.singleton(db);
     app.use('/api/languages', new MongoService(db.collection("languages")));
     app.use('/api/menu', new MongoService(db.collection("menu")));
+    app.use('/api/form', new MongoService(db.collection("form")));
     app.use('/api/main', new MongoService(db.collection("main")));
     app.use('/api/courses', new MongoService(db.collection("courses")));
     app.use('/api/course', new MongoService(db.collection("course")));
     app.use('/api/contacts', new MongoService(db.collection("contacts")));
     app.use('/api/participant', new MongoService(db.collection("participant")));
+    app.use('/api/advantages', new MongoService(db.collection("advantages")));    
   } catch (err) {
     print("Db connection ${err['errmsg']}");
   }
