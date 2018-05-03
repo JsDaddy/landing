@@ -9,6 +9,9 @@
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  {{#meta}}
+    <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <link rel="shortcut icon" href="" type="image/x-icon"/>
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Js Daddy</title>
+  <title>{{title}}</title>
   <meta charset="utf-8"/>
   <meta name="description" content=""/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  {{#meta}}
+    <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
