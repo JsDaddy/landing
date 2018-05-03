@@ -1,0 +1,10 @@
+# Default server configuration.
+host: 127.0.0.1
+mongo_db: string
+nbu_rate: string
+port: 3000
+jwt_secret: string
+username: string
+password: string
+emailport: 587
+emailhostName: 'smtp.office365.com'

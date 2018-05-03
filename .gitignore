@@ -95,3 +95,5 @@ public/js/bundle.min.js.deps
 .vscode
 .idea
 
+config/default.yaml
+config/prodaction.yaml

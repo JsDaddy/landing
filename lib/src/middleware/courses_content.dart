@@ -7,7 +7,7 @@ getCoursesContent(
     Angel app, header, form, advantages, rate, lang, RequestContext req, res) async {
   try {
     List course_content = await app.service('api/course').index({
-      "query": {'lang': lang}
+      "query": {'lang': lang, 'hidden': false}
     });
     var courses_content_array = await app.service('api/courses').index({
       "query": {'lang': lang}
