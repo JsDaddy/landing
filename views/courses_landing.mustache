@@ -9,6 +9,9 @@
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  {{#meta}}
+  <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <link rel="shortcut icon" href="" type="image/x-icon"/>
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
@@ -121,9 +124,12 @@
                             </div>
                             <h3 class="name">{{title}}</h3>
                             <div class="bottom-block">
-                                <h4>{{sub_title}}</h4>
+                                <div class="course-type {{classCourse}}">
+                                    {{typeCourse}}
+                                </div>
+                                <div class="duration">{{durations}}</div>
                                 <span class="prices">{{price}}</span>
-                                <div class="duration">{{duration}}</div>
+
                             </div>
                             <a class="link" href="{{link_href}}">{{link_text}}<i class="fa fa-arrow-right"></i></a>
                         </div>
@@ -194,14 +200,14 @@
         <div class="contact-form-wrapper">
           {{#courses}}
             {{#form}}
-                <contacts-form 
-                    class="apply_course" 
-                    courses="{{courseList}}"
-                    [selectedcourse]="'angular'"
-                    schema="{{schema}}"
-                    lang="{{lang}}"
-                    btnText="{{btn}}">
-                </contacts-form>          
+              <contacts-form
+                class="apply_course"
+                courses="{{courseList}}"
+                [selectedcourse]="'angular'"
+                schema="{{schema}}"
+                lang="{{lang}}"
+                btnText="{{btn}}">
+              </contacts-form>
             {{/form}}
           {{/courses}}
         </div>
@@ -211,7 +217,9 @@
           {{#contactDetails}}
             <div class="email-block">
               <ul>
-                <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{#﻿emailBlock}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{/﻿emailBlock}}
               </ul>
               <div class="social">
                 <ul>
@@ -229,7 +237,7 @@
             </div>
             <div class="address-block">
               <ul>
-                <li>{{address}}</li>
+                <li>{{﻿city}}</li>
               </ul>
             </div>
           {{/contactDetails}}
@@ -259,6 +267,7 @@
 <script src="/js/bundle.min.js"></script>
 <script src="/js/jquery.js"></script>
 <script src="/js/slick.min.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
 <script src="/js/common.js"></script>
 <script src="/js/contacts-form.js"></script>
 </body>

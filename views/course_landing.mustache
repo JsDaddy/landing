@@ -9,6 +9,9 @@
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  {{#meta}}
+    <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <link rel="shortcut icon" href="" type="image/x-icon"/>
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
@@ -26,7 +29,7 @@
     <header id="home">
       <div class="container">
         <div class="row content-header-wrapper">
-          <div class="logo"><a href="#banner"><img src="/img/logo.png" alt="js daddy"></a></div>
+          <div class="logo"><a href="/"><img src="/img/logo.png" alt="js daddy"></a></div>
           <div class="navigation-wrapper">
             <div class="lang-checker">
               <ul class="select">
@@ -138,32 +141,32 @@
       </div>
     </section>
   {{/programm}}
-<section class="advantages">
-  <div class="container">
-    {{#advantages}}
-      <div class="header-section-wrapper">
-        <h3>{{advantagesTitle}}</h3>
-        <div class="background-section-text">
+  <section class="advantages">
+    <div class="container">
+      {{#advantages}}
+        <div class="header-section-wrapper">
+          <h3>{{advantagesTitle}}</h3>
+          <div class="background-section-text">
             {{advantagesTitle}}
-        </div>
-      </div>
-      <div class="items-wrapper row">
-        {{#descriptions}}
-          <div class="col-lg-2 col-md-6">
-            <div class="item">
-              <div class="ico-wrap">
-                <img src="/img/{{icon}}" alt="">
-              </div>
-              <p>
-                {{desc}}
-              </p>
-            </div>
           </div>
-        {{/descriptions}}
-      </div>
-    {{/advantages}}
-  </div>
-</section>
+        </div>
+        <div class="items-wrapper row">
+          {{#descriptions}}
+            <div class="col-lg-2 col-md-6">
+              <div class="item">
+                <div class="ico-wrap">
+                  <img src="/img/{{icon}}" alt="">
+                </div>
+                <p>
+                  {{desc}}
+                </p>
+              </div>
+            </div>
+          {{/descriptions}}
+        </div>
+      {{/advantages}}
+    </div>
+  </section>
   <section id="contacts" class="contacts">
     <div class="container">
       {{#contacts}}
@@ -220,9 +223,9 @@
   </section>
 </div>
 <footer class="footer">
-  <div class="copyright">
-    Copywriting &#9400; 2018 JSdaddy
-  </div>
+  {{#footer}}
+    <div class="copyright">{{copyright}}</div>
+  {{/footer}}
 </footer>
 <div class="notification none">
   <div class="notification-message">

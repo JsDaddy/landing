@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Js Daddy</title>
+  <title>{{title}}</title>
   <meta charset="utf-8"/>
   <meta name="description" content=""/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  {{#meta}}
+    <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
@@ -13,7 +16,6 @@
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
   <link rel="apple-touch-icon" sizes="114x114" href=""/>
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
         integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -27,7 +29,7 @@
       <div class="container">
         <div class="row content-header-wrapper">
           <div class="logo">
-            <a href="/#banner">
+            <a href="/">
               <img src="/img/logo.png" alt="js daddy"/>
             </a>
           </div>
@@ -245,6 +247,7 @@
 <script src="/js/bundle.min.js"></script>
 <script src="/js/contacts-form.js"></script>
 <script src="/js/jquery.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
 <script src="/js/slick.min.js"></script>
 <script src="/js/common.js"></script>
 </body>

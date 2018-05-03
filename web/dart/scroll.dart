@@ -3,7 +3,7 @@ library scroll;
 import 'dart:html';
 
 startScroll(String selector) {
-  int to = querySelector(selector).offsetTop;
+  int to = querySelector(selector).offsetTop + 80;
   _scroll(window.scrollY, to, 60);
 }
 
