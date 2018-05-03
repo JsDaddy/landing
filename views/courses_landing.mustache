@@ -159,26 +159,28 @@
 </section>
 <section class="advantages">
   <div class="container">
-    <div class="header-section-wrapper">
-      <h3>Наши приемущества</h3>
-      <div class="background-section-text">
-        Our Advantages
-      </div>
-    </div>
-    <div class="items-wrapper row">
-      {{#advantages}}
-        <div class="col-lg-2 col-md-6">
-          <div class="item">
-            <div class="ico-wrap">
-              <img src="/img/{{icon}}" alt="">
-            </div>
-            <p>
-              {{desc}}
-            </p>
-          </div>
+    {{#advantages}}
+      <div class="header-section-wrapper">
+        <h3>{{advantagesTitle}}</h3>
+        <div class="background-section-text">
+          {{advantagesTitle}}
         </div>
-      {{/advantages}}
-    </div>
+      </div>
+      <div class="items-wrapper row">
+        {{#descriptions}}
+          <div class="col-lg-2 col-md-6">
+            <div class="item">
+              <div class="ico-wrap">
+                <img src="/img/{{icon}}" alt="">
+              </div>
+              <p>
+                {{desc}}
+              </p>
+            </div>
+          </div>
+        {{/descriptions}}
+      </div>
+    {{/advantages}}
   </div>
 </section>
 <section id="contacts" class="contacts">

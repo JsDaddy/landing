@@ -1,7 +1,6 @@
 import '../action/notify.dart';
 
 Map<String, dynamic> notifyReducer(Map<String, dynamic> state, action) {
-  print('REDUCER $action');
   switch (action.type) {
     case SHOW: {
       return {'isOpen': true, 'message': action.payload.toString(), 'isLoading': false };
