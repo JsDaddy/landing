@@ -11,7 +11,7 @@ header
   position: fixed
   top: 0
   left: 0
-  transition: width 0.15s ease, box-shadow 0.15s ease
+  transition: width 0.15s ease, padding-top ease 0.15s, min-height ease 0.15s
   &.fixed-header
     padding: 10px
     min-height: inherit
@@ -120,7 +120,6 @@ header
         &:hover
           color: $text-color
           text-decoration: none
-
   .social
     display: flex
     ul
@@ -144,7 +143,6 @@ header
           &.github
             &:hover
               color: $black
-
   .contact-btn-wrapper
     display: flex
     align-items: flex-start
