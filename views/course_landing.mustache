@@ -98,7 +98,11 @@
               {{/teachers}}
               <p class="prices">{{price}}</p>
             </div>
-            <a class="contact-btn" href="#contacts">Записаться</a>
+            {{#header}}
+            {{#headerBtn}}
+            <a class="contact-btn" href="{{btnHref}}">{{btntext}}</a>
+            {{/headerBtn}}
+            {{/header}}
           </div>
         </div>
       </div>
