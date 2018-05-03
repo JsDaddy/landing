@@ -217,7 +217,9 @@
           {{#contactDetails}}
             <div class="email-block">
               <ul>
-                <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{#﻿emailBlock}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{/﻿emailBlock}}
               </ul>
               <div class="social">
                 <ul>
@@ -235,7 +237,7 @@
             </div>
             <div class="address-block">
               <ul>
-                <li>{{address}}</li>
+                <li>{{﻿city}}</li>
               </ul>
             </div>
           {{/contactDetails}}
