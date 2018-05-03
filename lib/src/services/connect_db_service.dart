@@ -26,6 +26,7 @@ Future connectDb(Angel app) async {
     app.use('/api/course', new MongoService(db.collection("course")));
     app.use('/api/contacts', new MongoService(db.collection("contacts")));
     app.use('/api/participant', new MongoService(db.collection("participant")));
+    app.use('/api/advantages', new MongoService(db.collection("advantages")));    
   } catch (err) {
     print("Db connection ${err['errmsg']}");
   }

@@ -138,17 +138,18 @@
       </div>
     </section>
   {{/programm}}
-  <section class="advantages">
-    <div class="container">
+<section class="advantages">
+  <div class="container">
+    {{#advantages}}
       <div class="header-section-wrapper">
-        <h3>Наши приемущества</h3>
+        <h3>{{advantagesTitle}}</h3>
         <div class="background-section-text">
-          Our Advantages
+            {{advantagesTitle}}
         </div>
       </div>
       <div class="items-wrapper row">
-        {{#advantages}}
-          <div class="col-lg-2">
+        {{#descriptions}}
+          <div class="col-lg-2 col-md-6">
             <div class="item">
               <div class="ico-wrap">
                 <img src="/img/{{icon}}" alt="">
@@ -158,10 +159,11 @@
               </p>
             </div>
           </div>
-        {{/advantages}}
+        {{/descriptions}}
       </div>
-    </div>
-  </section>
+    {{/advantages}}
+  </div>
+</section>
   <section id="contacts" class="contacts">
     <div class="container">
       {{#contacts}}
