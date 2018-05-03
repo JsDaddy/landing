@@ -10,7 +10,7 @@ Stream<dynamic> notifyEpic(
   return actions
     .where((action) => action is PendingNotify).asyncMap((action) =>
       HttpRequest
-          .postFormData('$BASE_URL/${action.payload['url']}', action.payload['data'])
+          .postFormData('$BASE_URL/${action.payload['url']}', action.payload['data'], requestHeaders: {'Content-Language': '${action.payload['lang']}'} )
           .then((req) => json.decode(req.responseText))
           .then((data) => new ShowNotify(data['message']))
           .catchError((error) => new ErrorNotify(error)));

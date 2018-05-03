@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115295105-1');
+  </script>
   <title>Js Daddy</title>
   <meta charset="utf-8"/>
   <meta name="description" content=""/>
@@ -9,6 +18,9 @@
   <meta property="og:image" content="path/to/image.jpg"/>
   <meta name="format-detection" content="telephone=no"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  {{#meta}}
+  <meta name={{name}} content="{{content}}">
+  {{/meta}}
   <link rel="shortcut icon" href="" type="image/x-icon"/>
   <link rel="apple-touch-icon" href=""/>
   <link rel="apple-touch-icon" sizes="72x72" href=""/>
@@ -197,14 +209,14 @@
         <div class="contact-form-wrapper">
           {{#courses}}
             {{#form}}
-                <contacts-form
-                    class="apply_course"
-                    courses="{{courseList}}"
-                    [selectedcourse]="'angular'"
-                    schema="{{schema}}"
-                    lang="{{lang}}"
-                    btnText="{{btn}}">
-                </contacts-form>
+              <contacts-form
+                class="apply_course"
+                courses="{{courseList}}"
+                [selectedcourse]="'angular'"
+                schema="{{schema}}"
+                lang="{{lang}}"
+                btnText="{{btn}}">
+              </contacts-form>
             {{/form}}
           {{/courses}}
         </div>
@@ -214,7 +226,9 @@
           {{#contactDetails}}
             <div class="email-block">
               <ul>
-                <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{#﻿emailBlock}}
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                {{/﻿emailBlock}}
               </ul>
               <div class="social">
                 <ul>
@@ -232,7 +246,7 @@
             </div>
             <div class="address-block">
               <ul>
-                <li>{{address}}</li>
+                <li>{{﻿city}}</li>
               </ul>
             </div>
           {{/contactDetails}}
@@ -262,6 +276,7 @@
 <script src="/js/bundle.min.js"></script>
 <script src="/js/jquery.js"></script>
 <script src="/js/slick.min.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
 <script src="/js/common.js"></script>
 <script src="/js/contacts-form.js"></script>
 </body>

@@ -1,8 +1,0 @@
-# Default server configuration.
-host: 127.0.0.1
-mongo_db: mongodb://jsdaddy:daddycool1973@159.89.18.60:27017/jsdaddy
-nbu_rate: https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json
-port: 3000
-jwt_secret: "s0xn1oGsASUunsbeNwdrVkmV7L0jA8Ip"
-username: "icosupport@tokenize.exchange"
-password: "Tkx1234$"

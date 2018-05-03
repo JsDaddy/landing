@@ -7,7 +7,6 @@ import 'notify.dart';
 
 main() {
   var contacts_form = document.querySelector('contacts-form');  
-
   store.onChange.listen((data) {
     renderNotify(data) ? new Timer(Duration(seconds: 3), () {
       store.dispatch(new HideNotify());
@@ -32,7 +31,8 @@ main() {
   HtmlElement CSCForm = querySelector('.apply_course');
   CSCForm != null
       ? querySelector('.apply_course').addEventListener('form', (dynamic data) {
-          store.dispatch(new PendingNotify({'url': 'mail/course', 'data': data.detail }));
+          var lang = Uri.base.toString().split('/').toList().contains('ru') ? 'ru' : 'en';
+          store.dispatch(new PendingNotify({'url': 'mail/course', 'data': data.detail, 'lang': lang }));
         })
       : null;
 }

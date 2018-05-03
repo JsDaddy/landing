@@ -1,1 +1,263 @@
-<!DOCTYPE html><html><head>  <title>Js Daddy</title>  <meta charset="utf-8"/>  <meta name="description" content=""/>  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>  <meta property="og:image" content="path/to/image.jpg"/>  <meta name="format-detection" content="telephone=no"/>  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>  <link rel="shortcut icon" href="" type="image/x-icon"/>  <link rel="apple-touch-icon" href=""/>  <link rel="apple-touch-icon" sizes="72x72" href=""/>  <link rel="apple-touch-icon" sizes="114x114" href=""/>  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">  <link rel="stylesheet" href="/css/font-awesome.min.css">  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">  <link rel="stylesheet" href="/css/site.min.css">  <link rel="icon" href="/img/favicon.ico"></head><body><div>  {{#header}}    <header id="home">      <div class="container">        <div class="row content-header-wrapper">          <div class="logo"><a href="#banner"><img src="/img/logo.png" alt="js daddy"></a></div>          <div class="navigation-wrapper">            <div class="lang-checker">              <ul class="select">                {{#languages}}                  <li class={{active}}>                    <a href={{href}}>{{name}}</a>                  </li>                {{/languages}}              </ul>            </div>            <nav>              <ul id="menu">                {{#menu}}                  <li><a href=/{{lang}}{{link}}>{{title}}</a></li>                {{/menu}}              </ul>            </nav>            <div class="right-header-block">              <div class="tel-wrapper">                {{#phones}}                  <a href="{{phonesHref}}">{{phones}}</a>                {{/phones}}              </div>              <div class="contact-btn-wrapper">                {{#headerBtn}}                  <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>                {{/headerBtn}}              </div>            </div>          </div>          <div class="nav-burger">            <div class="line"></div>            <div class="text">Menu</div>            <div class="line"></div>          </div>        </div>      </div>    </header>  {{/header}}  <section class="banner-course">    <div class="container">      <div class="banner-content-wrapper">        <div class="banner-content">          <div class="img-banner-wrapper">            <img src="/img/{{banerImg}}"/>          </div>          <div class="banner-text">            <h1> {{title}}</h1>            <p>{{sub_title}}</p>            <div class="date-wrapper">              <p class="start">{{start_date}}</p>              <p class="schedule">                {{durations}}              </p>              {{#teachers}}                <p class="mentor">{{firstName}} {{lastName}}</p>              {{/teachers}}              <p class="prices">{{price}}</p>            </div>            {{#header}}            {{#headerBtn}}            <a class="contact-btn" href="{{btnHref}}">{{btntext}}</a>            {{/headerBtn}}            {{/header}}          </div>        </div>      </div>    </div>  </section>  {{#about_course}}    <section class="about-course">      <div class="container">        <div class="header-section-wrapper">          <h3>{{title}}</h3>          <div class="background-section-text">{{title}}</div>        </div>        <div class="row">          <div class="col-lg-5">            <div class="about-course-img">              <img src="/img/{{logo}}" alt="">            </div>          </div>          <div class="col-lg-7">            {{#description}}              <p>{{.}}</p>            {{/description}}          </div>        </div>      </div>    </section>  {{/about_course}}  {{#programm}}    <section class="course-program-wrapper">      <div class="container">        <div class="header-section-wrapper">          <h3>{{title}}</h3>          <div class="background-section-text">{{title}}</div>        </div>        <div class="program-wrap">          <div class="row">            {{#modules}}              <div class="col-lg-4">                <ul>                  <li class="program-title"> {{title}}</li>                  {{#items}}                    <li>{{.}}</li>                  {{/items}}                </ul>              </div>            {{/modules}}          </div>        </div>      </div>    </section>  {{/programm}}<section class="advantages">  <div class="container">    {{#advantages}}      <div class="header-section-wrapper">        <h3>{{advantagesTitle}}</h3>        <div class="background-section-text">            {{advantagesTitle}}        </div>      </div>      <div class="items-wrapper row">        {{#descriptions}}          <div class="col-lg-2 col-md-6">            <div class="item">              <div class="ico-wrap">                <img src="/img/{{icon}}" alt="">              </div>              <p>                {{desc}}              </p>            </div>          </div>        {{/descriptions}}      </div>    {{/advantages}}  </div></section>  <section id="contacts" class="contacts">    <div class="container">      {{#contacts}}        <div class="header-section-wrapper">          <h3>{{sectionTitle}}</h3>          <div class="background-section-text">{{sectionTitle}}</div>        </div>        <div class="row">          <div class="contact-form-wrapper">            {{#form}}              <contacts-form                class="apply_course"                courses="{{courseItems}}"                selectedcourse="{{link_href}}"                schema="{{schema}}"                lang="{{lang}}"                btnText="{{btn}}"              >              </contacts-form>            {{/form}}          </div>        </div>        <div class="row">          <div class="contact-details">            {{#contactDetails}}              <div class="email-block">                <ul>                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>                </ul>                <div class="social">                  <ul>                    {{#social}}                      <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>                    {{/social}}                  </ul>                </div>              </div>              <div class="tel-block">                <ul>                  <li class="tel"><p>{{socTitle}}</p></li>                  <li class="tel"><p>{{socText}}</p></li>                </ul>              </div>              <div class="address-block">                <ul>                  <li>{{address}}</li>                </ul>              </div>            {{/contactDetails}}          </div>        </div>      {{/contacts}}    </div>  </section></div><footer class="footer">  <div class="copyright">    Copywriting &#9400; 2018 JSdaddy  </div></footer><div class="notification none">  <div class="notification-message">    <div class="logo">      <img src="/img/logo-notification.png" alt="">    </div>    <div class="message">      Your application is accepted, thank you! We will send more information to your mail      <div class="close-btn">      </div>    </div>  </div></div><script src="/js/bundle.min.js"></script><script src="/js/contacts-form.js"></script><script src="/js/jquery.js"></script><script src="/js/slick.min.js"></script><script src="/js/jquery.equalheights.min.js"></script><script src="/js/common.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115295105-1');
+  </script>
+  <title>Js Daddy</title>
+  <meta charset="utf-8"/>
+  <meta name="description" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta property="og:image" content="path/to/image.jpg"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  {{#meta}}
+    <meta name={{name}} content="{{content}}">
+  {{/meta}}
+  <link rel="shortcut icon" href="" type="image/x-icon"/>
+  <link rel="apple-touch-icon" href=""/>
+  <link rel="apple-touch-icon" sizes="72x72" href=""/>
+  <link rel="apple-touch-icon" sizes="114x114" href=""/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+        integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.min.css">
+  <link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+<div>
+  {{#header}}
+    <header id="home">
+      <div class="container">
+        <div class="row content-header-wrapper">
+          <div class="logo"><a href="/"><img src="/img/logo.png" alt="js daddy"></a></div>
+          <div class="navigation-wrapper">
+            <div class="lang-checker">
+              <ul class="select">
+                {{#languages}}
+                  <li class={{active}}>
+                    <a href={{href}}>{{name}}</a>
+                  </li>
+                {{/languages}}
+              </ul>
+            </div>
+            <nav>
+              <ul id="menu">
+                {{#menu}}
+                  <li><a href=/{{lang}}{{link}}>{{title}}</a></li>
+                {{/menu}}
+              </ul>
+            </nav>
+            <div class="right-header-block">
+              <div class="tel-wrapper">
+                {{#phones}}
+                  <a href="{{phonesHref}}">{{phones}}</a>
+                {{/phones}}
+              </div>
+              <div class="contact-btn-wrapper">
+                {{#headerBtn}}
+                  <a class="contact-btn scroll" href="{{btnHref}}">{{btntext}}</a>
+                {{/headerBtn}}
+              </div>
+            </div>
+          </div>
+          <div class="nav-burger">
+            <div class="line"></div>
+            <div class="text">Menu</div>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+  {{/header}}
+  <section class="banner-course">
+    <div class="container">
+      <div class="banner-content-wrapper">
+        <div class="banner-content">
+          <div class="img-banner-wrapper">
+            <img src="/img/{{banerImg}}"/>
+          </div>
+          <div class="banner-text">
+            <h1> {{title}}</h1>
+            <p>{{sub_title}}</p>
+            <div class="date-wrapper">
+              <p class="start">{{start_date}}</p>
+              <p class="schedule">
+                {{durations}}
+              </p>
+              {{#teachers}}
+                <p class="mentor">{{firstName}} {{lastName}}</p>
+              {{/teachers}}
+              <p class="prices">{{price}}</p>
+            </div>
+            {{#header}}
+            {{#headerBtn}}
+            <a class="contact-btn" href="{{btnHref}}">{{btntext}}</a>
+            {{/headerBtn}}
+            {{/header}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{#about_course}}
+    <section class="about-course">
+      <div class="container">
+        <div class="header-section-wrapper">
+          <h3>{{title}}</h3>
+          <div class="background-section-text">{{title}}</div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="about-course-img">
+              <img src="/img/{{logo}}" alt="">
+            </div>
+          </div>
+          <div class="col-lg-7">
+            {{#description}}
+              <p>{{.}}</p>
+            {{/description}}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/about_course}}
+  {{#programm}}
+    <section class="course-program-wrapper">
+      <div class="container">
+        <div class="header-section-wrapper">
+          <h3>{{title}}</h3>
+          <div class="background-section-text">{{title}}</div>
+        </div>
+        <div class="program-wrap">
+          <div class="row">
+            {{#modules}}
+              <div class="col-lg-4">
+                <ul>
+                  <li class="program-title"> {{title}}</li>
+                  {{#items}}
+                    <li>{{.}}</li>
+                  {{/items}}
+                </ul>
+              </div>
+            {{/modules}}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{/programm}}
+  <section class="advantages">
+    <div class="container">
+      {{#advantages}}
+        <div class="header-section-wrapper">
+          <h3>{{advantagesTitle}}</h3>
+          <div class="background-section-text">
+            {{advantagesTitle}}
+          </div>
+        </div>
+        <div class="items-wrapper row">
+          {{#descriptions}}
+            <div class="col-lg-2 col-md-6">
+              <div class="item">
+                <div class="ico-wrap">
+                  <img src="/img/{{icon}}" alt="">
+                </div>
+                <p>
+                  {{desc}}
+                </p>
+              </div>
+            </div>
+          {{/descriptions}}
+        </div>
+      {{/advantages}}
+    </div>
+  </section>
+  <section id="contacts" class="contacts">
+    <div class="container">
+      {{#contacts}}
+        <div class="header-section-wrapper">
+          <h3>{{sectionTitle}}</h3>
+          <div class="background-section-text">{{sectionTitle}}</div>
+        </div>
+        <div class="row">
+          <div class="contact-form-wrapper">
+            {{#form}}
+              <contacts-form
+                class="apply_course"
+                courses="{{courseItems}}"
+                selectedcourse="{{link_href}}"
+                schema="{{schema}}"
+                lang="{{lang}}"
+                btnText="{{btn}}"
+              >
+              </contacts-form>
+            {{/form}}
+          </div>
+        </div>
+        <div class="row">
+          <div class="contact-details">
+            {{#contactDetails}}
+              <div class="email-block">
+                <ul>
+                  <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                </ul>
+                <div class="social">
+                  <ul>
+                    {{#social}}
+                      <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                    {{/social}}
+                  </ul>
+                </div>
+              </div>
+              <div class="tel-block">
+                <ul>
+                  <li class="tel"><p>{{socTitle}}</p></li>
+                  <li class="tel"><p>{{socText}}</p></li>
+                </ul>
+              </div>
+              <div class="address-block">
+                <ul>
+                  <li>{{address}}</li>
+                </ul>
+              </div>
+            {{/contactDetails}}
+          </div>
+        </div>
+      {{/contacts}}
+    </div>
+  </section>
+</div>
+<footer class="footer">
+  {{#footer}}
+    <div class="copyright">{{copyright}}</div>
+  {{/footer}}
+</footer>
+<div class="notification none">
+  <div class="notification-message">
+    <div class="logo">
+      <img src="/img/logo-notification.png" alt="">
+    </div>
+    <div class="message">
+      Your application is accepted, thank you! We will send more information to your mail
+      <div class="close-btn">
+
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/js/bundle.min.js"></script>
+<script src="/js/contacts-form.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
+<script src="/js/common.js"></script>
+</body>
+</html>
