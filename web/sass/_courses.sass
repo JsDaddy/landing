@@ -59,14 +59,32 @@
       display: inline-flex
       flex-direction: column
       margin-bottom: 15px
-      h4
-        font-size: 1.7rem
-        min-height: 32px
-        margin-bottom: 25px
+      position: relative
+      width: 100%
+      .course-type
+        position: absolute
+        left: -15px
+        top: 3px
+        padding: 5px 15px
+        background: transparent
+        min-width: 110px
+        text-align: center
+        &.course
+          background: #276BA4
+          color: #fff
+        &.intensive
+          background: #f74452
+          color: $white
       .prices
         width: 100%
-        font-size: 1rem
-        color: $text-color
+        text-align: right
+        font-size: 1.45rem
+        font-weight: 700
+      .duration
+        margin-top: 9px
+        width: 100%
+        text-align: right
+        margin-bottom: 30px
     .link
       display: inline-flex
       align-items: center
