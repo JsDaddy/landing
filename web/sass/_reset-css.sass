@@ -128,31 +128,40 @@ input
 
 *::-webkit-input-placeholder
   color: #000200
-  opacity: 1
+  opacity: 0.5 !important
   font-size: 0.875rem
   font-weight: 400
   font-family: $montserrat-font
 
 *:-moz-placeholder
   color: #000200
-  opacity: 1
+  opacity: 0.5 !important
   font-size: 0.875rem
   font-weight: 400
   font-family: $montserrat-font
 
 *::-moz-placeholder
   color: #000200
-  opacity: 1
+  opacity: 0.5 !important
   font-size: 0.875rem
   font-weight: 400
   font-family: $montserrat-font
 
 *:-ms-input-placeholder
   color: #000200
-  opacity: 1
+  opacity: 0.5 !important
   font-size: 0.875rem
   font-weight: 400
   font-family: $montserrat-font
+
+input:focus::-webkit-input-placeholder
+  color: transparent
+input:focus:-moz-placeholder
+  color: transparent
+input:focus::-moz-placeholder
+  color: transparent
+input:focus:-ms-input-placeholder
+  color: transparent
 
 section
   padding: 150px 0

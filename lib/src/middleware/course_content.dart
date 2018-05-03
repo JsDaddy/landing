@@ -7,16 +7,16 @@ getCourseContent(
     Angel app, header, form, advantages, lang, int id, num rate, RequestContext req, res) async {
   try {
     var course_content_arr = await app.service('api/course').index({
-      "query": {'lang': lang, "link_href": id}
+      "query": {'lang': lang, 'hidden': false, "link_href": id}
     });
 
     var course_content = course_content_arr.first;
     course_content['header'] = header;
     course_content['form'] = form;
     course_content['advantages'] = advantages;
-    
+
     List all_courses_content = await app.service('api/course').index({
-      "query": {'lang': lang}
+      "query": {'lang': lang, 'hidden': false}
     });
 
     course_content['courseItems'] = json.encode(all_courses_content.map((data) {
