@@ -24,7 +24,7 @@ $(document).ready(function () {
   });
 
   var type = window.location.hash.substr(1);
-  if(!type) {
+  if (!type) {
     return;
   }
   $(`a[href$=${type}]`).addClass('active');
@@ -34,7 +34,7 @@ $('.nav-burger').click(function () {
   $(this).toggleClass('active');
   $(this).parents('header').toggleClass('b-bottom');
 
-  $(this).siblings(".navigation-wrapper").slideToggle();
+  $(this).siblings('.navigation-wrapper').slideToggle();
 
 });
 $('#menu li a').click(function () {

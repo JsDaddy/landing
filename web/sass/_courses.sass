@@ -108,46 +108,47 @@
         display: inline-block
         margin-left: 10px
 
-.our-teaches
-  .slider-teaches
-    .item-wrapper
-      display: inline-flex
-      justify-content: center
-      align-items: center
-      flex-direction: column
-      padding: 0 15px
-      .photo-wrapper
-        display: inline-flex
-        justify-content: center
-        align-items: center
-        margin-bottom: 35px
-        width: 180px
-        filter: grayscale(100%)
-        &:hover
-          filter: grayscale(0%)
-          transition: grayscale 0.4s ease
-        img
-          width: 180px
-          height: 180px
-          border-radius: 50%
-      .name
-        width: 100%
-        font-weight: 700
-        font-size: 1.3rem
-        text-transform: uppercase
-        text-align: center
-        margin-bottom: 10px
-      .position
-        width: 100%
-        text-align: center
-        margin-bottom: 10px
-        text-transform: uppercase
-        font-size: 0.8rem
-        font-weight: 400
-      p
-        text-align: center
-        font-weight: 300
-        font-size: 0.9rem
+.item-wrapper
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  padding: 0 15px
+  .photo-wrapper
+    display: block
+    margin: 0 auto 35px auto
+    width: 180px
+    filter: grayscale(100%)
+    transition: grayscale 0.15s ease
+    &:hover
+      filter: grayscale(0%)
+      transition: grayscale 0.15s ease
+    img
+      transition: $transition-default
+      width: 180px
+      height: 180px
+      border-radius: 50%
+  .name
+    width: 100%
+    font-weight: 700
+    font-size: 1.3rem
+    text-transform: uppercase
+    text-align: center
+    margin-bottom: 10px
+  .position
+    width: 100%
+    text-align: center
+    margin-bottom: 10px
+    text-transform: uppercase
+    font-size: 0.8rem
+    font-weight: 400
+  p
+    text-align: center
+    font-weight: 300
+    font-size: 0.9rem
+  .fa
+    font-size: 30px
+    transition: $transition-default
 
 .advantages
   background: #f7f9f9
