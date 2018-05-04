@@ -11,12 +11,11 @@
     width: 100%
     margin: 0 auto 50px auto
     max-width: 320px
-    min-height: 500px
     position: relative
     cursor: pointer
     box-shadow: 1px 3px 4.7px 0.3px rgba(0, 0, 0, .24)
     transition: all .3s ease-in-out
-    padding: 100px 15px 15px 15px
+    padding: 75px 15px 15px 15px
     background: $white url("/img/Yellow-polygonal-1.png") no-repeat 0 0
     background-size: contain
     border-bottom: 3px solid #ffcc00
@@ -31,19 +30,36 @@
       float: right
       padding: 5px 15px
       background: #276BA4
+      min-width: 110px
+      text-align: center
       color: #fff
       font-family: $montserrat-font
       font-size: 0.9375rem
-      font-weight: 600
+      font-weight: 300
       margin-bottom: 20px
+    .course-type
+      position: absolute
+      font-weight: 300
+      left: 0
+      top: 15px
+      padding: 5px 15px
+      background: transparent
+      min-width: 110px
+      text-align: center
+      &.course
+        background: #276BA4
+        color: #fff
+      &.intensive
+        background: #f74452
+        color: $white
     h3
-      margin-bottom: 30px
+      margin-bottom: 15px
       width: 100%
       font-size: 2.3rem
       text-align: center
     .img-wrapper
-      width: 220px
-      height: 220px
+      width: 150px
+      height: 150px
       display: flex
       align-items: center
       justify-content: center
@@ -53,7 +69,7 @@
       box-shadow: 0 0 30px rgba(0,0,0,0.1)
       img
         display: block
-        max-height: 120px
+        max-height: 80px
         width: auto
     .bottom-block
       display: inline-flex
@@ -61,30 +77,17 @@
       margin-bottom: 15px
       position: relative
       width: 100%
-      .course-type
-        position: absolute
-        left: -15px
-        top: 3px
-        padding: 5px 15px
-        background: transparent
-        min-width: 110px
-        text-align: center
-        &.course
-          background: #276BA4
-          color: #fff
-        &.intensive
-          background: #f74452
-          color: $white
       .prices
         width: 100%
-        text-align: right
+        text-align: center
         font-size: 1.45rem
         font-weight: 700
+        color: #276BA4
       .duration
-        margin-top: 9px
+        font-weight: 300
         width: 100%
-        text-align: right
-        margin-bottom: 30px
+        text-align: center
+        margin-bottom: 15px
     .link
       display: inline-flex
       align-items: center
@@ -157,7 +160,6 @@
     align-items: flex-start
     justify-content: space-between
     .item
-
       min-width: 200px
       display: flex
       flex-direction: column
