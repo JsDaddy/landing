@@ -43,7 +43,7 @@
             </a>
           </div>
           <div class="navigation-wrapper">
-            <nav>
+            <nav class="nav-main">
               <ul id="menu">
                 {{#menu}}
                   <li><a href={{link}}>{{title}}</a></li>
@@ -185,6 +185,30 @@
       {{/whyWe}}
     </div>
   </section>
+  <section id="team">
+    <div class="container">
+      {{#﻿team}}
+      <div class="header-section-wrapper">
+        <h3>{{﻿sectionTitle}}</h3>
+        <div class="background-section-text">{{﻿sectionTitle}}</div>
+      </div>
+      <div class="row">
+        {{#﻿itemTeam}}
+          <div class="col-12 col-lg-3">
+            <div class="item-wrapper">
+              <div class="photo-wrapper"><img src="/img/{{photo}}" alt=""/></div>
+              <div class="name">{{﻿firstName}} {{﻿lastName}}</div>
+              <div class="position">{{﻿position}}</div>
+              <div class="soc-link">
+                <a href="{{﻿linkenIn}}"><i class="fa fa-linkedin-square"></i></a>
+              </div>
+            </div>
+          </div>
+        {{/﻿itemTeam}}
+      </div>
+      {{/﻿team}}
+    </div>
+  </section>
   <section id="contacts" class="contacts">
     <div class="container">
       {{#contacts}}
@@ -261,3 +285,6 @@
 <script src="/js/common.js"></script>
 </body>
 </html>
+
+
+
