@@ -5,7 +5,6 @@ import 'package:angel_framework/angel_framework.dart';
 import 'package:mailer/mailer.dart';
 import 'package:mustache/mustache.dart';
 import 'dart:io';
-import 'dart:convert';
 
 @Expose('/mail')
 class MailerController extends Controller {
@@ -18,18 +17,25 @@ class MailerController extends Controller {
       var output = template.renderString({'name': body['name']});
 
       var envelope = new Envelope()
-        ..from = 'info@jsdaddy.io'
+        ..from = 'info.jsdaddy@gmail.com'
         ..recipients.add(body['email'])
-        ..bccRecipients.add('info@jsdaddy.io')
         ..subject = 'JSDaddy contacts'
         ..html = output;
+      
+      var envelope2 = new Envelope()
+        ..from = 'info.jsdaddy@gmail.com'
+        ..recipients.add('info@jsdaddy.io')
+        ..subject = 'JSDaddy contacts'
+        ..text = body.toString();
 
       await app.service('/api/contacts').create(body);
 
       await emailTransport.send(envelope);
-      return res.json({'message': 'Email sent'});
+      await emailTransport.send(envelope2);
+      
+      return res.json({'message': 'Email sent', 'type': 'Success'});
     } catch (err) {
-      return 'Something went wrong';
+      return  res.json({'message': 'Something went wrong', 'type': 'Error'});
     }
   }
 
@@ -43,18 +49,26 @@ class MailerController extends Controller {
       var output = template.renderString({'name': body['name']});
 
       var envelope = new Envelope()
-        ..from = 'info@jsdaddy.io'
+        ..from = 'info.jsdaddy@gmail.com'
         ..recipients.add(body['email'])
         ..bccRecipients.add('info@jsdaddy.io')
         ..subject = 'JSDaddy course'
         ..html = output;
 
+      var envelope2 = new Envelope()
+        ..from = 'info.jsdaddy@gmail.com'
+        ..recipients.add('info@jsdaddy.io')
+        ..subject = 'JSDaddy course'
+        ..text = body.toString();
+
       await app.service('/api/participant').create(body);
 
       await emailTransport.send(envelope);
-      return res.json({'message': 'Email sent'});
+      await emailTransport.send(envelope2);
+      
+      return res.json({'message': 'Email sent', 'type': 'Success'});
     } catch (err) {
-      return 'Something went wrong';
+      return res.json({'message': 'Something went wrong', 'type': 'Error'});
     }
   }
 }

@@ -14,9 +14,7 @@ import 'package:mailer/mailer.dart';
 /// https://github.com/angel-dart/angel/wiki/Service-Basics
 Future mailer(Angel app) async {
   try {
-    var options = new SmtpOptions()
-    ..hostName = app.configuration['emailhostName']
-    ..port = app.configuration['emailport']
+    var options = new GmailSmtpOptions()
     ..username = app.configuration['username']
     ..password = app.configuration['password'];
 
