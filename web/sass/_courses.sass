@@ -36,14 +36,28 @@
       font-size: 0.9375rem
       font-weight: 600
       margin-bottom: 20px
+    .course-type
+      position: absolute
+      left: -15px
+      top: 3px
+      padding: 5px 15px
+      background: transparent
+      min-width: 110px
+      text-align: center
+      &.course
+        background: #276BA4
+        color: #fff
+      &.intensive
+        background: #f74452
+        color: $white
     h3
       margin-bottom: 30px
       width: 100%
       font-size: 2.3rem
       text-align: center
     .img-wrapper
-      width: 220px
-      height: 220px
+      width: 150px
+      height: 150px
       display: flex
       align-items: center
       justify-content: center
@@ -61,20 +75,6 @@
       margin-bottom: 15px
       position: relative
       width: 100%
-      .course-type
-        position: absolute
-        left: -15px
-        top: 3px
-        padding: 5px 15px
-        background: transparent
-        min-width: 110px
-        text-align: center
-        &.course
-          background: #276BA4
-          color: #fff
-        &.intensive
-          background: #f74452
-          color: $white
       .prices
         width: 100%
         text-align: right
@@ -157,7 +157,6 @@
     align-items: flex-start
     justify-content: space-between
     .item
-
       min-width: 200px
       display: flex
       flex-direction: column
