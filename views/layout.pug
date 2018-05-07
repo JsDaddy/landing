@@ -6,7 +6,7 @@ html
         meta(name='description', content='')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-        for item in meta
+        each item in meta
             meta(name= item.name, content= item.content )
         meta(property='og:image', content='path/to/image.jpg')
         meta(name='format-detection', content='telephone=no')
@@ -20,11 +20,34 @@ html
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
     body
+        header#home
+            .container
+                .row.content-header-wrapper
+                    .logo
+                        a(href='/')
+                            img(src='/img/logo.png', alt='js daddy')
+                    .navigation-wrapper
+                        nav.nav-main
+                            ul#menu
+                                each menu in header.menu
+                                    li
+                                        a(href=menu.link) #{menu.title}
+                        .right-header-block
+                            .social
+                                ul
+                                    each item in social
+                                        li
+                                            a(class=item.soc, href=item.﻿link)
+                                                i.fa(class=item.icon)
+                            .contact-btn-wrapper
+                                  each el in header.btnHeader
+                                      a.contact-btn.scroll(href='#contacts') #{el.text}
+
+
         block content
-        block foot
-            for text in footer
-                footer.footer
-                    .copyright #{text.copyright}
+        for text in footer
+            footer.footer
+                .copyright #{text.copyright}
         block scripts
             script(src='/js/bundle.min.js')
             script(src='/js/jquery.js')
@@ -32,3 +55,26 @@ html
             script(src='/js/jquery.equalheights.min.js')
             script(src='/js/slick.min.js')
             script(src='/js/common.js')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
