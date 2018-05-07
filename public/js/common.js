@@ -22,6 +22,14 @@ $(document).ready(function () {
       }
     ]
   });
+  $('.testimonials-wrap').slick({
+      infinite: true,
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: false
+  });
 
   var type = window.location.hash.substr(1);
   if (!type) {
