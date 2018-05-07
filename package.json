@@ -9,12 +9,13 @@
   },
   "scripts": {
     "nodemon": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "build:css && build:js && pm2 start src/main.ts",
     "lint": "tslint 'src/**/*.ts'",
     "start:dev": "npm-run-all --parallel build:css:w build:js:w nodemon",
-    "build:css:w": "node-sass -w --include-path scss web/sass/index.sass public/css/site.min.css --output-style compressed",
-    "build:js:w": "webpack -w"
+    "build:css": "node-sass --include-path scss web/sass/index.sass public/css/site.min.css --output-style compressed",
+    "build:css:w": "npm run build:css -- -w",
+    "build:js": "webpack",
+    "build:js:w": "npm run build:js -- -w"
   },
   "repository": {
     "type": "git",
