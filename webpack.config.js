@@ -1,0 +1,35 @@
+const webpack = require('webpack');
+const path = require('path');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+
+module.exports = {
+  mode: 'none',
+  entry: {
+    main :'./web/scripts/main.ts',
+    slick: './web/scripts/slick.min.js',
+    common: './web/scripts/common.js',
+    'contacts-form': './web/scripts/contacts-form.js',
+  },
+  output: {
+    path: path.resolve(__dirname, 'public/js'),
+    filename: '[name].min.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'awesome-typescript-loader'
+      }
+    ]
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
+    new UglifyJSPlugin()
+  ]
+};
