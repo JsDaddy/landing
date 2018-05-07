@@ -5,9 +5,9 @@ import { formMiddleware } from './../middleware/form.middleware';
 
 export const mainCtrl: (app: Application) => void = (app: Application) => {
   app.get(
-    '/main',
-    menuMiddleware,
-    formMiddleware,
+    '/',
+    menuMiddleware('main'),
+    formMiddleware('main'),
     async (_req: Request, res: Response) => {
       try {
         const mainContent: any = await new MainContentModel().getContent();
@@ -18,3 +18,6 @@ export const mainCtrl: (app: Application) => void = (app: Application) => {
     },
   );
 };
+
+
+
