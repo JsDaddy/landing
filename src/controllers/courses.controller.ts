@@ -8,6 +8,8 @@ import { CoursesModel } from './../models/courses.model';
 export const coursesCtrl: (app: Application) => void = (app: Application) => {
   app.get(
     '/:lang/courses',
+    // addLanguagesMenu,
+    // addCurrencyRate,
     menuMiddleware('courses'),
     formMiddleware('courses'),
     advantagesMiddleware,
@@ -22,7 +24,9 @@ export const coursesCtrl: (app: Application) => void = (app: Application) => {
   );
 
   app.get(
-    '/:lang/courses/:id',
+    '/:id',
+    // addLanguagesMenu,
+    // addCurrencyRate,
     menuMiddleware('course'),
     formMiddleware('course'),
     advantagesMiddleware,
