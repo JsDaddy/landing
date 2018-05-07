@@ -1,6 +1,13 @@
 {
-  "watch": ["src", "views", "web/sass"],
-  "ext": "ts,pug,sass",
-  "ignore": ["src/**/*.spec.ts"],
-  "exec": "ts-node src/main.ts && npm run build:css"
+  "watch": [
+    "src",
+    "views",
+    "web/sass",
+    "web/scripts"
+  ],
+  "ext": "ts,pug,sass,js",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "ts-node src/main.ts && npm run build:css && webpack "
 }
