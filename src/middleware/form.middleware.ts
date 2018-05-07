@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { FormModel } from '../models/form.model';
 
-export const formMiddleware:
-(section: string) => (req: Request, res: Response, next: NextFunction) => void = (section: string) => {
+export const formMiddleware = (section: string) => {
   return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       // TODO lang

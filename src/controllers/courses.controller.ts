@@ -2,12 +2,14 @@ import { Application, Request, Response } from 'express';
 import { menuMiddleware } from '../middleware/menu.middleware';
 import { advantagesMiddleware } from './../middleware/advantages.middleware';
 import { formMiddleware } from './../middleware/form.middleware';
-import { CourseModel } from './../models/course.model';
+// import { CourseModel } from './../models/course.model';
 import { CoursesModel } from './../models/courses.model';
 
 export const coursesCtrl: (app: Application) => void = (app: Application) => {
   app.get(
     '/:lang/courses',
+    // addLanguagesMenu,
+    // addCurrencyRate,
     menuMiddleware('courses'),
     formMiddleware('courses'),
     advantagesMiddleware,
@@ -21,8 +23,10 @@ export const coursesCtrl: (app: Application) => void = (app: Application) => {
     },
   );
 
-  app.get(
-    '/:lang/courses/:id',
+/*  app.get(
+    '/:id',
+    // addLanguagesMenu,
+    // addCurrencyRate,
     menuMiddleware('course'),
     formMiddleware('course'),
     advantagesMiddleware,
@@ -34,5 +38,5 @@ export const coursesCtrl: (app: Application) => void = (app: Application) => {
         return res.status(400).json({ data: { message: err.toString() } });
       }
     },
-  );
+  );*/
 };

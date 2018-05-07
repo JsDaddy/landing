@@ -86,3 +86,38 @@ block content
                                 .soc-link
                                     a(href=i.linkenIn)
                                         i.fa.fa-linkedin-square
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                each item in contacts
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    schema=form.schema
+                    btnText=form.btn
+                    )
+            .row
+                .contact-details
+                    each i in contacts
+                        each item in i.contactDetails
+                            .email-block
+                                ul
+                                    li(class=item.itemClass)
+                                        a(href=item.itemHref) #{item.itemText}
+                                .social
+                                    ul
+                                        each el in social
+                                            li
+                                                a(class=el.soc, href=el.link)
+                                                    i(class='fa ' + el.icon)
+                            .tel-block
+                                ul
+                                    li.tel
+                                        p #{item.socTitle}
+                                    li.tel
+                                        p #{item.socText}
+                            .address-block
+                                ul
+                                    li #{item.address}

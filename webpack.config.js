@@ -4,6 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   mode: 'none',
+  devtool: "source-map",
   entry: {
     main :'./web/scripts/main.ts',
     slick: './web/scripts/slick.min.js',
@@ -30,6 +31,6 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery"
     }),
-    new UglifyJSPlugin()
+    new UglifyJSPlugin({ sourceMap: true })
   ]
 };
