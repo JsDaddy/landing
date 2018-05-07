@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { MenuModel } from '../models/menu.model';
 
-export const menuMiddleware:
-(section: string) => (req: Request, res: Response, next: NextFunction) => void = (section: string) => {
+export const menuMiddleware = (section: string) => {
   return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       // TODO add lang

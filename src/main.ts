@@ -4,9 +4,9 @@ import { connectToDb } from './config/db.config';
 const app = express();
 
 import '../src/schema';
-connectToDb();
 import {controllers} from './controllers';
 
+connectToDb();
 controllers(app);
 
 app.use(express.static('public'));

@@ -2,12 +2,11 @@
   "watch": [
     "src",
     "views",
-    "web/sass",
-    "web/scripts"
+    "public"
   ],
   "ext": "ts,pug,sass,js",
   "ignore": [
     "src/**/*.spec.ts"
   ],
-  "exec": "ts-node src/main.ts && npm run build:css && webpack "
+  "exec": "ts-node src/main.ts"
 }
