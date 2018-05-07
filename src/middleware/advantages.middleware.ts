@@ -2,15 +2,14 @@ import { NextFunction, Request, Response } from 'express';
 import { AdvantagesModel } from '../models/advantages.model';
 
 export const advantagesMiddleware: (req: Request, res: Response, next: NextFunction) => void =
-async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
   try {
-    const advantages = await new AdvantagesModel().getAdvantages({ section: 'main' });
-    req.params.advantages = advantages;
+
+    req.params.advantages = await new AdvantagesModel().getContent({ lang: req.params.lang });
     return next();
   } catch (err) {
     // tslint:disable-next-line
-    console.log(req, res);
-    res.status(400);
+    console.log(err);
     return next(err);
   }
 };
