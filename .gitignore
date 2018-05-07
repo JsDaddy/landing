@@ -97,3 +97,5 @@ public/js/bundle.min.js.deps
 
 config/default.yaml
 config/prodaction.yaml
+
+node_modules/

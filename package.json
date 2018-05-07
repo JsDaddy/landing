@@ -1,0 +1,36 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "#### Installation ``` ## Install dart using brew to your local machine brew tap dart-lang/dart brew install dart --devel ```",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JsDaddy/landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JsDaddy/landing/issues"
+  },
+  "homepage": "https://github.com/JsDaddy/landing#readme",
+  "dependencies": {
+    "express": "4.16.3",
+    "pug": "2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.17.4",
+    "typescript": "2.8.3",
+    "ts-node": "6.0.3",
+    "@types/express": "4.11.1",
+    "@types/node": "10.0.4"
+  }
+}
