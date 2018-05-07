@@ -22,12 +22,13 @@ html
     body
         block content
         block foot
-            #footer
-                p some footer content
+            for text in footer
+                footer.footer
+                    .copyright #{text.copyright}
         block scripts
             script(src='/js/bundle.min.js')
-            script(src='/js/contacts-form.js')
             script(src='/js/jquery.js')
+            script(src='/js/contacts-form.js')
             script(src='/js/jquery.equalheights.min.js')
             script(src='/js/slick.min.js')
             script(src='/js/common.js')
