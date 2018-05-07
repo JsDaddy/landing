@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+    div.error-wrapper
+        img(src="/img/logo.png" class="logo")
+        h1
+          span 4
+          |0
+          span 4
+        div.text-message
+        h3 Эта страница еще не была созданна...или что-то пошло не так...
+        div.navigation-wrapper
+        a(href=back)
+          i(class="fa fa-arrow-left")
+          span Вернуться назад
+        a(href="/")
+          span Перейти на глaвную
+          i(class="fa fa-arrow-right")

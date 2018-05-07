@@ -19,6 +19,8 @@ app.get('/', (_req, res: express.Response) => {
       ]
     })
 });
-
+app.get('*', (_req, res: express.Response) => {
+  return res.render('error',{title:'MAIN'});
+});
 
 app.listen(3000);
