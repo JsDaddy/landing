@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint 'src/**/*.ts'",
     "start:dev": "nodemon",
     "build:css": "node-sass --include-path scss web/sass/index.sass public/css/site.min.css --output-style compressed"
   },
@@ -30,9 +31,14 @@
   "devDependencies": {
     "@types/express": "4.11.1",
     "@types/node": "10.0.4",
-    "node-sass": "^4.9.0",
+    "node-sass": "4.9.0",
     "nodemon": "1.17.4",
+    "pre-commit": "1.2.2",
     "ts-node": "6.0.3",
+    "tslint": "5.10.0",
     "typescript": "2.8.3"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
