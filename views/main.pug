@@ -1,6 +1,91 @@
 extends layout.pug
 
 block content
+    section.banner#banner
+        .container
+            .banner-content-wrapper
+                .banner-content
+                    each item in banner
+                        h1 #{item.bannerTitle}
+                        p #{item.bannerDesc}
+                        a.contact-btn(href='#contacts') #{item.bannerBtn}
+    section.services#services
+        .container
+            each item in weysSection
+                .header-section-wrapper
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+                .row
+                    each i in item.weysBox
+                        .col-md-4
+                            .item-content-block
+                                .icon
+                                    img(src=i.itemContentImg)
+                                h5 #{i.itemTitle}
+                                p #{i.itemText}
+
+    section#technologies.technologies
+        .container
+            each item in technologies
+                .header-section-wrapper
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+                .technologies-wrapper
+                    .row
+                        each i in item.technologiesImages
+                            .col-6.col-sm-4.col-md-2
+                                .img-wrapper
+                                    img(src=i.technologiesImg)
+
+    section.advantages
+        .container
+            each item in advantages
+                .header-section-wrapper
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+                .row
+                    each i in item.advantagesBox
+                        .col-md-4
+                            .item-content-block
+                                .icon
+                                    img(
+                                        src=i.itemImg
+                                        alt=i.imgAlt
+                                        )
+                                h5 #{i.itemTitle}
+                                p #{i.itemText}
+
+    section#about.why-we-are
+        .container
+            each item in whyWe
+                .header-section-wrapper
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+                .why-we-are-wrapper
+                    each i in item.whyWeBox
+                        .text-block
+                            h5 #{i.itemTitle}
+                            p #{i.itemText}
+                        .img-block
+                            img(src=i.itemImg)
+
+    section#team
+        .container
+            each item in team
+                .header-section-wrapper
+                    h3 #{item.sectionTitle}
+                    .background-section-text #{item.sectionTitle}
+                .row
+                    each i in item.itemTeam
+                        .col-12.col-lg-3
+                            .item-wrapper
+                                .photo-wrapper
+                                    img(src='/img/' + i.photo)
+                                .name #{i.firstName} #{i.lastName}
+                                .position #{i.position}
+                                .soc-link
+                                    a(href=i.linkenIn)
+                                        i.fa.fa-linkedin-square
     section#contacts.contacts
         .container
             .header-section-wrapper
@@ -10,9 +95,9 @@ block content
             .row
                 .contact-form-wrapper
                     contacts-form.contact_us(
-                        schema=form.schema
-                        btnText=form.btn
-                        )
+                    schema=form.schema
+                    btnText=form.btn
+                    )
             .row
                 .contact-details
                     each i in contacts
