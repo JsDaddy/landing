@@ -61,9 +61,9 @@ html
                         if mainMenu.content.languages
                             .lang-checker
                                 ul.select
-                                    each el in mainMenu.content.languages
-                                        li.active
-                                            a(href=el.link) #{el.title}
+                                    each lang in mainMenu.content.languages
+                                        li(class=lang.active)
+                                            a(href=lang.link) #{lang.title}
                         nav.nav-main
                             ul#main-menu
                                  each menu in mainMenu.content.menu

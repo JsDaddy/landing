@@ -16,8 +16,20 @@ export function coursesCtrl(app: express.Application) {
         ], req.params.lang);
         coursesContent.mainMenu = coursesContent.coursesMenu;
         const users: any[] = await new UserModel().getUsers('mentor');
-
-        return res.render('content/courses', {...coursesContent, ...users});
+        coursesContent.mainMenu.content.languages = coursesContent.mainMenu.content.languages.map((language: any) => {
+          if (language.title.toLowerCase() !== req.params.lang) {
+            return language;
+          }
+          return {
+            ...language,
+            active: 'active',
+          };
+        });
+        return res.render(
+          'content/courses',
+          {
+            ...coursesContent, ...users,
+          });
       } catch (err) {
         return res.render('content/error');
       }
