@@ -1,5 +1,10 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import { createEpicMiddleware } from 'redux-observable';
+import { renderNotify } from './notify';
 import { startScroll } from './scroll';
+import * as NotifyActions from './store/actions/notify.actions';
+import { rootEpic } from './store/epics/notify.epic';
+import { notify } from './store/reducer/notify.reducer';
 
 const menuItems: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a[href^="#"]');
 
@@ -10,45 +15,40 @@ Array.prototype.forEach.call(menuItems, (item: HTMLAnchorElement) => {
   });
 });
 
-/**
- * This is a reducer, a pure function with (state, action) => state signature.
- * It describes how an action transforms the state into the next state.
- *
- * The shape of the state is up to you: it can be a primitive, an array, an object,
- * or even an Immutable.js data structure. The only important part is that you should
- * not mutate the state object, but return a new object if the state changes.
- *
- * In this example, we use a `switch` statement and strings, but you can use a helper that
- * follows a different convention (such as function maps) if it makes sense for your
- * project.
- */
-function counter(state = 0, action) {
-  switch (action.type) {
-  case 'INCREMENT':
-    return state + 1
-  case 'DECREMENT':
-    return state - 1
-  default:
-    return state
-  }
-}
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
-// Create a Redux store holding the state of your app.
-// Its API is { subscribe, dispatch, getState }.
-let store = createStore(counter)
-
-// You can use subscribe() to update the UI in response to state changes.
-// Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
-// However it can also be handy to persist the current state in the localStorage.
-
-store.subscribe(() =>
-  console.log(store.getState()),
+const store = createStore(
+  notify,
+  // (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(epicMiddleware),
 );
 
-// The only way to mutate the internal state is to dispatch an action.
-// The actions can be serialized, logged or stored and later replayed.
-store.dispatch({ type: 'INCREMENT' });
-// 1
-store.dispatch({ type: 'INCREMENT' });
-// 2
-store.dispatch({ type: 'DECREMENT' });
+const contactsForm: HTMLElement | null = document.querySelector('contacts-form');
+const contactUsEl: HTMLElement | null = document.querySelector('.contact_us');
+const applyCourseEl: HTMLElement | null = document.querySelector('.apply_course');
+
+store.subscribe(() => {
+  const data = store.getState();
+  if (renderNotify(data)) {
+    setTimeout(() => store.dispatch(new NotifyActions.HideNotify()), 3000);
+  }
+
+  if (!contactsForm) {
+    return;
+  }
+
+  contactsForm.setAttribute('loading', data.isLoading.toString());
+});
+
+if (contactUsEl) {
+  contactUsEl.addEventListener('form', (data: any) => {
+    store.dispatch(new NotifyActions.PendingNotify({ url: 'mail/contacts', data: data.detail }))
+  });
+}
+
+if (applyCourseEl) {
+  applyCourseEl.addEventListener('form', (data: any) => {
+    const lang = (window.location.href.split('/') as any).includes('ru') ? 'ru' : 'en';
+    store.dispatch(new NotifyActions.PendingNotify({ url: 'mail/course', data: data.detail, lang }));
+  });
+}
