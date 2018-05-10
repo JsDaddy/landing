@@ -12,12 +12,10 @@ export function coursesCtrl(app: express.Application) {
             'coursesBanner',
             'about',
             'advantagesCourses',
-            'contactsCourses'
+            'contactsCourses',
             ],
             req.params.lang);
         coursesContent.mainMenu = coursesContent.coursesMenu;
-
-        console.log(coursesContent);
         return res.render('content/courses', coursesContent);
       } catch (err) {
         return res.render('content/error');
