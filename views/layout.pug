@@ -58,6 +58,12 @@ html
                         a(href='/')
                             img(src='/img/logo.png', alt='js daddy')
                     .navigation-wrapper
+                        if mainMenu.content.languages
+                            .lang-checker
+                                ul.select
+                                    each el in mainMenu.content.languages
+                                        li.active
+                                            a(href=el.link) #{el.title}
                         nav.nav-main
                             ul#main-menu
                                  each menu in mainMenu.content.menu
@@ -77,9 +83,6 @@ html
                                         a(href=i.link) #{i.phone}
                             .contact-btn-wrapper
                                 a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
-
-
-
         block content
           if footer
             for text in footer
