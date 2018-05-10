@@ -5,71 +5,95 @@ block content
     section.banner#banner
         .container
             .banner-content-wrapper
-                //.banner-content
-                //    each item in banner
-                //        h1 #{item.bannerTitle}
-                //        p #{item.bannerDesc}
-                //        a.contact-btn(href='#contacts') #{item.bannerBtn}
-                //    section.services#services
-                //        .container
-                //            each item in weysSection
-                //                .header-section-wrapper
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //                .row
-                //                    each i in item.weysBox
-                //                        .col-md-4
-                //                            .item-content-block
-                //                                .icon
-                //                                    img(src=i.itemContentImg)
-                //                                h5 #{i.itemTitle}
-                //                                p #{i.itemText}
-                //
-                //    section#technologies.technologies
-                //        .container
-                //            each item in technologies
-                //                .header-section-wrapper
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //                .technologies-wrapper
-                //                    .row
-                //                        each i in item.technologiesImages
-                //                            .col-6.col-sm-4.col-md-2
-                //                                .img-wrapper
-                //                                    img(src=i.technologiesImg)
-                //
-                //    section.advantages
-                //        .container
-                //            each item in advantages
-                //                .header-section-wrapper
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //                .row
-                //                    each i in item.advantagesBox
-                //                        .col-md-4
-                //                            .item-content-block
-                //                                .icon
-                //                                    img(
-                //                                        src=i.itemImg
-                //                                        alt=i.imgAlt
-                //                                        )
-                //                                h5 #{i.itemTitle}
-                //                                p #{i.itemText}
-                //
-                //    section#about.why-we-are
-                //        .container
-                //            each item in whyWe
-                //                .header-section-wrapper
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //                .why-we-are-wrapper
-                //                    each i in item.whyWeBox
-                //                        .text-block
-                //                            h5 #{i.itemTitle}
-                //                            p #{i.itemText}
-                //                        .img-block
-                //                            img(src=i.itemImg)
-                //
+                .banner-content
+                        h1 #{mainBanner.content.text.title}
+                        p #{mainBanner.content.text.subtitle}
+                        a.contact-btn(href='#contacts') #{mainBanner.content.text}
+    section.services#services
+        .container
+            .header-section-wrapper
+                h3 #{services.title}
+                .background-section-text #{services.title}
+            .row
+                each i in services.content
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(src=i.src)
+                            h5 #{i.title}
+                            p #{i.text}
+
+    section#technologies.technologies
+        .container
+            .header-section-wrapper
+                h3 #{technologies.title}
+                .background-section-text #{technologies.title}
+            .technologies-wrapper
+                .row
+                    each i in technologies.content
+                        .col-6.col-sm-4.col-md-2
+                            .img-wrapper
+                                img(src='/img/' + i.src)
+
+    section.advantages
+        .container
+            .header-section-wrapper
+                h3 #{advantagesCompany.title}
+                .background-section-text #{advantagesCompany.title}
+            .row
+                each i in advantagesCompany.content.item
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(
+                                    src='/img/' + i.src
+                                    alt=i.alt
+                                    )
+                            h5 #{i.title}
+                            p #{i.text}
+
+    section#about.why-we-are
+        .container
+            .header-section-wrapper
+                h3 #{aboutCompany.title}
+                .background-section-text #{aboutCompany.title}
+            .why-we-are-wrapper
+                .text-block
+                    h5 #{aboutCompany.content.text.title}
+                    p #{aboutCompany.content.text.description}
+                .img-block
+                    img(src='/img/' + aboutCompany.content.src)
+
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contacts.title}
+                .background-section-text #{contacts.title}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    btnText=contacts.content.button.text
+                    )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
+                        .social
+                            ul
+                                each el in contacts.content.contacts.social
+                                    li
+                                        a(class=el.linkClass, href=el.link)
+                                            i(class='fa ' + el.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p #{contacts.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contacts.content.contacts.address}
+
                 //    section#team
                 //        .container
                 //            each item in team
@@ -87,38 +111,3 @@ block content
                 //                                .soc-link
                 //                                    a(href=i.linkenIn)
                 //                                        i.fa.fa-linkedin-square
-                //    section#contacts.contacts
-                //        .container
-                //            .header-section-wrapper
-                //                each item in contacts
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //            .row
-                //                .contact-form-wrapper
-                //                    contacts-form.contact_us(
-                //                    schema=form.schema
-                //                    btnText=form.btn
-                //                    )
-                //            .row
-                //                .contact-details
-                //                    each i in contacts
-                //                        each item in i.contactDetails
-                //                            .email-block
-                //                                ul
-                //                                    li(class=item.itemClass)
-                //                                        a(href=item.itemHref) #{item.itemText}
-                //                                .social
-                //                                    ul
-                //                                        each el in social
-                //                                            li
-                //                                                a(class=el.soc, href=el.link)
-                //                                                    i(class='fa ' + el.icon)
-                //                            .tel-block
-                //                                ul
-                //                                    li.tel
-                //                                        p #{item.socTitle}
-                //                                    li.tel
-                //                                        p #{item.socText}
-                //                            .address-block
-                //                                ul
-                //                                    li #{item.address}
