@@ -7,7 +7,6 @@ import { rootEpic } from './store/epics/notify.epic';
 import { notify } from './store/reducer/notify.reducer';
 
 const menuItems: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a[href^="#"]');
-
 Array.prototype.forEach.call(menuItems, (item: HTMLAnchorElement) => {
   item.addEventListener('click', (e: MouseEvent) => {
     const selector: string | null = (e.target as HTMLAnchorElement).getAttribute('href');
@@ -29,6 +28,9 @@ const applyCourseEl: HTMLElement | null = document.querySelector('.apply_course'
 
 store.subscribe(() => {
   const data = store.getState();
+  if (!data) {
+    return;
+  }
   if (renderNotify(data)) {
     setTimeout(() => store.dispatch(new NotifyActions.HideNotify()), 3000);
   }
@@ -42,13 +44,20 @@ store.subscribe(() => {
 
 if (contactUsEl) {
   contactUsEl.addEventListener('form', (data: any) => {
-    store.dispatch(new NotifyActions.PendingNotify({ url: 'mail/contacts', data: data.detail }))
+    store.dispatch(new NotifyActions.PendingNotify({
+      data: data.detail,
+      url: 'mail/contacts',
+    }));
   });
 }
 
 if (applyCourseEl) {
   applyCourseEl.addEventListener('form', (data: any) => {
     const lang = (window.location.href.split('/') as any).includes('ru') ? 'ru' : 'en';
-    store.dispatch(new NotifyActions.PendingNotify({ url: 'mail/course', data: data.detail, lang }));
+    store.dispatch(new NotifyActions.PendingNotify({
+      url: 'mail/course',
+      data: data.detail,
+      lang
+    }));
   });
 }

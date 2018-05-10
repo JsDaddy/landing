@@ -1,8 +1,7 @@
 import * as axios from 'axios';
-import * as config from 'config';
 import { Observable } from 'rxjs/Observable';
 
-const BASE_URL: string = config.get('BASE_URL');
+const BASE_URL: string =  'http://127.0.0.1:3000';
 
 export const api = {
   sendEmail(url: string, body: any, headers: any): Observable<any> {

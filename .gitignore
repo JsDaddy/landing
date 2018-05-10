@@ -99,3 +99,4 @@ config/default.yaml
 config/prodaction.yaml
 
 node_modules/
+public/js
