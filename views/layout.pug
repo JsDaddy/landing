@@ -3,40 +3,42 @@ html
     head
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
         script.
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'UA-115295105-1');
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'UA-115295105-1');
         script.
-          !function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-              n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-          }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js'
-          );
-          fbq('init', '190979394957908');
-          fbq('track', 'PageView');
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = '2.0';
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js'
+            );
+            fbq('init', '190979394957908');
+            fbq('track', 'PageView');
         title #{title}
         meta(charset='utf-8')
         meta(name='description', content='')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
         if meta
-         each item in meta
-            meta(name= item.name, content= item.content )
+            each item in meta
+                meta(name= item.name, content= item.content )
         meta(property='og:image', content='path/to/image.jpg')
         meta(name='format-detection', content='telephone=no')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
@@ -49,8 +51,7 @@ html
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
     body
-        if header
-          header#home
+        header#home
             .container
                 .row.content-header-wrapper
                     .logo
@@ -58,29 +59,28 @@ html
                             img(src='/img/logo.png', alt='js daddy')
                     .navigation-wrapper
                         nav.nav-main
-                            ul#menu
-                                each menu in header.menu
+                            ul#main-menu
+                                each menu in mainMenu.content.menu
                                     li
                                         a(href=menu.link) #{menu.title}
                         .right-header-block
                             .social
                                 ul
-                                    each item in social
+                                    each item in mainMenu.content.social
                                         li
-                                            a(class=item.soc, href=item.link)
-                                                i.fa(class=item.icon)
+                                            a(class=item['link-class'], href=item.link)
+                                                i.fa(class=item['icon-class'])
                             .contact-btn-wrapper
-                                  each el in header.btnHeader
-                                      a.contact-btn.scroll(href='#contacts') #{el.text}
+                                a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
 
 
-        block content
-        if footer
-         for text in footer
-            footer.footer
-                .copyright #{text.copyright}
-        block scripts
-            script(src='/js/main.min.js')
-            script(src='/js/slick.min.js')
-            script(src='/js/common.min.js')
-            script(src='/js/contacts-form.min.js')
+            block content
+            if footer
+                for text in footer
+                    footer.footer
+                        //.copyright #{text.copyright}
+            block scripts
+                script(src='/js/main.min.js')
+                script(src='/js/slick.min.js')
+                script(src='/js/common.min.js')
+                script(src='/js/contacts-form.min.js')

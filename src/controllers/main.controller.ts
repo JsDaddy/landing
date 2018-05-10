@@ -6,9 +6,10 @@ export const mainCtrl = (app: express.Application) => {
     '/',
     async (_req: express.Request, res: express.Response) => {
       try {
-        const manContent: HashMap =
-        await new StaticContentModel().getContentHashMap(['main-menu', 'main-banner', 'services']);
-        return res.render('content/main', manContent);
+        const mainContent: HashMap =
+        await new StaticContentModel().getContentHashMap(['mainMenu', 'main-banner', 'services']);
+        return res.render('content/main', mainContent);
+
       } catch (err) {
         return res.render('content/error');
       }
