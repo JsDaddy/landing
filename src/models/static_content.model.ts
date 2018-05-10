@@ -1,8 +1,11 @@
 import * as mongoose from 'mongoose';
 
 export class StaticContentModel {
-  public async getMenu(query: {section: string, lang?: string}): Promise<any> {
+  public async getContentHashMap(section: string[], lang = 'en'): Promise<HashMap> {
     const menuModel: mongoose.Model<mongoose.Document> = mongoose.model('StaticContent');
-    return await menuModel.findOne(query).lean();
+    const content = await menuModel.find({ name: { $in: section }, lang, hidden: false }).lean();
+    return content.reduce((acc: HashMap, next: any) => {
+      return {...acc, [next.name]: next};
+    }, {});
   }
 }

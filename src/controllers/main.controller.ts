@@ -1,14 +1,18 @@
-import { Application } from 'express';
-import { menuMiddleware } from '../middleware/menu.middleware';
-import { MainContentModel } from '../models/main.content.model';
-import { formMiddleware } from './../middleware/form.middleware';
-import { consumer } from './consumer';
+import * as express from 'express';
+import { StaticContentModel } from './../models/static_content.model';
 
-export const mainCtrl = (app: Application) => {
+export const mainCtrl = (app: express.Application) => {
   app.get(
     '/',
-    menuMiddleware('main'),
-    formMiddleware('main'),
-    consumer('content/main', MainContentModel),
+    async (_req: express.Request, res: express.Response) => {
+      try {
+        const manContent: HashMap =
+        await new StaticContentModel().getContentHashMap(['main-menu', 'main-banner', 'services']);
+        return res.render('content/main', manContent);
+      } catch (err) {
+        return res.render('content/error');
+      }
+    },
   );
+
 };
