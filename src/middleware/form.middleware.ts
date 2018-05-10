@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
-import { FormModel } from '../models/form.model';
+import { UsersModel } from '../models/users.model';
 
 export const formMiddleware = (section: string) => {
   return async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
     try {
       // TODO lang
       const query: {section: string, lang?: string } = { section, lang: 'en' };
-      const form = await new FormModel().getForm(query);
+      const form = await new UsersModel().getForm(query);
       req.params.form = form;
       return next();
     } catch (err) {

@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { MenuModel } from '../models/menu.model';
+import { Static_contentModel } from '../models/static_content.model';
 
 export const menuMiddleware = (section: string) => {
   return async (req: Request, _res: Response, next: NextFunction): Promise<void> => {
@@ -11,7 +11,7 @@ export const menuMiddleware = (section: string) => {
         ...query,
         lang,
       } : null;
-      const menu = await new MenuModel().getMenu(query);
+      const menu = await new Static_contentModel().getMenu(query);
       menu.languages = req.params.languages;
       req.params.header = menu;
       return next();
