@@ -51,6 +51,7 @@ html
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
     body
+       if mainMenu
         header#home
             .container
                 .row.content-header-wrapper
@@ -83,13 +84,13 @@ html
                                         a(href=i.link) #{i.phone}
                             .contact-btn-wrapper
                                 a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
-        block content
+       block content
           if footer
             for text in footer
                footer.footer
                         //.copyright #{text.copyright}
-        block scripts
+       block scripts
            script(src='/js/main.min.js')
-           //script(src='/js/slick.min.js')
-           //script(src='/js/common.min.js')
-           //script(src='/js/contacts-form.min.js')
+           script(src='/js/slick.min.js')
+           script(src='/js/common.min.js')
+           script(src='/js/contacts-form.min.js')

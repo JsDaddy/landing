@@ -7,17 +7,19 @@ export function coursesCtrl(app: express.Application) {
     '/:lang/courses',
     async (req: express.Request, res: express.Response) => {
       try {
+        const { lang } = req.params;
         const coursesContent: HashMap = await new StaticContentModel().getContentHashMap([
           'coursesMenu',
           'coursesBanner',
           'about',
           'advantagesCourses',
           'contactsCourses',
+          'mentors',
         ], req.params.lang);
         coursesContent.mainMenu = coursesContent.coursesMenu;
         const users: any[] = await new UserModel().getUsers('mentor');
         coursesContent.mainMenu.content.languages = coursesContent.mainMenu.content.languages.map((language: any) => {
-          if (language.title.toLowerCase() !== req.params.lang) {
+          if (language.title.toLowerCase() !== lang) {
             return language;
           }
           return {
@@ -25,10 +27,18 @@ export function coursesCtrl(app: express.Application) {
             active: 'active',
           };
         });
+        coursesContent.mentors.content = users.map((user) => {
+          return {
+            ...user,
+            firstName: user.firstName[lang],
+            lastName: user.lastName[lang],
+          };
+        });
         return res.render(
           'content/courses',
           {
-            ...coursesContent, ...users,
+            ...coursesContent,
+            users,
           });
       } catch (err) {
         return res.render('content/error');

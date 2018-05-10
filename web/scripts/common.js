@@ -1,5 +1,7 @@
+require('jquery');
+require('slick-carousel');
 $(document).ready(function () {
-  $('.slider-teaches').slick({
+  $('.slider-teachers').slick({
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -64,4 +66,4 @@ $(window).scroll(function () {
   }
 });
 
-$('.program-title').equalHeights();
+// $('.program-title').equalHeights();

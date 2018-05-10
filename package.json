@@ -35,7 +35,8 @@
     "jquery": "3.3.1",
     "pug": "2.0.3",
     "redux": "3.7.2",
-    "redux-observable": "0.18.0"
+    "redux-observable": "0.18.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
