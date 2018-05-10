@@ -1,0 +1,73 @@
+@import "variables"
+
+#testimonials
+  .slide-wrap
+    width: 100%
+    .testimonials-wrap
+      width: 100%
+      .testimonials-item
+        margin: 15px 15px
+        .item
+          width: 100%
+          padding: 20px
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          align-items: flex-start
+          .left-block-wrap
+            display: flex
+            flex-direction: column
+            justify-content: center
+            max-width: 180px
+            align-items: flex-start
+            margin-right: 30px
+            .photo-client
+              min-width: 150px
+              min-height: 150px
+              overflow: hidden
+              display: inline-flex
+              align-items: center
+              justify-content: center
+              margin-bottom: 10px
+              img
+                width: 100%
+                min-width: 100%
+                border-radius: 50%
+            .name
+              width: 100%
+              text-align: center
+              text-transform: uppercase
+              font-weight: 600
+              margin-bottom: 5px
+            .position
+              width: 100%
+              text-align: center
+              font-weight: 300
+              margin-bottom: 5px
+            .company
+              width: 100%
+              text-align: center
+              font-weight: 300
+          .right-block
+            display: inline-flex
+            border-radius: 10px
+            background-color: #f7f9f9
+            padding: 15px
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              display: block
+              left: -37px
+              top: 50px
+              border: 20px solid transparent
+              border-right: 20px solid #f7f9f9
+
+    p
+              font-size: 1rem
+              color: $text-color
+              font-weight: 300
+
+
+
+

@@ -60,18 +60,24 @@ html
                     .navigation-wrapper
                         nav.nav-main
                             ul#main-menu
-                                each menu in mainMenu.content.menu
-                                    li
-                                        a(href=menu.link) #{menu.title}
+                                 each menu in mainMenu.content.menu
+                                     li
+                                         a(href=menu.link) #{menu.title}
                         .right-header-block
-                            .social
-                                ul
-                                    each item in mainMenu.content.social
-                                        li
-                                            a(class=item['link-class'], href=item.link)
-                                                i.fa(class=item['icon-class'])
+                            if mainMenu.content.social
+                                .social
+                                    ul
+                                        each item in mainMenu.content.social
+                                            li
+                                                a(class=item['link-class'], href=item.link)
+                                                    i.fa(class=item['icon-class'])
+                            if mainMenu.content.phone
+                                .tel-wrapper
+                                    each i in mainMenu.content.phone
+                                        a(href=i.link) #{i.phone}
                             .contact-btn-wrapper
                                 a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
+
 
 
         block content

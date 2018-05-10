@@ -7,7 +7,15 @@ export function coursesCtrl(app: express.Application) {
     async (req: express.Request, res: express.Response) => {
       try {
         const coursesContent: HashMap =
-          await new StaticContentModel().getContentHashMap(['coursesBanner'], req.params.lang);
+          await new StaticContentModel().getContentHashMap([
+            'coursesMenu',
+            'coursesBanner',
+            'about',
+            'advantagesCourses',
+            'contactsCourses',
+            ],
+            req.params.lang);
+        coursesContent.mainMenu = coursesContent.coursesMenu;
         return res.render('content/courses', coursesContent);
       } catch (err) {
         return res.render('content/error');
