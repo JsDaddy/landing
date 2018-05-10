@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-115295105-1');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '190979394957908');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1"
+             src="https://www.facebook.com/tr?id=190979394957908&ev=PageView
+&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    <title>{{title}}</title>
+    <meta charset="utf-8"/>
+    <meta name="description" content=""/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    {{#meta}}
+        <meta name={{name}} content="{{content}}">
+    {{/meta}}
+    <meta property="og:image" content="path/to/image.jpg"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href=""/>
+    <link rel="apple-touch-icon" sizes="72x72" href=""/>
+    <link rel="apple-touch-icon" sizes="114x114" href=""/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/site.min.css">
+    <link rel="icon" href="/img/favicon.ico">
+</head>
+<body>
+<div>
+    {{#header}}
+        <header id="home">
+            <div class="container">
+                <div class="row content-header-wrapper">
+                    <div class="logo">
+                        <a href="/">
+                            <img src="/img/logo.png" alt="js daddy"/>
+                        </a>
+                    </div>
+                    <div class="navigation-wrapper">
+                        <nav class="nav-main">
+                            <ul id="menu">
+                                {{#menu}}
+                                    <li><a href={{link}}>{{title}}</a></li>
+                                {{/menu}}
+                            </ul>
+                        </nav>
+                        <div class="right-header-block">
+                            <div class="social">
+                                <ul>
+                                    {{#social}}
+                                        <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                                    {{/social}}
+                                </ul>
+                            </div>
+                            <div class="contact-btn-wrapper">
+                                {{#btnHeader}}
+                                    <a class="contact-btn scroll" href="#contacts">{{text}}</a>
+                                {{/btnHeader}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-burger">
+                        <div class="line"></div>
+                        <div class="text">Menu</div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    {{/header}}
+    <section id="banner" class="banner">
+        <div class="container">
+            <div class="banner-content-wrapper">
+                <div class="banner-content">
+                    {{#banner}}
+                        <h1>{{bannerTitle}}</h1>
+                        <p>{{bannerDesc}}</p>
+                        <a class="contact-btn" href="#contacts">{{bannerBtn}}</a>
+                    {{/banner}}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="services">
+        <div class="container">
+            {{#weysSection}}
+                <div class="header-section-wrapper">
+                    <h3>{{sectionTitle}}</h3>
+                    <div class="background-section-text">{{sectionTitle}}</div>
+                </div>
+                <div class="row">
+                    {{#weysBox}}
+                        <div class="col-md-4">
+                            <div class="item-content-block">
+                                <div class="icon">
+                                    <img src="{{itemContentImg}}" alt="complex-web"/>
+                                </div>
+                                <h5>{{itemTitle}}</h5>
+                                <p>{{itemText}}</p>
+                                <!--<div class="more-info">-->
+                                <!--<a class="more-info-btn">More info<i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+                                <!--<div class="more-info-form-wrapper">-->
+                                <!--<form>-->
+                                <!--<input placeholder="Name" type="text">-->
+                                <!--<input placeholder="Email" type="email">-->
+                                <!--<button>Request more info</button>-->
+                                <!--</form>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    {{/weysBox}}
+                </div>
+            {{/weysSection}}
+        </div>
+    </section>
+    <section id="technologies" class="technologies">
+        <div class="container">
+            {{#technologies}}
+                <div class="header-section-wrapper">
+                    <h3>{{sectionTitle}}</h3>
+                    <div class="background-section-text">{{sectionTitle}}</div>
+                </div>
+                <div class="technologies-wrapper">
+                    <div class="row">
+                        {{#technologiesImages}}
+                            <div class="col-6 col-sm-4 col-md-2">
+                                <div class="img-wrapper">
+                                    <img src="{{technologiesImg}}" alt=""/>
+                                </div>
+                            </div>
+                        {{/technologiesImages}}
+                    </div>
+                </div>
+            {{/technologies}}
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="container">
+            {{#advantages}}
+                <div class="header-section-wrapper">
+                    <h3>{{sectionTitle}}</h3>
+                    <div class="background-section-text">{{sectionTitle}}</div>
+                </div>
+                <div class="row">
+                    {{#advantagesBox}}
+                        <div class="col-md-4">
+                            <div class="item-content-block">
+                                <div class="icon">
+                                    <img src="{{itemImg}}" alt="{{imgAlt}}"/>
+                                </div>
+                                <h5>{{itemTitle}}</h5>
+                                <p>{{itemText}}</p>
+                            </div>
+                        </div>
+                    {{/advantagesBox}}
+                </div>
+            {{/advantages}}
+        </div>
+    </section>
+    <section id="about" class="why-we-are">
+        <div class="container">
+            {{#whyWe}}
+                <div class="header-section-wrapper">
+                    <h3>{{sectionTitle}}</h3>
+                    <div class="background-section-text">{{sectionTitle}}</div>
+                </div>
+                <div class="why-we-are-wrapper">
+                    {{#whyWeBox}}
+                        <div class="text-block">
+                            <h5>{{itemTitle}}</h5>
+                            <p>{{itemText}}</p>
+                        </div>
+                        <div class="img-block">
+                            <img src="{{itemImg}}" alt=""/>
+                        </div>
+                    {{/whyWeBox}}
+                </div>
+            {{/whyWe}}
+        </div>
+    </section>
+    <section id="testimonials">
+        <div class="container">
+            <div class="header-section-wrapper">
+                <h3>Testimonials</h3>
+                <div class="background-section-text">Testimonials</div>
+            </div>
+            <div class="row">
+                <div class="slide-wrap">
+                    <div class="testimonials-wrap">
+                        <div class="testimonials-item">
+                            <div class="item">
+                                <div class="left-block-wrap">
+                                    <div class="photo-client">
+                                        <img src="/img/1525250660670.png" alt="ddd">
+                                    </div>
+                                    <div class="name">
+                                        Beverly Cranston
+                                    </div>
+                                    <div class="position">
+                                        Senior Marketing Manager
+                                    </div>
+                                    <div class="company">
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="quotes">
+                                        <p> "This allows us to focus on funnel optimization, content production, new
+                                            initiatives, and customer relationships, rather than manual daily tasks and
+                                            touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            and
+                                            focused on common goals than ever before and we now have insight into every
+                                            step
+                                            along a customer's journey from website visitor to lifelong customer." </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-item">
+                            <div class="item">
+                                <div class="left-block-wrap">
+                                    <div class="photo-client">
+                                        <img src="/img/1525250660670.png" alt="ddd">
+                                    </div>
+                                    <div class="name">
+                                        Beverly Cranston
+                                    </div>
+                                    <div class="position">
+                                        Senior Marketing Manager
+                                    </div>
+                                    <div class="company">
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="quotes">
+                                        <p> "This allows us to focus on funnel optimization, content production, new
+                                            initiatives, and customer relationships, rather than manual daily tasks and
+                                            touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            and
+                                            focused on common goals than ever before and we now have insight into every
+                                            step
+                                            along a customer's journey from website visitor to lifelong customer." </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-item">
+                            <div class="item">
+                                <div class="left-block-wrap">
+                                    <div class="photo-client">
+                                        <img src="/img/1525250660670.png" alt="ddd">
+                                    </div>
+                                    <div class="name">
+                                        Beverly Cranston
+                                    </div>
+                                    <div class="position">
+                                        Senior Marketing Manager
+                                    </div>
+                                    <div class="company">
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="quotes">
+                                        <p> "This allows us to focus on funnel optimization, content production, new
+                                            initiatives, and customer relationships, rather than manual daily tasks and
+                                            touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            and
+                                            focused on common goals than ever before and we now have insight into every
+                                            step
+                                            along a customer's journey from website visitor to lifelong customer." </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-item">
+                            <div class="item">
+                                <div class="left-block-wrap">
+                                    <div class="photo-client">
+                                        <img src="/img/1525250660670.png" alt="ddd">
+                                    </div>
+                                    <div class="name">
+                                        Beverly Cranston
+                                    </div>
+                                    <div class="position">
+                                        Senior Marketing Manager
+                                    </div>
+                                    <div class="company">
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="quotes">
+                                        <p> "This allows us to focus on funnel optimization, content production, new
+                                            initiatives, and customer relationships, rather than manual daily tasks and
+                                            touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            and
+                                            focused on common goals than ever before and we now have insight into every
+                                            step
+                                            along a customer's journey from website visitor to lifelong customer." </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-item">
+                            <div class="item">
+                                <div class="left-block-wrap">
+                                    <div class="photo-client">
+                                        <img src="/img/1525250660670.png" alt="ddd">
+                                    </div>
+                                    <div class="name">
+                                        Beverly Cranston
+                                    </div>
+                                    <div class="position">
+                                        Senior Marketing Manager
+                                    </div>
+                                    <div class="company">
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="right-block">
+                                    <div class="quotes">
+                                        <p> "This allows us to focus on funnel optimization, content production, new
+                                            initiatives, and customer relationships, rather than manual daily tasks and
+                                            touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            and
+                                            focused on common goals than ever before and we now have insight into every
+                                            step
+                                            along a customer's journey from website visitor to lifelong customer." </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="team">
+        <div class="container">
+            {{#﻿team}}
+                <div class="header-section-wrapper">
+                    <h3>{{﻿sectionTitle}}</h3>
+                    <div class="background-section-text">{{﻿sectionTitle}}</div>
+                </div>
+                <div class="row">
+                    {{#﻿itemTeam}}
+                        <div class="col-12 col-lg-3">
+                            <div class="item-wrapper">
+                                <div class="photo-wrapper"><img src="/img/{{photo}}" alt=""/></div>
+                                <div class="name">{{﻿firstName}} {{﻿lastName}}</div>
+                                <div class="position">{{﻿position}}</div>
+                                <div class="soc-link">
+                                    <a href="{{﻿linkenIn}}"><i class="fa fa-linkedin-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {{/﻿itemTeam}}
+                </div>
+            {{/﻿team}}
+        </div>
+    </section>
+    <section id="contacts" class="contacts">
+        <div class="container">
+            {{#contacts}}
+                <div class="header-section-wrapper">
+                    <h3>{{sectionTitle}}</h3>
+                    <div class="background-section-text">{{sectionTitle}}</div>
+                </div>
+                <div class="row">
+                    <div class="contact-form-wrapper">
+                        {{#form}}
+                            <contacts-form
+                                    class="contact_us"
+                                    lang="lang"
+                                    schema="{{schema}}"
+                                    btnText="{{btn}}">
+                            </contacts-form>
+                        {{/form}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contact-details">
+                        {{#contactDetails}}
+                            <div class="email-block">
+                                <ul>
+                                    <li class="{{itemClass}}"><a href="{{itemHref}}">{{itemText}}</a></li>
+                                </ul>
+                                <div class="social">
+                                    <ul>
+                                        {{#social}}
+                                            <li><a class="{{soc}}" href="{{link}}"><i class="fa {{icon}}"></i></a></li>
+                                        {{/social}}
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tel-block">
+                                <ul>
+                                    <li class="tel"><p>{{socTitle}}</p></li>
+                                    <li class="tel"><p>{{socText}}</p></li>
+                                </ul>
+                            </div>
+                            <div class="address-block">
+                                <ul>
+                                    <li>{{address}}</li>
+                                </ul>
+                            </div>
+                        {{/contactDetails}}
+                    </div>
+                </div>
+            {{/contacts}}
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    {{#footer}}
+        <div class="copyright">{{copyright}}</div>
+    {{/footer}}
+</footer>
+<div class="notification none">
+    <div class="notification-message">
+        <div class="logo">
+            <img src="/img/logo-notification.png" alt="">
+        </div>
+        <div class="message">
+            Your application is accepted, thank you! We will send more information to your mail
+            <div class="close-btn"></div>
+        </div>
+    </div>
+</div>
+<script src="/js/bundle.min.js"></script>
+<script src="/js/contacts-form.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.equalheights.min.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/common.js"></script>
+</body>
+</html>
+
+
+
