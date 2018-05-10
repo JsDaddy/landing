@@ -1,0 +1,44 @@
+extends ../layout
+
+block content
+    section.advantages
+        .container
+            .header-section-wrapper
+                h3 #{advantagesCourses.title}
+                .background-section-text #{advantagesCourses.title}
+            .items-wrapper.row
+                each item in advantagesCourses.content.item
+                    .col-lg-2.col-md-6
+                        .item
+                            .ico-wrap
+                                img(src='/img/' + item.icon)
+                            p #{item.text}
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contactsCourses.title}
+                .background-section-text #{contactsCourses.title}
+            .row
+                .contact-form-wrapper
+                    .contact-form-wrapper
+                        //contacts-form.contact_us(btnText=contacts.content.button.text)
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto' + contactsCourses.content.contacts.email) #{contactsCourses.content.contacts.email}
+                        .social
+                            ul
+                                each soc in contactsCourses.content.contacts.social
+                                    li
+                                        a(class=soc.linkClass, href=soc.link)
+                                            i.fa(class=soc.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p Skype:
+                                p #{contactsCourses.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contactsCourses.content.contacts.address}

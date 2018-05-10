@@ -18,7 +18,8 @@ export const mainCtrl = (app: express.Application) => {
           'contacts',
           'team',
         ]);
-        return res.render('content/main', {...mainContent, users});
+        mainContent.team.content = users;
+        return res.render('content/main', {...mainContent});
       } catch (err) {
         return res.render('content/error');
       }

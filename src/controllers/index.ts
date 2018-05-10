@@ -1,8 +1,10 @@
 import { Application } from 'express';
-import {coursesCtrl} from './courses.controller';
+import { courseCtrl } from './course.controller';
+import { coursesCtrl } from './courses.controller';
 import { mainCtrl } from './main.controller';
 
 export const controllers: (app: Application) => void = (app: Application) => {
   mainCtrl(app);
+  courseCtrl(app);
   coursesCtrl(app);
 };

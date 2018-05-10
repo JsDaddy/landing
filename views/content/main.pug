@@ -69,15 +69,15 @@ block content
                 h3 #{team.title}
                 .background-section-text #{team.title}
             .row
-                each user in users
+                each member in team.content
                     .col-12.col-lg-3
                         .item-wrapper
                             .photo-wrapper
-                                img(src='/img/' + user.photo)
-                            .name #{user.firstName.ru} #{user.lastName.ru}
-                            .position #{user.position}
+                                img(src='/img/' + member.photo)
+                            .name #{member.firstName.en} #{member.lastName.en}
+                            .position #{member.position}
                             .soc-link
-                                a(href=user.linkenIn)
+                                a(href=member.linkenIn)
                                     i.fa.fa-linkedin-square
 
     section#contacts.contacts
