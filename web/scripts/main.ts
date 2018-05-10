@@ -22,12 +22,12 @@ Array.prototype.forEach.call(menuItems, (item: HTMLAnchorElement) => {
  * follows a different convention (such as function maps) if it makes sense for your
  * project.
  */
-function counter(state = 0, action) {
+function counter(state = 0, action: any) {
   switch (action.type) {
   case 'INCREMENT':
-    return state + 1
+    return state + 1;
   case 'DECREMENT':
-    return state - 1
+    return state - 1;
   default:
     return state
   }
