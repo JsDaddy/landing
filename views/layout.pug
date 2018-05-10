@@ -3,34 +3,34 @@ html
     head
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
         script.
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'UA-115295105-1');
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'UA-115295105-1');
         script.
-            !function (f, b, e, v, n, t, s) {
-                if (f.fbq) return;
-                n = f.fbq = function () {
-                    n.callMethod ?
-                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-                };
-                if (!f._fbq) f._fbq = n;
-                n.push = n;
-                n.loaded = !0;
-                n.version = '2.0';
-                n.queue = [];
-                t = b.createElement(e);
-                t.async = !0;
-                t.src = v;
-                s = b.getElementsByTagName(e)[0];
-                s.parentNode.insertBefore(t, s)
-            }(window, document, 'script',
-                'https://connect.facebook.net/en_US/fbevents.js'
-            );
-            fbq('init', '190979394957908');
-            fbq('track', 'PageView');
+          !function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+              n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+          }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js'
+          );
+          fbq('init', '190979394957908');
+          fbq('track', 'PageView');
         title #{title}
         meta(charset='utf-8')
         meta(name='description', content='')
@@ -74,13 +74,13 @@ html
                                 a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
 
 
-            block content
-            if footer
-                for text in footer
-                    footer.footer
+        block content
+          if footer
+            for text in footer
+               footer.footer
                         //.copyright #{text.copyright}
-            block scripts
-                script(src='/js/main.min.js')
-                script(src='/js/slick.min.js')
-                script(src='/js/common.min.js')
-                script(src='/js/contacts-form.min.js')
+        block scripts
+           script(src='/js/main.min.js')
+           script(src='/js/slick.min.js')
+           script(src='/js/common.min.js')
+           script(src='/js/contacts-form.min.js')
