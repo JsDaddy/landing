@@ -63,6 +63,22 @@ block content
                     p #{aboutCompany.content.text.description}
                 .img-block
                     img(src='/img/' + aboutCompany.content.src)
+    section#team
+        .container
+            .header-section-wrapper
+                h3 #{team.title}
+                .background-section-text #{team.title}
+            .row
+                each user in users
+                    .col-12.col-lg-3
+                        .item-wrapper
+                            .photo-wrapper
+                                img(src='/img/' + user.photo)
+                            .name #{user.firstName.ru} #{user.lastName.ru}
+                            .position #{user.position}
+                            .soc-link
+                                a(href=user.linkenIn)
+                                    i.fa.fa-linkedin-square
 
     section#contacts.contacts
         .container
@@ -93,21 +109,3 @@ block content
                     .address-block
                         ul
                             li #{contacts.content.contacts.address}
-
-                //    section#team
-                //        .container
-                //            each item in team
-                //                .header-section-wrapper
-                //                    h3 #{item.sectionTitle}
-                //                    .background-section-text #{item.sectionTitle}
-                //                .row
-                //                    each i in item.itemTeam
-                //                        .col-12.col-lg-3
-                //                            .item-wrapper
-                //                                .photo-wrapper
-                //                                    img(src='/img/' + i.photo)
-                //                                .name #{i.firstName} #{i.lastName}
-                //                                .position #{i.position}
-                //                                .soc-link
-                //                                    a(href=i.linkenIn)
-                //                                        i.fa.fa-linkedin-square

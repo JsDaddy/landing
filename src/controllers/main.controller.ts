@@ -7,7 +7,7 @@ export const mainCtrl = (app: express.Application) => {
     '/',
     async (_req: express.Request, res: express.Response) => {
       try {
-        const users: any[] = await new UserModel().getUsers();
+        const users: any[] = await new UserModel().getUsers('member');
         const mainContent: HashMap = await new StaticContentModel().getContentHashMap([
           'mainMenu',
           'mainBanner',
@@ -16,6 +16,7 @@ export const mainCtrl = (app: express.Application) => {
           'advantagesCompany',
           'aboutCompany',
           'contacts',
+          'team',
         ]);
         return res.render('content/main', {...mainContent, users});
       } catch (err) {
