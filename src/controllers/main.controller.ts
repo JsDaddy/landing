@@ -1,5 +1,6 @@
 import * as express from 'express';
 import { StaticContentModel } from './../models/static_content.model';
+import { UserModel } from './../models/user.model';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -8,7 +9,8 @@ export const mainCtrl = (app: express.Application) => {
       try {
         const manContent: HashMap =
         await new StaticContentModel().getContentHashMap(['main-menu', 'main-banner', 'services']);
-        return res.render('content/main', manContent);
+        const users: any[] = await new UserModel().getUsers();
+        return res.render('content/main', {...manContent, users});
       } catch (err) {
         return res.render('content/error');
       }
