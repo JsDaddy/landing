@@ -18,6 +18,7 @@ export const mainCtrl = (app: express.Application) => {
           'aboutCompany',
           'contacts',
           'team',
+          'footer',
         ]);
         mainContent.team.content = users;
         mainContent.head = mainContent.mainHead.content;

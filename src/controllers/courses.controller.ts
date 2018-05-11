@@ -17,6 +17,7 @@ export function coursesCtrl(app: express.Application) {
           'advantagesCourses',
           'contactsCourses',
           'mentors',
+          'footer',
         ], req.params.lang);
         coursesContent.head = coursesContent.coursesHead.content;
         coursesContent.mainMenu = coursesContent.coursesMenu;
