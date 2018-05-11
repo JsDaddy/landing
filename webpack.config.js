@@ -7,7 +7,6 @@ module.exports = {
   devtool: "source-map",
   entry: {
     main :'./web/scripts/main.ts',
-    slick: './web/scripts/slick.min.js',
     common: './web/scripts/common.js',
     'contacts-form': './web/scripts/contacts-form.js',
   },

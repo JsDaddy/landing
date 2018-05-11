@@ -10,6 +10,7 @@ export function coursesCtrl(app: express.Application) {
       try {
         const { lang } = req.params;
         const coursesContent: HashMap = await new StaticContentModel().getContentHashMap([
+          'coursesHead',
           'coursesMenu',
           'coursesBanner',
           'about',
@@ -17,6 +18,7 @@ export function coursesCtrl(app: express.Application) {
           'contactsCourses',
           'mentors',
         ], req.params.lang);
+        coursesContent.head = coursesContent.coursesHead.content;
         coursesContent.mainMenu = coursesContent.coursesMenu;
         const users: any[] = await new UserModel().getUsers('mentor');
         coursesContent.mainMenu.content.languages = coursesContent.mainMenu.content.languages.map((language: any) => {
