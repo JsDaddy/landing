@@ -1,4 +1,5 @@
 import * as express from 'express';
+import { addCurrencyRate } from '../middleware/currency.middleware';
 import {UserModel} from '../models/user.model';
 import {CourseModel} from './../models/course.model';
 import {StaticContentModel} from './../models/static_content.model';
@@ -6,6 +7,7 @@ import {StaticContentModel} from './../models/static_content.model';
 export const courseCtrl = (app: express.Application) => {
   app.get(
     '/:lang/courses/:id',
+    addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
       const {lang, id} = req.params;
       const banner = `${id}Banner`;
@@ -58,7 +60,7 @@ export const courseCtrl = (app: express.Application) => {
             duration: selectedCourse.duration,
             firstName: mentor.firstName[lang],
             lastName: mentor.lastName[lang],
-            price: selectedCourse.price,
+            price: `${Math.round(req.params.currency * selectedCourse.price)}\₴ (~${selectedCourse.price}\$)`,
             shortDescription: selectedCourse.shortDescription,
             start: selectedCourse.start,
             title: selectedCourse.title,
