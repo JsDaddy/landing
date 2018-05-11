@@ -31,14 +31,13 @@ html
           );
           fbq('init', '190979394957908');
           fbq('track', 'PageView');
-        title #{title}
+
+        title #{head.title}
         meta(charset='utf-8')
-        meta(name='description', content='')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-        if meta
-            each item in meta
-                meta(name= item.name, content= item.content )
+        each meta in head.meta
+           meta(name=meta.name, content= meta.content)
         meta(property='og:image', content='path/to/image.jpg')
         meta(name='format-detection', content='telephone=no')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
@@ -93,7 +92,7 @@ html
             for text in footer
                footer.footer
                         //.copyright #{text.copyright}
-       block
+       block script
            script(src='/js/common.min.js')
            script(src='/js/main.min.js')
            script(src='/js/contacts-form.min.js')

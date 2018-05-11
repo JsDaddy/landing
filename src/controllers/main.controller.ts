@@ -9,6 +9,7 @@ export const mainCtrl = (app: express.Application) => {
       try {
         const users: any[] = await new UserModel().getUsers('member');
         const mainContent: HashMap = await new StaticContentModel().getContentHashMap([
+          'mainHead',
           'mainMenu',
           'mainBanner',
           'services',
@@ -19,7 +20,8 @@ export const mainCtrl = (app: express.Application) => {
           'team',
         ]);
         mainContent.team.content = users;
-        return res.render('content/main', {...mainContent});
+        mainContent.head = mainContent.mainHead.content;
+        return res.render('content/main', mainContent);
       } catch (err) {
         return res.render('content/error');
       }
