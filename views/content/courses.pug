@@ -8,7 +8,7 @@ block content
                     h1 #{coursesBanner.content.text.title}
                     p #{coursesBanner.content.text.subtitle}
 
-    section#aboutSchool.about-school
+    section#about.about-school
         .container
             .header-section-wrapper
                 h3 #{about.title}
@@ -35,9 +35,9 @@ block content
                             .bottom-block
                                 .duration #{thumb.duration}
                                 .prices #{thumb.price}
-                            a.link(href='#')
+                            a.link(href=thumb.href)
                                 i.fa.fa-arrow-right
-    section(id="ourTeaches" class="our-teaches")
+    section(id="mentors" class="our-teaches")
         .container
             .header-section-wrapper
                 h3 #{mentors.title}
