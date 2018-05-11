@@ -9,9 +9,9 @@
   },
   "scripts": {
     "nodemon": "nodemon",
-    "start": "build:css && build:js && pm2 start src/main.ts",
+    "start": "npm run build:css && npm run build:js && pm2 start src/main.ts",
     "lint": "tslint 'src/**/*.ts'",
-    "start:dev": "npm-run-all --parallel build:css:w build:js:w nodemon",
+    "start:dev": "npm run build:css && npm run build:js && nodemon",
     "build:css": "node-sass --include-path scss web/sass/index.sass public/css/site.min.css --output-style compressed",
     "build:css:w": "npm run build:css -- -w",
     "build:js": "webpack",
