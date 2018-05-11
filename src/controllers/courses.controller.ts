@@ -11,6 +11,7 @@ export function coursesCtrl(app: express.Application) {
         const { lang } = req.params;
         const coursesContent: HashMap = await new StaticContentModel().getContentHashMap([
           'coursesHead',
+          'coursesThumbs',
           'coursesMenu',
           'coursesBanner',
           'about',
@@ -38,8 +39,10 @@ export function coursesCtrl(app: express.Application) {
             lastName: user.lastName[lang],
           };
         });
-        const coursesList: any[] = await new CourseModel().getAllContent({lang});
-        const courses: any = coursesList
+        const coursesThumbs: any[] = await new CourseModel().getAllContent({lang});
+        coursesContent.coursesThumbs.content = coursesThumbs;
+        console.log(coursesContent.courses);
+        const courses: any = coursesThumbs
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         return res.render(
           'content/courses',

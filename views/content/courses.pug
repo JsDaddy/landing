@@ -18,6 +18,25 @@ block content
                     img(src='/img/' + about.src)
                 .col-lg-8
                     p #{about.content.text}
+    section#courses.courses
+        .container
+            .header-section-wrapper
+                h3 #{coursesThumbs.title}
+                .background-section-text #{coursesThumbs.title}
+            .row
+                each thumb in coursesThumbs.content
+                    .col-lg-4
+                        .item-wrapper
+                            .start-course #{thumb.﻿start}
+                            div(class='course-type ' + thumb.class) #{thumb.type}
+                            .img-wrapper
+                                img(src='/img/' + thumb.src, alt=thumb.﻿alt)
+                            h3.name #{thumb.title}
+                            .bottom-block
+                                .duration #{thumb.duration}
+                                .prices #{thumb.price}
+                            a.link(href='#')
+                                i.fa.fa-arrow-right
     section(id="ourTeaches" class="our-teaches")
         .container
             .header-section-wrapper
