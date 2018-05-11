@@ -22,7 +22,22 @@ export const courseCtrl = (app: express.Application) => {
                     'contactsCourses',
                 ], lang);
                 courseContent.mainMenu = courseContent.coursesMenu;
-                courseContent.mainMenu.content.languages =
+              courseContent.mainMenu.content.menu = courseContent.mainMenu.content.menu.map((item: any) => {
+                if(item.link === '#courses') {
+                    return {
+                      ...item,
+                      link: `/${lang}/courses#courses`
+                    }
+                }
+                if(item.link === '#mentors') {
+                  return {
+                    ...item,
+                    link: `/${lang}/courses#mentors`
+                  }
+                }
+                return item
+              });
+              courseContent.mainMenu.content.languages =
                 courseContent.mainMenu.content.languages.map((language: any) => {
                     if (language.title.toLowerCase() !== lang) {
                         return language;
@@ -32,7 +47,8 @@ export const courseCtrl = (app: express.Application) => {
                         active: 'active',
                     };
                 });
-                const coursesList: any[] = await new CourseModel().getAllContent({lang});
+              console.log(courseContent.mainMenu);
+              const coursesList: any[] = await new CourseModel().getAllContent({lang});
                 const courses: any = coursesList
                     .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
                 const selectedCourse: any = await new CourseModel().getContent({lang, name: id});

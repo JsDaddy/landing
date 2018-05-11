@@ -16,7 +16,7 @@ block content
                             p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
                             p.prices #{banner.content.info.price}
                             a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
-    section.about-course
+    section#about.about-course
         .container
             .header-section-wrapper
                 h3 #{description.title}
@@ -41,7 +41,7 @@ block content
                                 li.program-title #{module.title}
                                     each item in module.items
                                         li #{item}
-        section.advantages
+    section.advantages
         .container
             .header-section-wrapper
                 h3 #{advantagesCourses.title}
