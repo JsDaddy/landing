@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
 export class CourseModel {
-  public async getContent(query: any): Promise<any[]> {
+  public async getContent(query: any): Promise<any> {
     const courseModel: mongoose.Model<mongoose.Document> = mongoose.model('Course');
     return await courseModel.findOne(query)
       .lean();
