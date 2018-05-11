@@ -1,3 +1,3 @@
-type HashMap = {
-  [key: string]: any
+interface IHashMap  {
+  [key: string]: any;
 }

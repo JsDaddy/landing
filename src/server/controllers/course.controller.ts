@@ -1,8 +1,8 @@
 import * as express from 'express';
 import { addCurrencyRate } from '../middleware/currency.middleware';
+import { CourseModel } from '../models/course.model';
+import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
-import { CourseModel } from './../models/course.model';
-import { StaticContentModel } from './../models/static_content.model';
 
 export const courseCtrl = (app: express.Application) => {
   app.get(
@@ -14,7 +14,7 @@ export const courseCtrl = (app: express.Application) => {
       const program = `${id}Program`;
       const description = `${id}Description`;
       try {
-        const courseContent: HashMap = await new StaticContentModel().getContentHashMap([
+        const courseContent: IHashMap = await new StaticContentModel().getContentHashMap([
           'advantagesCourses',
           'coursesMenu',
           banner,

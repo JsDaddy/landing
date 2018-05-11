@@ -3,7 +3,7 @@ import * as config from 'config';
 import * as express from 'express';
 
 const app = express();
-import '../src/schema';
+import './schema/index';
 
 import { appConf } from './config/app.config';
 import { connectToDb } from './config/db.config';

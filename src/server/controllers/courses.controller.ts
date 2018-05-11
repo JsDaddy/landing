@@ -2,7 +2,7 @@ import * as express from 'express';
 import { addCurrencyRate } from '../middleware/currency.middleware';
 import {CourseModel} from '../models/course.model';
 import {StaticContentModel} from '../models/static_content.model';
-import {UserModel} from './../models/user.model';
+import {UserModel} from '../models/user.model';
 
 export function coursesCtrl(app: express.Application) {
   app.get(
@@ -11,7 +11,7 @@ export function coursesCtrl(app: express.Application) {
     async (req: express.Request, res: express.Response) => {
       try {
         const { lang } = req.params;
-        const coursesContent: HashMap = await new StaticContentModel().getContentHashMap([
+        const coursesContent: IHashMap = await new StaticContentModel().getContentHashMap([
           'coursesHead',
           'coursesThumbs',
           'coursesMenu',

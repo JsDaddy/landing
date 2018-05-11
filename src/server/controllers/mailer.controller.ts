@@ -1,7 +1,7 @@
 import * as express from 'express';
-import { CourseParticipentsModel } from './../models/courseParticipents.model';
-import { ProjectParticipentsModel } from './../models/projectParticipents.model';
-import { MailerService } from './../services/mailer.service';
+import { CourseParticipentsModel } from '../models/courseParticipents.model';
+import { ProjectParticipentsModel } from '../models/projectParticipents.model';
+import { MailerService } from '../services/mailer.service';
 
 export const mailerCtrl = (app: express.Application) => {
   app.post(

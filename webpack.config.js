@@ -6,9 +6,9 @@ module.exports = {
   mode: 'none',
   devtool: "source-map",
   entry: {
-    main :'./web/scripts/main.ts',
-    common: './web/scripts/common.js',
-    'contacts-form': './web/scripts/contacts-form.js',
+    main :'./src/web/scripts/main.ts',
+    common: './src/web/scripts/common.js',
+    'contacts-form': './src/web/scripts/contacts-form.js',
   },
   output: {
     path: path.resolve(__dirname, 'public/js'),
@@ -29,13 +29,9 @@ module.exports = {
     fs: 'empty'
   },
   plugins: [
-    // new webpack.ProvidePlugin({
-    //   $: "jquery",
-    //   jQuery: "jquery"
-    // }),
-    new UglifyJSPlugin({ sourceMap: true }),
+    new UglifyJSPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
   ]
 };
