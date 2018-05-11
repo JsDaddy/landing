@@ -21,17 +21,17 @@ block content
     section(id="ourTeaches" class="our-teaches")
         .container
             .header-section-wrapper
-              h3 #{mentors.title}
-              .background-section-text #{mentors.title}
+                h3 #{mentors.title}
+                .background-section-text #{mentors.title}
             .slider-teachers
-              each mentor in mentors.content
-               .item-wrapper
-                 .photo-wrapper
-                   img(src=/img/+ mentor.photo)
-                 .name #{mentor.firstName} #{mentor.lastName}
-                 .position #{mentor.position}
-                 .about
-                  .p
+                each mentor in mentors.content
+                    .item-wrapper
+                        .photo-wrapper
+                            img(src=/img/ + mentor.photo)
+                        .name #{mentor.firstName} #{mentor.lastName}
+                        .position #{mentor.position}
+                        .about
+                            .p
     section.advantages
         .container
             .header-section-wrapper
@@ -53,10 +53,10 @@ block content
                 .contact-form-wrapper
                     .contact-form-wrapper
                         contacts-form.contact_us(
-                            btnText=contactsCourses.content.button.text
-                            courses=courses
-                            schema
-                            showphone="true"
+                        btnText=contactsCourses.content.button.text
+                        courses=courses
+                        schema
+                        showphone="true"
                         )
             .row
                 .contact-details
