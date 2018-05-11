@@ -1,4 +1,4 @@
-require('jquery');
+const $ = require('jquery');
 require('slick-carousel');
 $(document).ready(function () {
   $('.slider-teachers').slick({
