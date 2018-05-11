@@ -37,6 +37,7 @@ export function coursesCtrl(app: express.Application) {
         coursesContent.mentors.content = users.map((user) => {
           return {
             ...user,
+            about: user.about[lang],
             firstName: user.firstName[lang],
             lastName: user.lastName[lang],
           };

@@ -6,16 +6,16 @@ block content
             .banner-content-wrapper
                 .banner-content
                     .img-banner-wrapper
-                        img(src='/img/' + banner.﻿content.icon)
+                        img(src='/img/' + banner.content.icon)
                     .banner-text
-                        h1 test
-                        p test
+                        h1 #{banner.content.info.title}
+                        p #{banner.content.info.shortDescription}
                         .date-wrapper
-                            p.start test
-                            p.schedule test
-                            p.mentor test
-                            p.prices test
-                            a.contact-btn(href=banner.﻿content.button.link) #{banner.﻿content.button.text}
+                            p.start #{banner.content.info.start}
+                            p.schedule #{banner.content.info.duration}
+                            p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
+                            p.prices #{banner.content.info.price}
+                            a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
     section.about-course
         .container
             .header-section-wrapper
@@ -26,7 +26,8 @@ block content
                     .about-course-img
                         img(src='/img/' + description.content.icon)
                 .col-lg-7
-                    p test
+                    each text in description.content
+                        p #{text}
     section.course-program-wrapper
         .container
             .header-section-wrapper
@@ -34,11 +35,13 @@ block content
                 div.background-section-text #{program.title}
             .program-wrap
                 .row
-                    .col-lg-4
-                        ul
-                            li.program-title testTitle
-                            li testItems
-    section.advantages
+                    each module in program.content
+                        .col-lg-4
+                            ul
+                                li.program-title #{module.title}
+                                    each item in module.items
+                                        li #{item}
+        section.advantages
         .container
             .header-section-wrapper
                 h3 #{advantagesCourses.title}
