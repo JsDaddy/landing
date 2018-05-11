@@ -1,8 +1,8 @@
 import * as express from 'express';
+import { addCurrencyRate } from '../middleware/currency.middleware';
 import {CourseModel} from '../models/course.model';
 import {StaticContentModel} from '../models/static_content.model';
 import {UserModel} from './../models/user.model';
-import {addCurrencyRate} from "../middleware/currency.middleware";
 
 export function coursesCtrl(app: express.Application) {
   app.get(
@@ -46,9 +46,9 @@ export function coursesCtrl(app: express.Application) {
         coursesContent.coursesThumbs.content = coursesThumbs
           .map((thumb) => {
             return {...thumb,
+              href: `courses/${thumb.name}`,
               price: `${Math.round(req.params.currency * thumb.price)}\₴ (~${thumb.price}\$)`,
-              href: `courses/${thumb.name}`
-            }
+            };
           });
         const courses: any = coursesThumbs
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
@@ -61,7 +61,6 @@ export function coursesCtrl(app: express.Application) {
             users,
           });
       } catch (err) {
-        console.log(err)
         return res.render('content/error');
       }
     },
