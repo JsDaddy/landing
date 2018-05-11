@@ -32,12 +32,12 @@ export const courseCtrl = (app: express.Application) => {
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         const selectedCourse: any = await new CourseModel().getContent({lang, name: id});
         return res.render('content/course', {
+          banner: courseContent[banner],
           ...courseContent,
           courses,
-          selectedCourse,
-          banner: courseContent[banner],
-          program: courseContent[program],
           description: courseContent[description],
+          program: courseContent[program],
+          selectedCourse,
         });
       } catch (err) {
         return res.render('content/error');
