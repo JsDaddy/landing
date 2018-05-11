@@ -3,18 +3,51 @@ extends ../layout
 block content
     section.banner-course
         .container
-            h1 #{banner.title}
             .banner-content-wrapper
                 .banner-content
-                    //.img-banner-wrapper
-                    //    img(src='/img/' + banner.﻿content.icon)
-                    //.banner-text
-                    //    h1 title
-                    //    p desc
-                    //    .date-wrapper
-                    //        p.start start_date
-                    //        p.schedule durations
-                    //        p.mentor mentor name
-                    //        p.prices prices
-                    //        a.contact-btn(href=banner.﻿content.button.link) #{banner.﻿content.button.text}
+                    .img-banner-wrapper
+                        img(src='/img/' + banner.﻿content.icon)
+                    .banner-text
+                        h1 test
+                        p test
+                        .date-wrapper
+                            p.start test
+                            p.schedule test
+                            p.mentor test
+                            p.prices test
+                            a.contact-btn(href=banner.﻿content.button.link) #{banner.﻿content.button.text}
+    section.about-course
+        .container
+            .header-section-wrapper
+                h3 #{description.title}
+                div.background-section-text #{description.title}
+            .row
+                .col-lg-5
+                    .about-course-img
+                        img(src='/img/' + description.content.icon)
+                .col-lg-7
+                    p test
+    section.course-program-wrapper
+        .container
+            .header-section-wrapper
+                h3 #{program.title}
+                div.background-section-text #{program.title}
+            .program-wrap
+                .row
+                    .col-lg-4
+                        ul
+                            li.program-title testTitle
+                            li testItems
+    section.advantages
+        .container
+            .header-section-wrapper
+                h3 #{advantagesCourses.title}
+                .background-section-text #{advantagesCourses.title}
+            .items-wrapper.row
+                each item in advantagesCourses.content.item
+                    .col-lg-2.col-md-6
+                        .item
+                            .ico-wrap
+                                img(src='/img/' + item.icon)
+                            p #{item.text}
 

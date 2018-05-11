@@ -88,12 +88,17 @@ html
                         .line
                         .text Menu
                         .line
-       block content
-          if footer
-            for text in footer
-               footer.footer
-                        //.copyright #{text.copyright}
-       block script
+        block content
+
+        footer.footer
+            .copyright #{﻿footer.content.text}
+
+        block script
            script(src='/js/common.min.js')
            script(src='/js/main.min.js')
            script(src='/js/contacts-form.min.js')
+
+
+//for text in footer
+//footer.footer
+//.copyright #{text.copyright}

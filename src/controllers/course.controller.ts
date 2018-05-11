@@ -12,10 +12,12 @@ export const courseCtrl = (app: express.Application) => {
       const description = `${id}Description`;
       try {
         const courseContent: HashMap = await new StaticContentModel().getContentHashMap([
+          'advantagesCourses',
           'coursesMenu',
           banner,
           program,
           description,
+          'footer',
         ], lang);
         courseContent.mainMenu = courseContent.coursesMenu;
         courseContent.mainMenu.content.languages = courseContent.mainMenu.content.languages.map((language: any) => {
