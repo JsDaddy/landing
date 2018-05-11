@@ -32,7 +32,7 @@ store.subscribe(() => {
     return;
   }
   if (renderNotify(data)) {
-    setTimeout(() => store.dispatch(new NotifyActions.HideNotify()), 3000);
+    setTimeout(() => store.dispatch(NotifyActions.HideNotify()), 3000);
   }
 
   if (!contactsForm) {
@@ -44,7 +44,7 @@ store.subscribe(() => {
 
 if (contactUsEl) {
   contactUsEl.addEventListener('form', (data: any) => {
-    store.dispatch(new NotifyActions.PendingNotify({
+    store.dispatch(NotifyActions.PendingNotify({
       data: data.detail,
       url: 'mail/contacts',
     }));
@@ -54,10 +54,10 @@ if (contactUsEl) {
 if (applyCourseEl) {
   applyCourseEl.addEventListener('form', (data: any) => {
     const lang = (window.location.href.split('/') as any).includes('ru') ? 'ru' : 'en';
-    store.dispatch(new NotifyActions.PendingNotify({
-      url: 'mail/course',
+    store.dispatch(NotifyActions.PendingNotify({
       data: data.detail,
-      lang
+      lang,
+      url: 'mail/course',
     }));
   });
 }
