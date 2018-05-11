@@ -1,11 +1,13 @@
 import * as express from 'express';
-import { CourseModel } from '../models/course.model';
-import { StaticContentModel } from '../models/static_content.model';
-import { UserModel } from './../models/user.model';
+import {CourseModel} from '../models/course.model';
+import {StaticContentModel} from '../models/static_content.model';
+import {UserModel} from './../models/user.model';
+import {addCurrencyRate} from "../middleware/currency.middleware";
 
 export function coursesCtrl(app: express.Application) {
   app.get(
     '/:lang/courses',
+    addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
       try {
         const { lang } = req.params;
@@ -40,7 +42,13 @@ export function coursesCtrl(app: express.Application) {
           };
         });
         const coursesThumbs: any[] = await new CourseModel().getAllContent({lang});
-        coursesContent.coursesThumbs.content = coursesThumbs;
+        coursesContent.coursesThumbs.content = coursesThumbs
+          .map((thumb) => {
+            return {...thumb,
+              price: `${Math.round(req.params.currency * thumb.price)}\₴ (~${thumb.price}\$)`,
+              href: `courses/${thumb.name}`
+            }
+          });
         const courses: any = coursesThumbs
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         return res.render(
@@ -52,6 +60,7 @@ export function coursesCtrl(app: express.Application) {
             users,
           });
       } catch (err) {
+        console.log(err)
         return res.render('content/error');
       }
     },

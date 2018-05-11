@@ -18,6 +18,7 @@ export const courseCtrl = (app: express.Application) => {
           program,
           description,
           'footer',
+          'contactsCourses',
         ], lang);
         courseContent.mainMenu = courseContent.coursesMenu;
         courseContent.mainMenu.content.languages = courseContent.mainMenu.content.languages.map((language: any) => {
