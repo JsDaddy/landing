@@ -3,9 +3,9 @@ import * as mongoose from 'mongoose';
 const Schema: typeof mongoose.Schema = mongoose.Schema;
 const courseParticipentsSchema: mongoose.Schema = new Schema({
   course: String,
+  email: String,
   name: String,
   phone: String,
-  surname: String,
   text: String,
 });
 

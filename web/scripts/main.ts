@@ -18,7 +18,7 @@ const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const store = createStore(
   notify,
-  // (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(epicMiddleware),
 );
 
@@ -46,6 +46,7 @@ if (contactUsEl) {
   contactUsEl.addEventListener('form', (data: any) => {
     store.dispatch(NotifyActions.PendingNotify({
       data: data.detail,
+      lang: 'en',
       url: 'mail/contacts',
     }));
   });

@@ -94,6 +94,9 @@ html
             for text in footer
                footer.footer
                         //.copyright #{text.copyright}
+                        
+       include content/notification.pug
+
        block script
            script(src='/js/common.min.js')
            script(src='/js/main.min.js')

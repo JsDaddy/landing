@@ -1,6 +1,12 @@
 import * as config from 'config';
 import * as nodemailer from 'nodemailer';
+import * as path from 'path';
 const { pass, user } = config.get('mailer');
+import * as fs from 'fs';
+import * as mustache from 'mustache';
+import * as util from 'util';
+// tslint:disable-next-line: typedef
+const readFile = util.promisify(fs.readFile);
 
 export class MailerService {
   private _transporter: nodemailer.Transporter;
@@ -17,37 +23,40 @@ export class MailerService {
     });
   }
 
-  public async sendMail(body: any, type: string, _lang = 'en'): Promise<{}> {
+  public async sendMail(body: any, type: string, lang = 'en'): Promise<{}> {
     switch (type) {
       case 'course': {
+
+        const file = await readFile(path.join(__dirname, `../../views/email-templates/course.${lang}.mustache`));
+        const output: string =  mustache.render(file.toString(), {name: body.name});
+
         return await this._sendMail({
-          html: `
-            <h2>Hello</h2>
-            <p>Thaks for applying our course. We will contact you as soon as possible to clarify the details.</p>
-          `,
+          html: output,
           subject: 'JSDaddy course',
           to: body.email,
         });
       }
-      // Dear name thanks for contacting us
+
       case 'contacts': {
+
+        const file = await readFile(path.join(__dirname, '../../views/email-templates/email.mustache'));
+        const output: string =  mustache.render(file.toString(), {name: body.name});
+
         return await this._sendMail({
-          html: `
-            <h2>Hello</h2>
-            <p>Thanks for contacting us. We will contact you as soon as possible to clarify the details</p>
-          `,
+          html: output,
           subject: 'JSDaddy contacts',
           to: body.email,
         });
       }
+
       case 'copy': {
-        // body.toString()
         return await this._sendMail({
           subject: 'JSDaddy',
           text: body.toString(),
           to: body.email,
         });
       }
+
       default: {
         return {};
       }

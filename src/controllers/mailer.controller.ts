@@ -13,9 +13,9 @@ export const mailerCtrl = (app: express.Application) => {
 
         await new ProjectParticipentsModel().createParticipent(req.body);
 
-        return res.json({ message: 'Email sent', type: 'Success' });
+        return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
-        return res.json({ message: 'Something went wrong', type: 'Error' });
+        return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },
   );
@@ -29,9 +29,9 @@ export const mailerCtrl = (app: express.Application) => {
 
         await new CourseParticipentsModel().createParticipent(req.body);
 
-        return res.json({ message: 'Email sent', type: 'Success' });
+        return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
-        return res.json({ message: 'Something went wrong', type: 'Error' });
+        return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },
   );

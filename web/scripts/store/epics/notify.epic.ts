@@ -10,7 +10,7 @@ export const notifyEpic = (action$: any, _store: any) => {
     .map((action: any) => action.payload)
     .switchMap((payload: any) => {
       return api.sendEmail(payload.url, payload.data, { 'Content-Language': payload.lang })
-        .map((_data: any) => NotifyActions.ShowNotify('message'))
+        .map((data: any) =>  NotifyActions.ShowNotify(data.data.message[payload.lang]))
         .catch((error: any) => Observable.of(NotifyActions.ErrorNotify(error)));
     });
 };

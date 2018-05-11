@@ -1,5 +1,6 @@
 export function renderNotify(data: any): boolean {
   const element: HTMLElement | null = document.querySelector('.notification');
+
   if (!element) {
     return false;
   }
