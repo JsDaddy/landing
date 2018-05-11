@@ -5,10 +5,12 @@ import * as express from 'express';
 const app = express();
 import '../src/schema';
 
+import { appConf } from './config/app.config';
 import { connectToDb } from './config/db.config';
 import { controllers } from './controllers';
 
 connectToDb();
+appConf(app);
 controllers(app);
 
 app.set('config', config);
