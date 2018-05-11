@@ -45,6 +45,7 @@ export function coursesCtrl(app: express.Application) {
           {
             ...coursesContent,
             courses,
+            lang,
             users,
           });
       } catch (err) {

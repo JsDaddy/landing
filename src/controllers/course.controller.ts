@@ -17,7 +17,7 @@ export const courseCtrl = (app: express.Application) => {
         const courses: any = coursesList
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         const selectedCourse: any = await new CourseModel().getContent({lang, name: id });
-        return res.render('content/course', { ...courseContent, courses, selectedCourse });
+        return res.render('content/course', { ...courseContent, courses, lang, selectedCourse });
       } catch (err) {
         return res.render('content/error');
       }
