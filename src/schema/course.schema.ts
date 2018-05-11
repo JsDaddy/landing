@@ -5,4 +5,4 @@ const courseSchema: mongoose.Schema = new Schema({
   // TODO describe schema
 });
 
-mongoose.model('Course', courseSchema, 'course');
+mongoose.model('Course', courseSchema, 'new_course');

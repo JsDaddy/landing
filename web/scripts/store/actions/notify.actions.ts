@@ -3,24 +3,29 @@ export const HIDE = '[Notify] HIDE';
 export const ERROR = '[Notify] ERROR';
 export const PENDING = '[Notify] PENDING';
 
-export class PendingNotify {
-  public readonly type = PENDING;
-  public constructor(public payload: any) {}
+export function PendingNotify(payload: any) {
+  return {
+    payload,
+    type: PENDING,
+  };
 }
 
-// tslint:disable-next-line
-export class ShowNotify {
-  public readonly type = SHOW;
-  public constructor(public payload: any) {}
+export function ShowNotify(payload: any) {
+  return {
+    payload,
+    type: SHOW,
+  };
 }
 
-// tslint:disable-next-line
-export class ErrorNotify {
-  public readonly type = ERROR;
-  public constructor(public payload: any) {}
+export function ErrorNotify(payload: any) {
+  return {
+    payload,
+    type: ERROR,
+  };
 }
 
-// tslint:disable-next-line
-export class HideNotify {
-  public readonly type = HIDE;
+export function HideNotify() {
+  return {
+    type: HIDE,
+  };
 }

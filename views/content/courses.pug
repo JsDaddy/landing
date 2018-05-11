@@ -52,7 +52,12 @@ block content
             .row
                 .contact-form-wrapper
                     .contact-form-wrapper
-                        //contacts-form.contact_us(btnText=contacts.content.button.text)
+                        contacts-form.contact_us(
+                            btnText=contactsCourses.content.button.text 
+                            courses=courses
+                            schema
+                            showphone="true"
+                        )
             .row
                 .contact-details
                     .email-block

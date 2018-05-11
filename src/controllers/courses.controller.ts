@@ -1,4 +1,5 @@
 import * as express from 'express';
+import { CourseModel } from '../models/course.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from './../models/user.model';
 
@@ -34,10 +35,14 @@ export function coursesCtrl(app: express.Application) {
             lastName: user.lastName[lang],
           };
         });
+        const coursesList: any[] = await new CourseModel().getAllContent({lang});
+        const courses: any = coursesList
+          .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         return res.render(
           'content/courses',
           {
             ...coursesContent,
+            courses,
             users,
           });
       } catch (err) {
