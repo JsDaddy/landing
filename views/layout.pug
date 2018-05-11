@@ -31,13 +31,14 @@ html
           );
           fbq('init', '190979394957908');
           fbq('track', 'PageView');
-
-        //title #{head.title}
+        if head
+          title #{head.title}
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-        // each meta in head.meta
-        //    meta(name=meta.name, content= meta.content)
+        if head
+         each meta in head.meta
+            meta(name=meta.name, content= meta.content)
         meta(property='og:image', content='path/to/image.jpg')
         meta(name='format-detection', content='telephone=no')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
@@ -90,14 +91,15 @@ html
                         .line
                         .text Menu
                         .line
-        block content
+       block content
 
-        footer.footer
-            .copyright #{﻿footer.content.text}
+       if footer
+         footer.footer
+            .copyright #{footer.content.text}
 
-        include content/notification.pug
-        
-        block script
+       include content/notification.pug
+
+       block script
            script(src='/js/common.min.js')
            script(src='/js/main.min.js')
            script(src='/js/contacts-form.min.js')

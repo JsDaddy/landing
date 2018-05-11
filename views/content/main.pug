@@ -7,7 +7,7 @@ block content
                 .banner-content
                         h1 #{mainBanner.content.text.title}
                         p #{mainBanner.content.text.subtitle}
-                        a.contact-btn(href='#contacts') #{mainBanner.content.text}
+                        a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
     section.services#services
         .container
             .header-section-wrapper
@@ -87,7 +87,7 @@ block content
             .row
                 .contact-form-wrapper
                     contacts-form.contact_us(
-                        btnText=contacts.content.button.text 
+                        btnText=contacts.content.button.text
                         schema
                         showphone="false"
                     )
