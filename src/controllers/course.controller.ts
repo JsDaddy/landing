@@ -52,37 +52,37 @@ export const courseCtrl = (app: express.Application) => {
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         const selectedCourse: any = await new CourseModel().getContent({lang, name: id});
 
-                const course = await new CourseModel().getContent({name: id});
-                const mentor: any = await new UserModel().getUser({_id: course.mentor});
-                const bannerContent = {
-                    duration: selectedCourse.duration,
-                    firstName: mentor.firstName[lang],
-                    lastName: mentor.lastName[lang],
-                    price: selectedCourse.price,
-                    shortDescription: selectedCourse.shortDescription,
-                    start: selectedCourse.start,
-                    title: selectedCourse.title,
-                };
-                mentor.firstName = mentor.firstName[lang];
-                mentor.lastName = mentor.lastName[lang];
-                return res.render('content/course', {
-                    banner: {
-                        ...courseContent[banner],
-                        content: {...courseContent[banner].content, info: bannerContent},
-                    },
-                    ...courseContent,
-                    courses,
-                    description: {
-                        ...courseContent[description],
-                        content: selectedCourse.description, descriptionImg: selectedCourse.descriptionImg},
-                    lang,
-                    program: {...courseContent[program], content: selectedCourse.program},
-                    selectedCourse,
-                });
-            } catch
-                (err) {
-                return res.render('content/error');
-            }
+        const course = await new CourseModel().getContent({name: id});
+        const mentor: any = await new UserModel().getUser({_id: course.mentor});
+        const bannerContent = {
+            duration: selectedCourse.duration,
+            firstName: mentor.firstName[lang],
+            lastName: mentor.lastName[lang],
+            price: selectedCourse.price,
+            shortDescription: selectedCourse.shortDescription,
+            start: selectedCourse.start,
+            title: selectedCourse.title,
+        };
+        mentor.firstName = mentor.firstName[lang];
+        mentor.lastName = mentor.lastName[lang];
+        return res.render('content/course', {
+            banner: {
+                ...courseContent[banner],
+                content: {...courseContent[banner].content, info: bannerContent},
+            },
+            ...courseContent,
+            courses,
+            description: {
+                ...courseContent[description],
+                content: selectedCourse.description, descriptionImg: selectedCourse.descriptionImg},
+            lang,
+            program: {...courseContent[program], content: selectedCourse.program},
+            selectedCourse,
+        });
+        } catch
+            (err) {
+            return res.render('content/error');
+        }
         },
     );
 };
