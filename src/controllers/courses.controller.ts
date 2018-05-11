@@ -41,7 +41,6 @@ export function coursesCtrl(app: express.Application) {
         });
         const coursesThumbs: any[] = await new CourseModel().getAllContent({lang});
         coursesContent.coursesThumbs.content = coursesThumbs;
-        console.log(coursesContent.courses);
         const courses: any = coursesThumbs
           .reduce((acc: any, next: any) => [...acc, {id: next.name, title: next.title}], []);
         return res.render(
