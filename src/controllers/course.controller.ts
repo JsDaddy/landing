@@ -57,7 +57,9 @@ export const courseCtrl = (app: express.Application) => {
                     },
                     ...courseContent,
                     courses,
-                    description: {...courseContent[description], content: selectedCourse.description},
+                    description: {
+                        ...courseContent[description],
+                        content: selectedCourse.description, descriptionImg: selectedCourse.descriptionImg},
                     lang,
                     program: {...courseContent[program], content: selectedCourse.program},
                     selectedCourse,
