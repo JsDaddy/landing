@@ -2,9 +2,11 @@ import * as config from 'config';
 import * as nodemailer from 'nodemailer';
 import * as path from 'path';
 const { pass, user } = config.get('mailer');
-import * as fs from 'fs/promises';
+import * as fs from 'fs';
 import * as mustache from 'mustache';
+import * as util from 'util';
 // tslint:disable-next-line: typedef
+const readFile = util.promisify(fs.readFile);
 
 export class MailerService {
   private _transporter: nodemailer.Transporter;
@@ -25,7 +27,7 @@ export class MailerService {
     switch (type) {
       case 'course': {
 
-        const file = await fs.readFile(path.join(process.cwd(), `views/email-templates/course.${lang}.mustache`));
+        const file = await readFile(path.join(process.cwd(), `views/email-templates/course.${lang}.mustache`));
         const output: string =  mustache.render(file.toString(), {name: body.name});
 
         return await this._sendMail({
@@ -37,7 +39,7 @@ export class MailerService {
 
       case 'contacts': {
 
-        const file = await fs.readFile(path.join(process.cwd(), 'views/email-templates/email.mustache'));
+        const file = await readFile(path.join(process.cwd(), 'views/email-templates/email.mustache'));
         const output: string =  mustache.render(file.toString(), {name: body.name});
 
         return await this._sendMail({
