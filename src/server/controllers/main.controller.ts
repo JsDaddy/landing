@@ -1,4 +1,5 @@
 import * as express from 'express';
+import { PortfolioModel } from '../models/portfolio.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
 
@@ -20,9 +21,11 @@ export const mainCtrl = (app: express.Application) => {
           'team',
           'footer',
           'opensource',
+          'portfolio',
         ]);
         mainContent.team.content = users;
         mainContent.head = mainContent.mainHead.content;
+        mainContent.portfolio.content = await new PortfolioModel().getContent();
         return res.render('content/main', mainContent);
       } catch (err) {
         return res.render('content/error');
