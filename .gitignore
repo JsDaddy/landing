@@ -99,6 +99,7 @@ public/js/.*
 
 config/default.yaml
 config/prodaction.yaml
+config/default.json
 
 node_modules/
 public/js
