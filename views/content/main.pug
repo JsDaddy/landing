@@ -78,6 +78,23 @@ block content
                             .soc-link
                                 a(href=member.linkenIn)
                                     i.fa.fa-linkedin-square
+    section#opensource.opensource
+        .container
+            .header-section-wrapper
+                h3 #{﻿opensource.title}
+                .background-section-text #{﻿opensource.﻿bgtext}
+            each package in opensource.content
+                .row
+                    .col-md-8
+                        .img-block
+                            img(src='/img/' + package.src)
+                    .col-md-4
+                        .text-block
+                            p #{package.description}
+                            .contact-btn-wrapper
+                                a.contact-btn(href=package.link) View on GitHub
+                                    i.fa.fa-github
+
 
     section#contacts.contacts
         .container
