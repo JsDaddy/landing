@@ -3,6 +3,7 @@ import { addCurrencyRate } from '../middleware/currency.middleware';
 import {CourseModel} from '../models/course.model';
 import {StaticContentModel} from '../models/static_content.model';
 import {UserModel} from '../models/user.model';
+import { UtilsService } from './../services/utils.service';
 
 export function coursesCtrl(app: express.Application) {
   app.get(
@@ -12,9 +13,9 @@ export function coursesCtrl(app: express.Application) {
       try {
         const { lang } = req.params;
         const coursesContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          'coursesHead',
+          { query: 'coursesHead', replace: 'head', rewrite: true },
+          { query: 'coursesMenu', replace: 'mainMenu' },
           'coursesThumbs',
-          'coursesMenu',
           'coursesBanner',
           'about',
           'advantagesCourses',
@@ -22,18 +23,12 @@ export function coursesCtrl(app: express.Application) {
           'mentors',
           'footer',
         ], req.params.lang);
-        coursesContent.head = coursesContent.coursesHead.content;
-        coursesContent.mainMenu = coursesContent.coursesMenu;
+
         const users: any[] = await new UserModel().getUsers('mentor');
-        coursesContent.mainMenu.content.languages = coursesContent.mainMenu.content.languages.map((language: any) => {
-          if (language.title.toLowerCase() !== lang) {
-            return language;
-          }
-          return {
-            ...language,
-            active: 'active',
-          };
-        });
+
+        coursesContent.mainMenu.content.languages =
+        new UtilsService().getLangulagesLinks(coursesContent.mainMenu.content.languages, lang);
+
         coursesContent.mentors.content = users.map((user) => {
           return {
             ...user,
@@ -66,8 +61,4 @@ export function coursesCtrl(app: express.Application) {
     },
   );
 
-  app.get(
-    '/:lang/courses/:id',
-    async (_req: express.Request, res: express.Response) => res.json({ data: 'Success' }),
-  );
 }
