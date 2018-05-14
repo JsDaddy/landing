@@ -1,7 +1,7 @@
 import * as express from 'express';
+import { PortfolioModel } from '../models/portfolio.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
-import {PortfolioModel} from "../models/portfolio.model";
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -26,7 +26,6 @@ export const mainCtrl = (app: express.Application) => {
         mainContent.team.content = users;
         mainContent.head = mainContent.mainHead.content;
         mainContent.portfolio.content = await new PortfolioModel().getContent();
-        console.log(mainContent);
         return res.render('content/main', mainContent);
       } catch (err) {
         return res.render('content/error');
