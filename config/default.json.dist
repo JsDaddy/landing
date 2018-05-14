@@ -1,11 +1,11 @@
 {
   "dbConfig": {
-    "host": "mongodb://jsdaddy:JSDaddyDB2018@159.89.18.60:27017/jsdaddy"
+    "host": "mongodb://username:password@159.89.18.60:27017/db"
   },
   "nbu_rate": "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json",
   "BASE_URL": "http://127.0.0.1:3000",
   "mailer": {
-    "pass": "JSDaddyMAIL2018",
-    "user": "info.jsdaddy@gmail.com"
+    "pass": "gmailPassword",
+    "user": "gmailAddress"
   }
 }

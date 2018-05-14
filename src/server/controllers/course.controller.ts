@@ -15,17 +15,16 @@ export const courseCtrl = (app: express.Application) => {
       const description = `${id}Description`;
       try {
         const courseContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          'coursesHead',
+          { query: 'coursesHead', replace: 'head', rewrite: true },
+          { query: 'coursesMenu', replace: 'mainMenu' },
           'advantagesCourses',
-          'coursesMenu',
           banner,
           program,
           description,
           'footer',
           'contactsCourses',
         ], lang);
-        courseContent.head = courseContent.coursesHead.content;
-        courseContent.mainMenu = courseContent.coursesMenu;
+
         courseContent.mainMenu.content.menu = courseContent.mainMenu.content.menu.map((item: any) => {
           if (item.link === '#courses') {
             return {
