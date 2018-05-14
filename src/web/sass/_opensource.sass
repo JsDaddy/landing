@@ -1,0 +1,31 @@
+@import "variables"
+.opensource
+  .row
+    border-bottom: 1px solid #cccccc
+    padding-bottom: 45px
+    margin-bottom: 45px
+    position: relative
+    &:last-child
+      border-bottom: none
+  .contact-btn-wrapper
+    position: absolute
+    right: 0
+    bottom: 0
+    .contact-btn
+      vertical-align: middle
+      width: 200px
+      &:hover
+        letter-spacing: 3px
+      .fa
+        font-size: 20px
+        padding-left: 8px
+        display: inline-block
+        vertical-align: middle
+    &.left
+      right: inherit
+      left: 0
+  .text-block
+    display: flex
+    flex-wrap: wrap
+    align-content: space-between
+    padding-bottom: 60px
