@@ -43,12 +43,12 @@ $(document).ready(function () {
 $('.nav-burger').click(function () {
   $(this).toggleClass('active');
   $(this).parents('header').toggleClass('b-bottom');
-
   $(this).siblings('.navigation-wrapper').slideToggle();
-
 });
-$('#menu li a').click(function () {
-  $('#menu li a').removeClass('active');
+$('#main-menu li a').click(function () {
+  $('#main-menu li a').removeClass('active');
+  $('#main-menu li a').siblings('.navigation-wrapper').slideToggle();
+  $('#main-menu li a').parents('header').toggleClass('b-bottom');
   $(this).addClass('active');
 
   if ($(window).width() <= 1199) {
