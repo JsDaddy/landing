@@ -81,30 +81,19 @@ block content
     section#opensource.opensource
         .container
             .header-section-wrapper
-                h3 Open Source
-                .background-section-text Open Source
-                h5.subtitle Subtitle text
-            .row
-                .col-6
-                    .img-block
-                        img(src='/img/' + aboutCompany.content.src)
-                .col-6
-                    .text-block
-                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque dolores earum eum exercitationem harum maiores? Aliquam aliquid asperiores consequuntur expedita illo molestiae molestias possimus praesentium, quia sed sequi, ullam.
-                        .contact-btn-wrapper
-                            a.contact-btn(href="#") View on GitHub
-                                i.fa.fa-github
-
-            .row
-                .col-6
-                    .text-block
-                        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque dolores earum eum exercitationem harum maiores? Aliquam aliquid asperiores consequuntur expedita illo molestiae molestias possimus praesentium, quia sed sequi, ullam.
-                        .contact-btn-wrapper.left
-                            a.contact-btn(href="#") View on GitHub
-                                i.fa.fa-github
-                .col-6
-                    .img-block
-                        img(src='/img/' + aboutCompany.content.src)
+                h3 #{﻿opensource.title}
+                .background-section-text #{﻿opensource.﻿bgtext}
+            each package in opensource.content
+                .row
+                    .col-md-8
+                        .img-block
+                            img(src='/img/' + package.src)
+                    .col-md-4
+                        .text-block
+                            p #{package.description}
+                            .contact-btn-wrapper
+                                a.contact-btn(href=package.link) View on GitHub
+                                    i.fa.fa-github
 
 
     section#contacts.contacts

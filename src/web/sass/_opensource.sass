@@ -1,12 +1,24 @@
 @import "variables"
 .opensource
+  .container
+    display: flex
+    flex-wrap: wrap
   .row
     border-bottom: 1px solid #cccccc
     padding-bottom: 45px
     margin-bottom: 45px
     position: relative
+    &:nth-child(odd)
+      .col-md-8
+        order: 2
+      .col-md-4
+        order: 1
     &:last-child
       border-bottom: none
+    &:nth-child(odd)
+      .contact-btn-wrapper
+        right: inherit
+        left: 0
   .contact-btn-wrapper
     position: absolute
     right: 0
@@ -21,9 +33,6 @@
         padding-left: 8px
         display: inline-block
         vertical-align: middle
-    &.left
-      right: inherit
-      left: 0
   .text-block
     display: flex
     flex-wrap: wrap
