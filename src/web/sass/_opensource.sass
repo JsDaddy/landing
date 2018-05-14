@@ -3,22 +3,22 @@
   .container
     display: flex
     flex-wrap: wrap
-  .row
-    border-bottom: 1px solid #cccccc
-    padding-bottom: 45px
-    margin-bottom: 45px
-    position: relative
-    &:nth-child(odd)
-      .col-md-8
-        order: 2
-      .col-md-4
-        order: 1
-    &:last-child
-      border-bottom: none
-    &:nth-child(odd)
-      .contact-btn-wrapper
-        right: inherit
-        left: 0
+    .row
+      border-bottom: 1px solid #cccccc
+      padding-bottom: 45px
+      margin-bottom: 45px
+      position: relative
+      &:nth-child(odd)
+        .col-md-8
+          order: 2
+        .col-md-4
+          order: 1
+      &:last-child
+        border-bottom: none
+      &:nth-child(odd)
+        .contact-btn-wrapper
+          right: inherit
+          left: 0
   .contact-btn-wrapper
     position: absolute
     right: 0
@@ -38,3 +38,6 @@
     flex-wrap: wrap
     align-content: space-between
     padding-bottom: 60px
+  .header-section-wrapper
+    .background-section-text
+      color: #f1f2f2
