@@ -8,7 +8,7 @@ block content
                     h1 #{coursesBanner.content.text.title}
                     p #{coursesBanner.content.text.subtitle}
 
-    section#aboutSchool.about-school
+    section#about.about-school
         .container
             .header-section-wrapper
                 h3 #{about.title}
@@ -18,20 +18,39 @@ block content
                     img(src='/img/' + about.src)
                 .col-lg-8
                     p #{about.content.text}
-    section(id="ourTeaches" class="our-teaches")
-      .container
-          .header-section-wrapper
-              h3 #{mentors.title}
-              .background-section-text #{mentors.title}
-          .slider-teachers
-           each mentor in mentors.content
-              .item-wrapper
-                .photo-wrapper
-                  img(src=/img/+ mentor.photo)
-                .name #{mentor.firstName} #{mentor.lastName}
-                .position #{mentor.position}
-                .about
-                  .p
+    section#courses.courses
+        .container
+            .header-section-wrapper
+                h3 #{coursesThumbs.title}
+                .background-section-text #{coursesThumbs.title}
+            .row
+                each thumb in coursesThumbs.content
+                    .col-lg-4
+                        .item-wrapper
+                            .start-course #{thumb.﻿start}
+                            div(class='course-type ' + thumb.class) #{thumb.type}
+                            .img-wrapper
+                                img(src='/img/' + thumb.src, alt=thumb.﻿alt)
+                            h3.name #{thumb.title}
+                            .bottom-block
+                                .duration #{thumb.duration}
+                                .prices #{thumb.price}
+                            a.link(href=thumb.href)
+                                i.fa.fa-arrow-right
+    section(id="mentors" class="our-teaches")
+        .container
+            .header-section-wrapper
+                h3 #{mentors.title}
+                .background-section-text #{mentors.title}
+            .slider-teachers
+                each mentor in mentors.content
+                    .item-wrapper
+                        .photo-wrapper
+                            img(src=/img/ + mentor.photo)
+                        .name #{mentor.firstName} #{mentor.lastName}
+                        .position #{mentor.position}
+                        .about
+                            .p #{mentor.about}
     section.advantages
         .container
             .header-section-wrapper
@@ -52,7 +71,13 @@ block content
             .row
                 .contact-form-wrapper
                     .contact-form-wrapper
-                        //contacts-form.contact_us(btnText=contacts.content.button.text)
+                        contacts-form.apply_course(
+                            btnText=contactsCourses.content.button.text 
+                            courses=courses
+                            schema
+                            showphone="true"
+                            lang=lang
+                        )
             .row
                 .contact-details
                     .email-block
