@@ -4,6 +4,7 @@ import { CourseModel } from '../models/course.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
 import { logger } from './../main';
+import { UtilsService } from './../services/utils.service';
 
 export const courseCtrl = (app: express.Application) => {
   app.get(
@@ -26,46 +27,14 @@ export const courseCtrl = (app: express.Application) => {
           'contactsCourses',
         ], lang);
 
-        courseContent.mainMenu.content.menu = courseContent.mainMenu.content.menu.map((item: any) => {
-          if (item.link === '#courses') {
-            return {
-              ...item,
-              link: `/${lang}/courses#courses`,
-            };
-          }
-          if (item.link === '#mentors') {
-            return {
-              ...item,
-              link: `/${lang}/courses#mentors`,
-            };
-          }
-          return item;
-        });
-        courseContent.mainMenu.content.languages = courseContent.mainMenu.content.languages.map((language: any) => {
-          const langMenu = {
-            ...language,
-            link: `/${language.title.toLowerCase()}/courses/${id}`,
-          };
-          if (language.title.toLowerCase() !== lang) {
-            return langMenu;
-          }
-          return {
-            ...langMenu,
-            active: 'active',
-          };
-        });
+        courseContent.mainMenu.content.menu =
+        new UtilsService().getCourseLinks(courseContent.mainMenu.content.menu, lang);
+
         courseContent.mainMenu.content.languages =
-          courseContent.mainMenu.content.languages.map((language: any) => {
-            if (language.title.toLowerCase() !== lang) {
-              return language;
-            }
-            return {
-              ...language,
-              active: 'active',
-            };
-          });
-        const coursesList: any[] = await new CourseModel().getAllContent({ lang });
-        const courses: any = coursesList
+        new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, id);
+
+        const coursesFormList: any[] = await new CourseModel().getAllContent({ lang });
+        const courses: any = coursesFormList
           .reduce((acc: any, next: any) => [
             ...acc,
             {
@@ -80,22 +49,23 @@ export const courseCtrl = (app: express.Application) => {
 
         const course = await new CourseModel().getContent({ name: id });
         const mentor: any = await new UserModel().getUser({ _id: course.mentor });
+        mentor.firstName = mentor.firstName[lang];
+        mentor.lastName = mentor.lastName[lang];
         const bannerContent = {
           duration: selectedCourse.duration,
-          firstName: mentor.firstName[lang],
-          lastName: mentor.lastName[lang],
+          firstName: mentor.firstName,
+          lastName: mentor.lastName,
           price: `${Math.round(req.params.currency * selectedCourse.price)}\₴ (~${selectedCourse.price}\$)`,
           shortDescription: selectedCourse.shortDescription,
           start: selectedCourse.start,
           title: selectedCourse.title,
         };
-        mentor.firstName = mentor.firstName[lang];
-        mentor.lastName = mentor.lastName[lang];
+        const courseBanner = courseContent[banner];
         return res.render('content/course', {
           banner: {
-            ...courseContent[banner],
+            ...courseBanner,
             content: {
-              ...courseContent[banner].content,
+              ...courseBanner.content,
               info: bannerContent,
             },
           },
