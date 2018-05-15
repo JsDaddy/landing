@@ -16,9 +16,10 @@ export const courseCtrl = (app: express.Application) => {
       const banner = `${id}Banner`;
       const program = `${id}Program`;
       const description = `${id}Description`;
+      const head = `${id}Head`;
       try {
         const courseContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          { query: 'coursesHead', replace: 'head', rewrite: true },
+          { query: head, replace: 'head', rewrite: true },
           { query: 'coursesMenu', replace: 'mainMenu' },
           'advantagesCourses',
           banner,

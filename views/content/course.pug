@@ -6,7 +6,7 @@ block content
             .banner-content-wrapper
                 .banner-content
                     .img-banner-wrapper
-                        img(src='/img/' + banner.content.icon)
+                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
                     .banner-text
                         h1 #{banner.content.info.title}
                         p #{banner.content.info.shortDescription}
@@ -24,7 +24,7 @@ block content
             .row
                 .col-lg-5
                     .about-course-img
-                        img(src='/img/' + description.descriptionImg)
+                        img(src='/img/' + description.descriptionImg.src, alt=description.descriptionImg.alt)
                 .col-lg-7
                     each text in description.content
                         p #{text}
@@ -51,7 +51,7 @@ block content
                     .col-lg-2.col-md-6
                         .item
                             .ico-wrap
-                                img(src='/img/' + item.icon)
+                                img(src='/img/' + item.icon, alt=item.text)
                             p #{item.text}
     section#contacts.contacts
         .container

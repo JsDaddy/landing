@@ -26,6 +26,9 @@ export const mainCtrl = (app: express.Application) => {
         ]);
         mainContent.team.content = users;
         mainContent.portfolio.content = await new PortfolioModel().getContent();
+
+        console.log(mainContent);
+
         return res.render('content/main', mainContent);
       } catch (err) {
         logger.log('error', err);
