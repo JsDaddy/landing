@@ -25,6 +25,12 @@ $(document).ready(function () {
       }
     ]
   });
+  $('.sl-events').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false
+  });
   $('.testimonials-wrap').slick({
       infinite: true,
       slidesToShow: 2,
@@ -33,7 +39,6 @@ $(document).ready(function () {
       autoplaySpeed: 2000,
       arrows: false
   });
-
   var type = window.location.hash.substr(1);
   if (!type) {
     return;

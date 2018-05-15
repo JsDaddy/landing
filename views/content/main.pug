@@ -21,7 +21,6 @@ block content
                                 img(src=i.src)
                             h5 #{i.title}
                             p #{i.text}
-
     section#technologies.technologies
         .container
             .header-section-wrapper
@@ -112,6 +111,32 @@ block content
                                     each icon in project.technologies
                                         li
                                             img(src='/img/' + icon)
+    section#events.events
+        .container
+            .header-section-wrapper
+                h3 Events
+                .background-section-text Events
+            .sl-events
+                .event-item
+                    .event
+                        .event-img(style=`background-image: url("/img/meetup-1.jpg" )`)
+                            span.label Meetup
+                        .event-title First Angular Meetup in Kharkiv
+                        .event-desc On November 3, the first meeting of the Kharkiv Angular Community will be held.
+                .event-item
+                    .event
+                        .event-img(style=`background-image: url("/img/meetup-2.jpg" )`)
+                            span.label Meetup
+                        .event-title Angular Meetup #2 - Kharkiv Angular Community
+                        .event-desc The second Angular Kharkiv Meetup, which took place on February 23 at 19:00 (Fabrika.space)
+                .event-item
+                    .event
+                        .event-img
+                            span.label label
+                            img(src='/img/' + aboutCompany.content.src)
+                        .event-title Event-title
+                        .event-desc event-desc
+
     section#contacts.contacts
         .container
             .header-section-wrapper
