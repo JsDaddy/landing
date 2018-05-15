@@ -28,7 +28,7 @@ app.set('http', axios.create());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.get('*', (_req, res: express.Response) => {
-  return res.render('content/error');
+  return res.render('content/error-en');
 });
 
 app.listen(3000);

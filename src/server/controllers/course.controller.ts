@@ -115,7 +115,7 @@ export const courseCtrl = (app: express.Application) => {
         });
       } catch (err) {
         logger.log('error', err);
-        return res.render('content/error');
+        return res.render(`content/error-${lang}`);
       }
     },
   );
