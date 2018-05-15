@@ -2,6 +2,7 @@ import * as express from 'express';
 import { PortfolioModel } from '../models/portfolio.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
+import { logger } from './../main';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -28,6 +29,7 @@ export const mainCtrl = (app: express.Application) => {
         mainContent.portfolio.content = await new PortfolioModel().getContent();
         return res.render('content/main', mainContent);
       } catch (err) {
+        logger.log('error', err);
         return res.render('content/error');
       }
     },
