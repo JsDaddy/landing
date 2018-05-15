@@ -3,6 +3,7 @@ import { addCurrencyRate } from '../middleware/currency.middleware';
 import { CourseModel } from '../models/course.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
+import { logger } from './../main';
 import { UtilsService } from './../services/utils.service';
 
 export const courseCtrl = (app: express.Application) => {
@@ -83,7 +84,8 @@ export const courseCtrl = (app: express.Application) => {
           selectedCourse,
         });
       } catch (err) {
-        return res.render('content/error');
+        logger.log('error', err);
+        return res.render(`content/error-${lang}`);
       }
     },
   );

@@ -12,6 +12,7 @@ brew install dart --devel
 #### Development
 - > dart --enable-vm-service bin/dev.dart
 - > npm run start:dev
+- > npm run build:js:w
 
 #### Start server on the 3000 port
 - > http://localhost:3000/

@@ -3,6 +3,7 @@ import { addCurrencyRate } from '../middleware/currency.middleware';
 import {CourseModel} from '../models/course.model';
 import {StaticContentModel} from '../models/static_content.model';
 import {UserModel} from '../models/user.model';
+import { logger } from './../main';
 import { UtilsService } from './../services/utils.service';
 
 export function coursesCtrl(app: express.Application) {
@@ -10,8 +11,8 @@ export function coursesCtrl(app: express.Application) {
     '/:lang/courses',
     addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
+      const { lang } = req.params;
       try {
-        const { lang } = req.params;
         const coursesContent: IHashMap = await new StaticContentModel().getContentHashMap([
           { query: 'coursesHead', replace: 'head', rewrite: true },
           { query: 'coursesMenu', replace: 'mainMenu' },
@@ -56,7 +57,8 @@ export function coursesCtrl(app: express.Application) {
             users,
           });
       } catch (err) {
-        return res.render('content/error');
+        logger.log('error', err);
+        return res.render(`content/error-${lang}`);
       }
     },
   );
