@@ -7,5 +7,10 @@
   "mailer": {
     "pass": "gmailPassword",
     "user": "gmailAddress"
-  }
+  },
+  "sitemap": {
+    "hostname": "http://jsdaddy.io/",
+    "cacheTime": 600000
+  },
+  "langs": ["en", "ru"]  
 }
