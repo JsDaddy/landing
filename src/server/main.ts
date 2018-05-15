@@ -5,10 +5,10 @@ import * as winston from 'winston';
 
 export const logger = new winston.Logger({
   transports: [
-      new winston.transports.File({
-        filename: './logs/all-logs.log',
-        level: 'info',
-      }),
+    new winston.transports.File({
+      filename: './logs/all-logs.log',
+      level: 'info',
+    }),
   ],
 });
 
@@ -27,8 +27,10 @@ app.set('config', config);
 app.set('http', axios.create());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
-app.get('*', (_req, res: express.Response) => {
-  return res.render('content/error-en');
+app.get('*', (req, res: express.Response) => {
+  const urlLang = req.url.split('/')[1];
+  const lang = app.get('config').get('langs').includes(urlLang) ? urlLang : 'en';
+  return res.render(`content/error-${lang}`);
 });
 
 app.listen(3000);

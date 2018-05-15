@@ -11,7 +11,8 @@ export const courseCtrl = (app: express.Application) => {
     '/:lang/courses/:id',
     addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
-      const { lang, id } = req.params;
+      // tslint:disable-next-line:prefer-const
+      let { lang, id } = req.params;
       const banner = `${id}Banner`;
       const program = `${id}Program`;
       const description = `${id}Description`;
@@ -28,10 +29,10 @@ export const courseCtrl = (app: express.Application) => {
         ], lang);
 
         courseContent.mainMenu.content.menu =
-        new UtilsService().getCourseLinks(courseContent.mainMenu.content.menu, lang);
+          new UtilsService().getCourseLinks(courseContent.mainMenu.content.menu, lang);
 
         courseContent.mainMenu.content.languages =
-        new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, id);
+          new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, id);
 
         const coursesFormList: any[] = await new CourseModel().getAllContent({ lang });
         const courses: any = coursesFormList
@@ -46,9 +47,14 @@ export const courseCtrl = (app: express.Application) => {
           lang,
           name: id,
         });
-
+        if (selectedCourse === null) {
+          throw new Error('selected Course not found');
+        }
         const course = await new CourseModel().getContent({ name: id });
         const mentor: any = await new UserModel().getUser({ _id: course.mentor });
+        if (mentor === null) {
+          throw new Error('mentor not found');
+        }
         mentor.firstName = mentor.firstName[lang];
         mentor.lastName = mentor.lastName[lang];
         const bannerContent = {
@@ -85,6 +91,8 @@ export const courseCtrl = (app: express.Application) => {
         });
       } catch (err) {
         logger.log('error', err);
+        // TODO aggregate from db
+        lang = app.get('config').get('langs').includes(lang) ? lang : 'en';
         return res.render(`content/error-${lang}`);
       }
     },
