@@ -1,9 +1,9 @@
 import * as express from 'express';
+import { EventsModel } from '../models/events.model';
 import { PortfolioModel } from '../models/portfolio.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
 import { logger } from './../main';
-import { EventsModel } from "../models/events.model";
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -29,7 +29,6 @@ export const mainCtrl = (app: express.Application) => {
         mainContent.team.content = users;
         mainContent.portfolio.content = await new PortfolioModel().getContent();
         mainContent.events.content = await new EventsModel().getContent();
-        console.log(mainContent.events.content);
         return res.render('content/main', mainContent);
       } catch (err) {
         logger.log('error', err);
