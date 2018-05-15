@@ -18,7 +18,7 @@ block content
                     .col-md-4
                         .item-content-block
                             .icon
-                                img(src=i.src)
+                                img(src=i.src, alt=i.title)
                             h5 #{i.title}
                             p #{i.text}
 
@@ -32,7 +32,7 @@ block content
                     each i in technologies.content
                         .col-6.col-sm-4.col-md-2
                             .img-wrapper
-                                img(src='/img/' + i.src)
+                                img(src='/img/' + i.src, alt=i.alt)
 
     section.advantages
         .container
@@ -45,9 +45,7 @@ block content
                         .item-content-block
                             .icon
                                 img(
-                                    src='/img/' + i.src
-                                    alt=i.alt
-                                    )
+                                    src='/img/' + i.src alt=i.alt)
                             h5 #{i.title}
                             p #{i.text}
 
@@ -61,7 +59,7 @@ block content
                     h5 #{aboutCompany.content.text.title}
                     p #{aboutCompany.content.text.description}
                 .img-block
-                    img(src='/img/' + aboutCompany.content.src)
+                    img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
     section#team
         .container
             .header-section-wrapper
@@ -72,7 +70,7 @@ block content
                     .col-12.col-lg-3
                         .item-wrapper
                             .photo-wrapper
-                                img(src='/img/' + member.photo)
+                                img(src='/img/' + member.photo, alt=member.lastName.en)
                             .name #{member.firstName.en} #{member.lastName.en}
                             .position #{member.position}
                             .soc-link
@@ -87,7 +85,7 @@ block content
                 .row
                     .col-md-8
                         .img-block
-                            img(src='/img/' + package.src)
+                            img(src='/img/' + package.src, alt=package.alt)
                     .col-md-4
                         .text-block
                             p #{package.description}
@@ -111,7 +109,7 @@ block content
                                 ul
                                     each icon in project.technologies
                                         li
-                                            img(src='/img/' + icon)
+                                            img(src='/img/' + icon.﻿src, alt=icon.﻿alt)
     section#contacts.contacts
         .container
             .header-section-wrapper
