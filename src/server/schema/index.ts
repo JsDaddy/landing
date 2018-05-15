@@ -1,5 +1,6 @@
 import './course-participents.schema';
 import './course.schema';
+import './events.schema';
 import './portfolio.schema';
 import './project-participents.schema';
 import './static_sections.schema';

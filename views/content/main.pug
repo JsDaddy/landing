@@ -21,7 +21,6 @@ block content
                                 img(src=i.src, alt=i.title)
                             h5 #{i.title}
                             p #{i.text}
-
     section#technologies.technologies
         .container
             .header-section-wrapper
@@ -110,6 +109,26 @@ block content
                                     each icon in project.technologies
                                         li
                                             img(src='/img/' + icon.﻿src, alt=icon.﻿alt)
+    section#events.events
+        .container
+            .header-section-wrapper
+                h3 #{events.title}
+                .background-section-text #{events.title}
+            each el in events.content
+                .sl-events
+                    each item in el.event
+                        .event-item
+                            .event
+                                .event-img(style=`background-image: url("/img/${item.src}" )`)
+                                    span.label #{item.label}
+                                .event-title #{item.title}
+                                .event-desc #{item.description}
+
+
+
+
+
+
     section#contacts.contacts
         .container
             .header-section-wrapper
