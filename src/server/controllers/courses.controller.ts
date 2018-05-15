@@ -10,8 +10,8 @@ export function coursesCtrl(app: express.Application) {
     '/:lang/courses',
     addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
+      const { lang } = req.params;
       try {
-        const { lang } = req.params;
         const coursesContent: IHashMap = await new StaticContentModel().getContentHashMap([
           'coursesHead',
           'coursesThumbs',
@@ -63,7 +63,7 @@ export function coursesCtrl(app: express.Application) {
           });
       } catch (err) {
         logger.log('error', err);
-        return res.render('content/error');
+        return res.render(`content/error-${lang}`);
       }
     },
   );

@@ -30,7 +30,7 @@ export const mainCtrl = (app: express.Application) => {
         return res.render('content/main', mainContent);
       } catch (err) {
         logger.log('error', err);
-        return res.render('content/error');
+        return res.render(`content/error-en`);
       }
     },
   );
