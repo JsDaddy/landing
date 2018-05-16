@@ -19,8 +19,15 @@ export const courseCtrl = (app: express.Application) => {
       const head = `${id}Head`;
       try {
         const courseContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          { query: head, replace: 'head', rewrite: true },
-          { query: 'coursesMenu', replace: 'mainMenu' },
+          {
+            query: head,
+            replace: 'head',
+            rewrite: true,
+          },
+          {
+            query: 'coursesMenu',
+            replace: 'mainMenu',
+          },
           'advantagesCourses',
           banner,
           program,
@@ -33,7 +40,7 @@ export const courseCtrl = (app: express.Application) => {
           new UtilsService().getCourseLinks(courseContent.mainMenu.content.menu, lang);
 
         courseContent.mainMenu.content.languages =
-          new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, id);
+          new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, true, id);
 
         const coursesFormList: any[] = await new CourseModel().getAllContent({ lang });
         const courses: any = coursesFormList
@@ -93,7 +100,9 @@ export const courseCtrl = (app: express.Application) => {
       } catch (err) {
         logger.log('error', err);
         // TODO aggregate from db
-        lang = app.get('config').get('langs').includes(lang) ? lang : 'en';
+        lang = app.get('config')
+          .get('langs')
+          .includes(lang) ? lang : 'en';
         return res.render(`content/error-${lang}`);
       }
     },

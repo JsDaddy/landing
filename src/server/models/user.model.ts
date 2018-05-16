@@ -13,6 +13,9 @@ export class UserModel {
 
   public async getUser(query: any): Promise<any> {
     const userModel: mongoose.Model<mongoose.Document> = mongoose.model('User');
-    return await userModel.findOne(query);
+    return await userModel.findOne({
+      ...query,
+      active: true,
+    });
   }
 }
