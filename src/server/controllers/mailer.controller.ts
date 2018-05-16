@@ -2,6 +2,7 @@ import * as express from 'express';
 import { CourseParticipentsModel } from '../models/courseParticipents.model';
 import { ProjectParticipentsModel } from '../models/projectParticipents.model';
 import { MailerService } from '../services/mailer.service';
+import { logger } from './../main';
 
 export const mailerCtrl = (app: express.Application) => {
   app.post(
@@ -15,6 +16,7 @@ export const mailerCtrl = (app: express.Application) => {
 
         return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
+        logger.log('error', err);
         return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },
@@ -31,6 +33,7 @@ export const mailerCtrl = (app: express.Application) => {
 
         return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
+        logger.log('error', err);
         return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },

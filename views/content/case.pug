@@ -6,30 +6,29 @@ block content
             .banner-content-wrapper
                 .banner-content
                     .banner-text
-                        h1 Tokenize
-                        p Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the first exchange to let you trade blockchain ideas, knowledge and values.
+                        h1 #{projectBanner.content.banner.title}
+                        p #{projectBanner.content.﻿shortdescription}
                     .btn-banner
-                        a.contact-btn(href='#') Contact Us
+                        a.contact-btn(href=﻿projectBanner.content.button.link) #{﻿projectBanner.content.button.text}
 
     section.about-case
         .container
             .header-section-wrapper
-                h3 About project
-                div.background-section-text About project
+                h3 #{aboutProject.title}
+                div.background-section-text #{aboutProject.title}
             .row
                 .col-lg-6
                     .img-wrapper
-                        img(src="/img/about-tknz-img.png")
+                        img(src='/img/' + aboutProject.content.﻿about.src, alt=aboutProject.content.﻿about.alt)
                 .col-lg-6
-                    p Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the first exchange to let you trade blockchain ideas, knowledge and values.
-                    p Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the first exchange to let you trade blockchain ideas, knowledge and values.
-                    p Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the first exchange to let you trade blockchain ideas, knowledge and values.
+                    each item in aboutProject.content.about.paragraph
+                        p #{item.text}
 
     section.tech-info
         .container
             .header-section-wrapper
-                h3 Technical info
-                div.background-section-text Technical info
+                h3 #{technicalInfo.title}
+                //div.background-section-text #{technicalInfo.title}
             .row
                 .col-lg-6
                     .tech-info-wrapper

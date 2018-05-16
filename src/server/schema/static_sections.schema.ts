@@ -7,6 +7,7 @@ const staticContentSchema: mongoose.Schema = new Schema({
   lang: String,
   name: String,
   title: String,
+  button: Object,
 });
 
 mongoose.model('StaticContent', staticContentSchema, 'static_sections');

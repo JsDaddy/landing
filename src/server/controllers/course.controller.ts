@@ -3,20 +3,31 @@ import { addCurrencyRate } from '../middleware/currency.middleware';
 import { CourseModel } from '../models/course.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
+import { logger } from './../main';
+import { UtilsService } from './../services/utils.service';
 
 export const courseCtrl = (app: express.Application) => {
   app.get(
     '/:lang/courses/:id',
     addCurrencyRate(app),
     async (req: express.Request, res: express.Response) => {
-      const { lang, id } = req.params;
+      // tslint:disable-next-line:prefer-const
+      let { lang, id } = req.params;
       const banner = `${id}Banner`;
       const program = `${id}Program`;
       const description = `${id}Description`;
+      const head = `${id}Head`;
       try {
         const courseContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          { query: 'coursesHead', replace: 'head', rewrite: true },
-          { query: 'coursesMenu', replace: 'mainMenu' },
+          {
+            query: head,
+            replace: 'head',
+            rewrite: true,
+          },
+          {
+            query: 'coursesMenu',
+            replace: 'mainMenu',
+          },
           'advantagesCourses',
           banner,
           program,
@@ -25,46 +36,14 @@ export const courseCtrl = (app: express.Application) => {
           'contactsCourses',
         ], lang);
 
-        courseContent.mainMenu.content.menu = courseContent.mainMenu.content.menu.map((item: any) => {
-          if (item.link === '#courses') {
-            return {
-              ...item,
-              link: `/${lang}/courses#courses`,
-            };
-          }
-          if (item.link === '#mentors') {
-            return {
-              ...item,
-              link: `/${lang}/courses#mentors`,
-            };
-          }
-          return item;
-        });
-        courseContent.mainMenu.content.languages = courseContent.mainMenu.content.languages.map((language: any) => {
-          const langMenu = {
-            ...language,
-            link: `/${language.title.toLowerCase()}/courses/${id}`,
-          };
-          if (language.title.toLowerCase() !== lang) {
-            return langMenu;
-          }
-          return {
-            ...langMenu,
-            active: 'active',
-          };
-        });
+        courseContent.mainMenu.content.menu =
+          new UtilsService().getCourseLinks(courseContent.mainMenu.content.menu, lang);
+
         courseContent.mainMenu.content.languages =
-          courseContent.mainMenu.content.languages.map((language: any) => {
-            if (language.title.toLowerCase() !== lang) {
-              return language;
-            }
-            return {
-              ...language,
-              active: 'active',
-            };
-          });
-        const coursesList: any[] = await new CourseModel().getAllContent({ lang });
-        const courses: any = coursesList
+          new UtilsService().getLangulagesLinks(courseContent.mainMenu.content.languages, lang, true, id);
+
+        const coursesFormList: any[] = await new CourseModel().getAllContent({ lang });
+        const courses: any = coursesFormList
           .reduce((acc: any, next: any) => [
             ...acc,
             {
@@ -76,25 +55,31 @@ export const courseCtrl = (app: express.Application) => {
           lang,
           name: id,
         });
-
+        if (selectedCourse === null) {
+          throw new Error('selected Course not found');
+        }
         const course = await new CourseModel().getContent({ name: id });
         const mentor: any = await new UserModel().getUser({ _id: course.mentor });
+        if (mentor === null) {
+          throw new Error('mentor not found');
+        }
+        mentor.firstName = mentor.firstName[lang];
+        mentor.lastName = mentor.lastName[lang];
         const bannerContent = {
           duration: selectedCourse.duration,
-          firstName: mentor.firstName[lang],
-          lastName: mentor.lastName[lang],
+          firstName: mentor.firstName,
+          lastName: mentor.lastName,
           price: `${Math.round(req.params.currency * selectedCourse.price)}\₴ (~${selectedCourse.price}\$)`,
           shortDescription: selectedCourse.shortDescription,
           start: selectedCourse.start,
           title: selectedCourse.title,
         };
-        mentor.firstName = mentor.firstName[lang];
-        mentor.lastName = mentor.lastName[lang];
+        const courseBanner = courseContent[banner];
         return res.render('content/course', {
           banner: {
-            ...courseContent[banner],
+            ...courseBanner,
             content: {
-              ...courseContent[banner].content,
+              ...courseBanner.content,
               info: bannerContent,
             },
           },
@@ -113,7 +98,12 @@ export const courseCtrl = (app: express.Application) => {
           selectedCourse,
         });
       } catch (err) {
-        return res.render('content/error');
+        logger.log('error', err);
+        // TODO aggregate from db
+        lang = app.get('config')
+          .get('langs')
+          .includes(lang) ? lang : 'en';
+        return res.render(`content/error-${lang}`);
       }
     },
   );

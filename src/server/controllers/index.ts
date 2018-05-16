@@ -4,6 +4,7 @@ import { courseCtrl } from './course.controller';
 import { coursesCtrl } from './courses.controller';
 import { mailerCtrl } from './mailer.controller';
 import { mainCtrl } from './main.controller';
+import { sitemapCtrl } from './sitemap.controller';
 
 export const controllers: (app: Application) => void = (app: Application) => {
   mainCtrl(app);
@@ -11,4 +12,5 @@ export const controllers: (app: Application) => void = (app: Application) => {
   coursesCtrl(app);
   mailerCtrl(app);
   caseCtrl(app);
+  sitemapCtrl(app);
 };

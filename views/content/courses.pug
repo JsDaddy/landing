@@ -30,7 +30,7 @@ block content
                             .start-course #{thumb.﻿start}
                             div(class='course-type ' + thumb.class) #{thumb.type}
                             .img-wrapper
-                                img(src='/img/' + thumb.src, alt=thumb.﻿alt)
+                                img(src='/img/' + thumb.logo.src, alt=thumb.﻿alt)
                             h3.name #{thumb.title}
                             .bottom-block
                                 .duration #{thumb.duration}
@@ -46,7 +46,7 @@ block content
                 each mentor in mentors.content
                     .item-wrapper
                         .photo-wrapper
-                            img(src=/img/ + mentor.photo)
+                            img(src=/img/ + mentor.photo, alt=mentor.lastName)
                         .name #{mentor.firstName} #{mentor.lastName}
                         .position #{mentor.position}
                         .about
@@ -61,7 +61,7 @@ block content
                     .col-lg-2.col-md-6
                         .item
                             .ico-wrap
-                                img(src='/img/' + item.icon)
+                                img(src='/img/' + item.icon, alt=item.text)
                             p #{item.text}
     section#contacts.contacts
         .container

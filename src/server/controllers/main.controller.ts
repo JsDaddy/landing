@@ -1,7 +1,9 @@
 import * as express from 'express';
+import { EventsModel } from '../models/events.model';
 import { PortfolioModel } from '../models/portfolio.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { UserModel } from '../models/user.model';
+import { logger } from './../main';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -10,7 +12,8 @@ export const mainCtrl = (app: express.Application) => {
       try {
         const users: any[] = await new UserModel().getUsers('member');
         const mainContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          'mainHead',
+          { query: 'mainHead', replace: 'head', rewrite: true },
+          'events',
           'mainMenu',
           'mainBanner',
           'services',
@@ -24,11 +27,12 @@ export const mainCtrl = (app: express.Application) => {
           'portfolio',
         ]);
         mainContent.team.content = users;
-        mainContent.head = mainContent.mainHead.content;
         mainContent.portfolio.content = await new PortfolioModel().getContent();
+        mainContent.events.content = await new EventsModel().getContent();
         return res.render('content/main', mainContent);
       } catch (err) {
-        return res.render('content/error');
+        logger.log('error', err);
+        return res.render(`content/error-en`);
       }
     },
   );

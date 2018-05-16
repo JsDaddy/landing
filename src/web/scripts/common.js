@@ -25,6 +25,30 @@ $(document).ready(function () {
       }
     ]
   });
+  $('.sl-events').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+          autoplaySpeed: 2000
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 2000
+        }
+      }
+    ]
+  });
   $('.testimonials-wrap').slick({
       infinite: true,
       slidesToShow: 2,
@@ -33,7 +57,6 @@ $(document).ready(function () {
       autoplaySpeed: 2000,
       arrows: false
   });
-
   var type = window.location.hash.substr(1);
   if (!type) {
     return;
