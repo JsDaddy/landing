@@ -1,4 +1,5 @@
 import { Application } from 'express';
+import { caseCtrl } from './case.controller';
 import { courseCtrl } from './course.controller';
 import { coursesCtrl } from './courses.controller';
 import { mailerCtrl } from './mailer.controller';
@@ -9,4 +10,5 @@ export const controllers: (app: Application) => void = (app: Application) => {
   courseCtrl(app);
   coursesCtrl(app);
   mailerCtrl(app);
+  caseCtrl(app);
 };
