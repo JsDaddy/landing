@@ -32,7 +32,6 @@ block content
                         .col-6.col-sm-4.col-md-2
                             .img-wrapper
                                 img(src='/img/' + i.src, alt=i.alt)
-
     section.advantages
         .container
             .header-section-wrapper
@@ -47,7 +46,6 @@ block content
                                     src='/img/' + i.src alt=i.alt)
                             h5 #{i.title}
                             p #{i.text}
-
     section#about.why-we-are
         .container
             .header-section-wrapper
@@ -113,7 +111,7 @@ block content
         .container
             .header-section-wrapper
                 h3 #{events.title}
-                .background-section-text #{events.title}
+                .background-section-text #{events.bgtitle}
             each el in events.content
                 .sl-events
                     each item in el.event
@@ -123,12 +121,6 @@ block content
                                     span.label #{item.label}
                                 .event-title #{item.title}
                                 .event-desc #{item.description}
-
-
-
-
-
-
     section#contacts.contacts
         .container
             .header-section-wrapper

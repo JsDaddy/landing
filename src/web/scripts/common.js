@@ -29,7 +29,25 @@ $(document).ready(function () {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          autoplay: true,
+          autoplaySpeed: 2000
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          autoplay: true,
+          autoplaySpeed: 2000
+        }
+      }
+    ]
   });
   $('.testimonials-wrap').slick({
       infinite: true,
