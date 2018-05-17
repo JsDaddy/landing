@@ -1,9 +1,10 @@
 import * as config from 'config';
 import * as express from 'express';
-import { CourseModel } from './../models/course.model';
+import {CourseModel} from './../models/course.model';
+const {cacheTime, hostname} = config.get('sitemap');
+import {ProjectsModel} from '../models/projects.model';
 // tslint:disable-next-line:no-var-requires
 const sm = require('sitemap');
-const { cacheTime, hostname } = config.get('sitemap');
 
 export const sitemapCtrl = (app: express.Application) => {
   app.get(
@@ -11,21 +12,28 @@ export const sitemapCtrl = (app: express.Application) => {
     async (_req: express.Request, res: express.Response) => {
       try {
         const courses: any[] = await new CourseModel().getAllContent({});
+        const projects: any[] = await new ProjectsModel().getContent({});
+
         const coursesUrls = courses.reduce((acc: any, course: any) => {
-          return [...acc, { url: `/${course.lang}/courses/${course.name}`, changefreq: 'weekly' }];
+          return [...acc, {url: `/${course.lang}/courses/${course.name}`, changefreq: 'weekly'}];
         }, []);
 
         const courseUrls = app.get('config').get('langs').reduce((acc: any, lang: any) => {
-          return [...acc, { url: `/${lang}/courses`, changefreq: 'weekly' }];
+          return [...acc, {url: `/${lang}/courses`, changefreq: 'weekly'}];
+        }, []);
+
+        const projectsUrls = projects.reduce((acc: any, project: any) => {
+          return [...acc, {url: `/projects/${project.name}`, changefreq: 'weekly'}];
         }, []);
 
         const sitemap = sm.createSitemap({
           cacheTime,
           hostname,
           urls: [
-            { url: '/', changefreq: 'weekly' },
+            {url: '/', changefreq: 'weekly'},
             ...courseUrls,
             ...coursesUrls,
+            ...projectsUrls,
           ],
         });
 
@@ -42,5 +50,4 @@ export const sitemapCtrl = (app: express.Application) => {
       }
     },
   );
-
 };

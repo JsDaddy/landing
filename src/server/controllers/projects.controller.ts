@@ -4,11 +4,17 @@ import { StaticContentModel } from '../models/static_content.model';
 
 export const projectsCtrl = (app: express.Application) => {
   app.get(
-    '/:lang/projects/:project',
+    '/projects/:project',
       async (req: express.Request, res: express.Response) => {
         const { lang, project } = req.params;
+        const head = `${project}Head`;
         try {
           const projectsContent: IHashMap = await new StaticContentModel().getContentHashMap([
+            {
+              query: head,
+              replace: 'head',
+              rewrite: true,
+            },
             'aboutProject',
             'contacts',
             'footer',
