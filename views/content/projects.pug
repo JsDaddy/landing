@@ -1,5 +1,4 @@
 extends ../layout
-
 block content
     section.banner-case(style="background-image: url('/img/tokenize-banner.jpg');")
         .container
@@ -10,7 +9,6 @@ block content
                         p #{projectBanner.content.﻿shortdescription}
                     .btn-banner
                         a.contact-btn(href=﻿projectBanner.content.button.link) #{﻿projectBanner.content.button.text}
-
     section.about-case
         .container
             .header-section-wrapper
@@ -23,61 +21,35 @@ block content
                 .col-lg-6
                     each item in aboutProject.content.about.paragraph
                         p #{item.text}
-
     section.tech-info
         .container
             .header-section-wrapper
                 h3 #{technicalInfo.title}
-                //div.background-section-text #{technicalInfo.title}
+                div.background-section-text #{technicalInfo.title}
             .row
                 .col-lg-6
                     .tech-info-wrapper
-                        .row-wrap
-                            .icon-wrap
-                                img(src='/img/team.svg')
-                            .reviews Command: 5 developers
-                        .row-wrap
-                            .icon-wrap
-                                img(src='/img/duration.svg')
-                            .reviews Duration: 5 month
-                        .row-wrap
-                            .icon-wrap
-                                img(src='/img/development-technolog.svg')
-                            .reviews Technology Stack: Angular, MySQL, NodeJS, HTML5, CSS3
+                        each item in technicalInfo.content.info.item
+                            .row-wrap
+                                .icon-wrap
+                                    img(src='/img/' + item.src, alt=item.alt)
+                                .reviews #{item.reviews}
                 .col-lg-6
                     .img-wrapper
-                        img(src="/img/tknz-img2.png")
+                        img(src='/img/' + technicalInfo.content.info.src, alt=technicalInfo.content.info.alt)
     section.work-process
         .container
             .header-section-wrapper
-                h3 Work Process
-                div.background-section-text Work Process
+                h3 #{workProcess.title}
+                div.background-section-text #{workProcess.title}
             .row
-                .col-lg-3
-                    .item
-                        .icon-wrap
-                            img(src='/img/analysis.svg')
-                        .name Analysis
-                        .reviews Process analysis helps you understand a work process or some part of a process.
-                .col-lg-3
-                    .item
-                        .icon-wrap
-                            img(src='/img/brainstorm.svg')
-                        .name Suggestions
-                        .reviews Process analysis helps you understand a work process or some part of a process.
-                .col-lg-3
-                    .item
-                        .icon-wrap
-                            img(src='/img/seo.svg')
-                        .name Development
-                        .reviews Process analysis helps you understand a work process or some part of a process.
-                .col-lg-3
-                    .item
-                        .icon-wrap
-                            img(src='/img/server.svg')
-                        .name Deployment
-                        .reviews Process analysis helps you understand a work process or some part of a process.
-
+                each item in workProcess.content.process
+                    .col-lg-3
+                        .item
+                            .icon-wrap
+                                img(src='/img/' + item.src, alt=item.title)
+                            .name #{item.title}
+                            .reviews #{item.text}
     section#contacts.contacts
         .container
             .header-section-wrapper
