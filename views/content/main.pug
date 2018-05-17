@@ -5,22 +5,26 @@ block content
         .container
             .banner-content-wrapper
                 .banner-content
-                        h1 #{mainBanner.content.text.title}
-                        p #{mainBanner.content.text.subtitle}
-                        a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
-    section.services#services
+                    h1 #{mainBanner.content.text.title}
+                    p #{mainBanner.content.text.subtitle}
+                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
+
+    section.business-options
         .container
             .header-section-wrapper
-                h3 #{services.title}
-                .background-section-text #{services.title}
-            .row
-                each i in services.content
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(src=i.src)
-                            h5 #{i.title}
-                            p #{i.text}
+                h3 #{businessOptions.title}
+                .background-section-text #{businessOptions.title}
+            .row.align-items-center
+                .col-lg-6.align-items-center
+                    .img-wrapper-business
+                        img(src='/img/' + businessOptions.taglineImage)
+                    p #{businessOptions.tagline}
+                .col-lg-6
+                    each item in businessOptions.content
+                        .item(class=item.class)
+                            h5 #{item.title}
+                            p #{item.text}
+
 
     section#technologies.technologies
         .container
@@ -45,9 +49,9 @@ block content
                         .item-content-block
                             .icon
                                 img(
-                                    src='/img/' + i.src
-                                    alt=i.alt
-                                    )
+                                src='/img/' + i.src
+                                alt=i.alt
+                                )
                             h5 #{i.title}
                             p #{i.text}
 
@@ -62,6 +66,21 @@ block content
                     p #{aboutCompany.content.text.description}
                 .img-block
                     img(src='/img/' + aboutCompany.content.src)
+
+    section.services#services
+        .container
+            .header-section-wrapper
+                h3 #{services.title}
+                .background-section-text #{services.title}
+            .row
+                each i in services.content
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(src=i.src)
+                            h5 #{i.title}
+                            p #{i.text}
+
     section#team
         .container
             .header-section-wrapper
@@ -112,6 +131,60 @@ block content
                                     each icon in project.technologies
                                         li
                                             img(src='/img/' + icon)
+    section#testimonials
+        .container
+            .header-section-wrapper
+                h3 Testimonials
+                .background-section-text Testimonials
+            .row
+                .slide-wrap
+                    .testimonials-wrap
+                        .testimonials-item
+                            .item
+                                .left-block-wrap
+                                    .photo-client
+                                        img(src="/img/1525250660670.png" alt="ddd")
+                                    .name Beverly Cranston
+                                    .position Senior Marketing Manager
+                                    .company Google
+                                .right-block
+                                    .quotes
+                                        p "This allows us to focus on funnel optimization, content production
+                                            | new initiatives, and customer relationships, rather than manual daily tasks
+                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            | and focused on common goals than ever before and we now have insight into every
+                                            | stepalong a customer's journey from website visitor to lifelong customer."
+                        .testimonials-item
+                            .item
+                                .left-block-wrap
+                                    .photo-client
+                                        img(src="/img/1525250660670.png" alt="ddd")
+                                    .name Beverly Cranston
+                                    .position Senior Marketing Manager
+                                    .company Google
+                                .right-block
+                                    .quotes
+                                        p "This allows us to focus on funnel optimization, content production
+                                            | new initiatives, and customer relationships, rather than manual daily tasks
+                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            | and focused on common goals than ever before and we now have insight into every
+                                            | stepalong a customer's journey from website visitor to lifelong customer."
+                        .testimonials-item
+                            .item
+                                .left-block-wrap
+                                    .photo-client
+                                        img(src="/img/1525250660670.png" alt="ddd")
+                                    .name Beverly Cranston
+                                    .position Senior Marketing Manager
+                                    .company Google
+                                .right-block
+                                    .quotes
+                                        p "This allows us to focus on funnel optimization, content production
+                                            | new initiatives, and customer relationships, rather than manual daily tasks
+                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
+                                            | and focused on common goals than ever before and we now have insight into every
+                                            | stepalong a customer's journey from website visitor to lifelong customer."
+
     section#contacts.contacts
         .container
             .header-section-wrapper
@@ -120,9 +193,9 @@ block content
             .row
                 .contact-form-wrapper
                     contacts-form.contact_us(
-                        btnText=contacts.content.button.text
-                        schema
-                        showphone="false"
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
                     )
             .row
                 .contact-details
