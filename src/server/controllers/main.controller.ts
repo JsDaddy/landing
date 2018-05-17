@@ -25,6 +25,8 @@ export const mainCtrl = (app: express.Application) => {
           'footer',
           'opensource',
           'portfolio',
+          'businessOptions',
+          'testimonials',
         ]);
         mainContent.team.content = users;
         mainContent.events.content = await new EventsModel().getContent();

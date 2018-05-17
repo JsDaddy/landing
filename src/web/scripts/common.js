@@ -55,7 +55,16 @@ $(document).ready(function () {
       slidesToScroll: 2,
       autoplay: true,
       autoplaySpeed: 2000,
-      arrows: false
+      arrows: false,
+      responsive: [
+          {
+              breakpoint: 992,
+              settings: {
+                  slidesToShow: 1,
+                  autoplay: false
+              }
+          }
+      ]
   });
   var type = window.location.hash.substr(1);
   if (!type) {

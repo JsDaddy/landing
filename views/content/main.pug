@@ -5,22 +5,27 @@ block content
         .container
             .banner-content-wrapper
                 .banner-content
-                        h1 #{mainBanner.content.text.title}
-                        p #{mainBanner.content.text.subtitle}
-                        a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
-    section.services#services
+                    h1 #{mainBanner.content.text.title}
+                    p #{mainBanner.content.text.subtitle}
+                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
+
+    section.business-options
         .container
             .header-section-wrapper
-                h3 #{services.title}
-                .background-section-text #{services.title}
-            .row
-                each i in services.content
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(src=i.src, alt=i.title)
-                            h5 #{i.title}
-                            p #{i.text}
+                h3 #{businessOptions.title}
+                .background-section-text #{businessOptions.title}
+            .row.align-items-center
+                .col-lg-6.align-items-center
+                    .img-wrapper-business
+                        img(src='/img/' + businessOptions.taglineImage)
+                    p #{businessOptions.tagline}
+                .col-lg-6
+                    each item in businessOptions.content
+                        .item(class=item.class)
+                            h5 #{item.title}
+                            p #{item.text}
+
+
     section#technologies.technologies
         .container
             .header-section-wrapper
@@ -43,7 +48,9 @@ block content
                         .item-content-block
                             .icon
                                 img(
-                                    src='/img/' + i.src alt=i.alt)
+                                    src='/img/' + i.src
+                                    alt=i.alt
+                                    )
                             h5 #{i.title}
                             p #{i.text}
     section#about.why-we-are
@@ -57,6 +64,19 @@ block content
                     p #{aboutCompany.content.text.description}
                 .img-block
                     img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
+    section.services#services
+        .container
+            .header-section-wrapper
+                h3 #{services.title}
+                .background-section-text #{services.title}
+            .row
+                each i in services.content
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(src=i.src)
+                            h5 #{i.title}
+                            p #{i.text}
     section#team
         .container
             .header-section-wrapper
@@ -102,11 +122,35 @@ block content
                             .item-content
                                 .duration #{project.duration}
                                 .name #{project.name}
-                                .shortDescription #{project.﻿shortdescription}
+                                .shortDescription #{project.shortdescription}
                                 ul
                                     each icon in project.technologies
                                         li
-                                            img(src='/img/' + icon.﻿src, alt=icon.﻿alt)
+                                            img(src='/img/' + icon.src, alt=icon.alt)
+
+    section#testimonials
+        .container
+            .header-section-wrapper
+                h3 #{testimonials.title}
+                .background-section-text #{testimonials.title}
+            .row
+                .slide-wrap
+                    .testimonials-wrap
+                        each item in testimonials.content
+                            .testimonials-item
+                                .item
+                                    .left-block-wrap
+                                        .photo-client
+                                            img(src='/img/' + item.photo, alt=item.alt)
+                                        .name #{item.name}
+                                        .position #{item.position}, #{item.company}
+                                        a.linkedin(
+                                        class='fa fa-LinkedIn'
+                                        href=item.profilelink
+                                        )
+                                    .right-block
+                                        .quotes
+                                            p #{item.text}
     section#events.events
         .container
             .header-section-wrapper
@@ -129,9 +173,9 @@ block content
             .row
                 .contact-form-wrapper
                     contacts-form.contact_us(
-                        btnText=contacts.content.button.text
-                        schema
-                        showphone="false"
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
                     )
             .row
                 .contact-details
