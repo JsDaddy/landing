@@ -98,7 +98,7 @@ block content
                 each project in portfolio.content
                     .col-lg-6
                         .client-wrapper(style=`background-image: url("/img/${project.background}")`)
-                            a(href=project.link)
+                            a(href=project.href)
                             .item-content
                                 .duration #{project.duration}
                                 .name #{project.name}

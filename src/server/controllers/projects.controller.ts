@@ -27,7 +27,6 @@ export const projectsCtrl = (app: express.Application) => {
             'workProcess',
           ], lang);
           const oneProject = await new PortfolioModel().getProject({name: project});
-
           projectsContent.projectBanner.content = {...projectsContent.projectBanner.content , ...oneProject};
           projectsContent.aboutProject.content = {...projectsContent.aboutProject.content , ...oneProject};
           projectsContent.technicalInfo.content = {...projectsContent.technicalInfo.content , ...oneProject};
