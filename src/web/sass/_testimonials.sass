@@ -10,16 +10,16 @@
           width: 100%
           padding: 20px
           display: flex
-          flex-direction: row
-          justify-content: space-between
-          align-items: flex-start
+          flex-direction: column
+          justify-content: center
+          align-items: center
           .left-block-wrap
             display: flex
             flex-direction: column
             justify-content: center
             max-width: 180px
-            align-items: flex-start
-            margin-right: 30px
+            align-items: center
+            margin-bottom: 40px
             .photo-client
               min-width: 150px
               min-height: 150px
@@ -47,20 +47,22 @@
               width: 100%
               text-align: center
               font-weight: 300
+            .linkedin
+              color: $white
+              font-size: 1rem
+              text-decoration: none
+              padding: 5px
+              border-radius: 3px
+              background: #008cc9
+              &:hover
+                background: #0077b5
           .right-block
             display: inline-flex
             border-radius: 10px
             background-color: #f7f9f9
             padding: 15px
             position: relative
-            &:before
-              content: ''
-              position: absolute
-              display: block
-              left: -37px
-              top: 50px
-              border: 20px solid transparent
-              border-right: 20px solid #f7f9f9
+            text-align: center
 
     p
               font-size: 1rem

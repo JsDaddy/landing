@@ -23,6 +23,7 @@ export const mainCtrl = (app: express.Application) => {
           'opensource',
           'portfolio',
           'businessOptions',
+          'testimonials',
         ]);
         mainContent.team.content = users;
         mainContent.head = mainContent.mainHead.content;

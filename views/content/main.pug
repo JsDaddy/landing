@@ -134,57 +134,26 @@ block content
     section#testimonials
         .container
             .header-section-wrapper
-                h3 Testimonials
-                .background-section-text Testimonials
+                h3 #{testimonials.title}
+                .background-section-text #{testimonials.title}
             .row
                 .slide-wrap
                     .testimonials-wrap
-                        .testimonials-item
-                            .item
-                                .left-block-wrap
-                                    .photo-client
-                                        img(src="/img/1525250660670.png" alt="ddd")
-                                    .name Beverly Cranston
-                                    .position Senior Marketing Manager
-                                    .company Google
-                                .right-block
-                                    .quotes
-                                        p "This allows us to focus on funnel optimization, content production
-                                            | new initiatives, and customer relationships, rather than manual daily tasks
-                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
-                                            | and focused on common goals than ever before and we now have insight into every
-                                            | stepalong a customer's journey from website visitor to lifelong customer."
-                        .testimonials-item
-                            .item
-                                .left-block-wrap
-                                    .photo-client
-                                        img(src="/img/1525250660670.png" alt="ddd")
-                                    .name Beverly Cranston
-                                    .position Senior Marketing Manager
-                                    .company Google
-                                .right-block
-                                    .quotes
-                                        p "This allows us to focus on funnel optimization, content production
-                                            | new initiatives, and customer relationships, rather than manual daily tasks
-                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
-                                            | and focused on common goals than ever before and we now have insight into every
-                                            | stepalong a customer's journey from website visitor to lifelong customer."
-                        .testimonials-item
-                            .item
-                                .left-block-wrap
-                                    .photo-client
-                                        img(src="/img/1525250660670.png" alt="ddd")
-                                    .name Beverly Cranston
-                                    .position Senior Marketing Manager
-                                    .company Google
-                                .right-block
-                                    .quotes
-                                        p "This allows us to focus on funnel optimization, content production
-                                            | new initiatives, and customer relationships, rather than manual daily tasks
-                                            | and touchpoints. As a result, our marketing and sales teams are more intertwined
-                                            | and focused on common goals than ever before and we now have insight into every
-                                            | stepalong a customer's journey from website visitor to lifelong customer."
-
+                        each item in testimonials.content
+                            .testimonials-item
+                                .item
+                                    .left-block-wrap
+                                        .photo-client
+                                            img(src='/img/' + item.photo)
+                                        .name #{item.name}
+                                        .position #{item.position}, #{item.company}
+                                        a.linkedin(
+                                            class='fa fa-LinkedIn'
+                                            href=item.profilelink
+                                            )
+                                    .right-block
+                                        .quotes
+                                            p #{item.text}
     section#contacts.contacts
         .container
             .header-section-wrapper
