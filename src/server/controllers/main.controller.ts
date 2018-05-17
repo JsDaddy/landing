@@ -1,9 +1,9 @@
 import * as express from 'express';
-import { EventsModel } from '../models/events.model';
-import { PortfolioModel } from '../models/portfolio.model';
-import { StaticContentModel } from '../models/static_content.model';
-import { UserModel } from '../models/user.model';
-import { logger } from './../main';
+import {EventsModel} from '../models/events.model';
+import {PortfolioModel} from '../models/portfolio.model';
+import {StaticContentModel} from '../models/static_content.model';
+import {UserModel} from '../models/user.model';
+import {logger} from './../main';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -12,7 +12,7 @@ export const mainCtrl = (app: express.Application) => {
       try {
         const users: any[] = await new UserModel().getUsers('member');
         const mainContent: IHashMap = await new StaticContentModel().getContentHashMap([
-          { query: 'mainHead', replace: 'head', rewrite: true },
+          {query: 'mainHead', replace: 'head', rewrite: true},
           'events',
           'mainMenu',
           'mainBanner',
@@ -27,8 +27,11 @@ export const mainCtrl = (app: express.Application) => {
           'portfolio',
         ]);
         mainContent.team.content = users;
-        mainContent.portfolio.content = await new PortfolioModel().getContent();
         mainContent.events.content = await new EventsModel().getContent();
+        mainContent.portfolio.content = await new PortfolioModel().getContent();
+        mainContent.portfolio.content = mainContent.portfolio.content.map((project: any) => {
+          return {...project, href: `/projects/${project.name}`};
+        });
         return res.render('content/main', mainContent);
       } catch (err) {
         logger.log('error', err);
@@ -36,5 +39,4 @@ export const mainCtrl = (app: express.Application) => {
       }
     },
   );
-
 };
