@@ -77,8 +77,12 @@ header
     li
       display: inline-block
       margin-right: 29px
+      position: relative
       &:last-of-type
         margin-right: 0
+      &:hover a .fa
+        padding: 0 8px 0 0
+        transform: rotate(180deg)
       a
         font-family: $montserrat-font
         font-size: 0.9375rem
@@ -104,6 +108,33 @@ header
           &:before
             background: $yellow
             width: 100%
+        .fa
+          font-weight: bold
+          display: inline-block
+          padding: 0 0 0 8px
+          font-size: 0.9375rem
+      &.sub-menu:hover
+        .sub-nav
+          display: block
+      .sub-nav
+        display: none
+        position: absolute
+        top: 100%
+        left: -10px
+        width: 100%
+        min-width: 220px
+        padding: 10px
+        background-color: $grey-header
+        border-bottom: 4px solid $yellow
+        li
+          margin: 0
+          padding: 8px 0
+          display: block
+          a
+            padding: 0 0
+            &:before
+              height: 3px
+              bottom: -3px
   .right-header-block
     display: flex
     flex-direction: row
