@@ -5,17 +5,52 @@ block content
         .container
             .banner-content-wrapper
                 .banner-content
-                    .img-banner-wrapper
-                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
-                    .banner-text
-                        h1 #{banner.content.info.title}
-                        p #{banner.content.info.shortDescription}
-                        .date-wrapper
-                            p.start #{banner.content.info.start}
-                            p.schedule #{banner.content.info.duration}
-                            p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
-                            p.prices #{banner.content.info.price}
-                            a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
+                    h1 #{banner.content.info.title}
+                    p Реактивный курс для реактивных разработчиков
+                    .info-wrapper
+                        .left-block
+                            .item.start
+                                .icon
+                                sapn #{banner.content.info.start}
+                            .item.about
+                                .icon
+                                sapn О курсе
+                            .item.duration
+                                .icon
+                                sapn #{banner.content.info.duration}
+                        .center-block
+                            .img-wrapper
+                                .hexagon
+                                    span
+                                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
+                                a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
+                        .right-block
+                            .item.mentor
+                                .photo
+                                sapn #{banner.content.info.firstName} #{banner.content.info.lastName}
+                            .item.program
+                                .icon
+                                sapn О курсе
+                            .item.prices
+                                .icon
+                                sapn #{banner.content.info.price}
+
+    //section.banner-course
+    //    .container
+    //        .banner-content-wrapper
+    //            .banner-content
+    //                .img-banner-wrapper
+    //                    img(src='/img/' + banner.content.icon, alt=banner.content.alt)
+    //                .banner-text
+    //                    h1 #{banner.content.info.title}
+    //                    p #{banner.content.info.shortDescription}
+    //                    .date-wrapper
+    //                        p.start #{banner.content.info.start}
+    //                        p.schedule #{banner.content.info.duration}
+    //                        p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
+    //                        p.prices #{banner.content.info.price}
+    //                        a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
+
     section#about.about-course
         .container
             .header-section-wrapper

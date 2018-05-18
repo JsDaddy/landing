@@ -3,45 +3,202 @@
 .banner-course
   width: 100%
   min-height: 250px
-  background: #ebf9fc
+  background: url("/img/geometricBG.png") no-repeat -55% 0px, url("/img/geometricBG-right.png") no-repeat 150% 0px
+  background-color: #fff !important
+  background-size: contain
   padding-top: 160px
   padding-bottom: 60px
   .banner-content
+    width: 100%
     display: flex
-    flex-direction: row
-    align-items: center
-    justify-content: space-between
-    .img-banner-wrapper
-      width: 50%
-      img
-        width: auto
-        max-height: 260px
-        max-width: 550px
-    .banner-text
-      width: 50%
-      display: inline-flex
-      flex-direction: column
-      align-items: center
+    flex-direction: column
+    flex-wrap: wrap
+    h1
+      width: 100%
       text-align: center
-      .date-wrapper
-        border-radius: 25px
-        background: rgba(255, 255, 255, 1)
-        padding: 25px
-        margin-bottom: 40px
-        width: 100%
-        max-width: 400px
-        border: 1px solid $yellow
+      font-weight: 600
+      text-transform: uppercase
+      margin-bottom: 20px
+    p
+      font-weight: 400
+      text-transform: uppercase
+      font-size: 1rem
+      width: 100%
+      text-align: center
+      position: relative
+      margin-bottom: 80px
+      &:before
+        content: ''
+        width: 150px
+        height: 3px
+        background: $yellow
+        position: absolute
+        top: calc(100% + 15px)
+        left: 50%
+        transform: translateX(-50%)
+    .info-wrapper
+      width: 100%
+      display: flex
+      flex-direction: row
+      justify-content: center
+      .item
+        font-weight: 600
+        font-size: 1.3rem
+        position: absolute
+      .left-block
+        width: 30%
+        text-align: right
+        padding-right: 30px
+        position: relative
+        .item
+          right: 0
+          padding-right: 50px
+          top: 0
+          &:before
+            content: ''
+            position: absolute
+            width: 50px
+            height: 4px
+            background: $yellow
+            border-radius: 10px
+          &:after
+            content: ''
+            position: absolute
+            height: 4px
+            width: 50px
+            background: $yellow
+            border-radius: 10px
+          &.start
+            top: 5px
+            &:before
+              width: 90px
+              right: 0
+              top: 100%
+            &:after
+              top: calc(100% + 20px)
+              width: 60px
+              right: -48px
+              transform: rotate(45deg)
+          &.about
+            top: 203px
+            &:before
+              width: 90px
+              top: 100%
+              right: 35px
+            &:after
+              display: none
+          &.duration
+            top: 400px
+            &:before
+              width: 90px
+              top: 100%
+              right: 0px
+            &:after
+              top: calc(100% + -20px)
+              width: 60px
+              right: -48px
+              transform: rotate(-45deg)
+      .center-block
+        width: 30%
+        display: flex
+        align-items: center
         text-align: center
-      h1
-        font-weight: 700
-        margin-bottom: 30px
-      p
-        font-size: 1rem
-        max-width: 600px
-        margin-bottom: 15px
-        font-weight: 300
-        &.start
-          font-weight: 700
+        justify-content: center
+        .img-wrapper
+          padding-top: 50px
+        .hexagon
+          position: relative
+          width: 320px
+          height: 184.75px
+          background-color: #222
+          margin: 92.38px 0
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.6)
+          span
+            display: flex
+            position: relative
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            top: 0
+            left: 0
+            width: 320px
+            height: 184.7521px
+            z-index: 2
+            background: inherit
+            img
+              position: relative
+              max-width: 180px
+              z-index: 20
+              display: inline-block
+          &:before,
+          &:after
+            content: ""
+            position: absolute
+            z-index: 1
+            width: 226.27px
+            height: 226.27px
+            transform: scaleY(0.5774) rotate(-45deg)
+            background-color: inherit
+            left: 46.8629px
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6)
+          &:before
+            top: -113.1371px
+          &:after
+            bottom: -113.1371px
+        .contact-btn
+          margin-top: 80px
+      .right-block
+        width: 30%
+        padding-left: 30px
+        position: relative
+        .item
+          left: 0
+          padding-left: 50px
+          top: 0
+          &:before
+            content: ''
+            position: absolute
+            width: 50px
+            height: 4px
+            background: $yellow
+            border-radius: 10px
+          &:after
+            content: ''
+            position: absolute
+            height: 4px
+            width: 50px
+            background: $yellow
+            border-radius: 10px
+          &.mentor
+            top: 5px
+            &:before
+              width: 90px
+              left: 0
+              top: 100%
+            &:after
+              top: calc(100% + 20px)
+              width: 60px
+              left: -48px
+              transform: rotate(-45deg)
+          &.program
+            top: 203px
+            &:before
+              width: 90px
+              top: 100%
+              left: 35px
+            &:after
+              display: none
+          &.prices
+            top: 400px
+            &:before
+              width: 90px
+              top: 100%
+              left: 0
+            &:after
+              top: calc(100% + -20px)
+              width: 60px
+              left: -48px
+              transform: rotate(45deg)
 
 .about-course
   p
