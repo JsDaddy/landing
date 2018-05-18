@@ -13,7 +13,7 @@ export const communityCtrl = (app: express.Application) => {
                     { query: 'communityHead', replace: 'head', rewrite: true },
                     { query: head, replace: 'head', rewrite: true },
                     'mainHead',
-                    'mainMenu',
+                    { query: 'about-usMenu', replace: 'mainMenu' },
                     'mainBanner',
                     'opensource',
                     'events',
