@@ -28,6 +28,20 @@
           margin-bottom: 29px
           text-transform: uppercase
           display: block
+          &.sub-menu
+            &:hover .sub-nav,
+            .sub-nav
+              display: inherit
+              position: absolute
+              top: 100%
+              left: -10px
+              width: 100%
+              min-width: 220px
+              padding: 10px
+              background-color: #f8f8f8
+              border-bottom: 4px solid #fc0
+
+
     .right-header-block
       flex-direction: column
       align-items: center
@@ -382,6 +396,7 @@
       .row-wrap
         .icon-wrap
           margin-right: 20px
+
 @media only screen and (max-width: 435px)
   .banner-course
     .banner-content

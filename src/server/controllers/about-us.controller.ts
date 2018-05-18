@@ -18,7 +18,7 @@ export const aboutUsCtrl = (app: express.Application) => {
                         rewrite: true,
                     },
                     'mainHead',
-                    'mainMenu',
+                    { query: 'about-usMenu', replace: 'mainMenu' },
                     'mainBanner',
                     'aboutCompany',
                     'team',
