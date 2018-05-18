@@ -1,4 +1,5 @@
 import { Application } from 'express';
+import { aboutUsCtrl } from './about-us.controller';
 import { courseCtrl } from './course.controller';
 import { coursesCtrl } from './courses.controller';
 import { mailerCtrl } from './mailer.controller';
@@ -12,5 +13,6 @@ export const controllers: (app: Application) => void = (app: Application) => {
   mainCtrl(app);
   mailerCtrl(app);
   projectsCtrl(app);
+  aboutUsCtrl(app);
   sitemapCtrl(app);
 };

@@ -25,7 +25,6 @@ export const sitemapCtrl = (app: express.Application) => {
         const projectsUrls = projects.reduce((acc: any, project: any) => {
           return [...acc, {url: `/projects/${project.name}`, changefreq: 'weekly'}];
         }, []);
-
         const sitemap = sm.createSitemap({
           cacheTime,
           hostname,
@@ -34,6 +33,7 @@ export const sitemapCtrl = (app: express.Application) => {
             ...courseUrls,
             ...coursesUrls,
             ...projectsUrls,
+              {url: '/about-us', changefreq: 'weekly'},
           ],
         });
 
