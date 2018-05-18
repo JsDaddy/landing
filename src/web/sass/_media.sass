@@ -286,12 +286,14 @@
     img
       max-width: 350px
   .opensource
-    .row
-      &:nth-child(odd)
-        .col-md-8
-          order: inherit
-        .col-md-4
-          order: inherit
+    .container
+      .row
+        &:nth-child(odd)
+          .col-md-8
+            order: 0
+          .col-md-4
+            order: 1
+
     .text-block
       padding-bottom: 0
       text-align: center
@@ -304,7 +306,6 @@
       text-align: center
       width: 100%
       margin-top: 35px
-
   .events
     .event
       max-width: 350px
