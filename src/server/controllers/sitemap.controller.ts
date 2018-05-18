@@ -34,7 +34,7 @@ export const sitemapCtrl = (app: express.Application) => {
             ...coursesUrls,
             ...projectsUrls,
               {url: '/about-us', changefreq: 'weekly'},
-              {url: '/community', changefreq: 'weekly'},
+              {url: '/open-sourse', changefreq: 'weekly'},
           ],
         });
 
