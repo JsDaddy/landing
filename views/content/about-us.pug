@@ -1,13 +1,6 @@
 extends ../layout
 
 block content
-    section.banner#banner
-        .container
-            .banner-content-wrapper
-                .banner-content
-                    h1 #{mainBanner.content.text.title}
-                    p #{mainBanner.content.text.subtitle}
-                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
     section#about.why-we-are
         .container
             .header-section-wrapper
@@ -15,17 +8,15 @@ block content
                 .background-section-text #{aboutCompany.title}
             .why-we-are-wrapper
                 .text-block
-                    h5 #{aboutCompany.content.text.title}
-
                     p #{aboutCompany.content.text.description}
                 .img-block.photo-sl
                     .left-img-cell.photo-sl
                         span.wrap
-                            img(src='/img/team_.jpg')
+                            img(src='/img/' + aboutCompany.content.team, alt=aboutCompany.alt)
                     .right-img-cell
                         .img-cell.unwrap
                             span
-                                img(src='/img/2018-05-21_16.51.41.jpg')
+                                img(src='/img/' + aboutCompany.content.ourTeam, alt=aboutCompany.alt)
                         .img-cell.unwrap
                             span
                                 img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
