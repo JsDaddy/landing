@@ -16,9 +16,19 @@ block content
             .why-we-are-wrapper
                 .text-block
                     h5 #{aboutCompany.content.text.title}
+
                     p #{aboutCompany.content.text.description}
-                .img-block
-                    img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
+                .img-block.photo-sl
+                    .left-img-cell.photo-sl
+                        span.wrap
+                            img(src='/img/team_.jpg')
+                    .right-img-cell
+                        .img-cell.unwrap
+                            span
+                                img(src='/img/2018-05-21_16.51.41.jpg')
+                        .img-cell.unwrap
+                            span
+                                img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
     section#team
         .container
             .header-section-wrapper
