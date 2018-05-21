@@ -359,6 +359,7 @@
   .why-we-are,
   .opensource
     padding-top: 150px
+
 @media only screen and (max-width: 575px)
   header
     display: inherit
@@ -371,7 +372,6 @@
         min-width: 105px
     .navigation-wrapper
       top: 94px
-
   .nav-burger
     margin-right: 15px
   .banner
@@ -396,7 +396,6 @@
     .item
       padding: 10px 30px
       border-radius: 15px
-
   #testimonials
     .slide-wrap
       .testimonials-wrap
@@ -434,16 +433,27 @@
         width: 100%
         .left-img-cell span,
         .right-img-cell span,
-        span.wrap
-          display: block !important
-          max-width: 100%
-          margin: 0 auto
+        span
+          &.wrap
+            display: block !important
+            max-width: 100%
+            margin: 0 auto
+          &:before
+            content: ''
+            display: inline-block
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: rgba(2, 157, 163, 0.04)
         .left-img-cell
           width: 100%
           padding-right: 0
         .right-img-cell
           width: 100%
           display: block
+
 @media only screen and (max-width: 435px)
   .banner-course
     .banner-content
