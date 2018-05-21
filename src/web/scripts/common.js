@@ -53,16 +53,20 @@ $(document).ready(function () {
   $('.testimonials-wrap').slick({
     infinite: true,
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 768,
         settings: {
+          infinite: true,
           slidesToShow: 1,
-          autoplay: false
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: false
         }
       }
     ]
