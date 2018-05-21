@@ -19,7 +19,6 @@ export const aboutUsCtrl = (app: express.Application) => {
                     },
                     'mainHead',
                     { query: 'about-usMenu', replace: 'mainMenu' },
-                    'mainBanner',
                     'aboutCompany',
                     'team',
                     'contacts',
