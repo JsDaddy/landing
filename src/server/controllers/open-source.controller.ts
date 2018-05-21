@@ -14,7 +14,6 @@ export const communityCtrl = (app: express.Application) => {
                     { query: head, replace: 'head', rewrite: true },
                     'mainHead',
                     { query: 'about-usMenu', replace: 'mainMenu' },
-                    'mainBanner',
                     'opensource',
                     'events',
                     'contacts',
