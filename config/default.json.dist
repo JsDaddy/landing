@@ -8,6 +8,7 @@
     "pass": "gmailPassword",
     "user": "gmailAddress"
   },
+  "copyEmail": "info@jsdaddy.io",
   "sitemap": {
     "hostname": "http://jsdaddy.io/",
     "cacheTime": 600000

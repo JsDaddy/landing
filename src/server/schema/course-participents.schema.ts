@@ -7,6 +7,7 @@ const courseParticipentsSchema: mongoose.Schema = new Schema({
   name: String,
   phone: String,
   text: String,
+  timestamp: {type: Date, default: Date.now },
 });
 
 mongoose.model('CourseParticipents', courseParticipentsSchema, 'course_participents');
