@@ -1,5 +1,14 @@
 @import "variables"
 @media only screen and (max-width: 1199px)
+  header nav li a.active:before,
+  header nav li span.active:before
+    background: 0 0
+  header .lang-checker .select li
+    &:first-child
+      margin-left: 8px
+    &:last-child
+      margin-right: 0
+
   header
     &.b-bottom
       background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
