@@ -50,21 +50,21 @@ $(document).ready(function () {
     ]
   });
   $('.testimonials-wrap').slick({
-      infinite: true,
-      slidesToShow: 2,
-      slidesToScroll: 2,
-      autoplay: true,
-      autoplaySpeed: 2000,
-      arrows: false,
-      responsive: [
-          {
-              breakpoint: 992,
-              settings: {
-                  slidesToShow: 1,
-                  autoplay: false
-              }
-          }
-      ]
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          autoplay: false
+        }
+      }
+    ]
   });
   var type = window.location.hash.substr(1);
   if (!type) {
@@ -83,16 +83,16 @@ $('#main-menu > li a').click(function () {
   $('#main-menu > li a').siblings('.navigation-wrapper').slideToggle();
   $('#main-menu > li a').parents('header').toggleClass('b-bottom');
   $(this).addClass('active');
-
   if ($(window).width() <= 1199) {
     $('.navigation-wrapper').toggle();
     $('.nav-burger').removeClass('active')
   }
 });
 
-$('.sub-menu span').click(function () {
+$('.sub').click(function () {
   if ($(window).width() <= 1199) {
-    $(this).toggleClass('open');
+    $(this).parents('.sub-menu').toggleClass('open');
+    $(this).siblings('.sub-nav').slideToggle();
   }
 });
 

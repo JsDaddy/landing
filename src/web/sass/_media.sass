@@ -1,5 +1,14 @@
 @import "variables"
 @media only screen and (max-width: 1199px)
+  header nav li a.active:before,
+  header nav li span.active:before
+    background: 0 0
+  header .lang-checker .select li
+    &:first-child
+      margin-left: 8px
+    &:last-child
+      margin-right: 0
+
   header
     &.b-bottom
       background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
@@ -20,28 +29,48 @@
       box-shadow: 0 2px 2px rgba(37, 25, 0, 0.1)
     nav
       margin-right: 0
+      margin-bottom: 30px
       ul
         margin: 0 auto
         text-align: center
         li
           margin-right: 0
-          margin-bottom: 29px
+          margin-bottom: 0
+          padding-left: 15px
+          padding-bottom: 15px
           text-transform: uppercase
           display: block
+          a:hover:before,
+          span:hover:before
+            background: 0 0
           &.sub-menu
+            padding-bottom: 15px
+            &:hover
+              .sub .fa
+                transform: rotate(0)
+                padding: 0 0 0 8px
+            &.open
+              .sub .fa
+                transform: rotate(180deg)
+                padding: 0 8px 0 0
+            .sub
+              position: static
             &:hover .sub-nav,
             .sub-nav
-              display: inherit
-              position: absolute
+              display: none
+              position: inherit
               top: 100%
               left: -10px
               width: 100%
               min-width: 220px
-              padding: 10px
+              padding: 10px 0
               background-color: #f8f8f8
-              border-bottom: 4px solid #fc0
-
-
+              border-bottom: none
+              li a
+                font-size: 0.8rem
+    #main-menu > li > a
+      position: relative
+      left: -8px
     .right-header-block
       flex-direction: column
       align-items: center
