@@ -49,29 +49,48 @@ $(document).ready(function () {
       }
     ]
   });
+
   $('.testimonials-wrap').slick({
     infinite: true,
     slidesToShow: 2,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     arrows: false,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 768,
         settings: {
+          infinite: true,
           slidesToShow: 1,
-          autoplay: false
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 2000,
+          arrows: false
         }
       }
     ]
   });
+
   var type = window.location.hash.substr(1);
   if (!type) {
     return;
   }
   $(`a[href$=${type}]`).addClass('active');
 });
+
+$(window).resize(function () {
+  if ($(window).width() <= 575) {
+    $('.wrap').unwrap('.left-img-cell');
+    $('.unwrap').unwrap('.right-img-cell');
+    $('.photo-sl').slick({
+      infinite: true,
+      autoplay: true,
+      arrows: false,
+      autoplaySpeed: 2000
+    });
+  }
+}).trigger('resize');
 
 $('.nav-burger').click(function () {
   $(this).toggleClass('active');
