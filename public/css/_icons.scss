@@ -1,0 +1,79 @@
+@font-face {
+	font-family: "Icons";
+	src: url('../fonts/Icons.eot');
+	src: url('../fonts/Icons.eot?#iefix') format('eot'),
+		url('../fonts/Icons.woff2') format('woff2'),
+		url('../fonts/Icons.ttf') format('truetype'),
+		url('../fonts/Icons.svg#Icons') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "Icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == calendar {
+		$char: "\E001";
+	}
+	@if $filename == consulting-message {
+		$char: "\E002";
+	}
+	@if $filename == exam {
+		$char: "\E003";
+	}
+	@if $filename == hipster-smiling {
+		$char: "\E004";
+	}
+	@if $filename == price-tag {
+		$char: "\E005";
+	}
+	@if $filename == stopwatch {
+		$char: "\E006";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-calendar {
+	@include icon(calendar);
+}
+.icon-consulting-message {
+	@include icon(consulting-message);
+}
+.icon-exam {
+	@include icon(exam);
+}
+.icon-hipster-smiling {
+	@include icon(hipster-smiling);
+}
+.icon-price-tag {
+	@include icon(price-tag);
+}
+.icon-stopwatch {
+	@include icon(stopwatch);
+}

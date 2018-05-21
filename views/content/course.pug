@@ -10,13 +10,16 @@ block content
                     .info-wrapper
                         .left-block
                             .item.start
-                                .icon
+                                .ico-wrap
+                                    span.ico.icon-stopwatch
                                 sapn #{banner.content.info.start}
                             .item.about
-                                .icon
-                                sapn О курсе
+                                .ico-wrap
+                                    span.ico.icon-consulting-message
+                                a(href='#additional') О курсе
                             .item.duration
-                                .icon
+                                .ico-wrap
+                                    span.ico.icon-calendar
                                 sapn #{banner.content.info.duration}
                         .center-block
                             .img-wrapper
@@ -26,44 +29,19 @@ block content
                                 a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
                         .right-block
                             .item.mentor
-                                .photo
                                 sapn #{banner.content.info.firstName} #{banner.content.info.lastName}
+                                .ico-wrap
+                                    span.ico.icon-hipster-smiling
                             .item.program
-                                .icon
-                                sapn О курсе
+                                a(href='#program') Программа
+                                .ico-wrap
+                                    span.ico.icon-exam
                             .item.prices
-                                .icon
                                 sapn #{banner.content.info.price}
+                                .ico-wrap
+                                    span.ico.icon-price-tag
 
-    //section.banner-course
-    //    .container
-    //        .banner-content-wrapper
-    //            .banner-content
-    //                .img-banner-wrapper
-    //                    img(src='/img/' + banner.content.icon, alt=banner.content.alt)
-    //                .banner-text
-    //                    h1 #{banner.content.info.title}
-    //                    p #{banner.content.info.shortDescription}
-    //                    .date-wrapper
-    //                        p.start #{banner.content.info.start}
-    //                        p.schedule #{banner.content.info.duration}
-    //                        p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
-    //                        p.prices #{banner.content.info.price}
-    //                        a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
-
-    section#about.about-course
-        .container
-            .header-section-wrapper
-                h3 #{description.title}
-                div.background-section-text #{description.title}
-            .row
-                .col-lg-5
-                    .about-course-img
-                        img(src='/img/' + description.descriptionImg.src, alt=description.descriptionImg.alt)
-                .col-lg-7
-                    each text in description.content
-                        p #{text}
-    section.course-program-wrapper
+    section#program.course-program-wrapper
         .container
             .header-section-wrapper
                 h3 #{program.title}
@@ -76,18 +54,29 @@ block content
                                 li.program-title #{module.title}
                                     each item in module.items
                                         li #{item}
-    section.advantages
+
+    section#additional.additional-service
         .container
             .header-section-wrapper
-                h3 #{advantagesCourses.title}
-                .background-section-text #{advantagesCourses.title}
-            .items-wrapper.row
-                each item in advantagesCourses.content.item
-                    .col-lg-2.col-md-6
-                        .item
-                            .ico-wrap
-                                img(src='/img/' + item.icon, alt=item.text)
-                            p #{item.text}
+                h3 #{description.title}
+                div.background-section-text #{description.title}
+            .row
+                .col-lg-6
+                    .about
+                        .head-wrapper
+                            h4 #{description.title}
+                        .text-wrapper
+                            each text in description.content
+                                p #{text}
+                .col-lg-6
+                    .demands
+                        .head-wrapper
+                            h4 Требования
+                        .text-wrapper
+                                p This course covers all basic and advanced principles of Angular development.
+                                p This course covers all basic and advanced principles of Angular development.
+                                p This course covers all basic and advanced principles of Angular development.
+
     section#contacts.contacts
         .container
             .header-section-wrapper
