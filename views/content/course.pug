@@ -5,30 +5,43 @@ block content
         .container
             .banner-content-wrapper
                 .banner-content
-                    .img-banner-wrapper
-                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
-                    .banner-text
-                        h1 #{banner.content.info.title}
-                        p #{banner.content.info.shortDescription}
-                        .date-wrapper
-                            p.start #{banner.content.info.start}
-                            p.schedule #{banner.content.info.duration}
-                            p.mentor #{banner.content.info.firstName} #{banner.content.info.lastName}
-                            p.prices #{banner.content.info.price}
-                            a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
-    section#about.about-course
-        .container
-            .header-section-wrapper
-                h3 #{description.title}
-                div.background-section-text #{description.title}
-            .row
-                .col-lg-5
-                    .about-course-img
-                        img(src='/img/' + description.descriptionImg.src, alt=description.descriptionImg.alt)
-                .col-lg-7
-                    each text in description.content
-                        p #{text}
-    section.course-program-wrapper
+                    h1 #{banner.content.info.title}
+                    p #{banner.content.info.desc}
+                    .info-wrapper
+                        .left-block
+                            .item.start
+                                .ico-wrap
+                                    span.ico.icon-stopwatch
+                                span #{banner.content.info.start}
+                            .item.about
+                                .ico-wrap
+                                    span.ico.icon-consulting-message
+                                a(href='#additional') #{banner.content.info.﻿about}
+                            .item.duration
+                                .ico-wrap
+                                    span.ico.icon-calendar
+                                span #{banner.content.info.duration}
+                        .center-block
+                            .img-wrapper
+                                .hexagon
+                                    span
+                                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
+                                a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
+                        .right-block
+                            .item.mentor
+                                span #{banner.content.info.firstName} #{banner.content.info.lastName}
+                                .ico-wrap
+                                    span.ico.icon-hipster-smiling
+                            .item.program
+                                a(href='#program') #{banner.content.info.﻿programm}
+                                .ico-wrap
+                                    span.ico.icon-exam
+                            .item.prices
+                                span #{banner.content.info.price}
+                                .ico-wrap
+                                    span.ico.icon-price-tag
+
+    section#program.course-program-wrapper
         .container
             .header-section-wrapper
                 h3 #{program.title}
@@ -41,18 +54,28 @@ block content
                                 li.program-title #{module.title}
                                     each item in module.items
                                         li #{item}
-    section.advantages
+
+    section#additional.additional-service
         .container
             .header-section-wrapper
-                h3 #{advantagesCourses.title}
-                .background-section-text #{advantagesCourses.title}
-            .items-wrapper.row
-                each item in advantagesCourses.content.item
-                    .col-lg-2.col-md-6
-                        .item
-                            .ico-wrap
-                                img(src='/img/' + item.icon, alt=item.text)
-                            p #{item.text}
+                h3 #{description.title}
+                div.background-section-text #{description.title}
+            .row
+                .col-lg-6
+                    .about
+                        .head-wrapper
+                            h4 #{description.title}
+                        .text-wrapper
+                            each text in description.content
+                                p #{text}
+                .col-lg-6
+                    .demands
+                        .head-wrapper
+                            h4 #{requirements.﻿title}
+                        .text-wrapper
+                            each text in ﻿requirements.content
+                                p #{text}
+
     section#contacts.contacts
         .container
             .header-section-wrapper
@@ -62,12 +85,12 @@ block content
                 .contact-form-wrapper
                     .contact-form-wrapper
                         contacts-form.apply_course(
-                            btnText=contactsCourses.content.button.text
-                            courses=courses
-                            schema
-                            showphone="true"
-                            selectedcourse=selectedCourse.name
-                            lang=lang
+                        btnText=contactsCourses.content.button.text
+                        courses=courses
+                        schema
+                        showphone="true"
+                        selectedcourse=selectedCourse.name
+                        lang=lang
                         )
             .row
                 .contact-details
