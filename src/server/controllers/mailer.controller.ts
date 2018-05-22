@@ -1,8 +1,10 @@
+import * as config from 'config';
 import * as express from 'express';
 import { CourseParticipentsModel } from '../models/courseParticipents.model';
 import { ProjectParticipentsModel } from '../models/projectParticipents.model';
 import { MailerService } from '../services/mailer.service';
 import { logger } from './../main';
+const copyEmail: string = config.get('copyEmail');
 
 export const mailerCtrl = (app: express.Application) => {
   app.post(
@@ -10,7 +12,7 @@ export const mailerCtrl = (app: express.Application) => {
     async (req: express.Request, res: express.Response) => {
       try {
         await new MailerService().sendMail(req.body, 'contacts');
-        await new MailerService().sendMail({ email: 'info@jsdaddy.io'}, 'copy');
+        await new MailerService().sendMail({ copyEmail, ...req.body }, 'copy');
 
         await new ProjectParticipentsModel().createParticipent(req.body);
 
@@ -27,7 +29,7 @@ export const mailerCtrl = (app: express.Application) => {
     async (req: express.Request, res: express.Response) => {
       try {
         await new MailerService().sendMail(req.body, 'course', req.headers['content-language']);
-        await new MailerService().sendMail({ email: 'info@jsdaddy.io'}, 'copy');
+        await new MailerService().sendMail({ copyEmail, ...req.body }, 'copy');
 
         await new CourseParticipentsModel().createParticipent(req.body);
 

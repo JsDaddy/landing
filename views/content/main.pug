@@ -25,7 +25,6 @@ block content
                             h5 #{item.title}
                             p #{item.text}
 
-
     section#technologies.technologies
         .container
             .header-section-wrapper
@@ -53,17 +52,6 @@ block content
                                     )
                             h5 #{i.title}
                             p #{i.text}
-    section#about.why-we-are
-        .container
-            .header-section-wrapper
-                h3 #{aboutCompany.title}
-                .background-section-text #{aboutCompany.title}
-            .why-we-are-wrapper
-                .text-block
-                    h5 #{aboutCompany.content.text.title}
-                    p #{aboutCompany.content.text.description}
-                .img-block
-                    img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
     section.services#services
         .container
             .header-section-wrapper
@@ -77,38 +65,7 @@ block content
                                 img(src=i.src)
                             h5 #{i.title}
                             p #{i.text}
-    section#team
-        .container
-            .header-section-wrapper
-                h3 #{team.title}
-                .background-section-text #{team.title}
-            .row
-                each member in team.content
-                    .col-12.col-lg-3
-                        .item-wrapper
-                            .photo-wrapper
-                                img(src='/img/' + member.photo, alt=`${member.firstName.en} ${member.lastName.en} ${member.position}`)
-                            .name #{member.firstName.en} #{member.lastName.en}
-                            .position #{member.position}
-                            .soc-link
-                                a(href=member.linkenIn)
-                                    i.fa.fa-linkedin-square
-    section#opensource.opensource
-        .container
-            .header-section-wrapper
-                h3 #{opensource.title}
-                .background-section-text #{opensource.bgtext}
-            each package in opensource.content
-                .row
-                    .col-md-8
-                        .img-block
-                            img(src='/img/' + package.src, alt=package.alt)
-                    .col-md-4
-                        .text-block
-                            p #{package.description}
-                            .contact-btn-wrapper
-                                a.contact-btn(href=package.link) View on GitHub
-                                    i.fa.fa-github
+
     section#clients
         .container
             .header-section-wrapper
@@ -145,26 +102,13 @@ block content
                                         .name #{item.name}
                                         .position #{item.position}, #{item.company}
                                         a.linkedin(
-                                        class='fa fa-LinkedIn'
+                                        class='fa fa-linkedin-square'
                                         href=item.profilelink
                                         )
                                     .right-block
                                         .quotes
                                             p #{item.text}
-    section#events.events
-        .container
-            .header-section-wrapper
-                h3 #{events.title}
-                .background-section-text #{events.bgtitle}
-            each el in events.content
-                .sl-events
-                    each item in el.event
-                        .event-item
-                            .event
-                                .event-img(style=`background-image: url("/img/${item.src}" )`)
-                                    span.label #{item.label}
-                                .event-title #{item.title}
-                                .event-desc #{item.description}
+
     section#contacts.contacts
         .container
             .header-section-wrapper

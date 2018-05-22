@@ -1,0 +1,69 @@
+extends ../layout
+
+block content
+    section#about.why-we-are
+        .container
+            .header-section-wrapper
+                h3 #{aboutCompany.title}
+                .background-section-text #{aboutCompany.title}
+            .why-we-are-wrapper
+                .text-block
+                    p #{aboutCompany.content.text.description}
+                .img-block.photo-sl
+                    .left-img-cell.photo-sl
+                        span.wrap
+                            img(src='/img/' + aboutCompany.content.team, alt=aboutCompany.alt)
+                    .right-img-cell
+                        .img-cell.unwrap
+                            span
+                                img(src='/img/' + aboutCompany.content.ourTeam, alt=aboutCompany.alt)
+                        .img-cell.unwrap
+                            span
+                                img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
+    section#team
+        .container
+            .header-section-wrapper
+                h3 #{team.title}
+                .background-section-text #{team.title}
+            .row
+                each member in team.content
+                    .col-12.col-lg-3
+                        .item-wrapper
+                            .photo-wrapper
+                                img(src='/img/' + member.photo, alt=`${member.firstName.en} ${member.lastName.en} ${member.position}`)
+                            .name #{member.firstName.en} #{member.lastName.en}
+                            .position #{member.position}
+                            .soc-link
+                                a(href=member.linkenIn)
+                                    i.fa.fa-linkedin-square
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contacts.title}
+                .background-section-text #{contacts.title}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
+                    )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
+                        .social
+                            ul
+                                each el in contacts.content.contacts.social
+                                    li
+                                        a(class=el.linkClass, href=el.link)
+                                            i(class='fa ' + el.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p #{contacts.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contacts.content.contacts.address}

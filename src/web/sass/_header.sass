@@ -28,7 +28,7 @@ header
     max-width: 142px
   .lang-checker
     display: inline-flex
-    margin-right: 35px
+    margin-right: 18px
     position: relative
     cursor: pointer
     .select
@@ -71,19 +71,25 @@ header
     align-items: center
   nav
     display: flex
-    margin-right: 50px
+    margin-right: 20px
     ul
       font-size: 0
     li
       display: inline-block
       margin-right: 29px
+      position: relative
       &:last-of-type
         margin-right: 0
-      a
+      &:hover a .fa
+        padding: 0 8px 0 0
+        transform: rotate(180deg)
+      a, span
         font-family: $montserrat-font
         font-size: 0.9375rem
         font-weight: 600
         position: relative
+        display: inline-block
+        cursor: pointer
         &:before
           content: ''
           display: block
@@ -104,6 +110,41 @@ header
           &:before
             background: $yellow
             width: 100%
+        .fa
+          font-weight: bold
+          display: inline-block
+          padding: 0 0 0 8px
+          font-size: 0.9375rem
+      &.sub-menu:hover
+        .sub-nav
+          display: block
+        .sub
+          display: block
+          .fa
+            transform: rotate(180deg)
+            padding: 0 8px 0 0
+      .sub-nav
+        display: none
+        position: absolute
+        top: 100%
+        left: -10px
+        width: 100%
+        min-width: 225px
+        padding: 10px
+        background-color: $grey-header
+        border-bottom: 4px solid $yellow
+        li
+          margin: 0
+          padding: 8px 0
+          display: block
+          a, span
+            padding: 0 0
+            display: inline-block
+            transition: $transition-default
+            &:hover
+              color: lighten($text-color, 30%)
+            &:before
+              display: none
   .right-header-block
     display: flex
     flex-direction: row
