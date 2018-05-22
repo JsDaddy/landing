@@ -6,21 +6,21 @@ block content
             .banner-content-wrapper
                 .banner-content
                     h1 #{banner.content.info.title}
-                    p Реактивный курс для реактивных разработчиков
+                    p #{banner.content.info.desc}
                     .info-wrapper
                         .left-block
                             .item.start
                                 .ico-wrap
                                     span.ico.icon-stopwatch
-                                sapn #{banner.content.info.start}
+                                span #{banner.content.info.start}
                             .item.about
                                 .ico-wrap
                                     span.ico.icon-consulting-message
-                                a(href='#additional') О курсе
+                                a(href='#additional') #{banner.content.info.﻿about}
                             .item.duration
                                 .ico-wrap
                                     span.ico.icon-calendar
-                                sapn #{banner.content.info.duration}
+                                span #{banner.content.info.duration}
                         .center-block
                             .img-wrapper
                                 .hexagon
@@ -29,15 +29,15 @@ block content
                                 a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
                         .right-block
                             .item.mentor
-                                sapn #{banner.content.info.firstName} #{banner.content.info.lastName}
+                                span #{banner.content.info.firstName} #{banner.content.info.lastName}
                                 .ico-wrap
                                     span.ico.icon-hipster-smiling
                             .item.program
-                                a(href='#program') Программа
+                                a(href='#program') #{banner.content.info.﻿programm}
                                 .ico-wrap
                                     span.ico.icon-exam
                             .item.prices
-                                sapn #{banner.content.info.price}
+                                span #{banner.content.info.price}
                                 .ico-wrap
                                     span.ico.icon-price-tag
 
@@ -71,11 +71,10 @@ block content
                 .col-lg-6
                     .demands
                         .head-wrapper
-                            h4 Требования
+                            h4 #{requirements.﻿title}
                         .text-wrapper
-                                p This course covers all basic and advanced principles of Angular development.
-                                p This course covers all basic and advanced principles of Angular development.
-                                p This course covers all basic and advanced principles of Angular development.
+                            each text in ﻿requirements.content
+                                p #{text}
 
     section#contacts.contacts
         .container
@@ -86,12 +85,12 @@ block content
                 .contact-form-wrapper
                     .contact-form-wrapper
                         contacts-form.apply_course(
-                            btnText=contactsCourses.content.button.text
-                            courses=courses
-                            schema
-                            showphone="true"
-                            selectedcourse=selectedCourse.name
-                            lang=lang
+                        btnText=contactsCourses.content.button.text
+                        courses=courses
+                        schema
+                        showphone="true"
+                        selectedcourse=selectedCourse.name
+                        lang=lang
                         )
             .row
                 .contact-details

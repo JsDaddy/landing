@@ -51,9 +51,14 @@
         text-align: left
         padding-right: 30px
         position: relative
+        a
+          transition: $transition-default
+          &:hover
+            color: #336699
+            text-decoration: none
         .item
           right: 0
-          padding-right: 50px
+          padding-right: 60px
           top: 0
           display: inline-flex
           width: 100%
@@ -179,6 +184,11 @@
           text-align: right
           justify-content: flex-end
           display: inline-flex
+          a
+            transition: $transition-default
+            &:hover
+              color: #336699
+              text-decoration: none
           .ico-wrap
             display: inline-flex
             min-width: 60px
