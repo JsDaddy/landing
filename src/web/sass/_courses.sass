@@ -1,5 +1,53 @@
 @import "variables"
 
+.accordion-wrapper
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+  .accordion
+    max-width: 900px
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 0
+    &.open
+      .fa-chevron-down
+        transform: rotate(180deg)
+    .header
+      width: 100%
+      height: 45px
+      align-items: center
+      padding-left: 20px
+      display: inline-flex
+      cursor: pointer
+      .ico-wrap
+        margin-right: 90px
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          width: 30px
+          height: 1px
+          display: inline-block
+          top: 50%
+          left: calc(100% + 25px)
+          background: $text-color
+        .fa
+          font-size: 2.5rem
+          color: $yellow
+      p
+        font-weight: 600
+        font-size: 1.2rem
+        color: $text-color
+        margin-right: 30px
+    .content
+      margin-left: 143px
+      div
+        margin-top: 10px
+        p
+          font-size: 1.2rem
+          color: $text-color
+          font-weight: 300
+
 .slick-initialized
   .slick-slide
     height: auto
@@ -9,6 +57,7 @@
     margin-bottom: 20px
 .courses
   background: #f7f9f9
+  padding-top: 180px
   .background-section-text
     color: #f1f2f2
   .item-wrapper

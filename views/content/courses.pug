@@ -1,23 +1,13 @@
 extends ../layout
 
 block content
-    section#banner.banner
-        .container
-            .banner-content-wrapper
-                .banner-content
-                    h1 #{coursesBanner.content.text.title}
-                    p #{coursesBanner.content.text.subtitle}
+    //section#banner.banner-courses
+    //    .container
+    //        .banner-content-wrapper
+    //            .banner-content
+    //                h1 #{coursesBanner.content.text.title}
+    //                p #{coursesBanner.content.text.subtitle}
 
-    section#about.about-school
-        .container
-            .header-section-wrapper
-                h3 #{about.title}
-                .background-section-text #{about.title}
-            .row
-                .col-lg-4
-                    img(src='/img/' + about.src)
-                .col-lg-8
-                    p #{about.content.text}
     section#courses.courses
         .container
             .header-section-wrapper
@@ -51,18 +41,94 @@ block content
                         .position #{mentor.position}
                         .about
                             .p #{mentor.about}
-    section.advantages
+    section#about.about-school
         .container
             .header-section-wrapper
-                h3 #{advantagesCourses.title}
-                .background-section-text #{advantagesCourses.title}
-            .items-wrapper.row
-                each item in advantagesCourses.content.item
-                    .col-lg-2.col-md-6
-                        .item
-                            .ico-wrap
-                                img(src='/img/' + item.icon, alt=item.text)
-                            p #{item.text}
+                h3 #{about.title}
+                .background-section-text #{about.title}
+            .row
+                .col-lg-4
+                    img(src='/img/' + about.src)
+                .col-lg-8
+                    p #{about.content.text}
+
+    section#faq.faq
+        .container
+            .header-section-wrapper
+                h3 FAQ
+                .background-section-text FAQ
+            .row
+                div.accordion-wrapper(data-accordion-group)
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+                    div.accordion(data-accordion)
+                        div.header(data-control)
+                            div.ico-wrap
+                                i(class="fa fa-question")
+                            p Хотите зададать ваш тупой вопрос?
+                            i(class="fa fa-chevron-down")
+                        div.content(data-content)
+                            div
+                                p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
+
+    //section.advantages
+    //    .container
+    //        .header-section-wrapper
+    //            h3 #{advantagesCourses.title}
+    //            .background-section-text #{advantagesCourses.title}
+    //        .items-wrapper.row
+    //            each item in advantagesCourses.content.item
+    //                .col-lg-2.col-md-6
+    //                    .item
+    //                        .ico-wrap
+    //                            img(src='/img/' + item.icon, alt=item.text)
+    //                        p #{item.text}
     section#contacts.contacts
         .container
             .header-section-wrapper
