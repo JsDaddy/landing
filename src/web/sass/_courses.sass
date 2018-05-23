@@ -3,8 +3,8 @@
 .about-courses
   margin-bottom: 120px
   h5
-    margin-bottom: 50px
-    font-size: 2rem
+    margin-bottom: 70px
+    font-size: 1.7rem
     text-align: center
     padding: 0 25px
     text-transform: uppercase
@@ -21,24 +21,45 @@
   p
     text-align: center
 .advantages-wrapper
+  width: 100%
   margin-bottom: 120px
-  h4
-    margin-bottom: 50px
-    font-size: 2rem
-    text-align: center
-    padding: 0 25px
-    text-transform: uppercase
-    position: relative
-    font-weight: 600
-    &:before
-      content: ''
-      width: 90px
-      height: 3px
-      background: $yellow
-      position: absolute
-      left: 50%
-      top: calc(100% + 30px)
-      transform: translateX(-50%)
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  .item
+    width: 20%
+    padding: 0 20px
+    display: inline-flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    .ico-wrap
+      width: 110px
+      height: 110px
+      margin: 0 auto 45px auto
+      box-shadow: 0 2px 43px rgba(1,34,46,0.2)
+      border-radius: 50%
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      &.blue
+        background: #1ca2fc
+      &.yellow
+        background: #fcb040
+      &.red
+        background: #ed7251
+      &.violet
+        background: #aa78c1
+      &.green
+        background: #23d2da
+      img
+        max-width: 70px
+        max-height: 70px
+    p
+      font-size: 1.1rem
+      font-weight: 600
+      text-align: center
+
 .faq-wrapper
   padding: 60px 20px
   box-shadow: 1px 3px 4.7px 0.3px rgba(0, 0, 0, .24)

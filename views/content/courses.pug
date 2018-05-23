@@ -43,15 +43,28 @@ block content
                     .about-courses
                         h5 О наших курсах
                         p #{about.content.text}
-            .advantages-wrapper
-                h4 Почему мы?
-                .row
-                    each item in advantagesCourses.content.item
-                        .col-lg-2.col-md-6
-                            .item
-                                .ico-wrap
-                                    img(src='/img/' + item.icon, alt=item.text)
-                                p #{item.text}
+            .row
+                .advantages-wrapper
+                    .item
+                        .ico-wrap.blue
+                            img(src='/img/clock-icon.svg')
+                        p Convenient schedule
+                    .item
+                        .ico-wrap.yellow
+                            img(src='/img/group-of-men.svg')
+                        p Compact groups
+                    .item
+                        .ico-wrap.red
+                            img(src='/img/presentation.svg')
+                        p Practising Teachers
+                    .item
+                        .ico-wrap.violet
+                            img(src='/img/thought.svg')
+                        p Only actual knowledge
+                    .item
+                        .ico-wrap.green
+                            img(src='/img/speaker.svg')
+                        p Individual approach
             .row
                 .col-lg-12
                     .faq-wrapper
