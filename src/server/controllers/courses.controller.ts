@@ -17,7 +17,6 @@ export function coursesCtrl(app: express.Application) {
                     {query: 'coursesHead', replace: 'head', rewrite: true},
                     {query: 'coursesMenu', replace: 'mainMenu'},
                     'coursesThumbs',
-                    'coursesBanner',
                     'about',
                     'advantagesCourses',
                     'contactsCourses',
