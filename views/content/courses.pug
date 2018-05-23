@@ -41,76 +41,30 @@ block content
             .row
                 .col-lg-12
                     .about-courses
-                        h5 О наших курсах
+                        h5 #{about.title}
                         p #{about.content.text}
             .row
                 .advantages-wrapper
-                    .item
-                        .ico-wrap.blue
-                            img(src='/img/clock-icon.svg')
-                        p Convenient schedule
-                    .item
-                        .ico-wrap.yellow
-                            img(src='/img/group-of-men.svg')
-                        p Compact groups
-                    .item
-                        .ico-wrap.red
-                            img(src='/img/presentation.svg')
-                        p Practising Teachers
-                    .item
-                        .ico-wrap.violet
-                            img(src='/img/thought.svg')
-                        p Only actual knowledge
-                    .item
-                        .ico-wrap.green
-                            img(src='/img/speaker.svg')
-                        p Individual approach
+                    each item in advantagesCourses.content.item
+                        .item
+                            .ico-wrap(class=item.class)
+                                img(src='/img/' + item.icon)
+                            p #{item.text}
             .row
                 .col-lg-12
                     .faq-wrapper
-                        h5 Чаще всего спрашивают
+                        h5 #{faq.title}
                         div.accordion-wrapper(data-accordion-group)
-                            div.accordion(data-accordion)
-                                div.header(data-control)
-                                    div.ico-wrap
-                                        i(class="fa fa-question")
-                                    p Хотите зададать ваш тупой вопрос?
-                                    i(class="fa fa-chevron-down")
-                                div.content(data-content)
-                                    div
-                                        p Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ! Получите наш тупой ответ!
-
-                            div.accordion(data-accordion)
-                                div.header(data-control)
-                                    div.ico-wrap
-                                        i(class="fa fa-question")
-                                    p Нам вернут деньги?
-                                    i(class="fa fa-chevron-down")
-                                div.content(data-content)
-                                    div
-                                        p Нет даже не мечтай!
-                            div.accordion(data-accordion)
-                                div.header(data-control)
-                                    div.ico-wrap
-                                        i(class="fa fa-question")
-                                    p Смогут ли меня начуить чему-то ведь все вокруг говорят что я тупой?
-                                    i(class="fa fa-chevron-down")
-                                div.content(data-content)
-                                    div
-                                        p Конечно нет ты тупым и сдохнешь!
-
-                            div.accordion(data-accordion)
-                                div.header(data-control)
-                                    div.ico-wrap
-                                        i(class="fa fa-question")
-                                    p Моя бабушка записала меня на эти курсы чтобы я перестал бухать под падиком, можно я не буду ходтиь?
-                                    i(class="fa fa-chevron-down")
-                                div.content(data-content)
-                                    div
-                                        p Конечно, можешь не приходить главное возьми бабки у бабули и принеси нам! Будь тупым это тебе идет!
-
-
-
+                            each item in ﻿faq.﻿content.﻿items
+                                div.accordion(data-accordion)
+                                    div.header(data-control)
+                                        div.ico-wrap
+                                            i(class="fa fa-question")
+                                        p #{item.question}
+                                        i(class="fa fa-chevron-down")
+                                    div.content(data-content)
+                                        div
+                                            p #{item.answer}
     section#contacts.contacts
         .container
             .header-section-wrapper
