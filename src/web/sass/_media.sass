@@ -1,4 +1,20 @@
 @import "variables"
+@media only screen and (max-width: 1700px)
+  .banner-course
+    background-position: -70% 0px, 170% 0px
+
+@media only screen and (max-width: 1600px)
+  .banner-course
+    background-position: -90% 0px, 190% 0px
+
+@media only screen and (max-width: 1500px)
+  .banner-course
+    background-position: -135% 0px, 235% 0px
+
+@media only screen and (max-width: 1350px)
+  .banner-course
+    background: url("/img/geometricBG-mobile.png") no-repeat left 0, url("/img/geometricBG-mobile-right.jpg") no-repeat right 0
+
 @media only screen and (max-width: 1199px)
   header nav li a.active:before,
   header nav li span.active:before
@@ -8,7 +24,6 @@
       margin-left: 8px
     &:last-child
       margin-right: 0
-
   header
     &.b-bottom
       background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
@@ -141,6 +156,14 @@
   .events
     .event
       max-width: 280px
+  .banner-course
+    .banner-content
+      .info-wrapper
+        .item
+          font-size: 0.8rem
+        .left-block
+          .item
+            padding-right: 90px
 
 @media only screen and (max-width: 991px)
   section
@@ -212,40 +235,9 @@
       margin: 0
       .item
         margin-bottom: 30px
-  .banner-course
-    .banner-content
-      .img-banner-wrapper
-        img
-          width: 100%
-      .banner-text
-        h1
-          font-size: 2rem
-          margin-bottom: 15px
-        .date-wrapper
-          padding: 15px
-          max-width: 300px
-  .about-course-img
-    img
-      width: 100%
-      max-width: 450px
-      display: block
-      margin: 0 auto
-  .course-program-wrapper
-    .program-wrap
-      ul
-        margin-bottom: 40px
-        li
-          font-size: 0.87rem
-          padding-left: 25px
-          margin-bottom: 10px
-          &.program-title
-            padding-bottom: 3px
-            display: flex
-            align-items: flex-end
   #team
   .item-wrapper
     width: 100%
-
   .about-case
     .img-wrapper
       margin-bottom: 50px
@@ -266,6 +258,91 @@
         display: none
       p
         margin-bottom: 0
+  .about-course-img
+    img
+      width: 100%
+      max-width: 450px
+      display: block
+      margin: 0 auto
+  .course-program-wrapper
+    .program-wrap
+      ul
+        margin-bottom: 40px
+        li
+          font-size: 0.87rem
+          padding-left: 25px
+          margin-bottom: 10px
+          &.program-title
+            padding-bottom: 3px
+            display: flex
+            align-items: flex-end
+
+  .banner-course
+    .banner-content
+      .img-banner-wrapper
+        img
+          width: 100%
+      .banner-text
+        h1
+          font-size: 2rem
+          margin-bottom: 15px
+        .date-wrapper
+          padding: 15px
+          max-width: 300px
+      .info-wrapper
+        .center-block
+          .hexagon
+            background: 0 0
+            box-shadow: none
+            &:before,
+            &:after
+              display: none
+            span,
+            img
+              max-width: 130px
+              margin: 0 auto
+        .left-block
+          .item
+            padding-right: 5px
+            &.start
+              top: 55px
+              &:before
+                width: 40px
+                right: -40px
+              &:after
+                right: -87px
+            &.about
+              &:before
+                width: 40px
+                right: -30px
+            &.duration
+              top: 350px
+              &:before
+                width: 40px
+                right: -38px
+              &:after
+                right: -87px
+        .right-block
+          .item
+            padding-left: 5px
+            &.mentor
+              top: 55px
+              &:before
+                width: 40px
+                left: -40px
+              &:after
+                left: -87px
+            &.program
+              &:before
+                width: 40px
+                left: -30px
+            &.prices
+              top: 350px
+              &:before
+                width: 40px
+                left: -38px
+              &:after
+                left: -87px
 
 @media only screen and (max-width: 960px)
   #team
@@ -359,6 +436,12 @@
   .why-we-are,
   .opensource
     padding-top: 150px
+  .banner-course
+    .banner-content
+      .info-wrapper
+        .left-block,
+        .right-block
+          width: 100%
 
 @media only screen and (max-width: 575px)
   header
@@ -387,11 +470,6 @@
     padding: 50px 0
   #cdk-overlay-0
     min-width: 88% !important
-  .banner-course
-    .banner-content
-      .img-banner-wrapper img
-        width: auto
-        height: auto
   .business-options
     .item
       padding: 10px 30px
@@ -453,6 +531,48 @@
         .right-img-cell
           width: 100%
           display: block
+  .banner-course
+    background: url("/img/geometricBG-mobile-right.jpg") 100% 0 no-repeat
+    .banner-content
+      .img-banner-wrapper img
+        width: auto
+        height: auto
+      .info-wrapper
+        flex-wrap: wrap
+        .center-block
+          width: 0
+          display: none
+          .hexagon
+            span, img
+              display: none
+        .left-block,
+        .right-block
+          padding: 0
+          text-align: left
+          flex-wrap: wrap
+          .item
+            padding: 0
+            margin-bottom: 25px
+            position: static
+            &.start,
+            &.mentor,
+            &.about,
+            &.program,
+            &.duration,
+            &.prices
+              &:before,
+              &:after
+                display: none
+        .right-block
+          display: flex
+          .item
+            justify-content: flex-start
+            span, a
+              order: 2
+            .ico-wrap
+              order: 1
+              margin-left: 0
+              margin-right: 20px
 
 @media only screen and (max-width: 435px)
   .banner-course
@@ -465,6 +585,12 @@
       min-height: 450px
       .item-content
         padding-bottom: 30px
+  .additional-service
+    .about,
+    .demands
+      .head-wrapper
+        min-height: 55px
+        line-height: 55px
 
 @media only screen and (max-width: 400px)
   #cdk-overlay-0
