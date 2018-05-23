@@ -1,0 +1,144 @@
+extends ../layout
+
+block content
+    section.banner#banner
+        .mouse-wr
+            a.mouse(href=mainBanner.content.mouse)
+        .container
+            .banner-content-wrapper
+                .banner-content
+                    h1 #{mainBanner.content.text.title}
+                    p #{mainBanner.content.text.subtitle}
+                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
+
+    section.business-options#business
+        .container
+            .header-section-wrapper
+                h3 #{businessOptions.title}
+                .background-section-text #{businessOptions.title}
+            .row.align-items-center
+                .col-lg-6.align-items-center
+                    .img-wrapper-business
+                        img(src='/img/' + businessOptions.taglineImage)
+                    p #{businessOptions.tagline}
+                .col-lg-6
+                    each item in businessOptions.content
+                        .item(class=item.class)
+                            h5 #{item.title}
+                            p #{item.text}
+
+    section#technologies.technologies
+        .container
+            .header-section-wrapper
+                h3 #{technologies.title}
+                .background-section-text #{technologies.title}
+            .technologies-wrapper
+                .row
+                    each i in technologies.content
+                        .col-6.col-sm-4.col-md-2
+                            .img-wrapper
+                                img(src='/img/' + i.src, alt=i.alt)
+    section.advantages
+        .container
+            .header-section-wrapper
+                h3 #{advantagesCompany.title}
+                .background-section-text #{advantagesCompany.title}
+            .row
+                each i in advantagesCompany.content.item
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(
+                                src='/img/' + i.src
+                                alt=i.alt
+                                )
+                            h5 #{i.title}
+                            p #{i.text}
+    section.services#services
+        .container
+            .header-section-wrapper
+                h3 #{services.title}
+                .background-section-text #{services.title}
+            .row
+                each i in services.content
+                    .col-md-4
+                        .item-content-block
+                            .icon
+                                img(src=i.src)
+                            h5 #{i.title}
+                            p #{i.text}
+
+    section#clients
+        .container
+            .header-section-wrapper
+                h3 #{portfolio.title}
+                .background-section-text #{portfolio.title}
+            .row
+                each project in portfolio.content
+                    .col-lg-6
+                        .client-wrapper(style=`background-image: url("/img/${project.background}")`)
+                            a(href=project.href)
+                            .item-content
+                                .duration #{project.duration}
+                                .name #{project.name}
+                                .shortDescription #{project.shortdescription}
+                                ul
+                                    each icon in project.technologies
+                                        li
+                                            img(src='/img/' + icon.src, alt=icon.alt)
+
+    section#testimonials
+        .container
+            .header-section-wrapper
+                h3 #{testimonials.title}
+                .background-section-text #{testimonials.title}
+            .row
+                .slide-wrap
+                    .testimonials-wrap
+                        each item in testimonials.content
+                            .testimonials-item
+                                .item
+                                    .left-block-wrap
+                                        .photo-client
+                                            img(src='/img/' + item.photo, alt=item.alt)
+                                        .name #{item.name}
+                                        .position #{item.position}, #{item.company}
+                                        a.linkedin(
+                                        class='fa fa-linkedin-square'
+                                        href=item.profilelink
+                                        )
+                                    .right-block
+                                        .quotes
+                                            p #{item.text}
+
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contacts.title}
+                .background-section-text #{contacts.title}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
+                    )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
+                        .social
+                            ul
+                                each el in contacts.content.contacts.social
+                                    li
+                                        a(class=el.linkClass, href=el.link)
+                                            i(class='fa ' + el.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p #{contacts.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contacts.content.contacts.address}

@@ -1,0 +1,12 @@
+{
+  "watch": [
+    "src",
+    "views",
+    "public"
+  ],
+  "ext": "ts,pug,sass,js",
+  "ignore": [
+    "src/**/*.spec.ts"
+  ],
+  "exec": "ts-node src/server/main.ts"
+}

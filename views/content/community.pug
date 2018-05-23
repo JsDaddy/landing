@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+    section#opensource.opensource
+        .container
+            .header-section-wrapper
+                h3 #{opensource.title}
+                .background-section-text #{opensource.bgtext}
+            each package in opensource.content
+                .row
+                    .col-md-8
+                        .img-block
+                            img(src='/img/' + package.src, alt=package.alt)
+                    .col-md-4
+                        .text-block
+                            p #{package.description}
+                            .contact-btn-wrapper
+                                a.contact-btn(href=package.link) View on GitHub
+                                    i.fa.fa-github
+    section#events.events
+        .container
+            .header-section-wrapper
+                h3 #{events.title}
+                .background-section-text #{events.bgtitle}
+            each el in events.content
+                .sl-events
+                    each item in el.event
+                        .event-item
+                            .event
+                                .event-img(style=`background-image: url("/img/${item.src}" )`)
+                                    span.label #{item.label}
+                                .event-title #{item.title}
+                                .event-desc #{item.description}
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contacts.title}
+                .background-section-text #{contacts.title}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
+                    )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
+                        .social
+                            ul
+                                each el in contacts.content.contacts.social
+                                    li
+                                        a(class=el.linkClass, href=el.link)
+                                            i(class='fa ' + el.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p #{contacts.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contacts.content.contacts.address}

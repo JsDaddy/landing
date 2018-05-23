@@ -89,11 +89,11 @@ logs/
 .DS_Store
 server_log.txt
 public/css/site.min.css
-public/js/bundle.min.js
-public/js/bundle.min.js.map
-public/js/bundle.min.js.deps
 .vscode
 .idea
 
 config/default.yaml
 config/prodaction.yaml
+config/default.json
+
+node_modules/
