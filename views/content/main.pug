@@ -2,6 +2,8 @@ extends ../layout
 
 block content
     section.banner#banner
+        .mouse-wr
+            a.mouse(href=mainBanner.content.mouse)
         .container
             .banner-content-wrapper
                 .banner-content
@@ -9,7 +11,7 @@ block content
                     p #{mainBanner.content.text.subtitle}
                     a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
 
-    section.business-options
+    section.business-options#business
         .container
             .header-section-wrapper
                 h3 #{businessOptions.title}
@@ -47,9 +49,9 @@ block content
                         .item-content-block
                             .icon
                                 img(
-                                    src='/img/' + i.src
-                                    alt=i.alt
-                                    )
+                                src='/img/' + i.src
+                                alt=i.alt
+                                )
                             h5 #{i.title}
                             p #{i.text}
     section.services#services
