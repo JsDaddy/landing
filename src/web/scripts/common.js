@@ -1,5 +1,7 @@
 const $ = require('jquery');
 require('slick-carousel');
+require('jq-accordion');
+
 $(document).ready(function () {
   $('.slider-teachers').slick({
     infinite: true,
@@ -132,6 +134,15 @@ $("a[href^='#']").click(function(e) {
     $("body, html").animate({
         scrollTop: position
     } /* speed */ );
+});
+
+$('.accordion').accordion({
+    transitionSpeed: 300,
+    transitionEasing: 'ease',
+    controlElement: '[data-control]',
+    contentElement: '[data-content]',
+    groupElement: '[data-accordion-group]',
+    singleOpen: true
 });
 
 // $('.program-title').equalHeights();
