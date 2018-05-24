@@ -16,20 +16,17 @@
     background: url("/img/geometricBG-mobile.png") no-repeat left 0, url("/img/geometricBG-mobile-right.jpg") no-repeat right 0
 
 @media only screen and (max-width: 1199px)
-  header nav li a.active:before,
-  header nav li span.active:before
-    background: 0 0
-  header .lang-checker .select li
-    &:first-child
-      margin-left: 8px
-    &:last-child
-      margin-right: 0
   header
     &.b-bottom
       background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
       background-size: 100% 1px
     .container
       position: static
+    .lang-checker .select li
+      &:first-child
+        margin-left: 8px
+      &:last-child
+        margin-right: 0
     .navigation-wrapper
       padding-top: 30px
       display: none
@@ -42,6 +39,11 @@
       top: 110px
       z-index: 10
       box-shadow: 0 2px 2px rgba(37, 25, 0, 0.1)
+      &.main-mnu
+        nav,
+        .social
+          margin-right: 0
+          margin-left: 0
     nav
       margin-right: 0
       margin-bottom: 30px
@@ -57,6 +59,9 @@
           display: block
           a:hover:before,
           span:hover:before
+            background: 0 0
+          a.active:before,
+          span.active:before
             background: 0 0
           &.sub-menu
             padding-bottom: 15px
@@ -349,6 +354,20 @@
   .item-wrapper
     width: 100%
 
+  .faq-wrapper
+    h5
+      font-size: 1.7rem
+  .accordion-wrapper
+    .accordion
+      .content div p
+        font-size: 1rem
+      .header p
+        font-size: 1.1rem
+  .advantages-wrapper
+    .item
+      p
+        font-size: 0.95rem
+
 @media only screen and (max-width: 767px)
   h3
     margin-bottom: 76px
@@ -442,6 +461,19 @@
         .left-block,
         .right-block
           width: 100%
+  .about-courses
+    margin-bottom: 80px
+  .advantages-wrapper
+    flex-wrap: wrap
+    .item
+      width: 50%
+      margin-bottom: 40px
+      .ico-wrap
+        margin-bottom: 20px
+  .accordion-wrapper
+    .accordion
+      .header p
+        width: 100%
 
 @media only screen and (max-width: 575px)
   header
@@ -573,6 +605,25 @@
               order: 1
               margin-left: 0
               margin-right: 20px
+  .advantages-wrapper
+    margin-bottom: 80px
+    .item
+      width: 100%
+  .faq-wrapper
+    padding: 40px 15px
+    h5:before
+      top: calc(100% + 15px)
+  .accordion-wrapper
+    .accordion
+      .content
+        margin-left: 70px
+      .header
+        padding-left: 0
+        .ico-wrap
+          margin-right: 45px
+          &:before
+            width: 18px
+            left: calc(100% + 13px)
 
 @media only screen and (max-width: 435px)
   .banner-course
@@ -616,6 +667,8 @@
           margin-right: 0
   .banner-case
     padding-top: 150px
+  .faq-wrapper h5
+    font-size: 1.4rem
 
 @media only screen and (max-width: 370px)
   .error-wrapper
