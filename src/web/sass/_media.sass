@@ -170,7 +170,6 @@
           .item
             padding-right: 90px
 
-
 @media only screen and (max-width: 991px)
   section
     padding: 75px 0
@@ -355,6 +354,20 @@
   .item-wrapper
     width: 100%
 
+  .faq-wrapper
+    h5
+      font-size: 1.7rem
+  .accordion-wrapper
+    .accordion
+      .content div p
+        font-size: 1rem
+      .header p
+        font-size: 1.1rem
+  .advantages-wrapper
+    .item
+      p
+        font-size: 0.95rem
+
 @media only screen and (max-width: 767px)
   h3
     margin-bottom: 76px
@@ -448,6 +461,19 @@
         .left-block,
         .right-block
           width: 100%
+  .about-courses
+    margin-bottom: 80px
+  .advantages-wrapper
+    flex-wrap: wrap
+    .item
+      width: 50%
+      margin-bottom: 40px
+      .ico-wrap
+        margin-bottom: 20px
+  .accordion-wrapper
+    .accordion
+      .header p
+        width: 100%
 
 @media only screen and (max-width: 575px)
   header
@@ -579,6 +605,25 @@
               order: 1
               margin-left: 0
               margin-right: 20px
+  .advantages-wrapper
+    margin-bottom: 80px
+    .item
+      width: 100%
+  .faq-wrapper
+    padding: 40px 15px
+    h5:before
+      top: calc(100% + 15px)
+  .accordion-wrapper
+    .accordion
+      .content
+        margin-left: 70px
+      .header
+        padding-left: 0
+        .ico-wrap
+          margin-right: 45px
+          &:before
+            width: 18px
+            left: calc(100% + 13px)
 
 @media only screen and (max-width: 435px)
   .banner-course
@@ -622,6 +667,8 @@
           margin-right: 0
   .banner-case
     padding-top: 150px
+  .faq-wrapper h5
+    font-size: 1.4rem
 
 @media only screen and (max-width: 370px)
   .error-wrapper
