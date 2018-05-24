@@ -16,20 +16,17 @@
     background: url("/img/geometricBG-mobile.png") no-repeat left 0, url("/img/geometricBG-mobile-right.jpg") no-repeat right 0
 
 @media only screen and (max-width: 1199px)
-  header nav li a.active:before,
-  header nav li span.active:before
-    background: 0 0
-  header .lang-checker .select li
-    &:first-child
-      margin-left: 8px
-    &:last-child
-      margin-right: 0
   header
     &.b-bottom
       background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
       background-size: 100% 1px
     .container
       position: static
+    .lang-checker .select li
+      &:first-child
+        margin-left: 8px
+      &:last-child
+        margin-right: 0
     .navigation-wrapper
       padding-top: 30px
       display: none
@@ -42,6 +39,11 @@
       top: 110px
       z-index: 10
       box-shadow: 0 2px 2px rgba(37, 25, 0, 0.1)
+      &.main-mnu
+        nav,
+        .social
+          margin-right: 0
+          margin-left: 0
     nav
       margin-right: 0
       margin-bottom: 30px
@@ -57,6 +59,9 @@
           display: block
           a:hover:before,
           span:hover:before
+            background: 0 0
+          a.active:before,
+          span.active:before
             background: 0 0
           &.sub-menu
             padding-bottom: 15px
@@ -164,6 +169,7 @@
         .left-block
           .item
             padding-right: 90px
+
 
 @media only screen and (max-width: 991px)
   section
