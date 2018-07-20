@@ -6,14 +6,13 @@ import * as NotifyActions from './store/actions/notify.actions';
 import { rootEpic } from './store/epics/notify.epic';
 import { notify } from './store/reducer/notify.reducer';
 
-const menuItems: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a[href^="#"]');
+const menuItems: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a[href^="/#"]');
 Array.prototype.forEach.call(menuItems, (item: HTMLAnchorElement) => {
   item.addEventListener('click', (e: MouseEvent) => {
     const selector: string | null = (e.target as HTMLAnchorElement).getAttribute('href');
     startScroll(selector);
   });
 });
-
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const store = createStore(

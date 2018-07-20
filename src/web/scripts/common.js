@@ -3,6 +3,7 @@ require('slick-carousel');
 require('jq-accordion');
 
 $(document).ready(function () {
+
   $('.slider-teachers').slick({
     infinite: true,
     slidesToShow: 3,
