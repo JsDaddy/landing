@@ -3,7 +3,7 @@ export function startScroll(selector: string | null) {
     return;
   }
   const to: number = (document.querySelector(selector) as HTMLElement).offsetTop + 80;
-  _scroll(window.scrollY, to, 1000);
+  _scroll(window.scrollY, to, 60);
 }
 
 function _scroll(from: number, to: number, duration: number) {
