@@ -84,11 +84,7 @@ $(document).ready(function () {
 
 $("a[href*='#']").click(function(e) {
   //e.preventDefault();
-  var a = document.referrer;
-  var delay = 2000;
-  if(a){
-    $(window).scrollTop(0);
-  }
+
   if($(this).attr("href")[0]=="/") {
     var position = $(this).attr("href").slice(1);
   }
