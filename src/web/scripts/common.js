@@ -82,7 +82,27 @@ $(document).ready(function () {
   $(`a[href$=${type}]`).addClass('active');
 });
 
+$("a[href*='#']").click(function(e) {
+  //e.preventDefault();
+  var a = document.referrer;
+  var delay = 2000;
+  if(a){
+    $(window).scrollTop(0);
+  }
+  if($(this).attr("href")[0]=="/") {
+    var position = $(this).attr("href").slice(1);
+  }
+  else
+    var position = $(this).attr("href");
+  $("body, html").animate({
+      scrollTop: ($(position).offset().top)
+    } /* speed */ );
+});
+
 $(window).resize(function () {
+  if ($(window).width() > 1199) {
+    $('.navigation-wrapper').removeAttr('style');
+  }
   if ($(window).width() <= 575) {
     $('.wrap').unwrap('.left-img-cell');
     $('.unwrap').unwrap('.right-img-cell');
@@ -135,7 +155,7 @@ $("a[href^='#']").click(function(e) {
     $("body, html").animate({
         scrollTop: position
     } /* speed */ );
-});
+}); 
 
 $('.accordion').accordion({
     transitionSpeed: 300,
