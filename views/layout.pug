@@ -48,12 +48,11 @@ html
         link(rel='apple-touch-icon', sizes='114x114', href='')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
         link(rel='stylesheet', href='https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css')
-        link(rel='stylesheet', href='/css/font-awesome.min.css')
         link(rel='stylesheet', href='/css/slick.css')
+        link(rel='stylesheet', href='/css/font-awesome.min.css')
         link(rel='stylesheet', href='/css/slick-theme.css')
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
-        link(rel='stylesheet' href='/css/main.min.css')
     body
         if mainMenu
             header
@@ -107,11 +106,52 @@ html
             //-         span Success!
         block content
 
-        if footer
-            footer.footer
-                .copyright #{footer.content.text}
-
-        include content/notification.pug
+        footer
+            .container#footer
+                .row
+                    .footer-wrapper
+                        .contacts
+                            .contacts__logo
+                                a(href="#")
+                                    img(src="/img/logo.png", alt="JsDaddy") 
+                            .contacts__email 
+                                a(href="mailto:info@jsdaddy.io") 
+                                    i(class="fa fa-envelope-o", aria-hidden="true") 
+                                    |info@jsdaddy.io 
+                            .contacts__skype 
+                                a(href="skype:juncker8888") 
+                                    i(class="fa fa-skype" aria-hidden="true") 
+                                    |juncker8888     
+                            .contacts__addres Kharkiv, Ukraine
+                        .navigation-footer
+                            ul
+                                li
+                                    a(href="#services") Services
+                                li
+                                    a(href="#dev-process") Development Process
+                                li
+                                    a(href="#technologies") Technologies
+                                li
+                                    a(href="#header") Portfolio
+                                li
+                                    a(href="#testimonials") Testimonials
+                                li 
+                                    a(href="#footer") About Us 
+                        .social Social
+                            ul
+                                li
+                                    a(href="https://www.facebook.com/JSDaddyUkraine/" class="facebook")
+                                        i(class="fa fa-facebook")
+                                li
+                                    a(href="https://www.linkedin.com/company/jsdaddy/" class="linkedin")
+                                        i(class="fa fa-linkedin")
+                                li
+                                    a(href="https://github.com/JsDaddy" class="github")
+                                        i(class="fa fa-github")                                                            
+            .copy-wrapper
+                .container
+                    .row
+                        .col-lg-12 Copyright Ⓒ 2017-2018 JSdaddy
 
         block script
             script(src='/js/common.min.js')
