@@ -1,682 +1,501 @@
-@import "variables"
-@media only screen and (max-width: 1700px)
-  .banner-course
-    background-position: -70% 0px, 170% 0px
+@import "vars"
 
-@media only screen and (max-width: 1600px)
-  .banner-course
-    background-position: -90% 0px, 190% 0px
+/*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	header
+		position: relative
+		.nav-wrapper
+			display: none
+			max-width: 100%
+			box-shadow: 0px 0px 10px rgba(224, 224, 224, 0.9)
+			background: #ffffff
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: 100%
+			left: 0
+			right: 0
+			text-align: center
+			margin-top: 11px
+			z-index: 5
+			&.active 
+				display: inline-flex
+				text-align: center
+			nav
+				ul
+					display: inline-flex
+					flex-direction: column
+					align-items: center
+				li	
+					padding: 10px
+					margin-left: 0px
+		.btn-wrap
+			margin-left: 0
+			.btn
+				margin: 0px 5px 15px 0
+		.nav-burger
+			display: block
+			cursor: pointer
+			.line 
+				margin: 5px
+				height: 5px
+				width: 45px
+				background-color: #fc0
+				transition: all .35s
+				position: relative
+			.line-middle
+				margin: 5px
+				height: 5px
+				width: 45px
+				background-color: #fc0
+				transition: all .35s
+				position: relative
+		.nav-burger.active .line-middle
+			display: none				
+		.nav-burger.active .line:first-child
+			top: 10px
+			transform: rotate(135deg)
+		.nav-burger.active .line:last-child
+			top: 0
+			transform: rotate(-135deg)
+		.nav-burger .line-middle
+			display: block				
+						
+	.right-col
+		margin-left: 10px
+	.left-col
+		margin-right: 10px
+.solution
+	max-height: 284px
+	min-height: 316px
 
-@media only screen and (max-width: 1500px)
-  .banner-course
-    background-position: -135% 0px, 235% 0px
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1000px)
+	.dev-process 
+		.step-wrapper 
+			.center-col
+				width: 270px
+				height: 270px
+	.scrollup
+		display: none !important	
 
-@media only screen and (max-width: 1350px)
-  .banner-course
-    background: url("/img/geometricBG-mobile.png") no-repeat left 0, url("/img/geometricBG-mobile-right.jpg") no-repeat right 0
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.dev-process 
+		.step-wrapper 
+			.center-col
+				width: 260px
+    			height: 260px
+	.advantages-wrapper 
+		.advantages__item
+			width: 90%
+@media only screen and (max-width : 800px)
+	.project
+		margin-bottom: 30px
+	.dev-process 
+		.step-wrapper 
+			.center-col
+				display: none	
 
-@media only screen and (max-width: 1199px)
-  header
-    &.b-bottom
-      background: $grey-header linear-gradient(#ccc, #ccc) no-repeat 0 100%
-      background-size: 100% 1px
-    .container
-      position: static
-    .lang-checker .select li
-      &:first-child
-        margin-left: 8px
-      &:last-child
-        margin-right: 0
-    .navigation-wrapper
-      padding-top: 30px
-      display: none
-      width: 100%
-      height: 100vh
-      position: absolute
-      left: 0
-      right: 0
-      background: $grey-header
-      top: 110px
-      z-index: 10
-      box-shadow: 0 2px 2px rgba(37, 25, 0, 0.1)
-      &.main-mnu
-        nav,
-        .social
-          margin-right: 0
-          margin-left: 0
-    nav
-      margin-right: 0
-      margin-bottom: 30px
-      ul
-        margin: 0 auto
-        text-align: center
-        li
-          margin-right: 0
-          margin-bottom: 0
-          padding-left: 15px
-          padding-bottom: 15px
-          text-transform: uppercase
-          display: block
-          a:hover:before,
-          span:hover:before
-            background: 0 0
-          a.active:before,
-          span.active:before
-            background: 0 0
-          &.sub-menu
-            padding-bottom: 15px
-            &:hover
-              .sub .fa
-                transform: rotate(0)
-                padding: 0 0 0 8px
-            &.open
-              .sub .fa
-                transform: rotate(180deg)
-                padding: 0 8px 0 0
-            .sub
-              position: static
-            &:hover .sub-nav,
-            .sub-nav
-              display: none
-              position: inherit
-              top: 100%
-              left: -10px
-              width: 100%
-              min-width: 220px
-              padding: 10px 0
-              background-color: #f8f8f8
-              border-bottom: none
-              li a
-                font-size: 0.8rem
-    #main-menu > li > a
-      position: relative
-      left: -8px
-    .right-header-block
-      flex-direction: column
-      align-items: center
-      .social
-        margin-bottom: 25px
-      .contact-btn-wrapper
-        margin-left: 0
-        margin-bottom: 40px
-      .tel-wrapper
-        padding-bottom: 30px
-    .nav-burger
-      display: block
-    &.fixed-header
-      .navigation-wrapper
-        top: 71px
-    .lang-checker
-      display: block
-      width: 100%
-      margin: 0
-      padding: 0 0 30px 0
-      .select
-        display: block
-        width: 100%
-        text-align: center
-  .banner
-    background: #edf8fc url($imgPath + "mobile-banner.png") no-repeat 50% 5%
-    align-items: flex-end
-    min-height: 700px
-    padding-bottom: 60px
-    .banner-content-wrapper
-      flex-direction: column
-  .header-section-wrapper
-    .background-section-text
-      font-size: 5.3rem
-      top: 20px
-  .item-content-block
-    h5
-      min-height: 40px
-      margin-bottom: 30px
-  .technologies
-    .img-wrapper
-      width: 130px
-      height: 70px
-  .why-we-are
-    background: #eff4f5
-    .why-we-are-wrapper
-      flex-direction: column
-      .text-block
-        width: 100%
-        padding-right: 0
-        text-align: center
-        margin-bottom: 40px
-        h5
-          text-align: center
-      .img-block
-        width: 100%
-  .banner-course
-    .banner-content
-      .banner-text
-        padding-top: 25px
-  .error-wrapper
-    h1
-      font-size: 10rem
-    .text-message
-      h3
-        font-size: 2rem
-        margin-bottom: 70px
-  .events
-    .event
-      max-width: 280px
-  .banner-course
-    .banner-content
-      .info-wrapper
-        .item
-          font-size: 0.8rem
-        .left-block
-          .item
-            padding-right: 90px
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.technologies .icon
+		height: 140px
+		width: 120px
+	.service
+		    margin-bottom: 60px
+	.dev-process 
+		.step-wrapper
+			margin-top: 0
+			flex-direction: column
+			.center-col
+				display: none
+	.dev-process 
+		.step-wrapper 
+			.right-col 
+				.step
+					margin-bottom: 30px	
+					.ico-wrap
+						margin-left: 20px
+				span
+					font-size: 35px	
+			.left-col
+				margin-right: 0
+				margin-bottom: 30px				
+				.step
+					flex-direction: row-reverse
+					margin-bottom: 30px
+					.ico-wrap
+						margin-right: 25px
+					.text-wrap
+						text-align: left			
 
-@media only screen and (max-width: 991px)
-  section
-    padding: 75px 0
-  .header-section-wrapper
-    .background-section-text
-      display: none
-    h3
-      margin-bottom: 30px
-  h3
-    font-size: 2.5rem
-  .item-content-block
-    h5
-      margin-bottom: 30px
-    .icon
-      img
-        width: 80px
-        height: 80px
-    p
-      font-size: 0.9rem
-  .technologies
-    .img-wrapper
-      width: 100px
-      height: 50px
-  .input-top-wrapper
-    width: 100%
-    flex-direction: column
-    .input-wrapper
-      max-width: 500px
-      width: 100%
-      margin: 0 auto
-      padding: 0 0 10px 0
-      .valid-message
-        position: static
-      input
-        width: 100%
-        margin-bottom: 10px
-    &.courses-form
-      .input-wrapper
-        width: 100%
-  .contact-form-wrapper
-    padding: 0 15px
-    textarea
-      width: 100%
-      max-width: 500px
-      display: flex
-      margin: 0 auto 50px auto
-  .contact-details
-    flex-direction: column
-    div
-      width: 100%
-      border: none
-      text-align: center
-    .email-block
-      margin-bottom: 20px
-      .social
-        justify-content: center
-        padding-top: 10px
-    .address-block
-      ul
-        text-align: center
-  .header-section-wrapper
-    text-align: center
-  .advantages
-    .items-wrapper
-      display: block
-      width: 100%
-      text-align: center
-      margin: 0
-      .item
-        margin-bottom: 30px
-  #team
-  .item-wrapper
-    width: 100%
-  .about-case
-    .img-wrapper
-      margin-bottom: 50px
+	.step.planing
+		border-radius: 0
+	.contact-us__wrapper
+		flex-direction: column
+		p
+			margin-bottom: 30px
+			margin-right: 0
+			text-align: center
+	.about-services__text
+		p
+		text-align: center
+	.sub-header
+		border-radius: 0
+	.about-us__text
+		margin-bottom: 30px
+	.team
+		text-align: center
+	.background-about-text
+		font-size: 120px					
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 572px)
+	.nav-burger
+		margin-right: 15px
+	.banner-second__web	p
+		margin: 0 15px 50px 15px
+	.about-us__text
+		text-align: center
+	.background-about-text
+		font-size: 100px
+	.header-section-wrapper h3
+		font-size: 50px				
 
-  .tech-info
-    .tech-info-wrapper
-      margin-bottom: 50px
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 556px)
+	header 
+		.nav-burger
+			margin-right: 15px
+	.service
+		margin-bottom: 30px		
+	.banner__content
+		margin-left: 20px
+	section
+		padding: 30px 0
+	.banner h1
+		font-size: 55px		
+	section h3
+		font-size: 25px
+	section 
+		.services-items-wrapper 
+			.item
+				height: 300px
+		.sub-header
+			margin: 0 auto 50px auto		
+	.advantages-wrapper 
+		.advantages
+			margin-left: 15px
+	.advantages-wrapper 
+		.advantages__item-text
+			font-size: 14px
+	.slick-next
+		display: none
+	.testimonials-wrapper	
+		padding: 20px 10px
+	footer
+		padding: 40px 0 0 0 
+		.contacts
+			margin-left: 15px
+		.social
+			margin-right: 15px	
+			font-size: 15px	
+			ul li a
+				font-size: 20px	
+		.contacts__email a, footer .contacts__skype a
+			font-size: 14px
+		.contacts__addres
+			font-size: 14px
+		.navigation-footer ul li a
+			font-size: 14px
+		.contacts__email i, footer .contacts__skype i
+			font-size: 15px
+	.copy-wrapper
+		margin-top: 40px
+	footer
+		.contacts
+			margin-left: 0
+			text-align: center
+		.social
+			margin-top: 15px
+			margin-right: 0
+			align-items: center
+			ul 
+				li:first-child
+					margin-left: 0
+		.navigation-footer
+			display: none	
+		.footer-wrapper
+			align-items: center
+			flex-direction: column
+			>div
+				border-right: none		
+	.copy-wrapper
+		    margin-top: 20px
+	.background-about-text
+		font-size: 80px					
+		
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.banner h1
+		font-size: 41px
+	.banner p
+		margin-bottom: 20px
+	section 
+		.sub-header
+			margin: 0 auto 60px auto
+			padding: 0 15px	
+		.services-items-wrapper 
+			.item
+				height: 250px
+				.item a			
+					padding: 10px
+			.item__icon
+				min-height: 95px
+				width: 95px		
 
-  .business-options
-    .img-wrapper-business
-      margin: 0 auto
-    p
-      margin: 0 auto 50px auto
-    .item
-      margin-bottom: 40px
-      &:before,
-      &:after
-        display: none
-      p
-        margin-bottom: 0
-  .about-course-img
-    img
-      width: 100%
-      max-width: 450px
-      display: block
-      margin: 0 auto
-  .course-program-wrapper
-    .program-wrap
-      ul
-        margin-bottom: 40px
-        li
-          font-size: 0.87rem
-          padding-left: 25px
-          margin-bottom: 10px
-          &.program-title
-            padding-bottom: 3px
-            display: flex
-            align-items: flex-end
+	.dev-process 
+		.step-wrapper 
+			.left-col
+				.step 
+					.text-wrap h6
+						font-size: 14px
+					.text-wrap p
+						font-size: 14px
+				.ico-wrap span
+					font-size: 35px
+	.dev-process 
+		.step-wrapper 
+			.right-col 
+				.step
+					.ico-wrap
+						margin-left: 27px
+					.ico-wrap span
+						font-size: 32px
+					.text-wrap h6
+						font-size: 14px
+	 				.text-wrap p
+						font-size: 14px	
+	.technologies 
+		.icon
+			width: 100px
+			height: 120px
+	.advantages-wrapper 
+		.advantages
+			margin-left: 35px	
+		.advantages__item-text
+			font-size: 12px	
+		.advantages__item-text h6
+			font-size: 20px
+		.advantages__item-icon img
+			height: 70px
+		.advantages__item-icon
+			margin-right: 35px	
+	footer
+		padding: 30px 0 0 0
+	footer 
+		.navigation-footer 
+			ul 
+				margin: 0 10px
+				li	
+					margin-bottom: 2px
+	footer .footer-wrapper img
+		width: 100px
+		height: 50px
+	.copy-wrapper
+		font-size: 10px
+		margin-top: 20px
+	.technologies 
+		.icon
+			&:hover img
+				top: -9px
+		.icon span
+			font-size: 11px
+		.icon:hover span
+			bottom: 3px
+	.banner-second p
+		font-size: 14px
+	.banner-second h1
+		font-size: 35px	
+	.header-section-wrapper
+		.background-section-text
+			font-size: 90px 
+		h3
+			font-size: 45px
+	.header-section-wrapper h3
+		font-size: 35px		
 
-  .banner-course
-    .banner-content
-      .img-banner-wrapper
-        img
-          width: 100%
-      .banner-text
-        h1
-          font-size: 2rem
-          margin-bottom: 15px
-        .date-wrapper
-          padding: 15px
-          max-width: 300px
-      .info-wrapper
-        .center-block
-          .hexagon
-            background: 0 0
-            box-shadow: none
-            &:before,
-            &:after
-              display: none
-            span,
-            img
-              max-width: 130px
-              margin: 0 auto
-        .left-block
-          .item
-            padding-right: 5px
-            &.start
-              top: 55px
-              &:before
-                width: 40px
-                right: -40px
-              &:after
-                right: -87px
-            &.about
-              &:before
-                width: 40px
-                right: -30px
-            &.duration
-              top: 350px
-              &:before
-                width: 40px
-                right: -38px
-              &:after
-                right: -87px
-        .right-block
-          .item
-            padding-left: 5px
-            &.mentor
-              top: 55px
-              &:before
-                width: 40px
-                left: -40px
-              &:after
-                left: -87px
-            &.program
-              &:before
-                width: 40px
-                left: -30px
-            &.prices
-              top: 350px
-              &:before
-                width: 40px
-                left: -38px
-              &:after
-                left: -87px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px)
+	.banner h1
+		font-size: 45px
+	.banner__content
+		margin-right: 20px
+	section h3
+		font-size: 20px
+	section 
+		.sub-header
+			margin: 0 auto 35px auto
+		.services-items-wrapper 
+			.item
+				height: 260px
+			.item__icon
+				width: 75px
+				min-height: 75px
+	section 
+		.short-header
+			margin: 0 auto 15px auto
+	section h3
+		margin: 0 auto 15px auto
+	.dev-process 
+		.step-wrapper 
+			.left-col 
+				.step 
+					.ico-wrap
+						margin-left: 5px
+					.text-wrap
+						margin-right: 10px	
+					.text-wrap h6
+						font-size: 13px
+					.text-wrap p
+						font-size: 12px
+					.text-wrap h6
+						font-size: 13px
+			.right-col 
+				.step 
+					.ico-wrap
+						margin-left: 0
+						margin-right: 32px
+					.text-wrap h6
+						font-size: 13px
+					.text-wrap p
+						font-size: 12px
+					.text-wrap h6
+						font-size: 13px
+	.advantages-wrapper
+		.advantages__item-icon
+			margin: 0 auto
+		.advantages__item-text
+			text-align: center
+		.advantages__item-text h6
+			margin-top: 20px 
+		.advantages__item
+			flex-direction: column
+		.advantages__item-text:before
+			top: 5px
+			width: 90px
+			left: 50%
+			height: 3px
+			transform: translate(-50%, -50%)						
+	.technologies 
+		.icon
+			height: 85px
+			width: 70px
+		.icon span
+			font-size: 8px	
+	footer 
+		.contacts__email i 
+			margin-right: 5px
+		.contacts__skype i												
+			margin-right: 5px
+		.contacts__logo	
+			margin-bottom: 5px
+	.background-about-text
+		top: 50px
+		font-size: 65px
 
-@media only screen and (max-width: 960px)
-  #team
-  .item-wrapper
-    width: 100%
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	.banner h1
+		font-size: 45px
+	.banner p
+		font-size: 15px
+	.dev-process 
+		.step-wrapper
+			.step
+			.left-col
+				width: 275px
+				.ico-wrap
+					margin-right: 10px
+			.right-col
+				width: 275px
+				.ico-wrap
+					margin-right: 18px
+	.technologies 
+		.icon
+			width: 60px
+			height: 65px
+			&:hover img
+				top: -9px
+		.icon span
+			font-size: 7px
+		.icon:hover span
+			bottom: 4px
+	footer
+		.social
+			margin-top: 3px
+		.social	ul li a
+			font-size: 15px
+		.contacts__email 
+			a
+				font-size: 11px	
+				i 
+					margin-right: 4px
+		.contacts__skype 
+			a
+				font-size: 11px
+				i												
+					margin-right: 4px
+		.contacts__logo	
+			margin-bottom: 2px
+	.solution__header, .solution__text
+		text-align: center
+		.banner-second p
+			font-size: 11px
+		.banner-second h1
+			font-size: 30px
+	.item-wrapper 
+		.photo-wrapper img
+			height: 150px
+			width: 150px
+		.name
+			font-size: 17px
+		.position
+			font-size: 11px
+		.fa
+			font-size: 25px			
 
-  .faq-wrapper
-    h5
-      font-size: 1.7rem
-  .accordion-wrapper
-    .accordion
-      .content div p
-        font-size: 1rem
-      .header p
-        font-size: 1.1rem
-  .advantages-wrapper
-    .item
-      p
-        font-size: 0.95rem
 
-@media only screen and (max-width: 767px)
-  h3
-    margin-bottom: 76px
-  .item-content-block
-    h5
-      margin-bottom: 15px
-    .icon
-      img
-        width: 90px
-        height: 90px
-    p
-      font-size: 0.9rem
-      margin-bottom: 30px
-    .more-info
-      margin-bottom: 100px
-      .more-info-form-wrapper
-        position: static
-        transform: translate(0, 0)
-    &.services
-      padding: 120px 0 40px 0
-  .notification
-    width: 300px
-    right: 50%
-    transform: translate(50%, 0)
-    .notification-message
-      flex-direction: column
-      height: inherit
-      .logo
-        min-width: inherit
-        padding: 15px 0
-        margin-left: 0
-      .message
-        padding: 30px 20px
-        margin: 0
-        text-align: center
-  .advantages
-    .container
-      text-align: center
-  .banner-course
-    padding-top: 140px
-    .banner-content
-      display: block
-      text-align: center
-      .img-banner-wrapper
-        width: 100%
-        img
-          margin: 0 auto
-          width: auto
-      .banner-text
-        width: 100%
-        max-width: 400px
-        .date-wrapper
-          padding: 20px
-  .about-course-img
-    img
-      max-width: 350px
-  .opensource
-    .container
-      .row
-        &:nth-child(odd)
-          .col-md-8
-            order: 0
-          .col-md-4
-            order: 1
 
-    .text-block
-      padding-bottom: 0
-      text-align: center
-      p
-        padding: 0 10px
-    .img-block
-      margin-bottom: 40px
-    .contact-btn-wrapper
-      position: inherit
-      text-align: center
-      width: 100%
-      margin-top: 35px
-  .events
-    .event
-      max-width: 350px
-    .event-img
-      height: 170px
-  .banner-case
-    padding-top: 180px
-  .why-we-are,
-  .opensource
-    padding-top: 150px
-  .banner-course
-    .banner-content
-      .info-wrapper
-        .left-block,
-        .right-block
-          width: 100%
-  .about-courses
-    margin-bottom: 80px
-  .advantages-wrapper
-    flex-wrap: wrap
-    .item
-      width: 50%
-      margin-bottom: 40px
-      .ico-wrap
-        margin-bottom: 20px
-  .accordion-wrapper
-    .accordion
-      .header p
-        width: 100%
+/*==========  Mobile First  ==========*/
 
-@media only screen and (max-width: 575px)
-  header
-    display: inherit
-    padding-top: 20px
-    min-height: 94px
-    .logo
-      margin-left: 15px
-      padding-top: 4px
-      img
-        min-width: 105px
-    .navigation-wrapper
-      top: 94px
-  .nav-burger
-    margin-right: 15px
-  .banner
-    min-height: 615px
-    margin-top: 94px
-    .banner-content
-      h1
-        font-size: 2.8rem
-        margin-bottom: 25px
-      p
-        font-size: 1.3rem
-  section
-    padding: 50px 0
-  #cdk-overlay-0
-    min-width: 88% !important
-  .business-options
-    .item
-      padding: 10px 30px
-      border-radius: 15px
-  #testimonials
-    .slide-wrap
-      .testimonials-wrap
-        .testimonials-item
-          .item
-            flex-direction: column
-            align-items: center
-            .left-block-wrap
-              margin-right: 0
-              margin-bottom: 20px
-            .right-block
-              &:before
-                display: none
-              .quotes
-                p
-                  text-align: center
-  .banner-case
-    .banner-text
-      h1
-        font-size: 2.6rem
-      p
-        font-size: 1rem
-  .about-case
-    p
-      font-size: 0.9rem
-  .tech-info
-    .tech-info-wrapper
-      .row-wrap
-        .icon-wrap
-          margin-right: 20px
-  .why-we-are
-    .why-we-are-wrapper
-      .img-block
-        display: block
-        width: 100%
-        .left-img-cell span,
-        .right-img-cell span,
-        span
-          &.wrap
-            display: block !important
-            max-width: 100%
-            margin: 0 auto
-          &:before
-            content: ''
-            display: inline-block
-            position: absolute
-            left: 0
-            right: 0
-            top: 0
-            bottom: 0
-            background: rgba(2, 157, 163, 0.04)
-        .left-img-cell
-          width: 100%
-          padding-right: 0
-        .right-img-cell
-          width: 100%
-          display: block
-  .banner-course
-    background: url("/img/geometricBG-mobile-right.jpg") 100% 0 no-repeat
-    .banner-content
-      .img-banner-wrapper img
-        width: auto
-        height: auto
-      .info-wrapper
-        flex-wrap: wrap
-        .center-block
-          width: 0
-          display: none
-          .hexagon
-            span, img
-              display: none
-        .left-block,
-        .right-block
-          padding: 0
-          text-align: left
-          flex-wrap: wrap
-          .item
-            padding: 0
-            margin-bottom: 25px
-            position: static
-            &.start,
-            &.mentor,
-            &.about,
-            &.program,
-            &.duration,
-            &.prices
-              &:before,
-              &:after
-                display: none
-        .right-block
-          display: flex
-          .item
-            justify-content: flex-start
-            span, a
-              order: 2
-            .ico-wrap
-              order: 1
-              margin-left: 0
-              margin-right: 20px
-  .advantages-wrapper
-    margin-bottom: 80px
-    .item
-      width: 100%
-  .faq-wrapper
-    padding: 40px 15px
-    h5:before
-      top: calc(100% + 15px)
-  .accordion-wrapper
-    .accordion
-      .content
-        margin-left: 70px
-      .header
-        padding-left: 0
-        .ico-wrap
-          margin-right: 45px
-          &:before
-            width: 18px
-            left: calc(100% + 13px)
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
 
-@media only screen and (max-width: 435px)
-  .banner-course
-    .banner-content
-      .img-banner-wrapper img
-        width: 100%
-        height: auto
-  #clients
-    .client-wrapper
-      min-height: 450px
-      .item-content
-        padding-bottom: 30px
-  .additional-service
-    .about,
-    .demands
-      .head-wrapper
-        min-height: 55px
-        line-height: 55px
 
-@media only screen and (max-width: 400px)
-  #cdk-overlay-0
-    min-width: 85% !important
-  .error-wrapper
-    .logo
-      max-width: 130px
-    .text-message
-      h3
-        font-size: 1.3rem
-    h1
-      margin-top: 20px
-      font-size: 7rem
-    .navigation-wrapper
-      display: flex
-      flex-wrap: nowrap
-      justify-content: space-between
-      a
-        font-size: 14px
-        display: block
-        margin: 0 15px 0 0
-        &:last-child
-          margin-right: 0
-  .banner-case
-    padding-top: 150px
-  .faq-wrapper h5
-    font-size: 1.4rem
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
 
-@media only screen and (max-width: 370px)
-  .error-wrapper
-    .navigation-wrapper a
-      .fa
-        display: none !important
 
-@media only screen and (min-width: 1200px)
-  header
-    .nav-burger
-      display: none
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1201px)
+	header
+		.container
+			.nav-wrapper
+				display: flex !important
+
+

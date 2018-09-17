@@ -53,54 +53,58 @@ html
         link(rel='stylesheet', href='/css/slick-theme.css')
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
+        link(rel='stylesheet' href='/css/main.min.css')
     body
         if mainMenu
-            header#home
-                .container
-                    .row.content-header-wrapper
-                        .logo
-                            a(href='/')
-                                img(src='/img/logo.png', alt='js daddy')
-                        .navigation-wrapper(class=mainMenu.class)
-                            if mainMenu.content.languages
-                                .lang-checker
-                                    ul.select
-                                        each lang in mainMenu.content.languages
-                                            li(class=lang.active)
-                                                a(href=lang.link) #{lang.title}
-                            nav.nav-main
-                                ul#main-menu
-                                    each menu in mainMenu.content.menu
-                                        if menu.﻿subMenu
-                                            li(class=menu.﻿subclass)
-                                                span.sub #{menu.title}
-                                                    i(class='fa fa-angle-down')
-                                                ul.sub-nav
-                                                    each submnu in menu.﻿subMenu
-                                                        li
-                                                            a(href=submnu.link) #{submnu.title}
-                                        else
-                                            li
-                                                a(href=menu.link) #{menu.title}
-
-                            .right-header-block
-                                if mainMenu.content.social
-                                    .social
-                                        ul
-                                            each item in mainMenu.content.social
-                                                li
-                                                    a(class=item['link-class'], href=item.link)
-                                                        i.fa(class=item['icon-class'])
-                                if mainMenu.content.phone
-                                    .tel-wrapper
-                                        each i in mainMenu.content.phone
-                                            a(href=i.link) #{i.phone}
-                                .contact-btn-wrapper
-                                    a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
-                        .nav-burger
-                            .line
-                            .text Menu
-                            .line
+            header
+                #header.default
+                    .container#header
+                        .row.align-items-center.justify-content-between
+                            .col-2.logo
+                                a(href='#')
+                                    img(src='/img/logo.png', alt="JsDaddy")
+                            .nav-wrapper.col-lg-10
+                                nav
+                                    ul#menu-wrap
+                                        li
+                                            a(href='#services' class="link-nav") Services
+                                        li
+                                            a(href='#dev-process' class="link-nav") Development Process
+                                        li
+                                            a(href="#technologies" class="link-nav") Technologies
+                                        li
+                                            a(href="#header" class="link-nav") Portfolio
+                                        li
+                                            a(href="#testimonials" class="link-nav") Testimonials
+                                        li
+                                            a(href="#" class="link-nav") About Us
+                                .btn-wrap
+                                    a(href=".popup-form" class="btn contact_us_btn") Contact Us
+                            .nav-burger
+                                .line
+                                .line-middle
+                                .line
+            // popup
+            //- form.popup-from.mfp-hide.white-popup-block
+            //-     h3 Contact Us
+            //-     .popup-form__input-wrapper
+            //-         label(for="name") Name
+            //-         input#name(name="name", type="text")
+            //-         p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+            //-     .popup-form__input-wrapper
+            //-         label(for="email") Email,
+            //-         input#email(name="email", type="email")
+            //-         p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+            //-     .popup-form__input-wrapper
+            //-         label(for="Textarea") Message
+            //-         textarea#message
+            //-         p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+            //-     .popup-form__btn-wrapper
+            //-         button.btn#form__submit Contact Us
+            //-     .success-message
+            //-         .success-message__icon
+            //-             i.fa.fa-check(aria-hidden="true")
+            //-         span Success!
         block content
 
         if footer
@@ -113,6 +117,7 @@ html
             script(src='/js/common.min.js')
             script(src='/js/main.min.js')
             script(src='/js/contacts-form.min.js')
+            script(src='/src/web/scripts/scripts.min.js')
 
         script.
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

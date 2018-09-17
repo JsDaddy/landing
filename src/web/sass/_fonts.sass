@@ -1,37 +1,6 @@
-@import "variables"
+@import "_mixins/font-face"
 
-@font-face
-  font-family: 'Montserrat'
-  src: url($fontPath + 'Montserrat-Bold.eot?#iefix') format('embedded-opentype')
-  src: url($fontPath + 'Montserrat-Bold.woff') format('woff')
-  src: url($fontPath + 'Montserrat-Bold.ttf') format('truetype')
-  src: url($fontPath + 'Montserrat-Bold.svg#SegoeUI') format('svg')
-  font-weight: 700
-  font-style: normal
-
-@font-face
-  font-family: 'Montserrat'
-  src: url($fontPath + 'Montserrat-SemiBold.eot?#iefix') format('embedded-opentype')
-  src: url($fontPath + 'Montserrat-SemiBold.woff') format('woff')
-  src: url($fontPath + 'Montserrat-SemiBold.ttf') format('truetype')
-  src: url($fontPath + 'Montserrat-SemiBold.svg#SegoeUI') format('svg')
-  font-weight: 600
-  font-style: normal
-
-@font-face
-  font-family: 'Montserrat'
-  src: url($fontPath + 'Montserrat-Regular.eot?#iefix') format('embedded-opentype')
-  src: url($fontPath + 'Montserrat-Regular.woff') format('woff')
-  src: url($fontPath + 'Montserrat-Regular.ttf') format('truetype')
-  src: url($fontPath + 'Montserrat-Regular.svg#SegoeUI') format('svg')
-  font-weight: 400
-  font-style: normal
-
-@font-face
-  font-family: 'Montserrat'
-  src: url($fontPath + 'Montserrat-Light.eot?#iefix') format('embedded-opentype')
-  src: url($fontPath + 'Montserrat-Light.woff') format('woff')
-  src: url($fontPath + 'Montserrat-Light.ttf') format('truetype')
-  src: url($fontPath + 'Montserrat-Light.svg#SegoeUI') format('svg')
-  font-weight: 300
-  font-style: normal
++font-face("roboto", "../fonts/RobotoRegular/RobotoRegular")
++font-face("roboto", "../fonts/RobotoBold/RobotoBold", bold)
++font-face("robotoMedium", "../fonts/RobotoMedium/RobotoMedium")
++font-face("ralewayBlack", "../fonts/Raleway-Black/Raleway-Black")

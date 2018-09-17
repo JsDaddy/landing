@@ -1,25 +1,134 @@
-@import "variables"
-@import "../../../public/css/_icons.scss"
 @import "fonts"
-@import "reset-css"
-@import "loader"
-@import "mouse"
+@import "libs"
+@import "vars"
+@import "icons"
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+body
+  margin: 0
+  padding: 0
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+html, body
+  height: 100%
+
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.65
+  font-family: $default-font
+  overflow-x: hidden
+
+button 
+  border: none
+  outline: none
+  background: transparent
+  height: inherit
+
+ul
+  padding: 0
+  margin: 0
+
+li
+  list-style: none
+  margin: 0
+  padding: 0
+
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  padding: 0
+  
+p
+  padding: 0
+  margin: 0
+  
+.text-center
+  text-align: center
+
+::selection
+  background-color: $accent
+  color: #fff
+
+.scrollup
+  color: #fff
+  background: $accent
+  border: 2px solid $accent
+  border-radius: 40px
+  width: 50px
+  height: 50px
+  position: fixed
+  bottom: 50px
+  right: 100px
+  display: none
+  cursor: pointer
+  transition: all 0.3s ease
+  &:hover
+    background: $accent
+    color: $black
+  i
+    font-size: 30px
+    position: absolute
+    left: 50%
+    top: 43%
+    transform: translate(-50%, -50%)
+
+.btn
+  display: inline-flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  text-decoration: none
+  color: #fff
+  line-height: 28px
+  cursor: pointer
+  outline: none
+  background: $accent
+  border: 2px solid $accent
+  padding: 7px 25px
+  border-radius: 30px
+  font-size: 16px
+  transition: all 0.3s ease
+  &:hover
+    background: $accent
+    color: $black
+
 @import "header"
-@import "banner"
+@import "main-page"
 @import "services"
-@import "technologies"
-@import "why-we-are"
-@import "contacts"
-@import "footer"
-@import "notification"
-@import "courses"
-@import "team"
-@import "course"
-@import "opensource"
-@import "error"
-@import "testimonials"
-@import "clients"
-@import "events"
-@import "client"
-@import "buisnes-option"
+@import "services-page"
+@import "popup-form"
+@import "about-us"
 @import "media"
