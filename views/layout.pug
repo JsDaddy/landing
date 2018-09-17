@@ -53,6 +53,8 @@ html
         link(rel='stylesheet', href='/css/slick-theme.css')
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
+        link(rel='stylesheet' href='/css/main.min.css')
+        link(rel="stylesheet" href="css/animate.css")
     body
         if mainMenu
             header
@@ -76,7 +78,7 @@ html
                                         li
                                             a(href="#testimonials" class="link-nav") Testimonials
                                         li
-                                            a(href="#" class="link-nav") About Us
+                                            a(href="#about-us" class="link-nav") About Us
                                 .btn-wrap
                                     a(href=".popup-form" class="btn contact_us_btn") Contact Us
                             .nav-burger
@@ -154,10 +156,7 @@ html
                         .col-lg-12 Copyright Ⓒ 2017-2018 JSdaddy
 
         block script
-            script(src='/js/common.min.js')
-            script(src='/js/main.min.js')
-            script(src='/js/contacts-form.min.js')
-            script(src='/src/web/scripts/scripts.min.js')
+            script(src='/src/web/scripts/common.js')
 
         script.
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();

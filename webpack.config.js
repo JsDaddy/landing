@@ -7,8 +7,7 @@ module.exports = {
   devtool: "source-map",
   entry: {
     main :'./src/web/scripts/main.ts',
-    common: './src/web/scripts/common.js',
-    'contacts-form': './src/web/scripts/contacts-form.js',
+    common: './src/web/scripts/common.js',  
   },
   output: {
     path: path.resolve(__dirname, 'public/js'),

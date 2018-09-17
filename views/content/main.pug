@@ -1,144 +1,259 @@
 extends ../layout
 
 block content
-    section.banner#banner
-        .mouse-wr
-            a.mouse(href=mainBanner.content.mouse)
-        .container
-            .banner-content-wrapper
-                .banner-content
-                    h1 #{mainBanner.content.text.title}
-                    p #{mainBanner.content.text.subtitle}
-                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
-
-    section.business-options#business
-        .container
-            .header-section-wrapper
-                h3 #{businessOptions.title}
-                .background-section-text #{businessOptions.title}
-            .row.align-items-center
-                .col-lg-6.align-items-center
-                    .img-wrapper-business
-                        img(src='/img/' + businessOptions.taglineImage)
-                    p #{businessOptions.tagline}
-                .col-lg-6
-                    each item in businessOptions.content
-                        .item(class=item.class)
-                            h5 #{item.title}
-                            p #{item.text}
-
-    section#technologies.technologies
-        .container
-            .header-section-wrapper
-                h3 #{technologies.title}
-                .background-section-text #{technologies.title}
-            .technologies-wrapper
+    section.banner
+        .animated.bounceInLeft.fast
+            .container
                 .row
-                    each i in technologies.content
-                        .col-6.col-sm-4.col-md-2
-                            .img-wrapper
-                                img(src='/img/' + i.src, alt=i.alt)
-    section.advantages
-        .container
-            .header-section-wrapper
-                h3 #{advantagesCompany.title}
-                .background-section-text #{advantagesCompany.title}
-            .row
-                each i in advantagesCompany.content.item
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(
-                                src='/img/' + i.src
-                                alt=i.alt
-                                )
-                            h5 #{i.title}
-                            p #{i.text}
+                    .banner__content
+                        h1 JSDADDY
+                        p Reach your business goals with awesome apps in a cost-effective and timely manner, using lean philosophy principles.
+                            principles.
+                        a(href=".popup-form" class="btn contact_us_btn") Contact Us
     section.services#services
         .container
-            .header-section-wrapper
-                h3 #{services.title}
-                .background-section-text #{services.title}
             .row
-                each i in services.content
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(src=i.src)
-                            h5 #{i.title}
-                            p #{i.text}
-
-    section#clients
+                .short-header SERVICES
+                h3 WEB MOBILE SOLUTIONS. ENTERPRISE APPS PORTALS
+                .sub-header Full-cycle servicing that covers every
+            .row.services-items-wrapper
+                .service.col-md-4
+                    .item.animated.wow.fadeInLeft.faster
+                        a(href='#web-development')
+                            .item__icon
+                                img(src="img/web.svg", alt="web")
+                            h5 Advanced WEB
+                            p  Productive, engaging and reliable solutions for business outcomes you deserve.
+                .service.col-md-4
+                    .item.animated.wow.fadeInUp.faster
+                        a(href='#')
+                            .item__icon
+                                img(src="img/smartphone.svg", alt="mobile app")
+                            h5 Advanced APP
+                            p Productive, engaging and reliable solutions for business outcomes you deserve.
+                .service.col-md-4
+                    .item.animated.wow.fadeInRight.faster
+                        a(href='#')
+                            .item__icon
+                                img(src="/img/cloud.svg", alt="cloud")
+                            h5 Advanced CLOUD
+                            p Productive, engaging and reliable solutions for business outcomes you deserve.
+    section.dev-process#dev-process
         .container
-            .header-section-wrapper
-                h3 #{portfolio.title}
-                .background-section-text #{portfolio.title}
             .row
-                each project in portfolio.content
-                    .col-lg-6
-                        .client-wrapper(style=`background-image: url("/img/${project.background}")`)
-                            a(href=project.href)
-                            .item-content
-                                .duration #{project.duration}
-                                .name #{project.name}
-                                .shortDescription #{project.shortdescription}
-                                ul
-                                    each icon in project.technologies
-                                        li
-                                            img(src='/img/' + icon.src, alt=icon.alt)
-
+                .short-header Process
+                h3 Development Process
+                .sub-header Do you have an idea?
+            .row
+                .step-wrapper
+                    .left-col
+                        .step.planing.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 PLANNING
+                                p Perfect plan will kick off a project flawlessly
+                            .ico-wrap
+                                span.icon-planinig
+                        .step.analysis.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 ANALYSIS
+                                p Analysis is an important step to proceed further to the next point
+                            .ico-wrap
+                                span.icon-analysis
+                        .step.stack.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 Design
+                                p Setting a standard and attempting to stick to it
+                            .ico-wrap
+                                span.icon-design
+                    .center-col
+                        img(src='img/construction_project_plan_building_architect_design_develop-83_icon-icons.com_60220.png', alt='asd')
+                    .right-col
+                        .step.architecture.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-implementation
+                            .text-wrap
+                                h6 IMPLEMENTATION
+                                p Developing software and a pilot study to check it
+                        .step.test.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-test
+                            .text-wrap
+                                h6 Testing
+                                p Checking applications for errors and bugs if there are any
+                        .step.deployment.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-MAINTENANCE
+                            .text-wrap
+                                h6 MAINTENANCE
+                                p Changing the existing functionality is a regular process
+    section.technologies#technologies
+        .container
+            .row
+                .short-header technologies
+                h3 We use only advanced technologies
+                .sub-header Full-cycle servicing
+            .row.animate.wow.fadeInUp.fast
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img1.png', alt="node")
+                        span node
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img2.png', alt="react")
+                        span react
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img3.png', alt="angular")
+                        span angular
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img4.png', alt="css3")
+                        span css3
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img5.png', alt="rxjava")
+                        span rxjava
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img6.png', alt="redux")
+                        span redux
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img7.png', alt="musql")
+                        span musql
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img8.png', alt="docker")
+                        span docker
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img9.png', alt="Vue")
+                        span Vue
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img10.png', alt="mocha")
+                        span mocha
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img11.png', alt="flutter")
+                        span flutter
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img12.png', alt="react native")
+                        span react native
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img13.png', alt="karma")
+                        span karma
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img14.png', alt="jasmine")
+                        span jasmine
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img15.png', alt="Jest")
+                        span Jest
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img16.png', alt="Type Script")
+                        span Type Script
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img17.png', alt="HTML5")
+                        span HTML5
+                .col-3.col-md-4.col-lg-2
+                    .icon
+                        img(src='img/img18-1.png', alt="Mongo DB")
+                        span Mongo DB
+    section.advantages-wrapper
+        .container
+            .row
+                .short-header advantages
+                h3 Why should you choose us?
+                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+            .row
+                .advantages
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="img/ico-tailor.png", alt="tailor")
+                        .advantages__item-text.tailer
+                            h6 Tailor made
+                            p Any discontent or difficulty of the client that appear during the development process can be improved while the formulation of the software with customer permission which is the most significant benefit of a JavaScript development company.
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="img/ico-integration.png", alt="integration")
+                        .advantages__item-text.integration
+                            h6 Integration
+                            p Businesses in need of numerous software programs can enjoy the benefits of operating on one custom software application designed using JavaScript to integrate multiple processes.
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="img/ico-support.png", alt="support")
+                        .advantages__item-text.support
+                            h6 Support
+                            p You will have full access to technical support by our JavaScript team that was involved in the development process of your application, so all your encountered problems are resolved in an efficient manner by our company.
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="img/ico-cost.png", alt="Price")
+                        .advantages__item-text.price
+                            h6 Price formation
+                            p The long-term benefits of investing in developing custom business applications are far more valuable than purchasing a ready-made product. On top of this, imagine additional costs you would incur when paying for licenses, be it short or long term or implementation, when you buy off shelf products.
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="img/ico-maintenance.png", alt="maintenance")
+                        .advantages__item-text.maintenance
+                            h6 Maintenance
+                            p With custom application development your JavaScript based software is maintained for as long as you require. With off-the-shelf software your business is at the mercy of the software development company you are purchasing from.
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="img/ico-quality.png", alt="quality")
+                        .advantages__item-text.quality
+                            h6 Quality
+                            p Our development company creates stable and scalable JavaScript applications. Using test coverage is a part of our daily work. High quality of the solution is one of the things that we care for more than our clients.
     section#testimonials
         .container
-            .header-section-wrapper
-                h3 #{testimonials.title}
-                .background-section-text #{testimonials.title}
+            .row.animate.wow.flipInX
+                .short-header testimonials
+                h3 Our Clients Say
+                .sub-header  Full-cycle servicing that covers every aspect
             .row
-                .slide-wrap
-                    .testimonials-wrap
-                        each item in testimonials.content
-                            .testimonials-item
-                                .item
-                                    .left-block-wrap
-                                        .photo-client
-                                            img(src='/img/' + item.photo, alt=item.alt)
-                                        .name #{item.name}
-                                        .position #{item.position}, #{item.company}
-                                        a.linkedin(
-                                        class='fa fa-linkedin-square'
-                                        href=item.profilelink
-                                        )
-                                    .right-block
-                                        .quotes
-                                            p #{item.text}
-
-    section#contacts.contacts
-        .container
-            .header-section-wrapper
-                h3 #{contacts.title}
-                .background-section-text #{contacts.title}
-            .row
-                .contact-form-wrapper
-                    contacts-form.contact_us(
-                    btnText=contacts.content.button.text
-                    schema
-                    showphone="false"
-                    )
-            .row
-                .contact-details
-                    .email-block
-                        ul
-                            li.email
-                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
-                        .social
-                            ul
-                                each el in contacts.content.contacts.social
-                                    li
-                                        a(class=el.linkClass, href=el.link)
-                                            i(class='fa ' + el.iconClass)
-                    .tel-block
-                        ul
-                            li.tel
-                                p #{contacts.content.contacts.skype}
-                    .address-block
-                        ul
-                            li #{contacts.content.contacts.address}
+                .testimonials-wrapper
+                    .item
+                        .item__photo
+                            img(src="/img/client-photo-1.jpeg" alt="asd")
+                        .item__name Oleg Semiglazov
+                        .item__position CTO, Uran Company
+                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
+                        .item__quotes
+                            p JSDaddy has provided audit services
+                    .item
+                        .item__photo
+                            img(src="/img/konstantin.jpg" alt="asd")
+                        .item__name Konstantin Korotych
+                        .item__position CEO and founder Onixcat.com, Onixcat
+                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
+                        .item__quotes
+                            p We needed JavaScript developers for the Planarsys project
+                    .item
+                        .item__photo
+                            img(src="/img/client-photo-1.jpeg" alt="asd")
+                        .item__name Oleg Semiglazov
+                        .item__position CTO, Uran Company
+                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
+                        .item__quotes
+                            p JSDaddy has provided audit services
+                    .item
+                        .item__photo
+                            img(src="/img/client-photo-1.jpeg" alt="asd")
+                        .item__name Oleg Semiglazov
+                        .item__position CTO, Uran Company
+                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
+                        .item__quotes
+                            p JSDaddy has provided audit services 
+                    .item
+                        .item__photo
+                            img(src="/img/client-photo-1.jpeg" alt="asd")
+                        .item__name Oleg Semiglazov
+                        .item__position CTO, Uran Company
+                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
+                        .item__quotes
+                            p JSDaddy has provided audit services 
