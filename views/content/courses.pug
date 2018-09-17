@@ -1,0 +1,101 @@
+extends ../layout
+
+block content
+    section#courses.courses
+        .container
+            .header-section-wrapper
+                h3 #{coursesThumbs.title}
+                .background-section-text #{coursesThumbs.title}
+            .row
+                each thumb in coursesThumbs.content
+                    .col-lg-4
+                        .item-wrapper
+                            .start-course #{thumb.﻿start}
+                            div(class='course-type ' + thumb.class) #{thumb.type}
+                            .img-wrapper
+                                img(src='/img/' + thumb.logo.src, alt=thumb.﻿alt)
+                            h3.name #{thumb.title}
+                            .bottom-block
+                                .duration #{thumb.duration}
+                                .prices #{thumb.price}
+                            a.link(href=thumb.href)
+                                i.fa.fa-arrow-right
+    section(id="mentors" class="our-teaches")
+        .container
+            .header-section-wrapper
+                h3 #{mentors.title}
+                .background-section-text #{mentors.title}
+            .slider-teachers
+                each mentor in mentors.content
+                    .item-wrapper
+                        .photo-wrapper
+                            img(src=/img/ + mentor.photo, alt=mentor.lastName)
+                        .name #{mentor.firstName} #{mentor.lastName}
+                        .position #{mentor.position}
+                        .about
+                            .p #{mentor.about}
+
+    section#faq.faq
+        .container
+            .row
+                .col-lg-12
+                    .about-courses
+                        h5 #{about.title}
+                        p #{about.content.text}
+            .row
+                .advantages-wrapper
+                    each item in advantagesCourses.content.item
+                        .item
+                            .ico-wrap(class=item.class)
+                                img(src='/img/' + item.icon)
+                            p #{item.text}
+            .row
+                .col-lg-12
+                    .faq-wrapper
+                        h5 #{faq.title}
+                        div.accordion-wrapper(data-accordion-group)
+                            each item in ﻿faq.﻿content.﻿items
+                                div.accordion(data-accordion)
+                                    div.header(data-control)
+                                        div.ico-wrap
+                                            i(class="fa fa-question")
+                                        p #{item.question}
+                                        i(class="fa fa-chevron-down")
+                                    div.content(data-content)
+                                        div
+                                            p #{item.answer}
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contactsCourses.title}
+                .background-section-text #{contactsCourses.title}
+            .row
+                .contact-form-wrapper
+                    .contact-form-wrapper
+                        contacts-form.apply_course(
+                            btnText=contactsCourses.content.button.text 
+                            courses=courses
+                            schema
+                            showphone="true"
+                            lang=lang
+                        )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto' + contactsCourses.content.contacts.email) #{contactsCourses.content.contacts.email}
+                        .social
+                            ul
+                                each soc in contactsCourses.content.contacts.social
+                                    li
+                                        a(class=soc.linkClass, href=soc.link)
+                                            i.fa(class=soc.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p Skype:
+                                p #{contactsCourses.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contactsCourses.content.contacts.address}

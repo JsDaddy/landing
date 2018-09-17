@@ -1,0 +1,114 @@
+extends ../layout
+
+block content
+    section.banner-course
+        .container
+            .banner-content-wrapper
+                .banner-content
+                    h1 #{banner.content.info.title}
+                    p #{banner.content.info.desc}
+                    .info-wrapper
+                        .left-block
+                            .item.start
+                                .ico-wrap
+                                    span.ico.icon-stopwatch
+                                span #{banner.content.info.start}
+                            .item.about
+                                .ico-wrap
+                                    span.ico.icon-consulting-message
+                                a(href='#additional') #{banner.content.info.﻿about}
+                            .item.duration
+                                .ico-wrap
+                                    span.ico.icon-calendar
+                                span #{banner.content.info.duration}
+                        .center-block
+                            .img-wrapper
+                                .hexagon
+                                    span
+                                        img(src='/img/' + banner.content.icon, alt=banner.content.alt)
+                                a.contact-btn(href=banner.content.button.link) #{banner.content.button.text}
+                        .right-block
+                            .item.mentor
+                                span #{banner.content.info.firstName} #{banner.content.info.lastName}
+                                .ico-wrap
+                                    span.ico.icon-hipster-smiling
+                            .item.program
+                                a(href='#program') #{banner.content.info.﻿programm}
+                                .ico-wrap
+                                    span.ico.icon-exam
+                            .item.prices
+                                span #{banner.content.info.price}
+                                .ico-wrap
+                                    span.ico.icon-price-tag
+
+    section#program.course-program-wrapper
+        .container
+            .header-section-wrapper
+                h3 #{program.title}
+                div.background-section-text #{program.title}
+            .program-wrap
+                .row
+                    each module in program.content
+                        .col-lg-4
+                            ul
+                                li.program-title #{module.title}
+                                    each item in module.items
+                                        li #{item}
+
+    section#additional.additional-service
+        .container
+            .header-section-wrapper
+                h3 #{description.title}
+                div.background-section-text #{description.title}
+            .row
+                .col-lg-6
+                    .about
+                        .head-wrapper
+                            h4 #{requirements.subtitle}
+                        .text-wrapper
+                            each text in description.content
+                                p #{text}
+                .col-lg-6
+                    .demands
+                        .head-wrapper
+                            h4 #{requirements.﻿title}
+                        .text-wrapper
+                            each text in ﻿requirements.content
+                                p #{text}
+
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contactsCourses.title}
+                .background-section-text #{contactsCourses.title}
+            .row
+                .contact-form-wrapper
+                    .contact-form-wrapper
+                        contacts-form.apply_course(
+                        btnText=contactsCourses.content.button.text
+                        courses=courses
+                        schema
+                        showphone="true"
+                        selectedcourse=selectedCourse.name
+                        lang=lang
+                        )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto' + contactsCourses.content.contacts.email) #{contactsCourses.content.contacts.email}
+                        .social
+                            ul
+                                each soc in contactsCourses.content.contacts.social
+                                    li
+                                        a(class=soc.linkClass, href=soc.link)
+                                            i.fa(class=soc.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p Skype:
+                                p #{contactsCourses.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contactsCourses.content.contacts.address}

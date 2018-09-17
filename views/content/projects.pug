@@ -1,0 +1,83 @@
+extends ../layout
+block content
+    section.banner-case(style="background-image: url('/img/tokenize-banner.jpg');")
+        .container
+            .banner-content-wrapper
+                .banner-content
+                    .banner-text
+                        h1 #{projectBanner.content.banner.title}
+                        p #{projectBanner.content.﻿shortdescription}
+                    .btn-banner
+                        a.contact-btn.white(href=﻿projectBanner.content.button.link) #{﻿projectBanner.content.button.text}
+    section.about-case
+        .container
+            .header-section-wrapper
+                h3 #{aboutProject.title}
+                div.background-section-text #{aboutProject.title}
+            .row
+                .col-lg-6
+                    .img-wrapper
+                        img(src='/img/' + aboutProject.content.﻿about.src, alt=aboutProject.content.﻿about.alt)
+                .col-lg-6
+                    each item in aboutProject.content.about.paragraph
+                        p #{item.text}
+    section.tech-info
+        .container
+            .header-section-wrapper
+                h3 #{technicalInfo.title}
+                div.background-section-text #{technicalInfo.title}
+            .row
+                .col-lg-6
+                    .tech-info-wrapper
+                        each item in technicalInfo.content.info.item
+                            .row-wrap
+                                .icon-wrap
+                                    img(src='/img/' + item.src, alt=item.alt)
+                                .reviews #{item.reviews}
+                .col-lg-6
+                    .img-wrapper
+                        img(src='/img/' + technicalInfo.content.info.src, alt=technicalInfo.content.info.alt)
+    section.work-process
+        .container
+            .header-section-wrapper
+                h3 #{workProcess.title}
+                div.background-section-text #{workProcess.title}
+            .row
+                each item in workProcess.content.process
+                    .col-lg-3.col-md-6
+                        .item
+                            .icon-wrap
+                                img(src='/img/' + item.src, alt=item.title)
+                            .name #{item.title}
+                            .reviews #{item.text}
+    section#contacts.contacts
+        .container
+            .header-section-wrapper
+                h3 #{contacts.title}
+                .background-section-text #{contacts.title}
+            .row
+                .contact-form-wrapper
+                    contacts-form.contact_us(
+                    btnText=contacts.content.button.text
+                    schema
+                    showphone="false"
+                    )
+            .row
+                .contact-details
+                    .email-block
+                        ul
+                            li.email
+                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
+                        .social
+                            ul
+                                each el in contacts.content.contacts.social
+                                    li
+                                        a(class=el.linkClass, href=el.link)
+                                            i(class='fa ' + el.iconClass)
+                    .tel-block
+                        ul
+                            li.tel
+                                p #{contacts.content.contacts.skype}
+                    .address-block
+                        ul
+                            li #{contacts.content.contacts.address}
