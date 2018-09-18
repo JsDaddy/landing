@@ -1,11 +1,9 @@
 const $ = require('jquery');
 require('slick-carousel');
-require('wowjs');
 require('magnific-popup');
 // require('animate.css');
 
 $(document).ready(function () {
-  // new WOW().init();
   $('.testimonials-wrapper').slick({
     arrows: false,
     dots: false,
