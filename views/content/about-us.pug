@@ -7,7 +7,7 @@ block content
                 .banner-second__web
                     h1 ABOUT US
                     p We are a team of experienced JavaScript developers who decided to make better service for our customers. The beginning of our development path started in 2015, and we have grown into a full-cycle software development company.During the development process we use cutting edge technologies, such as ES6, Angular, React, Node, Docker, etc.
-                    a(class='btn contact_us_btn', href='.popup-form') Contact Us
+                    a(href="#popup-from" class="btn contact_us_btn") Contact Us
     section.about-us
         .container
             .row   
@@ -101,4 +101,24 @@ block content
                         a(href='https://www.linkedin.com/in/mike-tkachenko/')
                             i(class='fa fa-linkedin-square')
     #map
-                    
+
+    form#popup-from.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!   

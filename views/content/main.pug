@@ -9,7 +9,7 @@ block content
                         h1 JSDADDY
                         p Reach your business goals with awesome apps in a cost-effective and timely manner, using lean philosophy principles.
                             principles.
-                        a(href=".popup-form" class="btn contact_us_btn") Contact Us
+                        a(href="#popup-from" class="btn contact_us_btn") Contact Us
     section.services#services
         .container
             .row
@@ -262,3 +262,24 @@ block content
                             a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                             .item__quotes
                                 p JSDaddy has provided audit services in the field of IT for my company. About this service I cansay the following: professional, reliable, responsible, available any time of the day.I definitely recommend it. 
+
+    form#popup-from.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!
