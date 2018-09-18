@@ -51,12 +51,11 @@ html
         link(rel='stylesheet', href='/css/slick.css')
         link(rel='stylesheet', href='/css/font-awesome.min.css')
         link(rel='stylesheet', href='/public/css/slick.css')
-        //- link(rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css")
         link(rel='stylesheet', href='/css/slick-theme.css')
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
         link(rel='stylesheet' href='/css/main.min.css')
-        link(rel="stylesheet" href="css/animate.css")
+        link(rel="stylesheet" href="/css/animate.min.css")
     body
         if mainMenu
             header
@@ -80,14 +79,14 @@ html
                                         li
                                             a(href="#testimonials" class="link-nav") Testimonials
                                         li
-                                            a(href="#about-us" class="link-nav") About Us
+                                            a(href="about-us" class="link-nav") About Us
                                 .btn-wrap
                                     a(href=".popup-form" class="btn contact_us_btn") Contact Us
                             .nav-burger
                                 .line
                                 .line-middle
                                 .line
-            // popup
+            //-  popup
             //- form.popup-from.mfp-hide.white-popup-block
             //-     h3 Contact Us
             //-     .popup-form__input-wrapper
@@ -160,8 +159,10 @@ html
         block script
             script(src='/js/common.min.js')
             script(src='/js/main.min.js')
+            script(src='/js/wow.min.js')
 
         script.
+          new WOW().init();
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
           (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
