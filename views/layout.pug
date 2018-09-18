@@ -63,7 +63,7 @@ html
                     .container#header
                         .row.align-items-center.justify-content-between
                             .col-2.logo
-                                a(href='#')
+                                a(href='/')
                                     img(src='/img/logo.png', alt="JsDaddy")
                             .nav-wrapper.col-lg-10
                                 nav
@@ -81,32 +81,11 @@ html
                                         li
                                             a(href="about-us" class="link-nav") About Us
                                 .btn-wrap
-                                    a(href=".popup-form" class="btn contact_us_btn") Contact Us
+                                    a(href="#popup-form" class="btn contact_us_btn") Contact Us
                             .nav-burger
                                 .line
                                 .line-middle
                                 .line
-            //-  popup
-            //- form.popup-from.mfp-hide.white-popup-block
-            //-     h3 Contact Us
-            //-     .popup-form__input-wrapper
-            //-         label(for="name") Name
-            //-         input#name(name="name", type="text")
-            //-         p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
-            //-     .popup-form__input-wrapper
-            //-         label(for="email") Email,
-            //-         input#email(name="email", type="email")
-            //-         p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
-            //-     .popup-form__input-wrapper
-            //-         label(for="Textarea") Message
-            //-         textarea#message
-            //-         p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
-            //-     .popup-form__btn-wrapper
-            //-         button.btn#form__submit Contact Us
-            //-     .success-message
-            //-         .success-message__icon
-            //-             i.fa.fa-check(aria-hidden="true")
-            //-         span Success!
         block content
 
         footer
@@ -129,17 +108,17 @@ html
                         .navigation-footer
                             ul
                                 li
-                                    a(href="#services") Services
+                                    a(href="/#services") Services
                                 li
-                                    a(href="#dev-process") Development Process
+                                    a(href="/#dev-process") Development Process
                                 li
-                                    a(href="#technologies") Technologies
+                                    a(href="/#technologies") Technologies
                                 li
-                                    a(href="#header") Portfolio
+                                    a(href="/#header") Portfolio
                                 li
-                                    a(href="#testimonials") Testimonials
+                                    a(href="/#testimonials") Testimonials
                                 li 
-                                    a(href="#footer") About Us 
+                                    a(href="about-us") About Us 
                         .social Social
                             ul
                                 li
@@ -157,9 +136,10 @@ html
                         .col-lg-12 Copyright Ⓒ 2017-2018 JSdaddy
 
         block script
-            script(src='/js/common.min.js')
             script(src='/js/main.min.js')
             script(src='/js/wow.min.js')
+            script(src='/js/common.min.js')
+            
 
         script.
           new WOW().init();
