@@ -7,6 +7,7 @@ import {mainCtrl} from './main.controller';
 import {communityCtrl} from './open-source.controller';
 import {projectsCtrl} from './projects.controller';
 import {sitemapCtrl} from './sitemap.controller';
+import { webDevelopmentCtrl } from './web-development';
 
 export const controllers: (app: Application) => void = (app: Application) => {
     // courseCtrl(app);
@@ -17,4 +18,5 @@ export const controllers: (app: Application) => void = (app: Application) => {
     projectsCtrl(app);
     aboutUsCtrl(app);
     sitemapCtrl(app);
+    webDevelopmentCtrl(app);
 };

@@ -9,7 +9,7 @@ block content
                         h1 JSDADDY
                         p Reach your business goals with awesome apps in a cost-effective and timely manner, using lean philosophy principles.
                             principles.
-                        a(href=".popup-form" class="btn contact_us_btn") Contact Us
+                        a(href="#popup-form" class="btn contact_us_btn") Contact Us
     section.services#services
         .container
             .row
@@ -18,8 +18,8 @@ block content
                 .sub-header Full-cycle servicing that covers every
             .row.services-items-wrapper
                 .service.col-md-4
-                    .item.animated.wow.fadeInLeft.faster
-                        a(href='#web-development')
+                    .item(class="animated wow fadeInLeft faster")
+                        a(href='/web-development')
                             .item__icon
                                 img(src="img/web.svg", alt="web")
                             h5 Advanced WEB
@@ -224,7 +224,7 @@ block content
                         .item__position CTO, Uran Company
                         a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                         .item__quotes
-                            p JSDaddy has provided audit services
+                            p JSDaddy has provided audit services in the field of IT for my company. About this  service I can  say the following: professional, reliable, responsible, available any time of the day.  I  definitely recommend it.
                     .item
                         .item__photo
                             img(src="/img/konstantin.jpg" alt="asd")
@@ -232,7 +232,7 @@ block content
                         .item__position CEO and founder Onixcat.com, Onixcat
                         a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                         .item__quotes
-                            p We needed JavaScript developers for the Planarsys project
+                            p We needed JavaScript developers for the Planarsys project. Appealed to the guys from JSDaddy  and the result met all expectations. These guys are sharp in high quality of the codebase,  project management and efficiency. The speed of work allowed us to met the deadline,  and  release the product in time and start selling our product. The software part of the  product  is on the top and my customers are happy.Guys, you’re awesome and you know the ropes! I  hope  we will work side by side again!
                     .item
                         .item__photo
                             img(src="/img/client-photo-1.jpeg" alt="asd")
@@ -240,7 +240,7 @@ block content
                         .item__position CTO, Uran Company
                         a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                         .item__quotes
-                            p JSDaddy has provided audit services
+                            p JSDaddy has provided audit services in the field of IT for my company. About this service I can say the following: professional, reliable, responsible, available any time of the day. I definitely recommend it.
                     .item
                         .item__photo
                             img(src="/img/client-photo-1.jpeg" alt="asd")
@@ -248,7 +248,7 @@ block content
                         .item__position CTO, Uran Company
                         a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                         .item__quotes
-                            p JSDaddy has provided audit services 
+                            p JSDaddy has provided audit services in the field of IT for my company. About this service I can say the following: professional, reliable, responsible, available any time of the day. I definitely recommend it.
                     .item
                         .item__photo
                             img(src="/img/client-photo-1.jpeg" alt="asd")
@@ -256,4 +256,27 @@ block content
                         .item__position CTO, Uran Company
                         a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
                         .item__quotes
-                            p JSDaddy has provided audit services 
+                            p JSDaddy has provided audit services in the field of IT for my company. About this service I cansay the following: professional, reliable, responsible, available any time of the day.I definitely recommend it. 
+    .scrollup
+        i(class="fa fa-chevron-up",aria-hidden="true")
+
+    form#popup-form.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!
