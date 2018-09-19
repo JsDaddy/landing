@@ -1,146 +1,71 @@
 extends ../layout
 
 block content
-    section.banner-second
+    section.banner-second(style=`background-image: url("/img/${webDevelopment.webBanner.background}")`)
         .container
             .row
                 .banner-second__web
-                    h1 WEB SOLUTIONS.
-                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam nesciunt corporis labore
-                        | consequuntur quidem quas, explicabo,
-                        | fuga, sequi doloribus eaque sed at deserunt omnis. Quia natus corrupti in dolorum optio.
-                    a(href=".popup-form" class="btn contact_us_btn") Contact Us
+                    h1 #{webDevelopment.webBanner.title}
+                    p #{webDevelopment.webBanner.subText}
+                    a(href=".popup-form" class="btn contact_us_btn") #{webDevelopment.webBanner.button.text}
     section.about-services
         .container
             .row
-                .short-header ABOUT
-                h3 WEB SERVICES. ENTERPRISE WEB SOLUTION.
-                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+                .short-header #{webDevelopment.webServices.subTitle}
+                h3 #{webDevelopment.webServices.title}
+                .sub-header #{webDevelopment.webServices.subText}
             .row
                 .col-md-6
                     .about-services__text.animate.wow.fadeInLeft.fast
-                        p We deeply believe in developing seamless experience across different devices, we ensure to
-                           | give our
-                           | customers everything to engage their users on any device they are working on.                   
-                        p We deeply believe in developing seamless experience across different devices, we ensure to
-                           | give our
-                           | customers everything to engage their users on any device they are working on.  
-                        p We deeply believe in developing seamless experience across different devices, we ensure to
-                           | give our
-                           | customers everything to engage their users on any device they are working on.
+                        p #{webDevelopment.webServices.contentServices.descriptionText}
+                        p #{webDevelopment.webServices.contentServices.descriptionText}
+                        p #{webDevelopment.webServices.contentServices.descriptionText}
                 .col-md-6
                     .about-services__img.animate.wow.fadeInRight.fast
-                        img(src="/img/web-dev-about.jpeg", alt="")
+                        img(src="/img/" + webDevelopment.webServices.contentServices.img, alt="")
     section.container-solution
         .container
             .row
-                .short-header WEB SOLUTION
-                h3 WEB & MOBILE SOLUTIONS. ENTERPRISE APPS & PORTALS.                                   
-                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+                .short-header #{webDevelopment.webSolution.subTitle}
+                h3 #{webDevelopment.webSolution.title}                                   
+                .sub-header #{webDevelopment.webSolution.subText}
             .row.animate.wow.fadeInRight.fast
                 .col-md-4
                     .solution
                         .solution__icon
                             span.icon-implementation
-                        .solution__header Frontend
-                        .solution__text Full-stack web development bla bla bla
+                        .solution__header #{webDevelopment.webSolution.contentSolution.frontEnd.title}
+                        .solution__text #{webDevelopment.webSolution.contentSolution.frontEnd.subTitle}
                 .col-md-4
                     .solution
                         .solution__icon
                             span.icon-implementation
-                        .solution__header High-load optimization            
-                        .solution__text Full-stack web development bla bla bla
+                        .solution__header #{webDevelopment.webSolution.contentSolution.hightLoadOptimization.title}            
+                        .solution__text #{webDevelopment.webSolution.contentSolution.hightLoadOptimization.subTitle}
                 .col-md-4
                     .solution
                         .solution__icon
                             span.icon-implementation
-                        .solution__header RESTful (API development)
-                        .solution__text Full-stack web development bla bla bla
+                        .solution__header #{webDevelopment.webSolution.contentSolution.restful.title}
+                        .solution__text #{webDevelopment.webSolution.contentSolution.restful.subTitle}
     section.technologies
         .container
             .row
-                .short-header stack
-                h3 WEB stack. ENTERPRISE WEB SOLUTION.
-                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+                .short-header #{webDevelopment.stack.subTitle}
+                h3 #{webDevelopment.stack.title}
+                .sub-header #{webDevelopment.stack.subText}
             .row.animate.wow.fadeInUp.fast
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src="img/img1.png" alt="node")
-                        span node
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src="img/img2.png" alt="react")           
-                        span react
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src="img/img3.png" alt="angular")
-                        span angular
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src="img/img4.png" alt="css3")
-                        span css3
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src="img/img5.png" alt="rxjava")
-                        span rxjava
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img6.png" alt="redux")
-                         span redux
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img7.png" alt="musql")
-                         span musql
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img8.png" alt="docker")
-                         span docker
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img9.png" alt="vue")
-                         span vue
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img10.png" alt="mocha")
-                         span mocha
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img11.png" alt="flutter")
-                         span flutter
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img12.png" alt="react native")
-                         span react native
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img13.png" alt="karma")
-                         span karma
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img14.png" alt="jasmine")
-                         span jasmine
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img15.png" alt="Jest")
-                         span Jest
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img16.png" alt="Type Script")
-                         span Type Script
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img17.png" alt="HTML5")
-                         span HTML5
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                         img(src="img/img18.png" alt="Mongo DB")
-                         span Mongo DB                                                                                                   
+                each icon in webDevelopment.completeProjects.technologies.content            
+                    .col-3.col-md-4.col-lg-2 
+                            .icon
+                                img(src="/img/" + icon.src, alt="node")
+                                span #{icon.alt}                                                                                                   
     section.completed-projects
         .container
             .row
-                .short-header Completed Projects
-                h3 Completed Projects. ENTERPRISE WEB SOLUTION.
-                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+                .short-header #{webDevelopment.completeProjects.subTitle}
+                h3 #{webDevelopment.completeProjects.title}
+                .sub-header #{webDevelopment.completeProjects.subText}
             .row.animate.wow.fadeInLeft.fast    
                 .project.col-lg-4
                     .item
@@ -171,7 +96,7 @@ block content
             .row.align-content-center
                 .col-lg-12
                     .contact-us__wrapper                        
-                        .contact-us__text Want to learn more about what Jsdaddy can do for you?
+                        p.contact-us__text Want to learn more about what Jsdaddy can do for you?
                         a(hfer="#" class="contact-us__link") Start project
 
 

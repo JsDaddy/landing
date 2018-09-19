@@ -1,7 +1,6 @@
 .banner-second
     background: #eaf9fc
     background-size: auto
-    background-image: url('/img/webDevelopmentBanner.jpg')
     background-repeat: no-repeat
     background-size: cover
     position: relative
@@ -109,7 +108,7 @@
         text-transform: uppercase
         margin-right: 50px
     &__link
-        color: $text-hover
+        color: $text-hover !important
         text-decoration: none
         font-size: 18px
         font-family: $ralewayBlack
@@ -122,7 +121,8 @@
         border-radius: 5px
         transition: all 0.3s ease
         &:hover
-            color: #fff
+            cursor: pointer
+            color: #fff !important
             border-color: #fff
 
 .completed-projects

@@ -3,7 +3,7 @@ import * as express from 'express';
 import { CourseParticipentsModel } from '../models/courseParticipents.model';
 import { ProjectParticipentsModel } from '../models/projectParticipents.model';
 import { MailerService } from '../services/mailer.service';
-import { logger } from './../main';
+// import { logger } from './../main';
 const copyEmail: string = config.get('copyEmail');
 
 export const mailerCtrl = (app: express.Application) => {
@@ -18,7 +18,7 @@ export const mailerCtrl = (app: express.Application) => {
 
         return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
-        logger.log('error', err);
+        // logger.log('error', err);
         return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },
@@ -35,7 +35,7 @@ export const mailerCtrl = (app: express.Application) => {
 
         return res.json({ message: {ru: 'Спасибо', en: 'Email sent' }, type: 'Success' });
       } catch (err) {
-        logger.log('error', err);
+        // logger.log('error', err);
         return res.json({ message: {ru: 'Что-то пошло не так', en: 'Something went wrong' }, type: 'Error' });
       }
     },

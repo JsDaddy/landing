@@ -3,7 +3,7 @@ import {addCurrencyRate} from '../middleware/currency.middleware';
 import {CourseModel} from '../models/course.model';
 import {StaticContentModel} from '../models/static_content.model';
 import {UserModel} from '../models/user.model';
-import {logger} from './../main';
+// import {logger} from './../main';
 import {UtilsService} from './../services/utils.service';
 
 export function coursesCtrl(app: express.Application) {
@@ -58,7 +58,7 @@ export function coursesCtrl(app: express.Application) {
                         users,
                     });
             } catch (err) {
-                logger.log('error', err);
+                // logger.log('error', err);
                 // TODO aggregate from db
                 lang = app.get('config').get('langs').includes(lang) ? lang : 'en';
                 return res.render(`content/error-${lang}`);
