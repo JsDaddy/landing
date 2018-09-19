@@ -5,6 +5,7 @@ export class StaticContentModel {
     sections: Section[],
     lang = 'en',
   ): Promise<IHashMap> {
+
     const query: string[] = sections.reduce((acc: string[], next: any) => {
       if (typeof next === 'string') {
         return [...acc, next];
@@ -13,6 +14,7 @@ export class StaticContentModel {
     }, []);
 
     const menuModel: mongoose.Model<mongoose.Document> = mongoose.model('StaticContent');
+
     const content = await menuModel.find({ name: { $in: query }, lang, hidden: false }).lean();
 
     const sectionHash: IHashMap = sections
