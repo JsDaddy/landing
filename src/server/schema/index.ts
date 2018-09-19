@@ -1,3 +1,4 @@
+import './about-us.schema';
 import './course-participents.schema';
 import './course.schema';
 import './events.schema';
