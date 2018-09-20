@@ -7,258 +7,160 @@ block content
                 .row
                     .banner__content
                         h1 #{mainPage.banner.title}
-                        p Reach your business goals with awesome apps in a cost-effective and timely manner, using lean philosophy principles.
+                        p #{mainPage.banner.subtitle}
                             principles.
-                        a(href="#popup-form" class="btn contact_us_btn") Contact Us
+                        a(href="#popup-form" class="btn contact_us_btn") #{mainPage.banner.button.text}
     section.services#services
         .container
             .row
-                .short-header SERVICES
-                h3 WEB MOBILE SOLUTIONS. ENTERPRISE APPS PORTALS
-                .sub-header Full-cycle servicing that covers every
+                .short-header #{mainPage.services.text}
+                h3 #{mainPage.services.title}
+                .sub-header #{mainPage.services.subtitle}
             .row.services-items-wrapper
                 .service.col-md-4
-                    .item(class="animated wow fadeInLeft faster")
+                    .item.animated.wow.fadeInLeft.faster
                         a(href='/web-development')
                             .item__icon
-                                img(src="img/web.svg", alt="web")
-                            h5 Advanced WEB
-                            p  Productive, engaging and reliable solutions for business outcomes you deserve.
+                                img(src="/img/" + mainPage.services.ourServices.web.image, alt="web")
+                            h5 #{mainPage.services.ourServices.web.title}
+                            p  #{mainPage.services.ourServices.web.text}
                 .service.col-md-4
                     .item.animated.wow.fadeInUp.faster
                         a(href='#')
                             .item__icon
-                                img(src="img/smartphone.svg", alt="mobile app")
-                            h5 Advanced APP
-                            p Productive, engaging and reliable solutions for business outcomes you deserve.
+                                img(src="/img/" + mainPage.services.ourServices.mobile.image, alt="mobile app")
+                            h5 #{mainPage.services.ourServices.mobile.title}
+                            p #{mainPage.services.ourServices.mobile.text}
                 .service.col-md-4
                     .item.animated.wow.fadeInRight.faster
                         a(href='#')
                             .item__icon
-                                img(src="/img/cloud.svg", alt="cloud")
-                            h5 Advanced CLOUD
-                            p Productive, engaging and reliable solutions for business outcomes you deserve.
+                                img(src="/img/" + mainPage.services.ourServices.cloud.image, alt="cloud")
+                            h5 #{mainPage.services.ourServices.cloud.title}
+                            p #{mainPage.services.ourServices.cloud.text}
     section.dev-process#dev-process
         .container
             .row
-                .short-header Process
-                h3 Development Process
-                .sub-header Do you have an idea?
+                .short-header #{mainPage.process.text}
+                h3 #{mainPage.process.title}
+                .sub-header #{mainPage.process.subtitle}
             .row
                 .step-wrapper
                     .left-col
                         .step.planing.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 PLANNING
-                                p Perfect plan will kick off a project flawlessly
+                                h6 #{mainPage.process.steps.planning.title}
+                                p #{mainPage.process.steps.planning.text}
                             .ico-wrap
                                 span.icon-planinig
                         .step.analysis.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 ANALYSIS
-                                p Analysis is an important step to proceed further to the next point
+                                h6 #{mainPage.process.steps.analysis.title}
+                                p #{mainPage.process.steps.analysis.text}
                             .ico-wrap
                                 span.icon-analysis
                         .step.stack.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 Design
-                                p Setting a standard and attempting to stick to it
+                                h6 #{mainPage.process.steps.design.title}
+                                p #{mainPage.process.steps.design.text}
                             .ico-wrap
                                 span.icon-design
                     .center-col
-                        img(src='img/construction_project_plan_building_architect_design_develop-83_icon-icons.com_60220.png', alt='asd')
+                        img(src='img/construction_project_plan_building_architect_design_develop-83_icon-icons.com_60220.png', alt='lamp')
                     .right-col
                         .step.architecture.animated.wow.fadeInRight.faster
                             .ico-wrap
                                 span.icon-implementation
                             .text-wrap
-                                h6 IMPLEMENTATION
-                                p Developing software and a pilot study to check it
+                                h6 #{mainPage.process.steps.implementation.title}
+                                p #{mainPage.process.steps.implementation.text}
                         .step.test.animated.wow.fadeInRight.faster
                             .ico-wrap
                                 span.icon-test
                             .text-wrap
-                                h6 Testing
-                                p Checking applications for errors and bugs if there are any
+                                h6 #{mainPage.process.steps.testing.title}
+                                p #{mainPage.process.steps.testing.text}
                         .step.deployment.animated.wow.fadeInRight.faster
                             .ico-wrap
                                 span.icon-MAINTENANCE
                             .text-wrap
-                                h6 MAINTENANCE
-                                p Changing the existing functionality is a regular process
+                                h6 #{mainPage.process.steps.maintenance.title}
+                                p #{mainPage.process.steps.maintenance.text}
     section.technologies#technologies
         .container
             .row
-                .short-header technologies
-                h3 We use only advanced technologies
-                .sub-header Full-cycle servicing
+                .short-header #{mainPage.technologies.text}
+                h3 #{mainPage.technologies.title}
+                .sub-header #{mainPage.technologies.subtitle}
             .row.animate.wow.fadeInUp.fast
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img1.png', alt="node")
-                        span node
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img2.png', alt="react")
-                        span react
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img3.png', alt="angular")
-                        span angular
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img4.png', alt="css3")
-                        span css3
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img5.png', alt="rxjava")
-                        span rxjava
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img6.png', alt="redux")
-                        span redux
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img7.png', alt="musql")
-                        span musql
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img8.png', alt="docker")
-                        span docker
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img9.png', alt="Vue")
-                        span Vue
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img10.png', alt="mocha")
-                        span mocha
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img11.png', alt="flutter")
-                        span flutter
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img12.png', alt="react native")
-                        span react native
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img13.png', alt="karma")
-                        span karma
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img14.png', alt="jasmine")
-                        span jasmine
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img15.png', alt="Jest")
-                        span Jest
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img16.png', alt="Type Script")
-                        span Type Script
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img17.png', alt="HTML5")
-                        span HTML5
-                .col-3.col-md-4.col-lg-2
-                    .icon
-                        img(src='img/img18-1.png', alt="Mongo DB")
-                        span Mongo DB
+                each i in mainPage.technologies.content
+                    .col-3.col-md-4.col-lg-2
+                        .icon
+                            img(src='/img/' + i.src, alt=i.alt)
+                            span #{i.alt}
     section.advantages-wrapper
         .container
             .row
-                .short-header advantages
-                h3 Why should you choose us?
-                .sub-header Full-cycle servicing that covers every aspect of app production and implementation.
+                .short-header #{mainPage.advantages.text}
+                h3 #{mainPage.advantages.title}
+                .sub-header #{mainPage.advantages.subtitle}
             .row
                 .advantages
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="img/ico-tailor.png", alt="tailor")
+                            img(src="/img/" + mainPage.advantages.cases.tailorMade.image, alt="tailor")
                         .advantages__item-text.tailer
-                            h6 Tailor made
-                            p Any discontent or difficulty of the client that appear during the development process can be improved while the formulation of the software with customer permission which is the most significant benefit of a JavaScript development company.
+                            h6 #{mainPage.advantages.cases.tailorMade.title}
+                            p #{mainPage.advantages.cases.tailorMade.text}
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="img/ico-integration.png", alt="integration")
+                            img(src="/img/" + mainPage.advantages.cases.integration.image, alt="integration")
                         .advantages__item-text.integration
-                            h6 Integration
-                            p Businesses in need of numerous software programs can enjoy the benefits of operating on one custom software application designed using JavaScript to integrate multiple processes.
+                            h6 #{mainPage.advantages.cases.integration.title}
+                            p #{mainPage.advantages.cases.integration.text}
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="img/ico-support.png", alt="support")
+                            img(src="/img/" + mainPage.advantages.cases.support.image, alt="support")
                         .advantages__item-text.support
-                            h6 Support
-                            p You will have full access to technical support by our JavaScript team that was involved in the development process of your application, so all your encountered problems are resolved in an efficient manner by our company.
+                            h6 #{mainPage.advantages.cases.support.title}
+                            p #{mainPage.advantages.cases.support.text}
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="img/ico-cost.png", alt="Price")
+                            img(src="/img/" + mainPage.advantages.cases.priceFormation.image, alt="Price")
                         .advantages__item-text.price
-                            h6 Price formation
-                            p The long-term benefits of investing in developing custom business applications are far more valuable than purchasing a ready-made product. On top of this, imagine additional costs you would incur when paying for licenses, be it short or long term or implementation, when you buy off shelf products.
+                            h6 #{mainPage.advantages.cases.priceFormation.title}
+                            p #{mainPage.advantages.cases.priceFormation.text}
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="img/ico-maintenance.png", alt="maintenance")
+                            img(src="/img/" + mainPage.advantages.cases.maintenance.image, alt="maintenance")
                         .advantages__item-text.maintenance
-                            h6 Maintenance
-                            p With custom application development your JavaScript based software is maintained for as long as you require. With off-the-shelf software your business is at the mercy of the software development company you are purchasing from.
+                            h6 #{mainPage.advantages.cases.maintenance.title}
+                            p #{mainPage.advantages.cases.maintenance.text}
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="img/ico-quality.png", alt="quality")
+                            img(src="/img/" + mainPage.advantages.cases.quality.image, alt="quality")
                         .advantages__item-text.quality
-                            h6 Quality
-                            p Our development company creates stable and scalable JavaScript applications. Using test coverage is a part of our daily work. High quality of the solution is one of the things that we care for more than our clients.
+                            h6 #{mainPage.advantages.cases.quality.title}
+                            p #{mainPage.advantages.cases.quality.text}
     section#testimonials
         .container
             .row.animate.wow.flipInX
-                .short-header testimonials
-                h3 Our Clients Say
-                .sub-header  Full-cycle servicing that covers every aspect
+                .short-header #{mainPage.testimonials.text}
+                h3 #{mainPage.testimonials.title}
+                .sub-header #{mainPage.testimonials.subtitle}
             .row
                 .testimonials-wrapper
-                    .item
-                        .item__photo
-                            img(src="/img/client-photo-1.jpeg" alt="asd")
-                        .item__name Oleg Semiglazov
-                        .item__position CTO, Uran Company
-                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
-                        .item__quotes
-                            p JSDaddy has provided audit services in the field of IT for my company. About this  service I can  say the following: professional, reliable, responsible, available any time of the day.  I  definitely recommend it.
-                    .item
-                        .item__photo
-                            img(src="/img/konstantin.jpg" alt="asd")
-                        .item__name Konstantin Korotych
-                        .item__position CEO and founder Onixcat.com, Onixcat
-                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
-                        .item__quotes
-                            p We needed JavaScript developers for the Planarsys project. Appealed to the guys from JSDaddy  and the result met all expectations. These guys are sharp in high quality of the codebase,  project management and efficiency. The speed of work allowed us to met the deadline,  and  release the product in time and start selling our product. The software part of the  product  is on the top and my customers are happy.Guys, you’re awesome and you know the ropes! I  hope  we will work side by side again!
-                    .item
-                        .item__photo
-                            img(src="/img/client-photo-1.jpeg" alt="asd")
-                        .item__name Oleg Semiglazov
-                        .item__position CTO, Uran Company
-                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
-                        .item__quotes
-                            p JSDaddy has provided audit services in the field of IT for my company. About this service I can say the following: professional, reliable, responsible, available any time of the day. I definitely recommend it.
-                    .item
-                        .item__photo
-                            img(src="/img/client-photo-1.jpeg" alt="asd")
-                        .item__name Oleg Semiglazov
-                        .item__position CTO, Uran Company
-                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
-                        .item__quotes
-                            p JSDaddy has provided audit services in the field of IT for my company. About this service I can say the following: professional, reliable, responsible, available any time of the day. I definitely recommend it.
-                    .item
-                        .item__photo
-                            img(src="/img/client-photo-1.jpeg" alt="asd")
-                        .item__name Oleg Semiglazov
-                        .item__position CTO, Uran Company
-                        a.item__linkedin.fa.fa-linkedin-square(href="https://www.linkedin.com/in/yanis-onkes/", tabindex="0")
-                        .item__quotes
-                            p JSDaddy has provided audit services in the field of IT for my company. About this service I cansay the following: professional, reliable, responsible, available any time of the day.I definitely recommend it. 
+                    each item in mainPage.testimonials.content
+                        .item
+                            .item__photo
+                                img(src='/img/' + item.photo, alt=item.alt)
+                            .item__name #{item.name}
+                            .item__position #{item.position}, #{item.company}
+                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink)
+                            .item__quotes
+                                p #{item.text}
     .scrollup
-        i(class="fa fa-chevron-up",aria-hidden="true")
+        i(class="fa fa-chevron-up", aria-hidden="true")
 
     form#popup-form.mfp-hide.white-popup-block.popup-form
         h3 Contact Us
