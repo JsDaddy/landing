@@ -57,31 +57,31 @@ html
         link(rel='stylesheet' href='/css/main.min.css')
         link(rel="stylesheet" href="/css/animate.min.css")
     body
-        if mainMenu
+        if headerMenu
             header
                 #header.default
                     .container#header
                         .row.align-items-center.justify-content-between
                             .col-2.logo
                                 a(href='/')
-                                    img(src='/img/logo.png', alt="JsDaddy")
+                                    img(src=`/img/${headerMenu.logo}`, alt="JsDaddy")
                             .nav-wrapper.col-lg-10
                                 nav
                                     ul#menu-wrap
                                         li
-                                            a(href='#services' class="link-nav") Services
+                                            a(href='#services' class="link-nav") #{headerMenu.nav.serv}
                                         li
-                                            a(href='#dev-process' class="link-nav") Development Process
+                                            a(href='#dev-process' class="link-nav") #{headerMenu.nav.dev_process}
                                         li
-                                            a(href="#technologies" class="link-nav") Technologies
+                                            a(href="#technologies" class="link-nav") #{headerMenu.nav.tech}
                                         li
-                                            a(href="#header" class="link-nav") Portfolio
+                                            a(href="#header" class="link-nav") #{headerMenu.nav.portfolio}
                                         li
-                                            a(href="#testimonials" class="link-nav") Testimonials
+                                            a(href="#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
                                         li
-                                            a(href="about-us" class="link-nav") About Us
+                                            a(href="about-us" class="link-nav") #{headerMenu.nav.about}
                                 .btn-wrap
-                                    a(href="#popup-form" class="btn contact_us_btn") Contact Us
+                                    a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
                             .nav-burger
                                 .line
                                 .line-middle
