@@ -1,32 +1,29 @@
 import * as express from 'express';
+import {AboutUsModel} from '../models/about-us.model';
+import { FooterModel } from '../models/footer.model';
+import {HeaderModel} from '../models/header.model';
 import {StaticContentModel} from '../models/static_content.model';
-import {UserModel} from '../models/user.model';
+// import {logger} from './../main';
 
 export const aboutUsCtrl = (app: express.Application) => {
     app.get(
         '/about-us',
-        async (req: express.Request, res: express.Response) => {
-            const {lang, project} = req.params;
-            const head = `${project}Head`;
+        async (_req: express.Request, res: express.Response) => {
             try {
-                const users: any[] = await new UserModel().getUsers('member');
                 const aboutUsContent: IHashMap = await new StaticContentModel().getContentHashMap([
-                    { query: 'aboutUsHead', replace: 'head', rewrite: true },
-                    {
-                        query: head,
-                        replace: 'head',
-                        rewrite: true,
-                    },
-                    'mainHead',
-                    { query: 'about-usMenu', replace: 'mainMenu' },
+                    {query: 'mainHead', replace: 'head', rewrite: true},
                     'aboutCompany',
+                    'headerMenu',
                     'team',
                     'contacts',
-                    'footer',
-                ], lang);
-                aboutUsContent.team.content = users;
+                    'footerNew',
+                ]);
+                aboutUsContent.aboutCompany = await new AboutUsModel().getContent({name: 'aboutCompany'});
+                aboutUsContent.headerMenu = await new HeaderModel().getContent({name: 'headerMenu'});
+                aboutUsContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
                 return res.render('content/about-us', aboutUsContent);
             } catch (err) {
+                // logger.log('error', err);
                 return res.render('content/error-en');
             }
         },

@@ -1,7 +1,8 @@
 import * as express from 'express';
+import { FooterModel } from '../models/footer.model';
+import {HeaderModel} from '../models/header.model';
 import {MainPageModel} from '../models/main-page.model';
 import {StaticContentModel} from '../models/static_content.model';
-// import { WebDevelopmentModel } from '../models/web-development.model';
 // import {logger} from './../main';
 
 export const mainCtrl = (app: express.Application) => {
@@ -11,14 +12,14 @@ export const mainCtrl = (app: express.Application) => {
       try {
         const mainContent: IHashMap = await new StaticContentModel().getContentHashMap([
           {query: 'mainHead', replace: 'head', rewrite: true},
-          'mainMenu',
+          'headerMenu',
           'mainPage',
-          'webDevelopment',
           'technologies',
-          'footer',
+          'footerNew',
         ]);
+        mainContent.headerMenu = await new HeaderModel().getContent({name: 'headerMenu'});
         mainContent.mainPage = await new MainPageModel().getContent({name: 'mainPage'});
-        // mainContent.webDevelopment = await new WebDevelopmentModel().getContent({name: 'webDevelopment'});
+        mainContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         return res.render('content/main', mainContent);
       } catch (err) {
         // logger.log('error', err);

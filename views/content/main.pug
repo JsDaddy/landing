@@ -92,12 +92,6 @@ block content
                 .short-header #{mainPage.technologies.text}
                 h3 #{mainPage.technologies.title}
                 .sub-header #{mainPage.technologies.subtitle}
-            .row.animate.wow.fadeInUp.fast
-                each i in mainPage.technologies.content
-                    .col-3.col-md-4.col-lg-2
-                        .icon
-                            img(src='/img/' + i.src, alt=i.alt)
-                            span #{i.alt}
     section.advantages-wrapper
         .container
             .row

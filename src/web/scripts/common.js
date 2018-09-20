@@ -177,7 +177,7 @@ $(document).ready(function () {
 // smooth navigation scroll
 $('a').click(function () {
   $('html, body').animate({
-    scrollTop: $($.attr(this, 'href')).offset().top
+    scrollTop: $($.attr(this, '/href')).offset().top
   }, 400);
   return false;
 });
