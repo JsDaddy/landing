@@ -69,15 +69,13 @@ html
                                 nav
                                     ul#menu-wrap
                                         li
-                                            a(href='#services' class="link-nav") #{headerMenu.nav.serv}
+                                            a(href='/#services' class="link-nav") #{headerMenu.nav.serv}
                                         li
-                                            a(href='#dev-process' class="link-nav") #{headerMenu.nav.dev_process}
+                                            a(href='/#dev-process' class="link-nav") #{headerMenu.nav.dev_process}
                                         li
-                                            a(href="#technologies" class="link-nav") #{headerMenu.nav.tech}
+                                            a(href="/#technologies" class="link-nav") #{headerMenu.nav.tech}
                                         li
-                                            a(href="#header" class="link-nav") #{headerMenu.nav.portfolio}
-                                        li
-                                            a(href="#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
+                                            a(href="/#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
                                         li
                                             a(href="about-us" class="link-nav") #{headerMenu.nav.about}
                                 .btn-wrap
@@ -87,53 +85,46 @@ html
                                 .line-middle
                                 .line
         block content
-
-        footer
-            .container#footer
-                .row
-                    .footer-wrapper
-                        .contacts
-                            .contacts__logo
-                                a(href="#")
-                                    img(src="/img/logo.png", alt="JsDaddy") 
-                            .contacts__email 
-                                a(href="mailto:info@jsdaddy.io") 
-                                    i(class="fa fa-envelope-o", aria-hidden="true") 
-                                    |info@jsdaddy.io 
-                            .contacts__skype 
-                                a(href="skype:juncker8888") 
-                                    i(class="fa fa-skype" aria-hidden="true") 
-                                    |juncker8888     
-                            .contacts__addres Kharkiv, Ukraine
-                        .navigation-footer
-                            ul
-                                li
-                                    a(href="/#services") Services
-                                li
-                                    a(href="/#dev-process") Development Process
-                                li
-                                    a(href="/#technologies") Technologies
-                                li
-                                    a(href="/#header") Portfolio
-                                li
-                                    a(href="/#testimonials") Testimonials
-                                li 
-                                    a(href="about-us") About Us 
-                        .social Social
-                            ul
-                                li
-                                    a(href="https://www.facebook.com/JSDaddyUkraine/" class="facebook")
-                                        i(class="fa fa-facebook")
-                                li
-                                    a(href="https://www.linkedin.com/company/jsdaddy/" class="linkedin")
-                                        i(class="fa fa-linkedin")
-                                li
-                                    a(href="https://github.com/JsDaddy" class="github")
-                                        i(class="fa fa-github")                                                            
-            .copy-wrapper
-                .container
+        if footerNew
+            footer
+                .container#footer
                     .row
-                        .col-lg-12 Copyright Ⓒ 2017-2018 JSdaddy
+                        .footer-wrapper
+                            .contacts
+                                .contacts__logo
+                                    a(href="#")
+                                        img(src="/img/" + footerNew.content.contacts.logo, alt="JsDaddy") 
+                                .contacts__email 
+                                    a(href="mailto:info@jsdaddy.io") 
+                                        i(class="fa fa-envelope-o", aria-hidden="true") 
+                                        |#{footerNew.content.contacts.info.mail}
+                                .contacts__skype 
+                                    a(href="skype:juncker8888") 
+                                        i(class="fa fa-skype" aria-hidden="true")
+                                        |#{footerNew.content.contacts.info.skype}     
+                                .contacts__addres #{footerNew.content.contacts.location}
+                            .navigation-footer
+                                ul
+                                    li
+                                        a(href="#services") #{footerNew.navigation.serv}
+                                    li
+                                        a(href="#dev-process") #{footerNew.navigation.DevProc}
+                                    li
+                                        a(href="#technologies") #{footerNew.navigation.techno}
+                                    li
+                                        a(href="#testimonials") #{footerNew.navigation.testimonial}
+                                    li 
+                                        a(href="about-us") #{footerNew.navigation.about} 
+                            .social #{footerNew.social.text}
+                                ul
+                                    each item in  footerNew.social.social
+                                        li 
+                                            a(href=item.link, class=item['linkClass'])
+                                                i.fa(class=item['iconClass'])                                                         
+                .copy-wrapper
+                    .container
+                        .row
+                            .col-lg-12 #{footerNew.footer.text}
 
         block script
             script(src='/js/main.min.js')

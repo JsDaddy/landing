@@ -1,9 +1,10 @@
 import * as express from 'express';
+import { FooterModel } from '../models/footer.model';
 import {HeaderModel} from '../models/header.model';
 import {MainPageModel} from '../models/main-page.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
-import {logger} from './../main';
+// import {logger} from './../main';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -15,14 +16,15 @@ export const mainCtrl = (app: express.Application) => {
           'headerMenu',
           'mainPage',
           'technologies',
-          'footer',
+          'footerNew',
         ]);
         mainContent.headerMenu = await new HeaderModel().getContent({name: 'headerMenu'});
         mainContent.technologies = await new TechnologiesModel().getContent({name: 'technologies'});
         mainContent.mainPage = await new MainPageModel().getContent({name: 'mainPage'});
+        mainContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         return res.render('content/main', mainContent);
       } catch (err) {
-        logger.log('error', err);
+        // logger.log('error', err);
         return res.render(`content/error-en`);
       }
     },
