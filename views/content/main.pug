@@ -89,11 +89,11 @@ block content
     section.technologies#technologies
         .container
             .row
-                .short-header #{mainPage.technologies.text}
-                h3 #{mainPage.technologies.title}
-                .sub-header #{mainPage.technologies.subtitle}
+                .short-header #{technologies.text}
+                h3 #{technologies.title}
+                .sub-header #{technologies.subtitle}
             .row.animate.wow.fadeInUp.fast
-                each i in mainPage.technologies.content
+                each i in technologies.list
                     .col-3.col-md-4.col-lg-2
                         .icon
                             img(src='/img/' + i.src, alt=i.alt)
