@@ -174,12 +174,16 @@ $(document).ready(function () {
 
 });
 
-// smooth navigation scroll
-$('a').click(function () {
-  $('html, body').animate({
-    scrollTop: $($.attr(this, '/href')).offset().top
-  }, 400);
-  return false;
+// smooth navigation scroll 
+$("a[href*='#']").click(function(e) {
+  if($(this).attr("href")[0]=="/") {
+    var position = $(this).attr("href").slice(1);
+  }
+  else
+    var position = $(this).attr("href");
+  $("body, html").animate({
+      scrollTop: ($(position).offset().top)
+    } /* speed */ );
 });
 
 // add class 'active' to navigation link

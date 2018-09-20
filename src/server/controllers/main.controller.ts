@@ -3,6 +3,7 @@ import { FooterModel } from '../models/footer.model';
 import {HeaderModel} from '../models/header.model';
 import {MainPageModel} from '../models/main-page.model';
 import {StaticContentModel} from '../models/static_content.model';
+import { TechnologiesModel } from '../models/technologies.model';
 // import {logger} from './../main';
 
 export const mainCtrl = (app: express.Application) => {
@@ -18,6 +19,7 @@ export const mainCtrl = (app: express.Application) => {
           'footerNew',
         ]);
         mainContent.headerMenu = await new HeaderModel().getContent({name: 'headerMenu'});
+        mainContent.technologies = await new TechnologiesModel().getContent({name: 'technologies'});
         mainContent.mainPage = await new MainPageModel().getContent({name: 'mainPage'});
         mainContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         return res.render('content/main', mainContent);
