@@ -7,7 +7,7 @@ block content
                 .banner-second__web
                     h1 #{webDevelopment.webBanner.title}
                     p #{webDevelopment.webBanner.subText}
-                    a(href=".popup-form" class="btn contact_us_btn") #{webDevelopment.webBanner.button.text}
+                    a(href="#popup-form" class="btn contact_us_btn") #{webDevelopment.webBanner.button.text}
     section.about-services
         .container
             .row
@@ -55,7 +55,7 @@ block content
                 h3 #{webDevelopment.stack.title}
                 .sub-header #{webDevelopment.stack.subText}
             .row.animate.wow.fadeInUp.fast
-                each icon in webDevelopment.completeProjects.technologies.content            
+                each icon in webDevelopment.stack.technologies          
                     .col-3.col-md-4.col-lg-2 
                             .icon
                                 img(src="/img/" + icon.src, alt="node")
@@ -66,37 +66,41 @@ block content
                 .short-header #{webDevelopment.completeProjects.subTitle}
                 h3 #{webDevelopment.completeProjects.title}
                 .sub-header #{webDevelopment.completeProjects.subText}
-            .row.animate.wow.fadeInLeft.fast    
-                .project.col-lg-4
-                    .item
-                        .item__image-wrapper(style="background-image: url('img/tokenize.png')")
-                            h4 TOKENIZE
-                            .item__review
-                                |Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the
-                                | first exchange to let you trade blockchain ideas, knowledge and values.
-                        .item__header  Digital Currency Exchange
-                .project.col-lg-4
-                    .item
-                        .item__image-wrapper(style="background-image: url('http://jsdaddy.io/img/plan2.png')")
-                            h4 PLANARSYS
-                            .item__review 
-                                | Planarsys - Modern digital IoT B2B platform, its aim is to monitor and manage different
-                                | type of devices through internet.
-                        .item__header B2B platform
-                .project.col-lg-4
-                   .item
-                        .item__image-wrapper(style="background-image: url('img/tokenize.png')")
-                            h4 TOKENIZE
-                            .item__review
-                                |Tokenize - More than just a Digital Currency Exchange, Tokenize Xchange aims to be the
-                                | first exchange to let you trade blockchain ideas, knowledge and values.
-                        .item__header  Digital Currency Exchange
-    section.contact-us
+            .row.animate.wow.fadeInLeft.fast
+                each item in webDevelopment.completeProjects.projects    
+                    .project.col-lg-4
+                            .item
+                                .item__image-wrapper(style=`background-image: url("/img/${item.background}")`)
+                                    h4 #{item.title}
+                                    .item__review #{item.shortdescription}
+                                .item__header #{item.header}
+    section.contact-us                            
         .container
             .row.align-content-center
                 .col-lg-12
                     .contact-us__wrapper                        
-                        p.contact-us__text Want to learn more about what Jsdaddy can do for you?
-                        a(hfer="#" class="contact-us__link") Start project
+                        .contact-us__text Want to learn more about what Jsdaddy can do for you?
+                        a(hreа="#" class="contact-us__link") Start project
+
+    form#popup-form.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!                       
 
 
