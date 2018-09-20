@@ -1,19 +1,19 @@
 extends ../layout
 
 block content
-    section.banner-second-about
+    section.banner-second-about(style=`background-image: url("/img/${aboutCompany.head.background}")`)
         .container
             .row
                 .banner-second__web
                     h1 #{aboutCompany.title}
                     p #{aboutCompany.head.description}
-                    a(href="#popup-form" class="btn contact_us_btn") Contact Us
+                    a(href="#popup-form" class="btn contact_us_btn") #{aboutCompany.head.contact}
     section.about-us
         .container
             .row   
                 .header-section-wrapper
                     .short-header #{aboutCompany.head.title}
-                        h3 ABOUT US TEXT
+                        h3 #{aboutCompany.main.title}
                         .sub-header #{aboutCompany.main.subtitle}
             .row
                 .col-md-6
@@ -25,13 +25,13 @@ block content
                     p #{aboutCompany.main.description3}
                 .col-md-6
                     .about-us__img.animate.wow.fadeInRight.fast
-                        img(src='/img/about-office.jpg', alt='')
+                        img(src=`/img/${aboutCompany.main.img}`, alt='')
     section
       .container
         .row
           .header-section-wrapper
-            h3 Team
-            .background-section-text Team
+            h3 #{aboutCompany.team.title}
+            .background-section-text #{aboutCompany.team.title}
             .sub-header #{aboutCompany.team.subtitle}
         .row
             each i in aboutCompany.team.content
@@ -44,7 +44,7 @@ block content
                         .soc-link
                             a(href=i.soc-link)
                                 i(class='fa fa-linkedin-square')
-    #map
+    #map(style=`background-image: url("/img/${aboutCompany.map}")`)
 
     form#popup-form.mfp-hide.white-popup-block.popup-form
         h3 Contact Us
