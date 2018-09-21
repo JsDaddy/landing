@@ -5,6 +5,7 @@ import './events.schema';
 import './footer.schema';
 import './header.schema';
 import './main-page.schema';
+import './new-projects.schema';
 import './portfolio.schema';
 import './project-participents.schema';
 import './static_sections.schema';
