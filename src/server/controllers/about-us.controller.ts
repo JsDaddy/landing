@@ -14,8 +14,8 @@ export const aboutUsCtrl = (app: express.Application) => {
                     {query: 'mainHead', replace: 'head', rewrite: true},
                     'aboutCompany',
                     'headerMenu',
-                    'team',
-                    'contacts',
+                    // 'team',
+                    // 'contacts',
                     'footerNew',
                 ]);
                 aboutUsContent.aboutCompany = await new AboutUsModel().getContent({name: 'aboutCompany'});

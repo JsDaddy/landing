@@ -63,17 +63,18 @@ block content
     section.completed-projects
         .container
             .row
-                .short-header #{webDevelopment.completeProjects.subTitle}
-                h3 #{webDevelopment.completeProjects.title}
-                .sub-header #{webDevelopment.completeProjects.subText}
+                .short-header #{completeProjects.subTitle}
+                h3 #{completeProjects.title}
+                .sub-header #{completeProjects.subText}
             .row.animate.wow.fadeInLeft.fast
-                each item in webDevelopment.completeProjects.projects    
+                each i in completeProjects.projects    
                     .project.col-lg-4
-                            .item
-                                .item__image-wrapper(style=`background-image: url("/img/${item.background}")`)
-                                    h4 #{item.title}
-                                    .item__review #{item.shortdescription}
-                                .item__header #{item.header}
+                        .item
+                            .item__image-wrapper(style=`background-image: url("/img/${i.background}")`)
+                                h4 #{i.title}
+                                .item__review #{i.shortdescription}
+                            .item__header #{i.header}
+        //- h1 #{webDevelopment.stack.subTitle}
     section.contact-us                            
         .container
             .row.align-content-center
