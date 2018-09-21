@@ -9,7 +9,7 @@ import { WebDevelopmentModel } from '../models/web-development.model';
 
 export const webDevelopmentCtrl = (app: express.Application) => {
   app.get(
-    '/web-development',
+    '/',
     async (_req: express.Request, res: express.Response) => {
       try {
         const webDevelopmentContent: IHashMap = await new StaticContentModel().getContentHashMap([
