@@ -1,14 +1,8 @@
 import './about-us.schema';
-import './course-participents.schema';
-import './course.schema';
-import './events.schema';
 import './footer.schema';
 import './header.schema';
 import './main-page.schema';
-import './new-projects.schema';
-import './portfolio.schema';
-import './project-participents.schema';
+import './projects.schema';
 import './static_sections.schema';
 import './technologies.schema';
-import './user.schema';
 import './web-development.schema';
