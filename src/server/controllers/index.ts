@@ -9,7 +9,6 @@ import {projectsCtrl} from './projects.controller';
 import {sitemapCtrl} from './sitemap.controller';
 import { webDevelopmentCtrl } from './web-development.controller';
 
-
 export const controllers: (app: Application) => void = (app: Application) => {
     // courseCtrl(app);
     // coursesCtrl(app);
