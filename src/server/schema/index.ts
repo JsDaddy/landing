@@ -1,7 +1,8 @@
-import './course-participents.schema';
-import './course.schema';
-import './events.schema';
-import './portfolio.schema';
-import './project-participents.schema';
+import './about-us.schema';
+import './footer.schema';
+import './header.schema';
+import './main-page.schema';
+import './projects.schema';
 import './static_sections.schema';
-import './user.schema';
+import './technologies.schema';
+import './web-development.schema';

@@ -48,73 +48,91 @@ html
         link(rel='apple-touch-icon', sizes='114x114', href='')
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css', integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb', crossorigin='anonymous')
         link(rel='stylesheet', href='https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css')
-        link(rel='stylesheet', href='/css/font-awesome.min.css')
         link(rel='stylesheet', href='/css/slick.css')
+        link(rel='stylesheet', href='/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/public/css/slick.css')
         link(rel='stylesheet', href='/css/slick-theme.css')
         link(rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
+        link(rel='stylesheet' href='/css/main.min.css')
+        link(rel="stylesheet" href="/css/animate.min.css")
     body
-        if mainMenu
-            header#home
-                .container
-                    .row.content-header-wrapper
-                        .logo
-                            a(href='/')
-                                img(src='/img/logo.png', alt='js daddy')
-                        .navigation-wrapper(class=mainMenu.class)
-                            if mainMenu.content.languages
-                                .lang-checker
-                                    ul.select
-                                        each lang in mainMenu.content.languages
-                                            li(class=lang.active)
-                                                a(href=lang.link) #{lang.title}
-                            nav.nav-main
-                                ul#main-menu
-                                    each menu in mainMenu.content.menu
-                                        if menu.﻿subMenu
-                                            li(class=menu.﻿subclass)
-                                                span.sub #{menu.title}
-                                                    i(class='fa fa-angle-down')
-                                                ul.sub-nav
-                                                    each submnu in menu.﻿subMenu
-                                                        li
-                                                            a(href=submnu.link) #{submnu.title}
-                                        else
-                                            li
-                                                a(href=menu.link) #{menu.title}
-
-                            .right-header-block
-                                if mainMenu.content.social
-                                    .social
-                                        ul
-                                            each item in mainMenu.content.social
-                                                li
-                                                    a(class=item['link-class'], href=item.link)
-                                                        i.fa(class=item['icon-class'])
-                                if mainMenu.content.phone
-                                    .tel-wrapper
-                                        each i in mainMenu.content.phone
-                                            a(href=i.link) #{i.phone}
-                                .contact-btn-wrapper
-                                    a.contact-btn.scroll(href=mainMenu.content.button.link) #{mainMenu.content.button.text}
-                        .nav-burger
-                            .line
-                            .text Menu
-                            .line
+        if headerMenu
+            header
+                #header.default
+                    .container#header
+                        .row.align-items-center.justify-content-between
+                            .col-2.logo
+                                a(href='/')
+                                    img(src=`/img/${headerMenu.logo}`, alt="JsDaddy")
+                            .nav-wrapper.col-lg-10
+                                nav
+                                    ul#menu-wrap
+                                        li
+                                            a(href='/#services' class="link-nav") #{headerMenu.nav.serv}
+                                        li
+                                            a(href='/#dev-process' class="link-nav") #{headerMenu.nav.dev_process}
+                                        li
+                                            a(href="/#technologies" class="link-nav") #{headerMenu.nav.tech}
+                                        li
+                                            a(href="/#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
+                                        li
+                                            a(href="about-us" class="link-nav") #{headerMenu.nav.about}
+                                .btn-wrap
+                                    a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
+                            .nav-burger
+                                .line
+                                .line-middle
+                                .line
         block content
-
-        if footer
-            footer.footer
-                .copyright #{footer.content.text}
-
-        include content/notification.pug
+        if footerNew
+            footer
+                .container#footer
+                    .row
+                        .footer-wrapper
+                            .contacts
+                                .contacts__logo
+                                    a(href="#")
+                                        img(src="/img/" + footerNew.content.contacts.logo, alt="JsDaddy") 
+                                .contacts__email 
+                                    a(href="mailto:info@jsdaddy.io") 
+                                        i(class="fa fa-envelope-o", aria-hidden="true") 
+                                        |#{footerNew.content.contacts.info.mail}
+                                .contacts__skype 
+                                    a(href="skype:juncker8888") 
+                                        i(class="fa fa-skype" aria-hidden="true")
+                                        |#{footerNew.content.contacts.info.skype}     
+                                .contacts__addres #{footerNew.content.contacts.location}
+                            .navigation-footer
+                                ul
+                                    li
+                                        a(href="/#services") #{footerNew.navigation.serv}
+                                    li
+                                        a(href="/#dev-process") #{footerNew.navigation.DevProc}
+                                    li
+                                        a(href="/#technologies") #{footerNew.navigation.techno}
+                                    li
+                                        a(href="/#testimonials") #{footerNew.navigation.testimonial}
+                                    li 
+                                        a(href="about-us") #{footerNew.navigation.about} 
+                            .social #{footerNew.social.text}
+                                ul
+                                    each item in  footerNew.social.social
+                                        li 
+                                            a(href=item.link, class=item['linkClass'])
+                                                i.fa(class=item['iconClass'])                                                         
+                .copy-wrapper
+                    .container
+                        .row
+                            .col-lg-12 #{footerNew.footer.text}
 
         block script
-            script(src='/js/common.min.js')
             script(src='/js/main.min.js')
-            script(src='/js/contacts-form.min.js')
+            script(src='/js/common.min.js')
+            
 
         script.
+          new WOW().init();
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
           (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];

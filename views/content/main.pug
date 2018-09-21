@@ -1,144 +1,184 @@
 extends ../layout
 
 block content
-    section.banner#banner
-        .mouse-wr
-            a.mouse(href=mainBanner.content.mouse)
-        .container
-            .banner-content-wrapper
-                .banner-content
-                    h1 #{mainBanner.content.text.title}
-                    p #{mainBanner.content.text.subtitle}
-                    a.contact-btn(href=mainBanner.content.button.link) #{mainBanner.content.button.text}
-
-    section.business-options#business
-        .container
-            .header-section-wrapper
-                h3 #{businessOptions.title}
-                .background-section-text #{businessOptions.title}
-            .row.align-items-center
-                .col-lg-6.align-items-center
-                    .img-wrapper-business
-                        img(src='/img/' + businessOptions.taglineImage)
-                    p #{businessOptions.tagline}
-                .col-lg-6
-                    each item in businessOptions.content
-                        .item(class=item.class)
-                            h5 #{item.title}
-                            p #{item.text}
-
-    section#technologies.technologies
-        .container
-            .header-section-wrapper
-                h3 #{technologies.title}
-                .background-section-text #{technologies.title}
-            .technologies-wrapper
+    section.banner
+        .animated.bounceInLeft.fast
+            .container
                 .row
-                    each i in technologies.content
-                        .col-6.col-sm-4.col-md-2
-                            .img-wrapper
-                                img(src='/img/' + i.src, alt=i.alt)
-    section.advantages
-        .container
-            .header-section-wrapper
-                h3 #{advantagesCompany.title}
-                .background-section-text #{advantagesCompany.title}
-            .row
-                each i in advantagesCompany.content.item
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(
-                                src='/img/' + i.src
-                                alt=i.alt
-                                )
-                            h5 #{i.title}
-                            p #{i.text}
+                    .banner__content
+                        h1 #{mainPage.banner.title}
+                        p #{mainPage.banner.subtitle}
+                            principles.
+                        a(href="#popup-form" class="btn contact_us_btn") #{mainPage.banner.button.text}
     section.services#services
         .container
-            .header-section-wrapper
-                h3 #{services.title}
-                .background-section-text #{services.title}
             .row
-                each i in services.content
-                    .col-md-4
-                        .item-content-block
-                            .icon
-                                img(src=i.src)
-                            h5 #{i.title}
-                            p #{i.text}
-
-    section#clients
+                .short-header #{mainPage.services.text}
+                h3 #{mainPage.services.title}
+                .sub-header #{mainPage.services.subtitle}
+            .row.services-items-wrapper
+                .service.col-md-4
+                    .item.animated.wow.fadeInLeft.faster
+                        a(href='#/')
+                            .item__icon
+                                img(src="/img/" + mainPage.services.ourServices.web.image, alt="web")
+                            h5 #{mainPage.services.ourServices.web.title}
+                            p  #{mainPage.services.ourServices.web.text}
+                .service.col-md-4
+                    .item.animated.wow.fadeInUp.faster
+                        a(href='#/')
+                            .item__icon
+                                img(src="/img/" + mainPage.services.ourServices.mobile.image, alt="mobile app")
+                            h5 #{mainPage.services.ourServices.mobile.title}
+                            p #{mainPage.services.ourServices.mobile.text}
+                .service.col-md-4
+                    .item.animated.wow.fadeInRight.faster
+                        a(href='#/')
+                            .item__icon
+                                img(src="/img/" + mainPage.services.ourServices.cloud.image, alt="cloud")
+                            h5 #{mainPage.services.ourServices.cloud.title}
+                            p #{mainPage.services.ourServices.cloud.text}
+    section.dev-process#dev-process
         .container
-            .header-section-wrapper
-                h3 #{portfolio.title}
-                .background-section-text #{portfolio.title}
             .row
-                each project in portfolio.content
-                    .col-lg-6
-                        .client-wrapper(style=`background-image: url("/img/${project.background}")`)
-                            a(href=project.href)
-                            .item-content
-                                .duration #{project.duration}
-                                .name #{project.name}
-                                .shortDescription #{project.shortdescription}
-                                ul
-                                    each icon in project.technologies
-                                        li
-                                            img(src='/img/' + icon.src, alt=icon.alt)
-
+                .short-header #{mainPage.process.text}
+                h3 #{mainPage.process.title}
+                .sub-header #{mainPage.process.subtitle}
+            .row
+                .step-wrapper
+                    .left-col
+                        .step.planing.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 #{mainPage.process.steps.planning.title}
+                                p #{mainPage.process.steps.planning.text}
+                            .ico-wrap
+                                span.icon-planinig
+                        .step.analysis.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 #{mainPage.process.steps.analysis.title}
+                                p #{mainPage.process.steps.analysis.text}
+                            .ico-wrap
+                                span.icon-analysis
+                        .step.stack.animated.wow.fadeInLeft.faster
+                            .text-wrap
+                                h6 #{mainPage.process.steps.design.title}
+                                p #{mainPage.process.steps.design.text}
+                            .ico-wrap
+                                span.icon-design
+                    .center-col
+                        img(src='img/construction_project_plan_building_architect_design_develop-83_icon-icons.com_60220.png', alt='lamp')
+                    .right-col
+                        .step.architecture.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-implementation
+                            .text-wrap
+                                h6 #{mainPage.process.steps.implementation.title}
+                                p #{mainPage.process.steps.implementation.text}
+                        .step.test.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-test
+                            .text-wrap
+                                h6 #{mainPage.process.steps.testing.title}
+                                p #{mainPage.process.steps.testing.text}
+                        .step.deployment.animated.wow.fadeInRight.faster
+                            .ico-wrap
+                                span.icon-MAINTENANCE
+                            .text-wrap
+                                h6 #{mainPage.process.steps.maintenance.title}
+                                p #{mainPage.process.steps.maintenance.text}
+    section.technologies#technologies
+        .container
+            .row
+                .short-header #{technologies.text}
+                h3 #{technologies.title}
+                .sub-header #{technologies.subtitle}
+            .row.animate.wow.fadeInUp.fast
+                each i in technologies.list
+                    .col-3.col-md-4.col-lg-2
+                        .icon
+                            img(src='/img/' + i.src, alt=i.alt)
+                            span #{i.alt}
+    section.advantages-wrapper
+        .container
+            .row
+                .short-header #{mainPage.advantages.text}
+                h3 #{mainPage.advantages.title}
+                .sub-header #{mainPage.advantages.subtitle}
+            .row
+                .advantages
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.tailorMade.image, alt="tailor")
+                        .advantages__item-text.tailer
+                            h6 #{mainPage.advantages.cases.tailorMade.title}
+                            p #{mainPage.advantages.cases.tailorMade.text}
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.integration.image, alt="integration")
+                        .advantages__item-text.integration
+                            h6 #{mainPage.advantages.cases.integration.title}
+                            p #{mainPage.advantages.cases.integration.text}
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.support.image, alt="support")
+                        .advantages__item-text.support
+                            h6 #{mainPage.advantages.cases.support.title}
+                            p #{mainPage.advantages.cases.support.text}
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.priceFormation.image, alt="Price")
+                        .advantages__item-text.price
+                            h6 #{mainPage.advantages.cases.priceFormation.title}
+                            p #{mainPage.advantages.cases.priceFormation.text}
+                    .advantages__item.animated.wow.fadeInLeft.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.maintenance.image, alt="maintenance")
+                        .advantages__item-text.maintenance
+                            h6 #{mainPage.advantages.cases.maintenance.title}
+                            p #{mainPage.advantages.cases.maintenance.text}
+                    .advantages__item.animated.wow.fadeInRight.faster
+                        .advantages__item-icon
+                            img(src="/img/" + mainPage.advantages.cases.quality.image, alt="quality")
+                        .advantages__item-text.quality
+                            h6 #{mainPage.advantages.cases.quality.title}
+                            p #{mainPage.advantages.cases.quality.text}
     section#testimonials
         .container
-            .header-section-wrapper
-                h3 #{testimonials.title}
-                .background-section-text #{testimonials.title}
+            .row.animate.wow.flipInX
+                .short-header #{mainPage.testimonials.text}
+                h3 #{mainPage.testimonials.title}
+                .sub-header #{mainPage.testimonials.subtitle}
             .row
-                .slide-wrap
-                    .testimonials-wrap
-                        each item in testimonials.content
-                            .testimonials-item
-                                .item
-                                    .left-block-wrap
-                                        .photo-client
-                                            img(src='/img/' + item.photo, alt=item.alt)
-                                        .name #{item.name}
-                                        .position #{item.position}, #{item.company}
-                                        a.linkedin(
-                                        class='fa fa-linkedin-square'
-                                        href=item.profilelink
-                                        )
-                                    .right-block
-                                        .quotes
-                                            p #{item.text}
+                .testimonials-wrapper
+                    each item in mainPage.testimonials.content
+                        .item
+                            .item__photo
+                                img(src='/img/' + item.photo, alt=item.alt)
+                            .item__name #{item.name}
+                            .item__position #{item.position}, #{item.company}
+                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink)
+                            .item__quotes
+                                p #{item.text}
+    .scrollup
+        i(class="fa fa-chevron-up", aria-hidden="true")
 
-    section#contacts.contacts
-        .container
-            .header-section-wrapper
-                h3 #{contacts.title}
-                .background-section-text #{contacts.title}
-            .row
-                .contact-form-wrapper
-                    contacts-form.contact_us(
-                    btnText=contacts.content.button.text
-                    schema
-                    showphone="false"
-                    )
-            .row
-                .contact-details
-                    .email-block
-                        ul
-                            li.email
-                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
-                        .social
-                            ul
-                                each el in contacts.content.contacts.social
-                                    li
-                                        a(class=el.linkClass, href=el.link)
-                                            i(class='fa ' + el.iconClass)
-                    .tel-block
-                        ul
-                            li.tel
-                                p #{contacts.content.contacts.skype}
-                    .address-block
-                        ul
-                            li #{contacts.content.contacts.address}
+    form#popup-form.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!

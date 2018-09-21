@@ -1,0 +1,141 @@
+section .short-header
+    z-index: 1
+.about-us
+    width: 100%
+    position: relative
+    p
+        margin-bottom: 20px
+    &__img
+        position: relative
+        display: flex
+        flex-direction: column
+        img
+            max-width: 100%
+        &:before
+            content: ''
+            display: inline-block
+            position: absolute
+            left: 0
+            right: 0
+            top: 0
+            bottom: 0
+            background: rgba(0,0,0,.6)
+.background-about-text
+    width: 100%
+    text-align: center
+    position: absolute
+    top: 75px
+    left: 50%
+    transform: translate(-50%, -50%)
+    color: #f1f2f2
+    font-weight: 700
+    font-size: 120px             
+.header-section-wrapper
+    width: 100%
+    position: relative
+    h3  
+        position: relative
+        font-size: 60px  
+        z-index: 1         
+    .background-section-text
+        width: 100%
+        text-align: center
+        position: absolute
+        top: 25px
+        left: 50%
+        transform: translate(-50%, -50%)
+        color: #f1f2f2
+        font-weight: 700
+        font-size: 130px                                      
+.item-wrapper
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    padding: 0 15px
+    padding-bottom: 40px
+    .name
+        width: 100%
+        font-weight: 700
+        font-size: 20px
+        text-align: center
+        margin-bottom: 10px
+    .position
+        width: 100%
+        text-align: center
+        margin-bottom: 10px
+        text-transform: uppercase
+        font-size: 13px
+        font-weight: 400
+    .soc-link
+        a
+            text-decoration: none
+            color: #383838
+    .fa
+        font-size: 30px
+        &:hover
+            color: #007bff                 
+    .photo-wrapper
+        display: block
+        margin: 0 auto 35px auto
+        width: 180px
+        filter: grayscale(100%)
+        &:hover
+            cursor: pointer
+            filter: grayscale(0%)
+        img
+            width: 180px
+            height: 180px
+            border-radius: 50%      
+        font-size: 130px
+                                 
+.banner-second-about
+    background: #eaf9fc
+    background-size: auto
+    background-repeat: no-repeat
+    background-size: cover
+    position: relative
+    background-position: center
+    z-index: 0
+    &__web
+        width: 100%
+        min-height: 400px
+        position: relative
+        z-index: 1
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &:before
+        content: ''
+        display: inline-block
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: rgba(0,0,0,0.5)
+    h1
+        font-family: $ralewayBlack
+        font-size: 40px
+        line-height: 48px
+        margin-bottom: 30px
+        color: #fff
+    p
+        max-width: 800px
+        font-family: $default-font
+        font-size: 16px
+        line-height: 22px
+        margin-bottom: 50px
+        color: #fff
+        text-align: center
+
+#map
+    width: 100%
+    min-height: 500px
+    filter: grayscale(100%)
+    background-repeat: no-repeat
+    background-position: 50% 50%
+    background-size: cover
+    &:hover
+        filter: none

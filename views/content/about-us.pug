@@ -1,69 +1,66 @@
 extends ../layout
 
 block content
-    section#about.why-we-are
+    section.banner-second-about(style=`background-image: url("/img/${aboutCompany.head.background}")`)
         .container
-            .header-section-wrapper
-                h3 #{aboutCompany.title}
-                .background-section-text #{aboutCompany.title}
-            .why-we-are-wrapper
-                .text-block
-                    p #{aboutCompany.content.text.description}
-                .img-block.photo-sl
-                    .left-img-cell.photo-sl
-                        span.wrap
-                            img(src='/img/' + aboutCompany.content.team, alt=aboutCompany.alt)
-                    .right-img-cell
-                        .img-cell.unwrap
-                            span
-                                img(src='/img/' + aboutCompany.content.ourTeam, alt=aboutCompany.alt)
-                        .img-cell.unwrap
-                            span
-                                img(src='/img/' + aboutCompany.content.src, alt=aboutCompany.﻿alt)
-    section#team
+            .row
+                .banner-second__web
+                    h1 #{aboutCompany.title}
+                    p #{aboutCompany.head.description}
+                    a(href="#popup-form" class="btn contact_us_btn") #{aboutCompany.head.contact}
+    section.about-us
         .container
-            .header-section-wrapper
-                h3 #{team.title}
-                .background-section-text #{team.title}
+            .row   
+                .header-section-wrapper
+                    .short-header #{aboutCompany.head.title}
+                        h3 #{aboutCompany.main.title}
+                        .sub-header #{aboutCompany.main.subtitle}
             .row
-                each member in team.content
-                    .col-12.col-lg-3
-                        .item-wrapper
-                            .photo-wrapper
-                                img(src='/img/' + member.photo, alt=`${member.firstName.en} ${member.lastName.en} ${member.position}`)
-                            .name #{member.firstName.en} #{member.lastName.en}
-                            .position #{member.position}
-                            .soc-link
-                                a(href=member.linkenIn)
-                                    i.fa.fa-linkedin-square
-    section#contacts.contacts
-        .container
-            .header-section-wrapper
-                h3 #{contacts.title}
-                .background-section-text #{contacts.title}
-            .row
-                .contact-form-wrapper
-                    contacts-form.contact_us(
-                    btnText=contacts.content.button.text
-                    schema
-                    showphone="false"
-                    )
-            .row
-                .contact-details
-                    .email-block
-                        ul
-                            li.email
-                                a(href='mailto:' + contacts.content.contacts.email) #{contacts.content.contacts.email}
-                        .social
-                            ul
-                                each el in contacts.content.contacts.social
-                                    li
-                                        a(class=el.linkClass, href=el.link)
-                                            i(class='fa ' + el.iconClass)
-                    .tel-block
-                        ul
-                            li.tel
-                                p #{contacts.content.contacts.skype}
-                    .address-block
-                        ul
-                            li #{contacts.content.contacts.address}
+                .col-md-6
+                    .about-us__text.animate.wow.fadeInLeft.fast
+                        p #{aboutCompany.main.descripton}
+                        p #{aboutCompany.main.description1}
+                        p #{aboutCompany.main.description2}
+                .col-md-6
+                    .about-us__img.animate.wow.fadeInRight.fast
+                        img(src=`/img/${aboutCompany.main.img}`, alt='Team work')
+    section
+      .container
+        .row
+          .header-section-wrapper
+            h3 #{aboutCompany.team.title}
+            .background-section-text #{aboutCompany.team.title}
+            .sub-header #{aboutCompany.team.subtitle}
+        .row
+            each i in aboutCompany.team.content
+                .team.col-md-4.col-lg-3
+                    .item-wrapper.animate.wow.zoomIn.fast
+                        .photo-wrapper
+                            img(src='/img/' + i.photo, alt=i.alt)
+                        .name #{i.name}
+                        .position #{i.position}
+                        .soc-link
+                            a(href=i.soc-link)
+                                i(class='fa fa-linkedin-square')
+    #map(style=`background-image: url("/img/${aboutCompany.map}")`)
+
+    form#popup-form.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!   

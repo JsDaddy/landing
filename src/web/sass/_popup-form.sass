@@ -1,0 +1,67 @@
+.mfp-content
+    max-width: 500px
+
+.popup-form
+    background-color: #fff
+    padding: 30px
+    font-family: roboto-example,sans-serif
+    position: relative
+    h3
+        text-align: center
+        font-size: 21px
+        margin-bottom: 35px
+    input[type=text], input[type=email], textarea
+        width: 100%
+        margin-bottom: 10px
+        border: none
+        outline: none
+        padding: 10px
+        font-size: 17px
+        border: 1px solid rgba(0,0,0,0.3)
+    &__btn-wrapper
+        text-align: center
+        margin-top: 40px
+    &__input-wrapper
+        margin-bottom: 20px
+        position: relative
+        p
+            font-size: 12px
+        textarea
+            margin-bottom: 0
+            resize: none
+            @-moz-document url-prefix() 
+                margin-bottom: 5px
+    &__input-wrapper_invalid
+        border: 1px solid #f00!important
+        &-message
+            color: red
+            display: block
+            position: absolute
+            top: calc(100% - 10px)
+    .success-message
+        display: none
+        flex-direction: column
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: #fff
+        z-index: 1
+        align-items: center
+        justify-content: center
+        padding: 30px
+        font-family: $ralewayBlack
+        font-size: 40px
+        &__icon
+            min-width: 75px
+            min-height: 75px
+            border-radius: 50%
+            background: $accent
+            align-items: center
+            justify-content: center
+            display: flex
+            color: #fff
+        &.open
+            display: inline-flex
+        

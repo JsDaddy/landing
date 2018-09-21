@@ -1,0 +1,80 @@
+@font-face {
+	font-family: "Icons";
+	src: url('../fonts/icons/Icons.eot');
+	src: url('../fonts/icons/Icons.eot?#iefix') format('eot'),
+		url('../fonts/icons/Icons.woff2') format('woff2'),
+		url('../fonts/icons/Icons.woff') format('woff'),
+		url('../fonts/icons/Icons.ttf') format('truetype'),
+		url('../fonts/icons/Icons.svg#Icons') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "Icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == MAINTENANCE {
+		$char: "\E001";
+	}
+	@if $filename == analysis {
+		$char: "\E002";
+	}
+	@if $filename == design {
+		$char: "\E003";
+	}
+	@if $filename == implementation {
+		$char: "\E004";
+	}
+	@if $filename == planinig {
+		$char: "\E005";
+	}
+	@if $filename == test {
+		$char: "\E006";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-MAINTENANCE {
+	@include icon(MAINTENANCE);
+}
+.icon-analysis {
+	@include icon(analysis);
+}
+.icon-design {
+	@include icon(design);
+}
+.icon-implementation {
+	@include icon(implementation);
+}
+.icon-planinig {
+	@include icon(planinig);
+}
+.icon-test {
+	@include icon(test);
+}
