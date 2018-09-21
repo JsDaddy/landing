@@ -9,4 +9,4 @@ const projectsSchema: mongoose.Schema = new Schema ({
     title: String,
 });
 
-mongoose.model('Portfol', projectsSchema, 'new_projects');
+mongoose.model('Projects', projectsSchema, 'new_projects');

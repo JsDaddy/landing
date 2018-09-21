@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { FooterModel } from '../models/footer.model';
 import { HeaderModel } from '../models/header.model';
-import { ProjectsNewModel } from '../models/new-projects.model';
+import { ProjectsNewModel } from '../models/projects.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
 import { WebDevelopmentModel } from '../models/web-development.model';
