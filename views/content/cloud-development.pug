@@ -1,0 +1,107 @@
+extends ../layout
+
+block content
+    section.banner-second(style=`background-image: url("/img/${cloudDevelopment.cloudBanner.background}")`)
+        .container
+            .row
+                .banner-second__web
+                    h1 #{cloudDevelopment.cloudBanner.title}
+                    p #{cloudDevelopment.cloudBanner.subText}
+                    a(href="#popup-form" class="btn contact_us_btn") #{cloudDevelopment.cloudBanner.button.text}
+    section.about-services
+        .container
+            .row
+                .short-header #{cloudDevelopment.cloudServices.subTitle}
+                h3 #{cloudDevelopment.cloudServices.title}
+                .sub-header #{cloudDevelopment.cloudServices.subText}
+            .row
+                .col-md-6
+                    .about-services__text.animate.wow.fadeInLeft.fast
+                        p #{cloudDevelopment.cloudServices.contentServices.descriptionText}
+                        p #{cloudDevelopment.cloudServices.contentServices.text2}
+                        p #{cloudDevelopment.cloudServices.contentServices.text3}
+                .col-md-6
+                    .about-services__img.animate.wow.fadeInRight.fast
+                        img(src="/img/" + cloudDevelopment.cloudServices.contentServices.img, alt="")
+    section.container-solution
+        .container
+            .row
+                .short-header #{cloudDevelopment.cloudSolution.subTitle}
+                h3 #{cloudDevelopment.cloudSolution.title}                                   
+                .sub-header #{cloudDevelopment.cloudSolution.subText}
+            .row.animate.wow.fadeInRight.fast
+                .col-md-4
+                    .solution
+                        .solution__icon
+                            span.icon-implementation
+                        .solution__header #{cloudDevelopment.cloudSolution.contentSolution.frontEnd.title}
+                        .solution__text #{cloudDevelopment.cloudSolution.contentSolution.frontEnd.subTitle}
+                .col-md-4
+                    .solution
+                        .solution__icon
+                            span.icon-implementation
+                        .solution__header #{cloudDevelopment.cloudSolution.contentSolution.hightLoadOptimization.title}            
+                        .solution__text #{cloudDevelopment.cloudSolution.contentSolution.hightLoadOptimization.subTitle}
+                .col-md-4
+                    .solution
+                        .solution__icon
+                            span.icon-implementation
+                        .solution__header #{cloudDevelopment.cloudSolution.contentSolution.restful.title}
+                        .solution__text #{cloudDevelopment.cloudSolution.contentSolution.restful.subTitle}
+    section.technologies
+        .container
+            .row
+                .short-header #{cloudDevelopment.stack.subTitle}
+                h3 #{cloudDevelopment.stack.title}
+                .sub-header #{cloudDevelopment.stack.subText}
+            .row.animate.wow.fadeInUp.fast
+                each i in cloudDevelopment.stack.technologies
+                    .col-3.col-md-4.col-lg-2
+                        .icon
+                            img(src='/img/' + i.src, alt=i.alt)
+                            span #{i.alt}                                                                                                  
+    section.completed-projects
+        .container
+            .row
+                .short-header #{completeProjects.subTitle}
+                h3 #{completeProjects.title}
+                .sub-header #{completeProjects.subText}
+            .row.animate.wow.fadeInLeft.fast
+                each i in completeProjects.projects    
+                    .project.col-lg-4
+                        .item
+                            .item__image-wrapper(style=`background-image: url("/img/${i.background}")`)
+                                h4 #{i.title}
+                                .item__review #{i.shortdescription}
+                            .item__header #{i.header}
+        //- h1 #{webDevelopment.stack.subTitle}
+    section.contact-us                            
+        .container
+            .row.align-content-center
+                .col-lg-12
+                    .contact-us__wrapper                        
+                        .contact-us__text #{cloudDevelopment.startProjects.startText}
+                        a(hreа="#" class="contact-us__link") Start project
+
+    form#popup-form.mfp-hide.white-popup-block.popup-form
+        h3 Contact Us
+        .popup-form__input-wrapper
+            label(for="name") Name
+            input#name(name="name", type="text")
+            p.popup-form__input-wrapper_invalid-message#name_error This field can not be empty
+        .popup-form__input-wrapper
+            label(for="email") Email
+            input#email(name="email", type="email")
+            p.popup-form__input-wrapper_invalid-message#email_error This field must contain valid email
+        .popup-form__input-wrapper
+            label(for="Textarea") Message
+            textarea#message
+            p.popup-form__input-wrapper_invalid-message#textarea_error This field can not be empty
+        .popup-form__btn-wrapper
+            button.btn#form__submit Contact Us
+        .success-message
+            .success-message__icon
+                i.fa.fa-check(aria-hidden="true")
+            span Success!                       
+
+
