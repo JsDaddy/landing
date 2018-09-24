@@ -1,4 +1,5 @@
 import './about-us.schema';
+import './cloud_development.schema';
 import './footer.schema';
 import './header.schema';
 import './main-page.schema';
