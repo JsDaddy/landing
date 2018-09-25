@@ -53,7 +53,7 @@ block content
                 h3 #{webDevelopment.stack.title}
                 .sub-header #{webDevelopment.stack.subText}
             .row.animate.wow.fadeInUp.fast
-                each i in technologies.list
+                each i in webDevelopment.stack.technologies
                     .col-3.col-md-4.col-lg-2
                         .icon
                             img(src='/img/' + i.src, alt=i.alt)
