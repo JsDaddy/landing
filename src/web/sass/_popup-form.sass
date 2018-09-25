@@ -64,4 +64,29 @@
             color: #fff
         &.open
             display: inline-flex
-        
+    .error-message
+        display: none
+        flex-direction: column
+        position: absolute
+        left: 0
+        right: 0
+        top: 0
+        bottom: 0
+        background: #fff
+        z-index: 1
+        align-items: center
+        justify-content: center
+        padding: 30px
+        font-family: $ralewayBlack
+        font-size: 40px
+        &__icon
+            min-width: 75px
+            min-height: 75px
+            border-radius: 50%
+            background: $accent
+            align-items: center
+            justify-content: center
+            display: flex
+            color: #fff
+        &.open
+            display: inline-flex
