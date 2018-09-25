@@ -3,6 +3,7 @@ import './cloud_development.schema';
 import './footer.schema';
 import './header.schema';
 import './main-page.schema';
+import './mobile-development.schema';
 import './projects.schema';
 import './static_sections.schema';
 import './technologies.schema';

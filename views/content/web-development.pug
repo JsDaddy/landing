@@ -18,8 +18,6 @@ block content
                 .col-md-6
                     .about-services__text.animate.wow.fadeInLeft.fast
                         p #{webDevelopment.webServices.contentServices.descriptionText}
-                        p #{webDevelopment.webServices.contentServices.descriptionText}
-                        p #{webDevelopment.webServices.contentServices.descriptionText}
                 .col-md-6
                     .about-services__img.animate.wow.fadeInRight.fast
                         img(src="/img/" + webDevelopment.webServices.contentServices.img, alt="")
@@ -55,7 +53,7 @@ block content
                 h3 #{webDevelopment.stack.title}
                 .sub-header #{webDevelopment.stack.subText}
             .row.animate.wow.fadeInUp.fast
-                each i in technologies.list
+                each i in webDevelopment.stack.technologies
                     .col-3.col-md-4.col-lg-2
                         .icon
                             img(src='/img/' + i.src, alt=i.alt)
