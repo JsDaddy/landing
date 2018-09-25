@@ -102,7 +102,7 @@ $(document).ready(function () {
       $('.popup-form').submit(function () {
         $.ajax({
           type: 'POST',
-          url: 'http://jsdaddy.io/3000/mail/contacts',
+          url: 'http://jsdaddy.io/mail/contacts',
           data: { email, name, message },
           success: () => {
             $('.success-message').addClass('open');
