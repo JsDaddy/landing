@@ -71,7 +71,6 @@ $(document).ready( () => {
     } else if (name !== '') {
       $('#name_error').hide();
       $('input#name').removeClass('popup-form__input-wrapper_invalid');
-      return name;
     }
     const email = $('input#email').val();
     if (email === '' || !emailRegExp.test(email!.toString())) {
@@ -81,7 +80,6 @@ $(document).ready( () => {
     } else if (email !== '') {
       $('#email_error').hide();
       $('input#email').removeClass('popup-form__input-wrapper_invalid');
-      return email;
     }
     const message = $('textarea#message').val();
     if (message === '') {
@@ -91,7 +89,6 @@ $(document).ready( () => {
     } else if (message !== '') {
       $('#textarea_error').hide();
       $('textarea#message').removeClass('popup-form__input-wrapper_invalid');
-      return message;
     }
     if (name !== '' && email !== '' && message !== '') {
       $('.popup-form').submit( () => {
