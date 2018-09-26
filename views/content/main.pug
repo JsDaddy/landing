@@ -156,7 +156,7 @@ block content
                                 img(src='/img/' + item.photo, alt=item.alt)
                             .item__name #{item.name}
                             .item__position #{item.position}, #{item.company}
-                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink)
+                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink, target="_blank")
                             .item__quotes
                                 p #{item.text}
     .scrollup

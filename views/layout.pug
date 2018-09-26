@@ -120,7 +120,7 @@ html
                                 ul
                                     each item in  footerNew.social.social
                                         li 
-                                            a(href=item.link, class=item['linkClass'])
+                                            a(href=item.link, class=item['linkClass'], target="_blank")
                                                 i.fa(class=item['iconClass'])                                                         
                 .copy-wrapper
                     .container
@@ -133,11 +133,11 @@ html
             
 
         script.
-          new WOW().init();
           var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
           (function () {
             var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
             s1.async = true;
+            console.log()
             s1.src = 'https://embed.tawk.to/5afd6518227d3d7edc25680d/default';
             s1.charset = 'UTF-8';
             s1.setAttribute('crossorigin', '*');

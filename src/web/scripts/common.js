@@ -97,14 +97,15 @@ $(document).ready(function () {
       $('#textarea_error').hide();
       $('textarea#message').removeClass('popup-form__input-wrapper_invalid');
     };
-    // var dataString = 'name=' + name + '&email=' + email + '&message=' + message;
     if (name !== '' && email !== '' && message !== '') {
       $('.popup-form').submit(function () {
+        $('#form__submit').prop('disabled', true);
         $.ajax({
           type: 'POST',
           url: 'http://jsdaddy.io/mail/contacts',
           data: { email, name, message },
           success: () => {
+            $('#form__submit').prop('disabled', false);
             $('.success-message').addClass('open');
             setTimeout(() => {
               $('.success-message').removeClass('open');
@@ -112,6 +113,7 @@ $(document).ready(function () {
             }, 3000);
           },
           error: () => {
+            $('#form__submit').prop('disabled', false);
             $('.error-message').addClass('open');
             setTimeout(() => {
               $('.error-message').removeClass('open');
