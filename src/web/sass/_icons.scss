@@ -2,16 +2,16 @@
 	font-family: "Icons";
 	src: url('../fonts/icons/Icons.eot');
 	src: url('../fonts/icons/Icons.eot?#iefix') format('eot'),
-		url('../fonts/icons/Icons.woff2') format('woff2'),
-		url('../fonts/icons/Icons.woff') format('woff'),
-		url('../fonts/icons/Icons.ttf') format('truetype'),
-		url('../fonts/icons/Icons.svg#Icons') format('svg');
+	url('../fonts/icons/Icons.woff2') format('woff2'),
+	url('../fonts/icons/Icons.woff') format('woff'),
+	url('../fonts/icons/Icons.ttf') format('truetype'),
+	url('../fonts/icons/Icons.svg#Icons') format('svg');
 }
 
 @mixin icon-styles {
 	font-family: "Icons";
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: normal;
@@ -27,23 +27,59 @@
 @function icon-char($filename) {
 	$char: "";
 
-	@if $filename == MAINTENANCE {
+	@if $filename == HIGHLOAD-OPTIMIZATION {
 		$char: "\E001";
 	}
-	@if $filename == analysis {
+	@if $filename == MAINTENANCE {
 		$char: "\E002";
 	}
-	@if $filename == design {
+	@if $filename == analysis {
 		$char: "\E003";
 	}
-	@if $filename == implementation {
+	@if $filename == android {
 		$char: "\E004";
 	}
-	@if $filename == planinig {
+	@if $filename == api {
 		$char: "\E005";
 	}
-	@if $filename == test {
+	@if $filename == app-store-apple {
 		$char: "\E006";
+	}
+	@if $filename == backend {
+		$char: "\E007";
+	}
+	@if $filename == database {
+		$char: "\E008";
+	}
+	@if $filename == deploy {
+		$char: "\E009";
+	}
+	@if $filename == design {
+		$char: "\E00A";
+	}
+	@if $filename == front-end {
+		$char: "\E00B";
+	}
+	@if $filename == frontend {
+		$char: "\E00C";
+	}
+	@if $filename == implementation {
+		$char: "\E00D";
+	}
+	@if $filename == optimization {
+		$char: "\E00E";
+	}
+	@if $filename == planinig {
+		$char: "\E00F";
+	}
+	@if $filename == server {
+		$char: "\E010";
+	}
+	@if $filename == smartphone {
+		$char: "\E011";
+	}
+	@if $filename == test {
+		$char: "\E012";
 	}
 
 	@return $char;
@@ -60,20 +96,56 @@
 	}
 }
 
+.icon-HIGHLOAD-OPTIMIZATION {
+	@include icon(HIGHLOAD-OPTIMIZATION);
+}
 .icon-MAINTENANCE {
 	@include icon(MAINTENANCE);
 }
 .icon-analysis {
 	@include icon(analysis);
 }
+.icon-android {
+	@include icon(android);
+}
+.icon-api {
+	@include icon(api);
+}
+.icon-app-store-apple {
+	@include icon(app-store-apple);
+}
+.icon-backend {
+	@include icon(backend);
+}
+.icon-database {
+	@include icon(database);
+}
+.icon-deploy {
+	@include icon(deploy);
+}
 .icon-design {
 	@include icon(design);
+}
+.icon-front-end {
+	@include icon(front-end);
+}
+.icon-frontend {
+	@include icon(frontend);
 }
 .icon-implementation {
 	@include icon(implementation);
 }
+.icon-optimization {
+	@include icon(optimization);
+}
 .icon-planinig {
 	@include icon(planinig);
+}
+.icon-server {
+	@include icon(server);
+}
+.icon-smartphone {
+	@include icon(smartphone);
 }
 .icon-test {
 	@include icon(test);
