@@ -142,6 +142,52 @@ block content
                         .advantages__item-text.quality
                             h6 #{mainPage.advantages.cases.quality.title}
                             p #{mainPage.advantages.cases.quality.text}
+
+    //- extends ../layout
+
+    //- section.banner-second-about(style=`background-image: url("/img/${aboutCompany.head.background}")`)
+    //-     .container
+    //-         .row
+    //-             .banner-second__web
+    //-                 h1 #{aboutCompany.title}
+    //-                 p #{aboutCompany.head.description}
+    //-                 a(href="#popup-form" class="btn contact_us_btn") #{aboutCompany.head.contact}
+    section.about-us
+        .container
+            .row   
+                .header-section-wrapper
+                    .short-header #{aboutCompany.head.title}
+                        h3 #{aboutCompany.main.title}
+                        //- .sub-header #{aboutCompany.main.subtitle}
+            .row
+                .col-md-6
+                    .about-us__text.animate.wow.fadeInLeft.fast
+                        p #{aboutCompany.main.descripton}
+                        p #{aboutCompany.main.description1}
+                        p #{aboutCompany.main.description2}
+                .col-md-6
+                    .about-us__img.animate.wow.fadeInRight.fast
+                        img(src=`/img/${aboutCompany.main.img}`, alt='Team work')
+    section#about_us
+      .container
+        .row
+          .header-section-wrapper
+            h3 #{aboutCompany.team.title}
+            //- .background-section-text #{aboutCompany.team.title}
+            //- .sub-header #{aboutCompany.team.subtitle}
+        .row
+            each i in aboutCompany.team.content
+                .team.col-md-4.col-lg-3
+                    .item-wrapper.animate.wow.zoomIn.fast
+                        .photo-wrapper
+                            img(src='/img/' + i.photo, alt=i.alt)
+                        .name #{i.name}
+                        .position #{i.position}
+                        .soc-link
+                            a(href=i.soc_link, target="_blank")
+                                i(class='fa fa-linkedin-square')
+    //- #map(style=`background-image: url("/img/${aboutCompany.map}")`)
+
     section#testimonials
         .container
             .row.animate.wow.flipInX
