@@ -143,40 +143,29 @@ block content
                             h6 #{mainPage.advantages.cases.quality.title}
                             p #{mainPage.advantages.cases.quality.text}
 
-    //- extends ../layout
-
-    //- section.banner-second-about(style=`background-image: url("/img/${mainPage.aboutCompany.head.background}")`)
-    //-     .container
-    //-         .row
-    //-             .banner-second__web
-    //-                 h1 #{mainPage.aboutCompany.title}
-    //-                 p #{mainPage.aboutCompany.head.description}
-    //-                 a(href="#popup-form" class="btn contact_us_btn") #{mainPage.aboutCompany.head.contact}
     section.about-us
         .container
             .row   
                 .header-section-wrapper
-                    .short-header #{mainPage.mainPage.aboutCompany.head.title}
-                        h3 #{mainPage.aboutCompany.main.title}
-                        //- .sub-header #{mainPage.aboutCompany.main.subtitle}
+                    .short-header #{aboutCompany.head.title}
+                        h3 #{aboutCompany.main.title}
+                        //- .sub-header #{aboutCompany.main.subtitle}
             .row
                 .col-md-6
                     .about-us__text.animate.wow.fadeInLeft.fast
-                        p #{mainPage.aboutCompany.main.descripton}
-                        p #{mainPage.aboutCompany.main.description1}
-                        p #{mainPage.aboutCompany.main.description2}
+                        p #{aboutCompany.main.descripton}
+                        p #{aboutCompany.main.description1}
+                        p #{aboutCompany.main.description2}
                 .col-md-6
                     .about-us__img.animate.wow.fadeInRight.fast
-                        img(src=`/img/${mainPage.aboutCompany.main.img}`, alt='Team work')
+                        img(src=`/img/${aboutCompany.main.img}`, alt='Team work')
     section#about_us
       .container
         .row
           .header-section-wrapper
-            h3 #{mainPage.aboutCompany.team.title}
-            //- .background-section-text #{mainPage.aboutCompany.team.title}
-            //- .sub-header #{mainPage.aboutCompany.team.subtitle}
+            h3 #{aboutCompany.team.title}
         .row
-            each i in mainPage.aboutCompany.team.content
+            each i in aboutCompany.team.content
                 .team.col-md-4.col-lg-3
                     .item-wrapper.animate.wow.zoomIn.fast
                         .photo-wrapper
@@ -186,7 +175,6 @@ block content
                         .soc-link
                             a(href=i.soc_link, target="_blank")
                                 i(class='fa fa-linkedin-square')
-    //- #map(style=`background-image: url("/img/${mainPage.aboutCompany.map}")`)
 
     section#testimonials
         .container
