@@ -145,38 +145,38 @@ block content
 
     //- extends ../layout
 
-    //- section.banner-second-about(style=`background-image: url("/img/${aboutCompany.head.background}")`)
+    //- section.banner-second-about(style=`background-image: url("/img/${mainContent.aboutCompany.head.background}")`)
     //-     .container
     //-         .row
     //-             .banner-second__web
-    //-                 h1 #{aboutCompany.title}
-    //-                 p #{aboutCompany.head.description}
-    //-                 a(href="#popup-form" class="btn contact_us_btn") #{aboutCompany.head.contact}
+    //-                 h1 #{mainContent.aboutCompany.title}
+    //-                 p #{mainContent.aboutCompany.head.description}
+    //-                 a(href="#popup-form" class="btn contact_us_btn") #{mainContent.aboutCompany.head.contact}
     section.about-us
         .container
             .row   
                 .header-section-wrapper
-                    .short-header #{aboutCompany.head.title}
-                        h3 #{aboutCompany.main.title}
-                        //- .sub-header #{aboutCompany.main.subtitle}
+                    .short-header #{mainContent.mainContent.aboutCompany.head.title}
+                        h3 #{mainContent.aboutCompany.main.title}
+                        //- .sub-header #{mainContent.aboutCompany.main.subtitle}
             .row
                 .col-md-6
                     .about-us__text.animate.wow.fadeInLeft.fast
-                        p #{aboutCompany.main.descripton}
-                        p #{aboutCompany.main.description1}
-                        p #{aboutCompany.main.description2}
+                        p #{mainContent.aboutCompany.main.descripton}
+                        p #{mainContent.aboutCompany.main.description1}
+                        p #{mainContent.aboutCompany.main.description2}
                 .col-md-6
                     .about-us__img.animate.wow.fadeInRight.fast
-                        img(src=`/img/${aboutCompany.main.img}`, alt='Team work')
+                        img(src=`/img/${mainContent.aboutCompany.main.img}`, alt='Team work')
     section#about_us
       .container
         .row
           .header-section-wrapper
-            h3 #{aboutCompany.team.title}
-            //- .background-section-text #{aboutCompany.team.title}
-            //- .sub-header #{aboutCompany.team.subtitle}
+            h3 #{mainContent.aboutCompany.team.title}
+            //- .background-section-text #{mainContent.aboutCompany.team.title}
+            //- .sub-header #{mainContent.aboutCompany.team.subtitle}
         .row
-            each i in aboutCompany.team.content
+            each i in mainContent.aboutCompany.team.content
                 .team.col-md-4.col-lg-3
                     .item-wrapper.animate.wow.zoomIn.fast
                         .photo-wrapper
@@ -186,7 +186,7 @@ block content
                         .soc-link
                             a(href=i.soc_link, target="_blank")
                                 i(class='fa fa-linkedin-square')
-    //- #map(style=`background-image: url("/img/${aboutCompany.map}")`)
+    //- #map(style=`background-image: url("/img/${mainContent.aboutCompany.map}")`)
 
     section#testimonials
         .container
