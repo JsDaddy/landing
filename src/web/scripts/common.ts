@@ -154,6 +154,12 @@ $(document).ready( () => {
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
   });
+
+  // scroll to down
+  $('.scrolldown').click( () => {
+    $('html, body').animate({ scrollTop: $('#services').scrollTop() }, 600);
+    return false;
+  });
 });
 
 // smooth navigation scroll
