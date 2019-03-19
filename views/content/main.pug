@@ -151,7 +151,7 @@ block content
             .row
                 .testimonials-wrapper
                     each item in mainPage.testimonials.content
-                        .item(style = "background: '#fff'")
+                        .item(style = "background: none")
                             .item__photo
                                 img(src='/img/' + item.photo, alt=item.alt)
                             .item__name #{item.name}
