@@ -31,6 +31,13 @@ html
           );
           fbq('init', '190979394957908');
           fbq('track', 'PageView');
+
+        script.
+            var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || 
+            {widgetcode:"d3e4936b1730257df3133972dc9e6be79226f1085d1f5040bd17a721a71099e0", values:{},ready:function(){}};
+            var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
+            s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+
         if head
             title #{head.title}
         meta(charset='utf-8')
@@ -118,8 +125,8 @@ html
                                         a(href="/#testimonials") #{footerNew.navigation.testimonial}
                                     li 
                                         a(href="about-us") #{footerNew.navigation.about} 
-                                    li
-                                        a(href="blog") #{footerNew.navigation.blog}
+                                    //- li
+                                    //-     a(href="blog") #{footerNew.navigation.blog}
                             .social #{footerNew.social.text}
                                 ul
                                     each item in  footerNew.social.social
@@ -136,13 +143,13 @@ html
             script(src='/js/common.min.js')
             
 
-        script.
-          var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-          (function () {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/5afd6518227d3d7edc25680d/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-          })();
+        //- script.
+        //-   var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        //-   (function () {
+        //-     var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        //-     s1.async = true;
+        //-     s1.src = 'https://embed.tawk.to/5afd6518227d3d7edc25680d/default';
+        //-     s1.charset = 'UTF-8';
+        //-     s1.setAttribute('crossorigin', '*');
+        //-     s0.parentNode.insertBefore(s1, s0);
+        //-   })();
