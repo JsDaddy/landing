@@ -3,6 +3,7 @@ import { AboutUsModel } from '../models/about-us.model';
 import { FooterModel } from '../models/footer.model';
 import {HeaderModel} from '../models/header.model';
 import {MainPageModel} from '../models/main-page.model';
+import { ProjectsNewModel } from '../models/projects.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
 // import {logger} from './../main';
@@ -19,12 +20,14 @@ export const mainCtrl = (app: express.Application) => {
           'technologies',
           'aboutCompany',
           'footerNew',
+          'completeProjects',
         ]);
         mainContent.headerMenu = await new HeaderModel().getContent({name: 'headerMenu'});
         mainContent.technologies = await new TechnologiesModel().getContent({name: 'technologies'});
         mainContent.aboutCompany = await new AboutUsModel().getContent({name: 'aboutCompany'});
         mainContent.mainPage = await new MainPageModel().getContent({name: 'mainPage'});
         mainContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
+        mainContent.completeProjects = await new ProjectsNewModel().getContent({name: 'completeProjects'});
         return res.render('content/main', mainContent);
       } catch (err) {
         // logger.log('error', err);

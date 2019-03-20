@@ -39,7 +39,7 @@ html
             s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
 
         if head
-            title #{head.title}
+            title JSDaddy - JavaScript Development Company
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
@@ -85,7 +85,7 @@ html
                                         li
                                             a(href="/#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
                                         li
-                                            a(href="/#about-us" class="link-nav") #{headerMenu.nav.about}
+                                            a(href="/#about_us" class="link-nav") #{headerMenu.nav.about}
                                         //- li
                                         //-     a(href="/blog" class="link-nav") #{headerMenu.nav.blog}
                                 .btn-wrap
@@ -107,11 +107,7 @@ html
                                 .contacts__email 
                                     a(href="mailto:info@jsdaddy.io") 
                                         i(class="fa fa-envelope-o", aria-hidden="true") 
-                                        |#{footerNew.content.contacts.info.mail}
-                                //- .contacts__skype 
-                                //-     a(href="skype:juncker8888") 
-                                //-         i(class="fa fa-skype" aria-hidden="true")
-                                //-         |#{footerNew.content.contacts.info.skype}     
+                                        |#{footerNew.content.contacts.info.mail}   
                                 .contacts__addres #{footerNew.content.contacts.location}
                             .navigation-footer
                                 ul
@@ -124,12 +120,10 @@ html
                                     li
                                         a(href="/#testimonials") #{footerNew.navigation.testimonial}
                                     li 
-                                        a(href="about-us") #{footerNew.navigation.about} 
-                                    //- li
-                                    //-     a(href="blog") #{footerNew.navigation.blog}
+                                        a(href="/#about_us") #{footerNew.navigation.about}
                             .social #{footerNew.social.text}
                                 ul
-                                    each item in  footerNew.social.social
+                                    each item in footerNew.social.social
                                         li 
                                             a(href=item.link, class=item['linkClass'], target="_blank")
                                                 i.fa(class=item['iconClass'])                                                         

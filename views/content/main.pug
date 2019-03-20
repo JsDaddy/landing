@@ -14,40 +14,22 @@ block content
                     //- .scroldown
                     //-     i(class="fa fa-chevron-down", aria-hidden="true")
 
-    section.services#services
+    section#services
         .container
-            .row
-                //- .short-header #{mainPage.services.text}
+            .row.animate.wow.flipInX
                 h3 #{mainPage.services.title}
-                //- .sub-header #{mainPage.services.subtitle}
-            .row.services-items-wrapper
-                .service.col-md-4
-                    .item.animated.wow.fadeInLeft.faster
-                        a(href='/web-development')
-                            .item__icon
-                                img(src="/img/" + mainPage.services.ourServices.web.image, alt="web")
-                            h5 #{mainPage.services.ourServices.web.title}
-                            p  #{mainPage.services.ourServices.web.text}
-                .service.col-md-4
-                    .item.animated.wow.fadeInUp.faster
-                        a(href='/mobile-development')
-                            .item__icon
-                                img(src="/img/" + mainPage.services.ourServices.mobile.image, alt="mobile app")
-                            h5 #{mainPage.services.ourServices.mobile.title}
-                            p #{mainPage.services.ourServices.mobile.text}
-                .service.col-md-4
-                    .item.animated.wow.fadeInRight.faster
-                        a(href='/cloud-development')
-                            .item__icon
-                                img(src="/img/" + mainPage.services.ourServices.cloud.image, alt="cloud")
-                            h5 #{mainPage.services.ourServices.cloud.title}
-                            p #{mainPage.services.ourServices.cloud.text}
+            .row
+                .projects-wrapper
+                    each item in completeProjects.projects
+                        .item
+                            h2 #{item.title}
+                            .item__photo(style=`background-image: url("/img/${item.background}")`)
+                            .item__name #{item.shortdescription}
+
     section.dev-process#dev-process
         .container
             .row
-                //- .short-header #{mainPage.process.text}
                 h3 #{mainPage.process.title}
-                //- .sub-header #{mainPage.process.subtitle}
             .row
                 .step-wrapper
                     .left-col
@@ -93,21 +75,34 @@ block content
     section.technologies#technologies
         .container
             .row
-                //- .short-header #{technologies.text}
                 h3 #{technologies.title}
-                //- .sub-header #{technologies.subtitle}
             .row.animate.wow.fadeInUp.fast
                 each i in technologies.list
                     .col-3.col-md-4.col-lg-2
                         .icon
                             img(src='/img/' + i.src, alt=i.alt)
-                            //- span #{i.alt}
+
+    section.about-us#about_us
+      .container
+        .row
+          .header-section-wrapper
+            h3 #{aboutCompany.team.title}
+        .row
+            each i in aboutCompany.team.content
+                .team.col-md-4.col-lg-3
+                    .item-wrapper.animate.wow.zoomIn.fast
+                        .photo-wrapper
+                            img(src='/img/' + i.photo, alt=i.alt)
+                        .name #{i.name}
+                        .position #{i.position}
+                        .soc-link
+                            a(href=i.soc_link, target="_blank")
+                                i(class='fa fa-linkedin-square')
+
     section.advantages-wrapper
         .container
             .row
-                //- .short-header #{mainPage.advantages.text}
                 h3 #{mainPage.advantages.title}
-                //- .sub-header #{mainPage.advantages.subtitle}
             .row
                 .advantages
                     .advantages__item.animated.wow.fadeInLeft.faster
@@ -147,45 +142,11 @@ block content
                             h6 #{mainPage.advantages.cases.quality.title}
                             p #{mainPage.advantages.cases.quality.text}
 
-    section.about-us#about-us
-        .container
-            .row   
-                .header-section-wrapper
-                    //- .short-header #{aboutCompany.head.title}
-                    h3 #{aboutCompany.main.title}
-                        //- .sub-header #{aboutCompany.main.subtitle}
-            .row
-                .col-md-6
-                    .about-us__text.animate.wow.fadeInLeft.fast
-                        p #{aboutCompany.main.descripton}
-                        p #{aboutCompany.main.description1}
-                        p #{aboutCompany.main.description2}
-                .col-md-6
-                    .about-us__img.animate.wow.fadeInRight.fast
-                        img(src=`/img/${aboutCompany.main.img}`, alt='Team work')
-    section#about_us
-      .container
-        .row
-          .header-section-wrapper
-            h3 #{aboutCompany.team.title}
-        .row
-            each i in aboutCompany.team.content
-                .team.col-md-4.col-lg-3
-                    .item-wrapper.animate.wow.zoomIn.fast
-                        .photo-wrapper
-                            img(src='/img/' + i.photo, alt=i.alt)
-                        .name #{i.name}
-                        .position #{i.position}
-                        .soc-link
-                            a(href=i.soc_link, target="_blank")
-                                i(class='fa fa-linkedin-square')
 
-    section#testimonials
+    section.testimonials#testimonials
         .container
             .row.animate.wow.flipInX
-                //- .short-header #{mainPage.testimonials.text}
                 h3 #{mainPage.testimonials.title}
-                //- .sub-header #{mainPage.testimonials.subtitle}
             .row
                 .testimonials-wrapper
                     each item in mainPage.testimonials.content

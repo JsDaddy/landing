@@ -12,7 +12,54 @@ $(document).ready( () => {
     adaptiveHeight: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
+    dots: false,
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 990,
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 740,
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToScroll: 1,
+          slidesToShow: 1,
+        },
+      },
+    ],
+    slidesToShow: 3,
+  });
+
+  ($('.projects-wrapper') as any).slick({
+    adaptiveHeight: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 1000,
     dots: false,
     infinite: true,
     responsive: [
@@ -126,6 +173,13 @@ $(document).ready( () => {
     const slickTrack = $('.testimonials-wrapper').find('.slick-track');
     const slickTrackHeight = $(slickTrack).height();
     $('.testimonials-wrapper').find('.item').css('height', slickTrackHeight + 'px');
+  });
+
+  $('.projects-wrapper').on('setPosition', () => {
+    $('.projects-wrapper').find('.slick-slide').height('auto');
+    const slickTrack = $('.projects-wrapper').find('.slick-track');
+    const slickTrackHeight = $(slickTrack).height();
+    $('.projects-wrapper').find('.item').css('height', slickTrackHeight + 'px');
   });
 
   let showOrHide = true;

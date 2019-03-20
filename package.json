@@ -11,9 +11,11 @@
     "nodemon": "nodemon",
     "start": "npm run build:css && pm2 start src/server/main.ts",
     "lint": "tslint 'src/**/*.ts'",
-    "start:dev": "nodemon",
     "build:css": "node-sass --include-path scss src/web/sass/index.sass public/css/site.min.css --output-style compressed",
-    "build:css:w": "npm run build:css -- -w"
+    "build:css:w": "npm run build:css -- -w",
+    "build:js": "webpack",
+    "build:js:w": "npm run build:js -- -w",
+    "start:dev": "npm run build:css && npm run build:js && nodemon"
   },
   "repository": {
     "type": "git",
