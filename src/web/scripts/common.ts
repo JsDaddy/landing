@@ -209,11 +209,6 @@ $(document).ready( () => {
     return false;
   });
 
-  // // scroll to down
-  // $('.scrolldown').click( () => {
-  //   $('html, body').animate({ scrollTop: $('#services').scrollTop() }, 600);
-  //   return false;
-  // });
 });
 
 // smooth navigation scroll
@@ -238,3 +233,8 @@ for (const i of btns) {
     i.className += ' active';
   });
 }
+
+$('.scroll-down').click (() => {
+  $('html, body').animate({ scrollTop: 700 }, 600);
+  return false;
+});
