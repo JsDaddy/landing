@@ -58,7 +58,7 @@ $(document).ready( () => {
   ($('.projects-wrapper') as any).slick({
     adaptiveHeight: true,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 1000,
     dots: false,
     infinite: true,
