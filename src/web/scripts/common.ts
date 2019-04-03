@@ -234,7 +234,7 @@ for (const i of btns) {
   });
 }
 
-$('.scroll-down').click (() => {
-  $('html, body').animate({ scrollTop: 700 }, 600);
-  return false;
-});
+// $('.scroll-down').click (() => {
+//   $('html, body').animate({ scrollTop: 700 }, 600);
+//   return false;
+// });
