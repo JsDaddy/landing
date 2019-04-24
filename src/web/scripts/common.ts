@@ -6,7 +6,7 @@ require('magnific-popup');
 // tslint:disable-next-line:no-var-requires
 const wowJs = require('wowjs');
 
-$(document).ready( () => {
+$(document).ready(() => {
   new wowJs.WOW().init();
   ($('.testimonials-wrapper') as any).slick({
     adaptiveHeight: true,
@@ -113,7 +113,9 @@ $(document).ready( () => {
     const name = $('input#name').val();
     if (name === '') {
       $('#name_error').show();
-      $('input#name').focus().addClass('popup-form__input-wrapper_invalid');
+      $('input#name')
+        .focus()
+        .addClass('popup-form__input-wrapper_invalid');
       return false;
     } else if (name !== '') {
       $('#name_error').hide();
@@ -122,7 +124,9 @@ $(document).ready( () => {
     const email = $('input#email').val();
     if (email === '' || !emailRegExp.test(email!.toString())) {
       $('#email_error').show();
-      $('input#email').focus().addClass('popup-form__input-wrapper_invalid');
+      $('input#email')
+        .focus()
+        .addClass('popup-form__input-wrapper_invalid');
       return false;
     } else if (email !== '') {
       $('#email_error').hide();
@@ -131,14 +135,16 @@ $(document).ready( () => {
     const message = $('textarea#message').val();
     if (message === '') {
       $('#textarea_error').show();
-      $('textarea#message').focus().addClass('popup-form__input-wrapper_invalid');
+      $('textarea#message')
+        .focus()
+        .addClass('popup-form__input-wrapper_invalid');
       return false;
     } else if (message !== '') {
       $('#textarea_error').hide();
       $('textarea#message').removeClass('popup-form__input-wrapper_invalid');
     }
     if (name !== '' && email !== '' && message !== '') {
-      $('.popup-form').submit( () => {
+      $('.popup-form').submit(() => {
         $('#form__submit').prop('disabled', true);
         $.ajax({
           data: { email, name, message },
@@ -169,21 +175,29 @@ $(document).ready( () => {
   });
 
   $('.testimonials-wrapper').on('setPosition', () => {
-    $('.testimonials-wrapper').find('.slick-slide').height('auto');
+    $('.testimonials-wrapper')
+      .find('.slick-slide')
+      .height('auto');
     const slickTrack = $('.testimonials-wrapper').find('.slick-track');
     const slickTrackHeight = $(slickTrack).height();
-    $('.testimonials-wrapper').find('.item').css('height', slickTrackHeight + 'px');
+    $('.testimonials-wrapper')
+      .find('.item')
+      .css('height', slickTrackHeight + 'px');
   });
 
   $('.projects-wrapper').on('setPosition', () => {
-    $('.projects-wrapper').find('.slick-slide').height('auto');
+    $('.projects-wrapper')
+      .find('.slick-slide')
+      .height('auto');
     const slickTrack = $('.projects-wrapper').find('.slick-track');
     const slickTrackHeight = $(slickTrack).height();
-    $('.projects-wrapper').find('.item').css('height', slickTrackHeight + 'px');
+    $('.projects-wrapper')
+      .find('.item')
+      .css('height', slickTrackHeight + 'px');
   });
 
   let showOrHide = true;
-  $('.nav-burger').click( () => {
+  $('.nav-burger').click(() => {
     if (!showOrHide) {
       $('.nav-wrapper').slideUp(500);
       $('.nav-burger').removeClass('active');
@@ -196,7 +210,7 @@ $(document).ready( () => {
   });
 
   // scroll to top
-  $(window).scroll( () => {
+  $(window).scroll(() => {
     const windowScroll = window;
     if ($(windowScroll).scrollTop()! > 100) {
       $('.scrollup').fadeIn();
@@ -204,21 +218,24 @@ $(document).ready( () => {
       $('.scrollup').fadeOut();
     }
   });
-  $('.scrollup').click( () => {
+  $('.scrollup').click(() => {
     $('html, body').animate({ scrollTop: 0 }, 600);
     return false;
   });
-
 });
 
 // smooth navigation scroll
 $('a[href*="#"]').click(function() {
-  const a = $(this).attr('href')!.slice(1);
+  const a = $(this)
+    .attr('href')!
+    .slice(1);
   const offset = $(a).offset();
   if (offset) {
-    $('body, html').animate({
-      scrollTop: (offset.top),
-    } /* speed */);
+    $('body, html').animate(
+      {
+        scrollTop: offset.top,
+      }, /* speed */
+    );
   }
 });
 
