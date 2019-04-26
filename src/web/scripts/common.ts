@@ -168,7 +168,7 @@ $(document).ready(() => {
             }, 3000);
           },
           type: 'POST',
-          url: 'http://localhost:3000/mail/contacts',
+          url: 'http://jsdaddy.io/mail/contacts',
         });
         return false;
       });
