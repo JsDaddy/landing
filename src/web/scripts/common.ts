@@ -177,42 +177,6 @@ $(document).ready(() => {
     return;
   });
 
-  // function populateTemplate(data: any) {
-  //   // tslint:disable-next-line:no-console
-  //   // console.log('AAAAAA');
-  //   const keys = Object.keys(data);
-  //    // tslint:disable-next-line:prefer-for-of
-  //    for (let i = 0; i < keys.length; i ++) {
-  //     const key = keys[i];
-  //     // tslint:disable-next-line:no-console
-  //     const target = 'json-' + key;
-  //     // tslint:disable
-  //     console.log('' , keys[i], target);
-  //     console.log( 'RRRRRR', document.getElementById('json-' + keys[i]) as any);
-  //     console.log('data[key]', data[key]);
-  //     // tslint:disable-next-line:align
-  //     (document.getElementById('json-' + keys[i]) as any).innerHTML = data[key];
-  //      }
-  //   }
-  // document.getElementById('form__submit')!
-  //         .addEventListener('click', (e) => {
-  //          e.preventDefault();
-  //          // tslint:disable-next-line:no-console
-  //          console.log('BBBBBB');
-  //          const name = (document.getElementById('name') as any).value;
-  //          const email = (document.getElementById('email') as any).value;
-  //          const message = (document.getElementById('message') as any).value;
-  //          // tslint:disable-next-line
-  //          console.log(email, name, message);
-  //          const data = {
-  //           email,
-  //           message,
-  //           name,
-  //          };
-  //          // console.log('vvv', v);
-  //          populateTemplate(data);
-  //        });
-
   $('.testimonials-wrapper').on('setPosition', () => {
     $('.testimonials-wrapper')
       .find('.slick-slide')
