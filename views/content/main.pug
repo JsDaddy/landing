@@ -21,10 +21,17 @@ block content
                 .projects-wrapper
                     each item in completeProjects.projects
                         .item
-                            h2 #{item.title}
+                            .title_wrapper 
+                                h2 #{item.title} 
+                                .title_icon(style=`background-image: url("/img/${item.icon}")`)
                             .item__photo(style=`background-image: url("/img/${item.background}")`)
                             p #{item.shortdescription}
-            
+                            .title_wrapper_technology
+                                .title_icon(style=`background-image: url("/img/${item.icontechnology}")`)
+                                .title_iconn(style=`background-image: url("/img/${item.icontechnologyy}")`)
+                                .title_iconn1(style=`background-image: url("/img/${item.iconredux}")`)
+                                .title_iconn2(style=`background-image: url("/img/${item.iconsql}")`)
+                                .title_iconn3(style=`background-image: url("/img/${item.iconts}")`)
         h5 Visit our 
             a(href="https://github.com/JsDaddy" target="_blank")
                 i.fa.fa-github

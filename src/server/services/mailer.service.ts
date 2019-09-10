@@ -41,7 +41,6 @@ export class MailerService {
 
         const file = await readFile(path.join(process.cwd(), 'views/email-templates/email.mustache'));
         const output: string =  mustache.render(file.toString(), {name: body.name});
-
         return await this._sendMail({
           html: output,
           subject: 'JSDaddy contacts',
@@ -52,7 +51,7 @@ export class MailerService {
       case 'copy': {
         return await this._sendMail({
           subject: 'JSDaddy',
-          text: JSON.stringify(body),
+          text: 'we will contact you soon',
           to: body.copyEmail,
         });
       }
