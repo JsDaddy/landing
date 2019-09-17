@@ -59,7 +59,7 @@ $(document).ready(() => {
     adaptiveHeight: true,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 1500,
     dots: false,
     infinite: true,
     responsive: [
