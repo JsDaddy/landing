@@ -90,6 +90,9 @@ html
                                         //-     a(href="/blog" class="link-nav") #{headerMenu.nav.blog}
                                 .btn-wrap
                                     a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
+                                h5 Visit our
+                                    a(href="https://github.com/JsDaddy" target="_blank")
+                                        i.fa.fa-github
                             .nav-burger
                                 .line
                                 .line-middle
@@ -121,12 +124,13 @@ html
                                         a(href="/#testimonials") #{footerNew.navigation.testimonial}
                                     li 
                                         a(href="/#about_us") #{footerNew.navigation.about}
-                            .social #{footerNew.social.text}
+                            .social
+                                h5 Social
                                 ul
                                     each item in footerNew.social.social
-                                        li 
+                                        li
                                             a(href=item.link, class=item['linkClass'], target="_blank")
-                                                i.fa(class=item['iconClass'])                                                         
+                                                i.fa(class=item['iconClass'])
                 .copy-wrapper
                     .container
                         .row
@@ -135,4 +139,3 @@ html
         block script
             script(src='/js/main.min.js')
             script(src='/js/common.min.js')
-            

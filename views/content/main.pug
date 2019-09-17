@@ -32,9 +32,10 @@ block content
                                 .title_iconn1(style=`background-image: url("/img/${item.iconredux}")`)
                                 .title_iconn2(style=`background-image: url("/img/${item.iconsql}")`)
                                 .title_iconn3(style=`background-image: url("/img/${item.iconts}")`)
-        h5 Visit our 
-            a(href="https://github.com/JsDaddy" target="_blank")
-                i.fa.fa-github
+
+        //h5 Visit our
+        //    a(href="https://github.com/JsDaddy" target="_blank")
+        //        i.fa.fa-github
 
     section.dev-process#dev-process
         .container
@@ -91,6 +92,7 @@ block content
                     .col-3.col-md-4.col-lg-2
                         .icon
                             img(src='/img/' + i.src, alt=i.alt)
+                            span #{i.alt}
 
     section.about-us#about_us
       .container
@@ -195,4 +197,3 @@ block content
             .error-message__icon
                 i.fa.fa-times(aria-hidden="true")
             span Error!
-        
