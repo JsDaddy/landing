@@ -38,7 +38,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new CompressionPlugin({
-      filename: ".gz[query]",
+      filename: "[path].gz[query]",
       algorithm: "gzip",
       test: /\.js$|\.css$|\.html$/,
       threshold: 5240,
