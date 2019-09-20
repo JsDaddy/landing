@@ -37,12 +37,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new CompressionPlugin({
-      filename: "[path].gz[query]",
-      algorithm: "gzip",
-      test: /\.js$|\.css$|\.html$/,
-      threshold: 5240,
-      minRatio: 0
-    }),
+    new CompressionPlugin
   ]
 };
