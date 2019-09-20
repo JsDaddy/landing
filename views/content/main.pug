@@ -21,8 +21,8 @@ block content
                 .projects-wrapper
                     each item in completeProjects.projects
                         .item
-                            .title_wrapper 
-                                h2 #{item.title} 
+                            .title_wrapper
+                                h2 #{item.title}
                                 .title_icon(style=`background-image: url("/img/${item.icon}")`)
                             .item__photo(style=`background-image: url("/img/${item.background}")`)
                             p #{item.shortdescription}
