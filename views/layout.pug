@@ -1,5 +1,5 @@
 // - layout.pug
-html
+<html lang="en"> 
     head
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
         script.
@@ -42,13 +42,13 @@ html
             title JSDaddy - JavaScript Development Company
         meta(charset='utf-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
-        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=2')
         if head
             each meta in head.meta
                 meta(name=meta.name, content= meta.content)
         meta(property='og:image', content='path/to/image.jpg')
         meta(name='format-detection', content='telephone=no')
-        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=2, user-scalable=0')
         meta(name="Keywords" content='JS, Web Development, Full-stack, jsdaddy, JSDADDY, Angular, TypeScript, React, Redux, NodeJS')
         link(rel='shortcut icon', href='', type='image/x-icon')
         link(rel='apple-touch-icon', href='')
@@ -68,7 +68,7 @@ html
         if headerMenu
             header
                 #header.default
-                    .container#header
+                    .container#header_container
                         .row.align-items-center.justify-content-between
                             .col-2.logo
                                 a(href='/')
@@ -91,7 +91,7 @@ html
                                 .btn-wrap
                                     a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
                                 h5 Visit our
-                                    a(href="https://github.com/JsDaddy" target="_blank")
+                                    a(href="https://github.com/JsDaddy" target="_blank" aria-label="github")
                                         i.fa.fa-github
                             .nav-burger
                                 .line
@@ -129,7 +129,7 @@ html
                                 ul
                                     each item in footerNew.social.social
                                         li
-                                            a(href=item.link, class=item['linkClass'], target="_blank")
+                                            a(href=item.link, class=item['linkClass'], target="_blank" aria-label="social")
                                                 i.fa(class=item['iconClass'])
                 .copy-wrapper
                     .container
@@ -139,3 +139,4 @@ html
         block script
             script(src='/js/main.min.js')
             script(src='/js/common.min.js')
+</html>
