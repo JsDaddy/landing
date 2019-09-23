@@ -1,10 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
-  mode: 'none',
-  devtool: "source-map",
+  mode: 'production',
   entry: {
     main :'./src/web/scripts/main.ts',
     common: './src/web/scripts/common.ts'
@@ -32,9 +31,9 @@ module.exports = {
         $: 'jquery',
         jQuery: 'jquery'
     }),
-    new UglifyJSPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
+    new CompressionPlugin
   ]
 };
