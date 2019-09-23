@@ -1,4 +1,5 @@
 // - layout.pug
+doctype html
 <html lang="en"> 
     head
         script(async src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
@@ -32,11 +33,7 @@
           fbq('init', '190979394957908');
           fbq('track', 'PageView');
 
-        script.
-            var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
-            {widgetcode:"d3e4936b1730257df3133972dc9e6be79226f1085d1f5040bd17a721a71099e0", values:{},ready:function(){}};
-            var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
-            s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+        
 
         if head
             title JSDaddy - JavaScript Development Company
@@ -90,7 +87,7 @@
                                 .btn-wrap
                                     a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
                                 h5 Visit our
-                                    a(href="https://github.com/JsDaddy" target="_blank" aria-label="github")
+                                    a(href="https://github.com/JsDaddy" target="_blank" aria-label="github" rel="noopener")
                                         i.fa.fa-github
                             .nav-burger
                                 .line
@@ -128,7 +125,7 @@
                                 ul
                                     each item in footerNew.social.social
                                         li
-                                            a(href=item.link, class=item['linkClass'], target="_blank" aria-label="social")
+                                            a(href=item.link, class=item['linkClass'], target="_blank" aria-label="social" rel="noopener")
                                                 i.fa(class=item['iconClass'])
                 .copy-wrapper
                     .container

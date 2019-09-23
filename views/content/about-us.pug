@@ -40,7 +40,7 @@ block content
                         .name #{i.name}
                         .position #{i.position}
                         .soc-link
-                            a(href=i.soc_link, target="_blank" aria-label="linkedin")
+                            a(href=i.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
                                 i(class='fa fa-linkedin-square')
     #map(style=`background-image: url("/img/${aboutCompany.map}")`)
 

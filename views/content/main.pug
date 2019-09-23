@@ -33,10 +33,6 @@ block content
                                 .title_iconn2(style=`background-image: url("/img/${item.iconsql}")`)
                                 .title_iconn3(style=`background-image: url("/img/${item.iconts}")`)
 
-        //h5 Visit our
-        //    a(href="https://github.com/JsDaddy" target="_blank" aria-label="github")
-        //        i.fa.fa-github
-
     section.dev-process#dev-process
         .container
             .row
@@ -108,7 +104,7 @@ block content
                         .name #{i.name}
                         .position #{i.position}
                         .soc-link
-                            a(href=i.soc_link, target="_blank" aria-label="linkedin2")
+                            a(href=i.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
                                 i(class='fa fa-linkedin-square')
 
     section.advantages-wrapper
@@ -167,7 +163,7 @@ block content
                                 img(src='/img/' + item.photo, alt=item.alt)
                             .item__name #{item.name}
                             .item__position #{item.position}, #{item.company}
-                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink, target="_blank" aria-label="linkedin")
+                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink, target="_blank" aria-label="linkedin" rel="noopener")
                             .item__quotes
                                 p #{item.text}
     .scrollup
