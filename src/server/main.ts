@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as compression from 'compression';
 import * as config from 'config';
 import * as express from 'express';
 // import * as winston from 'winston';
@@ -26,6 +27,7 @@ controllers(app);
 app.set('config', config);
 app.set('http', axios.create());
 app.use(express.static('public'));
+app.use(compression());
 app.set('view engine', 'pug');
 app.get('*', (req, res: express.Response) => {
   const urlLang = req.url.split('/')[1];
@@ -33,4 +35,4 @@ app.get('*', (req, res: express.Response) => {
   return res.render(`content/error-${lang}`);
 });
 
-app.listen(3000);
+app.listen(8080);
