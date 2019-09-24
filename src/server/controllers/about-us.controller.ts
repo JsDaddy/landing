@@ -3,7 +3,6 @@ import {AboutUsModel} from '../models/about-us.model';
 import { FooterModel } from '../models/footer.model';
 import {HeaderModel} from '../models/header.model';
 import {StaticContentModel} from '../models/static_content.model';
-// import {logger} from './../main';
 
 export const aboutUsCtrl = (app: express.Application) => {
     app.get(
@@ -14,8 +13,6 @@ export const aboutUsCtrl = (app: express.Application) => {
                     {query: 'mainHead', replace: 'head', rewrite: true},
                     'aboutCompany',
                     'headerMenu',
-                    // 'team',
-                    // 'contacts',
                     'footerNew',
                 ]);
                 aboutUsContent.aboutCompany = await new AboutUsModel().getContent({name: 'aboutCompany'});
@@ -23,7 +20,6 @@ export const aboutUsCtrl = (app: express.Application) => {
                 aboutUsContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
                 return res.render('content/about-us', aboutUsContent);
             } catch (err) {
-                // logger.log('error', err);
                 return res.render('content/error-en');
             }
         },

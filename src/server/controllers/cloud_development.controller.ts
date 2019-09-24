@@ -6,8 +6,6 @@ import { ProjectsNewModel } from '../models/projects.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
 
-// import {logger} from './../main';
-
 export const cloudDevelopmentCtrl = (app: express.Application) => {
   app.get(
     '/cloud-development',
@@ -29,7 +27,6 @@ export const cloudDevelopmentCtrl = (app: express.Application) => {
         cloudDevelopmentContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         return res.render('content/cloud-development', cloudDevelopmentContent);
       } catch (err) {
-        // logger.log('error', err);
         return res.render(`content/error-en`);
       }
     },

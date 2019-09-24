@@ -6,7 +6,6 @@ import {MainPageModel} from '../models/main-page.model';
 import { ProjectsNewModel } from '../models/projects.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
-// import {logger} from './../main';
 
 export const mainCtrl = (app: express.Application) => {
   app.get(
@@ -30,7 +29,6 @@ export const mainCtrl = (app: express.Application) => {
         mainContent.completeProjects = await new ProjectsNewModel().getContent({name: 'completeProjects'});
         return res.render('content/main', mainContent);
       } catch (err) {
-        // logger.log('error', err);
         return res.render(`content/error-en`);
       }
     },

@@ -5,7 +5,6 @@ import { MobileDevelopmentModel } from '../models/mobile-development.model';
 import { ProjectsNewModel } from '../models/projects.model';
 import { StaticContentModel } from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
-// import {logger} from './../main';
 
 export const mobileDevelopmentCtrl = (app: express.Application) => {
     app.get(
@@ -30,7 +29,6 @@ export const mobileDevelopmentCtrl = (app: express.Application) => {
                 mobileDevelopmentContent.footerNew = await new FooterModel().getContent({ name: 'footerNew' });
                 return res.render('content/mobile-development', mobileDevelopmentContent);
             } catch (err) {
-                // logger.log('error', err);
                 return res.render(`content/error-en`);
             }
         },

@@ -5,7 +5,6 @@ import { ProjectsNewModel } from '../models/projects.model';
 import {StaticContentModel} from '../models/static_content.model';
 import { TechnologiesModel } from '../models/technologies.model';
 import { WebDevelopmentModel } from '../models/web-development.model';
-// import {logger} from './../main';
 
 export const webDevelopmentCtrl = (app: express.Application) => {
   app.get(
@@ -27,7 +26,6 @@ export const webDevelopmentCtrl = (app: express.Application) => {
         webDevelopmentContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         return res.render('content/web-development', webDevelopmentContent);
       } catch (err) {
-        // logger.log('error', err);
         return res.render(`content/error-en`);
       }
     },
