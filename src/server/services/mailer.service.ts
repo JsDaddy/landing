@@ -51,7 +51,7 @@ export class MailerService {
       case 'copy': {
         return await this._sendMail({
           subject: 'JSDaddy',
-          text: text: 'Name: ' + body.email + ' Name: ' + body.name + ' Text: ' + body.message,
+          text: 'Name: ' + body.email + ' Name: ' + body.name + ' Text: ' + body.message,
           to: body.copyEmail,
         });
       }
