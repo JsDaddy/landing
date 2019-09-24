@@ -5,10 +5,7 @@ require('slick-carousel');
 require('magnific-popup');
 // tslint:disable-next-line:no-var-requires
 const wowJs = require('wowjs');
-
-$(document).ready(() => {
-  new wowJs.WOW().init();
-  ($('.testimonials-wrapper') as any).slick({
+const slickOptions = {
     adaptiveHeight: true,
     arrows: false,
     autoplay: true,
@@ -53,54 +50,13 @@ $(document).ready(() => {
       },
     ],
     slidesToShow: 3,
-  });
+  };
+$(document).ready(() => {
+  new wowJs.WOW().init();
 
-  ($('.projects-wrapper') as any).slick({
-    adaptiveHeight: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 1500,
-    dots: false,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 990,
-        settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 740,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 580,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
-      },
-      {
-        breakpoint: 481,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
-      },
-    ],
-    slidesToShow: 3,
-  });
+  ($('.testimonials-wrapper') as any).slick(slickOptions);
+
+  ($('.projects-wrapper') as any).slick(slickOptions);
 
   ($('.contact_us_btn') as any).magnificPopup({
     focus: '#name',
@@ -109,8 +65,6 @@ $(document).ready(() => {
   });
   $('.popup-form__input-wrapper_invalid-message').hide();
   $('#form__submit').click(() => {
-    // tslint:disable-next-line:no-console
-    console.log('444444');
     const emailRegExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     const name = $('input#name').val();
     if (name === '') {
@@ -253,8 +207,3 @@ for (const i of btns) {
     i.className += ' active';
   });
 }
-
-// $('.scroll-down').click (() => {
-//   $('html, body').animate({ scrollTop: 700 }, 600);
-//   return false;
-// });
