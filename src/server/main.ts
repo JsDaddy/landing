@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as compression from 'compression';
 import * as config from 'config';
 import * as express from 'express';
@@ -15,7 +14,6 @@ appConf(app);
 controllers(app);
 
 app.set('config', config);
-app.set('http', axios.create());
 app.use(compression());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
