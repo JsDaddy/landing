@@ -6,7 +6,6 @@ module.exports = {
   mode: 'production',
   entry: {
     main :'./src/web/scripts/main.ts',
-    common: './src/web/scripts/common.ts'
   },
   output: {
     path: path.resolve(__dirname, 'public/js'),
