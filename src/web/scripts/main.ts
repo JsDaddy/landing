@@ -5,6 +5,7 @@ require('slick-carousel');
 require('magnific-popup');
 // tslint:disable-next-line:no-var-requires
 const wowJs = require('wowjs');
+const url = 'https://jsdaddy.io/mail/contacts';
 const slickOptions = {
     adaptiveHeight: true,
     arrows: false,
@@ -122,7 +123,7 @@ $(document).ready(() => {
             }, 3000);
           },
           type: 'POST',
-          url: 'http://jsdaddy.io/mail/contacts',
+          url,
         });
         return false;
       });
