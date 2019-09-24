@@ -2,6 +2,7 @@
 doctype html
 <html lang="en"> 
     head
+        <!-- Google Tag Manager -->
         script.
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({
                 'gtm.start':new Date().getTime(),event:'gtm.js'
@@ -10,7 +11,8 @@ doctype html
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-T33GBWR')
-        script(async, src='/js/main.min.js')
+        <!-- End Google Tag Manager -->
+       
         script(async, src="https://www.googletagmanager.com/gtag/js?id=AW-970047931")
         script.
             window.dataLayer = window.dataLayer || [];
@@ -45,9 +47,12 @@ doctype html
         link(rel='icon', href='/img/favicon.ico')
         link(rel='stylesheet' href='/css/main.min.css')
         link(rel="stylesheet" href="/css/animate.min.css")
+        script(async, src='/js/main.min.js')
     body
+        <!-- Google Tag Manager (noscript) -->
         noscript
             iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-T33GBWR" height="0" width="0" style="display:none;visibility:hidden")
+        <!-- End Google Tag Manager (noscript) -->
         if headerMenu
             header
                 #header.default
