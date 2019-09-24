@@ -2,16 +2,6 @@ import axios from 'axios';
 import * as compression from 'compression';
 import * as config from 'config';
 import * as express from 'express';
-// import * as winston from 'winston';
-
-// export const logger = new winston.Logger({
-//   transports: [
-//     new winston.transports.File({
-//       filename: './logs/all-logs.log',
-//       level: 'info',
-//     }),
-//   ],
-// });
 
 const app = express();
 import './schema/index';
