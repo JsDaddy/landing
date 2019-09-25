@@ -1,12 +1,14 @@
 import * as config from 'config';
 import * as nodemailer from 'nodemailer';
-import * as path from 'path';
 const { pass, user } = config.get('mailer');
 import * as fs from 'fs';
 import * as mustache from 'mustache';
+import * as path from 'path';
 import * as util from 'util';
+import { MessageModel } from '../models/message.model';
 // tslint:disable-next-line: typedef
 const readFile = util.promisify(fs.readFile);
+const appendFile = util.promisify(fs.appendFile);
 
 export class MailerService {
   private _transporter: nodemailer.Transporter;
@@ -26,10 +28,8 @@ export class MailerService {
   public async sendMail(body: any, type: string, lang = 'en'): Promise<{}> {
     switch (type) {
       case 'course': {
-
         const file = await readFile(path.join(process.cwd(), `views/email-templates/course.${lang}.mustache`));
         const output: string =  mustache.render(file.toString(), {name: body.name});
-
         return await this._sendMail({
           html: output,
           subject: 'JSDaddy course',
@@ -38,7 +38,6 @@ export class MailerService {
       }
 
       case 'contacts': {
-
         const file = await readFile(path.join(process.cwd(), 'views/email-templates/email.mustache'));
         const output: string =  mustache.render(file.toString(), {name: body.name});
         return await this._sendMail({
@@ -49,9 +48,20 @@ export class MailerService {
       }
 
       case 'copy': {
+        const date = new Date();
+        await appendFile(
+          `./src/server/mails/${date.toISOString()}.txt`,
+        `Name:  ${body.name}\nEmail: ${body.email}\nText: ${body.message}`,
+        );
+        await new MessageModel().saveMessage({
+          date: date.toISOString(),
+          email: body.email,
+          message: body.message,
+          name: body.name,
+        });
         return await this._sendMail({
           subject: 'JSDaddy',
-          text: 'Name: ' + body.email + ' Name: ' + body.name + ' Text: ' + body.message,
+          text: 'Email: ' + body.email + ' Name: ' + body.name + ' Text: ' + body.message,
           to: body.copyEmail,
         });
       }

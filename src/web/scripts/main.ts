@@ -5,53 +5,54 @@ require('slick-carousel');
 require('magnific-popup');
 // tslint:disable-next-line:no-var-requires
 const wowJs = require('wowjs');
-const url = 'https://jsdaddy.io/mail/contacts';
+// const url = 'https://jsdaddy.io/mail/contacts';
+const url = 'http://localhost:3000/mail/contacts';
 const slickOptions = {
-    adaptiveHeight: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    dots: false,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 990,
-        settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2,
-        },
+  adaptiveHeight: true,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  dots: false,
+  infinite: true,
+  responsive: [
+    {
+      breakpoint: 990,
+      settings: {
+        slidesToScroll: 2,
+        slidesToShow: 2,
       },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToScroll: 2,
-          slidesToShow: 2,
-        },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToScroll: 2,
+        slidesToShow: 2,
       },
-      {
-        breakpoint: 740,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
+    },
+    {
+      breakpoint: 740,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 1,
       },
-      {
-        breakpoint: 580,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
+    },
+    {
+      breakpoint: 580,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 1,
       },
-      {
-        breakpoint: 481,
-        settings: {
-          slidesToScroll: 1,
-          slidesToShow: 1,
-        },
+    },
+    {
+      breakpoint: 481,
+      settings: {
+        slidesToScroll: 1,
+        slidesToShow: 1,
       },
-    ],
-    slidesToShow: 3,
-  };
+    },
+  ],
+  slidesToShow: 3,
+};
 $(document).ready(() => {
   new wowJs.WOW().init();
 
@@ -100,9 +101,9 @@ $(document).ready(() => {
       $('#textarea_error').hide();
       $('textarea#message').removeClass('popup-form__input-wrapper_invalid');
     }
-        // tslint:disable-next-line:align
+    // tslint:disable-next-line:align
     if (name !== '' && email !== '' && message !== '') {
-      $('.popup-form').submit(() => {
+      $('.popup-form').submit(async () => {
         $('#form__submit').prop('disabled', true);
         $.ajax({
           data: { email, name, message },
@@ -115,6 +116,7 @@ $(document).ready(() => {
             }, 3000);
           },
           success: () => {
+
             $('#form__submit').prop('disabled', false);
             $('.success-message').addClass('open');
             setTimeout(() => {
