@@ -1,6 +1,6 @@
 // - layout.pug
 doctype html
-<html lang="en"> 
+<html lang="en">
     head
         <!-- Google Tag Manager -->
         script.
@@ -12,7 +12,7 @@ doctype html
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-T33GBWR')
         <!-- End Google Tag Manager -->
-       
+
         script(async, src="https://www.googletagmanager.com/gtag/js?id=AW-970047931")
         script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
         script.
@@ -109,6 +109,14 @@ doctype html
                                         i(class="fa fa-envelope-o", aria-hidden="true")
                                         |#{footerNew.content.contacts.info.mail}
                                 .contacts__addres #{footerNew.content.contacts.location}
+                                .contacts__skype
+                                    a(href="skype:juncker8888")
+                                        i(class="fa fa-skype" aria-hidden="true")
+                                        | #{footerNew.content.contacts.info.skype}
+                                .contacts__skype
+                                    a(href="skype:sirnip86")
+                                        i(class="fa fa-skype" aria-hidden="true")
+                                        | sirnip86
                             .navigation-footer
                                 ul
                                     li
@@ -131,6 +139,6 @@ doctype html
                 .copy-wrapper
                     .container
                         .row
-                            .col-lg-12 #{footerNew.footer.text}
-            
+                            .col-lg-12 Copyright Ⓒ 2017 - #{dateYear.date} JSDaddy
+
 </html>
