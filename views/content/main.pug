@@ -1,4 +1,5 @@
 extends ../layout
+
 block content
     section.banner
         .animated.bounceInLeft.fast
@@ -23,11 +24,7 @@ block content
                             .title_wrapper
                                 h2 #{item.title}
                                 .title_icon(style=`background-image: url("/img/${item.icon}")`)
-                            picture.item__photo
-                                source( type="image/jxr", srcset='/img/' + item.backgrounds.jxr, alt='item.alt')
-                                source(srcset='/img/' + item.backgrounds.jp2, type="image/jp2", alt='item.alt')
-                                source(srcset='/img/' + item.backgrounds.webp, type="image/webp", alt='item.alt')
-                                img(srcset='/img/' + item.backgrounds.webp, alt='item.alt')
+                            .item__photo(style=`background-image: url("/img/${item.background}")`)
                             p #{item.shortdescription}
                             .title_wrapper_technology
                                 .title_icon(style=`background-image: url("/img/${item.icontechnology}")`)
@@ -102,12 +99,8 @@ block content
             each i in aboutCompany.team.content
                 .team.col-md-4.col-lg-3
                     .item-wrapper.animate.wow.zoomIn.fast
-                        picture.photo-wrapper
-                            source( type="image/jxr", srcset='/img/' + i.photos.jxr, alt='i.alt')
-                            source(srcset='/img/' + i.photos.jp2, type="image/jp2", alt='i.alt')
-                            source(srcset='/img/' + i.photos.webp, type="image/webp", alt='i.alt')
-                            img(srcset='/img/' + i.photos.webp, alt='i.alt')
-
+                        .photo-wrapper
+                            img(src='/img/' + i.photo, alt=i.alt)
                         .name #{i.name}
                         .position #{i.position}
                         .soc-link
@@ -166,11 +159,8 @@ block content
                 .testimonials-wrapper
                     each item in mainPage.testimonials.content
                         .item
-                            picture.item__photo
-                                source( type="image/jxr", srcset='/img/' + item.photos.jxr, alt='item.alt')
-                                source(srcset='/img/' + item.photos.jp2, type="image/jp2", alt='item.alt')
-                                source(srcset='/img/' + item.photos.webp, type="image/webp", alt='item.alt')
-                                img(srcset='/img/' + item.photos.webp, alt='item.alt')
+                            .item__photo
+                                img(src='/img/' + item.photo, alt=item.alt)
                             .item__name #{item.name}
                             .item__position #{item.position}, #{item.company}
                             a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink, target="_blank" aria-label="linkedin" rel="noopener")
