@@ -23,7 +23,11 @@ block content
                             .title_wrapper
                                 h2 #{item.title}
                                 .title_icon(style=`background-image: url("/img/${item.icon}")`)
-                            .item__photo(style=`background-image: url("/img/${item.background}")`)
+                            picture.item__photo
+                                source( type="image/jxr", srcset='/img/' + item.backgrounds.jxr, alt='item.alt')
+                                source(srcset='/img/' + item.backgrounds.jp2, type="image/jp2", alt='item.alt')
+                                source(srcset='/img/' + item.backgrounds.webp, type="image/webp", alt='item.alt')
+                                img(srcset='/img/' + item.backgrounds.webp, alt='item.alt')
                             p #{item.shortdescription}
                             .title_wrapper_technology
                                 .title_icon(style=`background-image: url("/img/${item.icontechnology}")`)
