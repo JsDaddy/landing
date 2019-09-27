@@ -27,7 +27,6 @@ export const mainCtrl = (app: express.Application) => {
         mainContent.mainPage = await new MainPageModel().getContent({name: 'mainPage'});
         mainContent.footerNew = await new FooterModel().getContent({name: 'footerNew'});
         mainContent.completeProjects = await new ProjectsNewModel().getContent({name: 'completeProjects'});
-        mainContent.dateYear = {date: new Date().getFullYear()};
         return res.render('content/main', mainContent);
       } catch (err) {
         return res.render(`content/error-en`);
