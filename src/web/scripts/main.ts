@@ -5,8 +5,7 @@ require('slick-carousel');
 require('magnific-popup');
 // tslint:disable-next-line:no-var-requires
 const wowJs = require('wowjs');
-// const url = 'https://jsdaddy.io/mail/contacts';
-const url = 'http://localhost:3000/mail/contacts';
+const url = 'https://jsdaddy.io/mail/contacts';
 const slickOptions = {
   adaptiveHeight: true,
   arrows: false,
