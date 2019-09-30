@@ -12,4 +12,5 @@ jobs:
         HOST: ${{ secrets.my_host }}
         SCRIPT: ~/deploy_bash_front.sh
         password: ${{ secrets.PASSWORD }}
+        script_stop: true
 
