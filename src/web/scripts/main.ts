@@ -115,7 +115,6 @@ $(document).ready(() => {
             }, 3000);
           },
           success: () => {
-
             $('#form__submit').prop('disabled', false);
             $('.success-message').addClass('open');
             setTimeout(() => {
@@ -138,7 +137,13 @@ $(document).ready(() => {
       .find('.slick-slide')
       .height('auto');
     const slickTrack = $('.testimonials-wrapper').find('.slick-track');
-    const slickTrackHeight = $(slickTrack).height();
+    let slickTrackHeight = $(slickTrack).height();
+    if (!slickTrackHeight || slickTrackHeight < 543) {
+      slickTrackHeight = 543;
+    }
+    if (slickTrackHeight > 566) {
+      slickTrackHeight = 543;
+    }
     $('.testimonials-wrapper')
       .find('.item')
       .css('height', slickTrackHeight + 'px');
@@ -148,11 +153,7 @@ $(document).ready(() => {
     $('.projects-wrapper')
       .find('.slick-slide')
       .height('auto');
-    const slickTrack = $('.projects-wrapper').find('.slick-track');
-    const slickTrackHeight = $(slickTrack).height();
-    $('.projects-wrapper')
-      .find('.item')
-      .css('height', slickTrackHeight + 'px');
+    $('.projects-wrapper').find('.item');
   });
 
   let showOrHide = true;
