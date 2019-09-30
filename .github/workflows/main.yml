@@ -1,4 +1,4 @@
-name: CI
+name: Deploy
 on: [push]
  
 jobs:
@@ -10,5 +10,5 @@ jobs:
       env:
         USERNAME: ${{ secrets.my_username }}
         HOST: ${{ secrets.my_host }}
-        SCRIPT: ~/deployment.sh
+        SCRIPT: ~/deploy_bash_front.sh
         KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
