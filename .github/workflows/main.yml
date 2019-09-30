@@ -11,4 +11,5 @@ jobs:
         USERNAME: ${{ secrets.my_username }}
         HOST: ${{ secrets.my_host }}
         SCRIPT: ~/deploy_bash_front.sh
-        KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
+        password: ${{ secrets.PASSWORD }}
+
