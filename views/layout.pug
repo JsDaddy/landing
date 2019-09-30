@@ -1,6 +1,6 @@
 // - layout.pug
 doctype html
-<html lang="en">
+<html lang="en"> 
     head
         <!-- Google Tag Manager -->
         script.
@@ -12,7 +12,7 @@ doctype html
                 j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-T33GBWR')
         <!-- End Google Tag Manager -->
-
+       
         script(async, src="https://www.googletagmanager.com/gtag/js?id=AW-970047931")
         script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-115295105-1")
         script.
@@ -51,10 +51,12 @@ doctype html
         link(type='text/css', rel='stylesheet', href='/css/slick.css')
         link(type='text/css', rel='stylesheet', href='/css/font-awesome.min.css')
         link(type='text/css', rel='stylesheet', href='/css/slick-theme.css')
+        link(type='text/css', rel='stylesheet', href='/public/css/slick.css')
         link(type='text/css', rel='stylesheet', href='/css/site.min.css')
         link(rel='icon', href='/img/favicon.ico')
         link(type='text/css', rel='stylesheet', href='/css/main.min.css')
         link(type='text/css', rel="stylesheet", href="/css/animate.min.css")
+
         script(async, src='/js/main.min.js')
     body
         <!-- Google Tag Manager (noscript) -->
@@ -108,14 +110,6 @@ doctype html
                                         i(class="fa fa-envelope-o", aria-hidden="true")
                                         |#{footerNew.content.contacts.info.mail}
                                 .contacts__addres #{footerNew.content.contacts.location}
-                                .contacts__skype
-                                    a(href="skype:juncker8888")
-                                        i(class="fa fa-skype" aria-hidden="true")
-                                        | #{footerNew.content.contacts.info.skype}
-                                .contacts__skype
-                                    a(href="skype:sirnip86")
-                                        i(class="fa fa-skype" aria-hidden="true")
-                                        | sirnip86
                             .navigation-footer
                                 ul
                                     li
@@ -138,6 +132,6 @@ doctype html
                 .copy-wrapper
                     .container
                         .row
-                            .col-lg-12 Copyright Ⓒ 2017 - #{dateYear.date} JSDaddy
-
+                            .col-lg-12 #{footerNew.footer.text}
+            
 </html>

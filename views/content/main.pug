@@ -1,4 +1,5 @@
 extends ../layout
+
 block content
     section.banner(style=`background: url("../img/banner1.png") 75% 0 no-repeat`)
         .animated.bounceInLeft.fast
@@ -107,7 +108,6 @@ block content
                             source(srcset='/img/' + i.photos.jp2, type="image/jp2", alt='i.alt')
                             source(srcset='/img/' + i.photos.webp, type="image/webp", alt='i.alt')
                             img(srcset='/img/' + i.photos.webp, alt='i.alt')
-
                         .name #{i.name}
                         .position #{i.position}
                         .soc-link

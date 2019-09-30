@@ -1,6 +1,7 @@
 import * as compression from 'compression';
 import * as config from 'config';
 import * as express from 'express';
+
 const app = express();
 import './schema/index';
 
@@ -19,13 +20,7 @@ app.set('view engine', 'pug');
 
 app.get('*', (req, res: express.Response) => {
   const urlLang = req.url.split('/')[1];
-  const lang = app
-    .get('config')
-    .get('langs')
-    .includes(urlLang)
-    ? urlLang
-    : 'en';
-
+  const lang = app.get('config').get('langs').includes(urlLang) ? urlLang : 'en';
   return res.render(`content/error-${lang}`);
 });
 
