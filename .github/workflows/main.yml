@@ -5,10 +5,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to nerdhood.de
+    - name: Deploy
       uses: appleboy/ssh-action@master
       env:
-        USERNAME: secrets.my_username
-        HOST: secrets.my_host
+        USERNAME: ${{ secrets.my_username }}
+        HOST: ${{ secrets.my_host }}
         SCRIPT: ~/deployment.sh
         KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
