@@ -7,22 +7,13 @@ import './schema/index';
 import { appConf } from './config/app.config';
 import { connectToDb } from './config/db.config';
 import { controllers } from './controllers';
-// tslint:disable-next-line: no-var-requires
-const browser = require('browser-detect');
 
 connectToDb();
 appConf(app);
 controllers(app);
 
 app.set('config', config);
-app.use((_req, _res, next) => {
-    const result = browser(_req.headers['user-agent']);
-    if (result.name !== 'safari') {
-     return compression()(_req, _res, next);
-    }
-    next();
-});
-
+app.use(compression());
 app.use(express.static('public'));
 app.set('view engine', 'pug');
 
