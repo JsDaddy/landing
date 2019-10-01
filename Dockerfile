@@ -3,6 +3,7 @@ FROM node:10
 WORKDIR /usr/src/app
 
 RUN npm install -g ts-node
+
 RUN npm install -g typescript
 
 COPY package*.json ./
