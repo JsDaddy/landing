@@ -16,6 +16,5 @@ jobs:
           whoami
           cd landing
           git pull origin master
-          npm rebuild node-sass --force
           npm run deploy
        script_stop: true
