@@ -16,4 +16,5 @@ jobs:
           whoami 
           cd landing
           git pull origin master
+          npm run deploy
        script_stop: true
