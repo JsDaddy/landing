@@ -14,5 +14,6 @@ jobs:
        PASSWORD: ${{ secrets.PASSWORD }}
        SCRIPT: |
           whoami 
-          ~/deploy_bash_front.sh
+          cd landing
+          git pull origin master
        script_stop: true
