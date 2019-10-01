@@ -19,5 +19,8 @@ jobs:
           whoami
           cd landing
           git pull origin master
-          npm run deploy
+          docker build -t jsdaddy/landing .
+          docker stop landing-container
+          docker rm landing-container
+          docker run -p 3000:3000 --name landing-container -d jsdaddy/landing
        script_stop: true
