@@ -13,7 +13,7 @@ jobs:
        HOST: ${{ secrets.my_host }}
        PASSWORD: ${{ secrets.PASSWORD }}
        SCRIPT: |
-          whoami 
+          whoami
           cd landing
           git pull origin master
           npm run deploy
