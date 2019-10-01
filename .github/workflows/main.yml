@@ -1,0 +1,16 @@
+name: Deploy Landing
+
+on: [push]
+
+jobs:
+ deploy:
+   runs-on: ubuntu-latest
+   steps:
+   - name: Deploy
+     uses: appleboy/ssh-action@master
+     env:
+       USERNAME: ${{ secrets.my_username }}
+       HOST: ${{ secrets.my_host }}
+       SCRIPT: ~/deploy_bash_front.sh
+       key: ${{ secrets.PASSWORD }}
+       script_stop: true
