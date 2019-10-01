@@ -15,7 +15,8 @@
     "build:css:w": "npm run build:css -- -w",
     "build:js": "webpack",
     "build:js:w": "npm run build:js -- -w",
-    "start:dev": "npm run build:css && npm run build:js && nodemon"
+    "start:dev": "npm run build:css && npm run build:js && nodemon",
+    "deploy": "npm run build:css && npm run build:js"
   },
   "repository": {
     "type": "git",
