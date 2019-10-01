@@ -24,4 +24,5 @@ jobs:
           docker rm landing-container
           docker run -p 3000:3000 --name landing-container -d jsdaddy/landing
        script_stop: true
-       TIMEOUT: "5m" 
+       TIMEOUT: "5m"
+       COMMAND_TIMEOUT: "5m"
