@@ -12,5 +12,7 @@ jobs:
        USERNAME: ${{ secrets.my_username }}
        HOST: ${{ secrets.my_host }}
        PASSWORD: ${{ secrets.PASSWORD }}
-       SCRIPT: ~/deploy_bash_front.sh
+       SCRIPT: |
+          whoami 
+          ~/deploy_bash_front.sh
        script_stop: true
