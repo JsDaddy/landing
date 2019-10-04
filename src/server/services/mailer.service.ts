@@ -65,7 +65,6 @@ export class MailerService {
           to: body.copyEmail,
         });
       }
-
       default: {
         return {};
       }
