@@ -50,7 +50,7 @@ export class MailerService {
       case 'copy': {
         const date = new Date();
         await appendFile(
-          `./src/server/mails/${date.toISOString()}.txt`,
+          path.resolve(process.cwd(), `./mails/${date.toISOString()}.txt`),
         `Name:  ${body.name}\nEmail: ${body.email}\nText: ${body.message}`,
         );
         await new MessageModel().saveMessage({
