@@ -2,7 +2,7 @@ import * as $ from 'jquery';
 // tslint:disable-next-line:no-var-requires
 require('magnific-popup');
 
-const url = 'http://jsdaddy.io/mail/contacts';
+const url = 'https://jsdaddy.io/mail/contacts';
 $(document).ready(() => {
     ($('.contact_us_btn') as any).magnificPopup({
         focus: '#name',
