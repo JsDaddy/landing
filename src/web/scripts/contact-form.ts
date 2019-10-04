@@ -2,7 +2,7 @@ import * as $ from 'jquery';
 // tslint:disable-next-line:no-var-requires
 require('magnific-popup');
 
-const url = 'https://jsdaddy.io/mail/contacts';
+const url = 'http://localhost:3000/mail/contacts';
 $(document).ready(() => {
     ($('.contact_us_btn') as any).magnificPopup({
         focus: '#name',
@@ -11,7 +11,7 @@ $(document).ready(() => {
     });
 
     $('.popup-form__input-wrapper_invalid-message').hide();
-    $('#form__submit').click(() => {
+    $('#form__submit').on('click', () => {
         const emailRegExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
         const name = $('input#name').val();
         if (name === '') {
@@ -46,9 +46,7 @@ $(document).ready(() => {
             $('#textarea_error').hide();
             $('textarea#message').removeClass('popup-form__input-wrapper_invalid');
         }
-        // tslint:disable-next-line:align
         if (name !== '' && email !== '' && message !== '') {
-            $('.popup-form').submit(async () => {
                 $('#form__submit').prop('disabled', true);
                 $.ajax({
                     data: { email, name, message },
@@ -71,9 +69,7 @@ $(document).ready(() => {
                     type: 'POST',
                     url,
                 });
-                return false;
-            });
-            return;
+                return;
         }
         return;
     });
