@@ -93,6 +93,5 @@ server_log.txt
 
 config/default.yaml
 config/prodaction.yaml
-config/default.json
 
 node_modules/
