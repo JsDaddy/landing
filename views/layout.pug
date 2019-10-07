@@ -64,7 +64,7 @@ doctype html
             header
                 #header.default
                     .container#header_container
-                        .row.align-items-center.justify-content-between
+                        .row.align-items-center.justify-content-between#header_wrap
                             .col-2.logo
                                 a(href='/')
                                     img(src=`/img/${headerMenu.logo}`, alt="JsDaddy")
@@ -81,8 +81,8 @@ doctype html
                                             a(href="/#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
                                         li
                                             a(href="/#about_us" class="link-nav") #{headerMenu.nav.about}
-                                        //- li
-                                        //-     a(href="/blog" class="link-nav") #{headerMenu.nav.blog}
+                                        li
+                                            a(href="/blog" class="link-nav") #{headerMenu.nav.blog}
                                 .btn-wrap
                                     a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
                                 h5 Visit our
