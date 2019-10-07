@@ -1,0 +1,17 @@
+{
+  "dbConfig": {
+    "host": "mongodb://jsdaddy:JSDaddyDB2018@159.89.18.60:27017/jsdaddy"
+  },
+  "nbu_rate": "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&json",
+  "BASE_URL": "http://127.0.0.1:3000",
+  "mailer": {
+    "pass": "JSDaddyMAIL2018",
+    "user": "info.jsdaddy@gmail.com"
+  },
+  "copyEmail": "info@jsdaddy.io",
+  "sitemap": {
+    "hostname": "http://jsdaddy.io/",
+    "cacheTime": 600000
+  },
+  "langs": ["en", "ru"]
+}
