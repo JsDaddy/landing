@@ -94,25 +94,25 @@ block content
                             img(src='/img/' + i.src, alt=i.alt)
                             span #{i.alt}
 
-    section.about-us#about_us
-      .container
-        .row#about-team
-          .header-section-wrapper
-            h3 #{aboutCompany.team.title}
-        .row#team
-            each i in aboutCompany.team.content
-                .team.col-md-4.col-lg-3
-                    .item-wrapper.animate.wow.zoomIn.fast
-                        picture.photo-wrapper
-                            source( type="image/jxr", srcset='/img/' + i.photos.jxr, alt='i.alt')
-                            source(srcset='/img/' + i.photos.jp2, type="image/jp2", alt='i.alt')
-                            source(srcset='/img/' + i.photos.webp, type="image/webp", alt='i.alt')
-                            img(srcset='/img/' + i.photos.webp, alt='i.alt')
-                        .name #{i.name}
-                        .position #{i.position}
-                        .soc-link
-                            a(href=i.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
-                                i(class='fa fa-linkedin-square')
+    //- section.about-us#about_us
+    //-   .container
+    //-     .row#about-team
+    //-       .header-section-wrapper
+    //-         h3 #{aboutCompany.team.title}
+    //-     .row#team
+    //-         each i in aboutCompany.team.content
+    //-             .team.col-md-4.col-lg-3
+    //-                 .item-wrapper.animate.wow.zoomIn.fast
+    //-                     picture.photo-wrapper
+    //-                         source( type="image/jxr", srcset='/img/' + i.photos.jxr, alt='i.alt')
+    //-                         source(srcset='/img/' + i.photos.jp2, type="image/jp2", alt='i.alt')
+    //-                         source(srcset='/img/' + i.photos.webp, type="image/webp", alt='i.alt')
+    //-                         img(srcset='/img/' + i.photos.webp, alt='i.alt')
+    //-                     .name #{i.name}
+    //-                     .position #{i.position}
+    //-                     .soc-link
+    //-                         a(href=i.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
+    //-                             i(class='fa fa-linkedin-square')
 
     section.advantages-wrapper
         .container
