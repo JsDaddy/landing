@@ -60,31 +60,29 @@ doctype html
         noscript
             iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-T33GBWR" height="0" width="0" style="display:none;visibility:hidden")
         <!-- End Google Tag Manager (noscript) -->
-        if headerMenu
+
             header
                 #header.default
                     .container#header_container
                         .row.align-items-center.justify-content-between#header_wrap
                             .col-2.logo
                                 a(href='/')
-                                    img(src=`/img/${headerMenu.logo}`, alt="JsDaddy")
+                                    img(src=`/img/logo.png`, alt="JsDaddy")
                             .nav-wrapper.col-lg-10
                                 nav
-                                    ul#menu-wrap
+                                    ul#menu-wrap                                        
                                         li
-                                            a(href='/#services' class="link-nav") #{headerMenu.nav.serv}
+                                            a(href='/#dev-process' class="link-nav") Development Process
                                         li
-                                            a(href='/#dev-process' class="link-nav") #{headerMenu.nav.dev_process}
+                                            a(href="/#technologies" class="link-nav") Technologies
                                         li
-                                            a(href="/#technologies" class="link-nav") #{headerMenu.nav.tech}
-                                        li
-                                            a(href="/#testimonials" class="link-nav") #{headerMenu.nav.testimonials}
+                                            a(href="/#testimonials" class="link-nav") Testimonials
                                         //- li
                                         //-     a(href="/#about_us" class="link-nav") #{headerMenu.nav.about}
                                         li
-                                            a(href="/blog" class="link-nav") #{headerMenu.nav.blog}
+                                            a(href="/blog" class="link-nav") Blog
                                 .btn-wrap
-                                    a(href="#popup-form" class="btn contact_us_btn") #{headerMenu.btn}
+                                    a(href="#popup-form" class="btn contact_us_btn") Contact Us
                                 h5 Visit our
                                     a(href="https://github.com/JsDaddy" target="_blank" aria-label="github" rel="noopener")
                                         i.fa.fa-github
@@ -92,8 +90,8 @@ doctype html
                                 .line
                                 .line-middle
                                 .line
-        block content
-        if footerNew
+            
+            block content
             footer
                 .container#footer
                     .row
@@ -101,42 +99,36 @@ doctype html
                             .contacts
                                 .contacts__logo
                                     a(href="#")
-                                        img(src="/img/" + footerNew.content.contacts.logo, alt="JsDaddy")
+                                        img(src="/img/" + 'logo.png', alt="JsDaddy")
                                 .contacts__email
                                     a(href="mailto:info@jsdaddy.io")
-                                        i(class="fa fa-envelope-o", aria-hidden="true")
-                                        |#{footerNew.content.contacts.info.mail}
-                                .contacts__addres #{footerNew.content.contacts.location}
+                                        i(class="fa fa-envelope-o", aria-hidden="true") info@jsdaddy.io
                                 .contacts__skype
                                     a(href="skype:juncker8888")
-                                        i(class="fa fa-skype" aria-hidden="true")
-                                        | #{footerNew.content.contacts.info.skype}
+                                        i(class="fa fa-skype" aria-hidden="true") juncker8888
                                 .contacts__skype
                                     a(href="skype:sirnip86")
-                                        i(class="fa fa-skype" aria-hidden="true")
-                                        | sirnip86
+                                        i(class="fa fa-skype" aria-hidden="true") sirnip86
+                                .contacts__addres Kharkiv, Ukraine
                             .navigation-footer
                                 ul
                                     li
-                                        a(href="/#services") #{footerNew.navigation.serv}
+                                        a(href="/#dev-process") Development Process
                                     li
-                                        a(href="/#dev-process") #{footerNew.navigation.DevProc}
+                                        a(href="/#technologies") Technologies
                                     li
-                                        a(href="/#technologies") #{footerNew.navigation.techno}
-                                    li
-                                        a(href="/#testimonials") #{footerNew.navigation.testimonial}
-                                    //- li
-                                    //-     a(href="/#about_us") #{footerNew.navigation.about}
+                                        a(href="/#testimonials") Testimonials
                             .social
                                 h5 Social
                                 ul
-                                    each item in footerNew.social.social
+                                    each item in [{ link: 'https://www.linkedin.com/company/jsdaddy/', className: 'linkedin', iconClass: 'fa-linkedin' }, { link: 'https://github.com/JsDaddy/', className: 'github', iconClass: 'fa-github' }]
                                         li
-                                            a(href=item.link, class=item['linkClass'], target="_blank" aria-label="social" rel="noopener")
-                                                i.fa(class=item['iconClass'])
+                                            a(href=item.link, class=item.class, target="_blank" aria-label="social" rel="noopener")
+                                                i.fa(class=item['iconClass']) 
+
                 .copy-wrapper
                     .container
                         .row
-                            .col-lg-12 Copyright Ⓒ 2017 - #{dateYear.date} JSDaddy
+                            .col-lg-12 Copyright Ⓒ 2017 - #{new Date().getFullYear()} JSDaddy
 
 </html>

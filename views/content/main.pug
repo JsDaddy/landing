@@ -6,60 +6,58 @@ block content
             .container
                 .row
                     .banner__content
-                        h1 #{mainPage.banner.title}
-                        p #{mainPage.banner.subtitle}
+                        h1 JSDADDY
+                        p Reach your business goals by using our development expertise to build custom software in a cost-effective and timely manner.
                             principles.
-                        a(href="#popup-form" class="btn contact_us_btn") #{mainPage.banner.button.text}
+                        a(href="#popup-form" class="btn contact_us_btn") Contact Us
 
     //- a.scroll-down(href="#" address="true")
 
-    section.services#services
-        .container
-            .row.animate.wow.flipInX
-                h3 #{mainPage.services.title}
-            .row
-                .projects-wrapper
-                    each item in completeProjects.projects
-                        .item
-                            .title_wrapper
-                                h2 #{item.title}
-                                .title_icon(style=`background-image: url("/img/${item.icon}")`)
-                            picture.item__photo
-                                source( type="image/jxr", srcset='/img/' + item.backgrounds.jxr, alt='item.alt')
-                                source(srcset='/img/' + item.backgrounds.jp2, type="image/jp2", alt='item.alt')
-                                source(srcset='/img/' + item.backgrounds.webp, type="image/webp", alt='item.alt')
-                                img(srcset='/img/' + item.backgrounds.webp, alt='item.alt')
-                            p #{item.shortdescription}
-                            .title_wrapper_technology
-                                .title_icon(style=`background-image: url("/img/${item.icontechnology}")`)
-                                .title_iconn(style=`background-image: url("/img/${item.icontechnologyy}")`)
-                                .title_iconn1(style=`background-image: url("/img/${item.iconredux}")`)
-                                .title_iconn2(style=`background-image: url("/img/${item.iconsql}")`)
-                                .title_iconn3(style=`background-image: url("/img/${item.iconts}")`)
+    //- section.services#services
+    //-     .container
+    //-         .row.animate.wow.flipInX
+    //-             h3 CHECK OUR WEB & MOBILE SOLUTIONS
+    //-         .row
+    //-             .projects-wrapper
+    //-                 each item in ['completeProjects.projects', 'completeProjects.projects', 'completeProjects.projects']
+    //-                     .item
+    //-                         .title_wrapper
+    //-                             h2  Tokenize
+    //-                             .title_icon(style=`background-image: url("/img/flutter.svg")`)
+    //-                         picture.item__photo
+    //-                             source( type="image/jxr", srcset='/img/' + 'cresttoken.jxr', alt='item.alt')
+    //-                             source(srcset='/img/' + 'cresttoken.jp2', type="image/jp2", alt='item.alt')
+    //-                             source(srcset='/img/' + 'cresttoken.webp', type="image/webp", alt='item.alt')
+    //-                             img(srcset='/img/' + 'cresttoken.webp', alt='item.alt')
+    //-                         p item.shortdescription
+    //-                         .title_wrapper_technology
+    //-                             .title_icon(style=`background-image: url("/img/mysql-icon.svg")`)
+    //-                             .title_iconn(style=`background-image: url("/img/ts.svg")`)
+    //-                             .title_iconn1(style=`background-image: url("/img/redux.svg")`)
 
     section.dev-process#dev-process
         .container
             .row
-                h3 #{mainPage.process.title}
+                h3 DEVELOPMENT PROCESS
             .row
                 .step-wrapper
                     .left-col
                         .step.planing.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 #{mainPage.process.steps.planning.title}
-                                p #{mainPage.process.steps.planning.text}
+                                h6 PLANNING
+                                p Perfect plan will kick off a project flawlessly
                             .ico-wrap
                                 span.icon-planinig
                         .step.analysis.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 #{mainPage.process.steps.analysis.title}
-                                p #{mainPage.process.steps.analysis.text}
+                                h6 ANALYSIS
+                                p Analysis is an important step to proceed further to the next point
                             .ico-wrap
                                 span.icon-analysis
                         .step.stack.animated.wow.fadeInLeft.faster
                             .text-wrap
-                                h6 #{mainPage.process.steps.design.title}
-                                p #{mainPage.process.steps.design.text}
+                                h6 Design
+                                p Setting a standard and attempting to stick to it
                             .ico-wrap
                                 span.icon-design
                     .center-col
@@ -69,111 +67,115 @@ block content
                             .ico-wrap
                                 span.icon-implementation
                             .text-wrap
-                                h6 #{mainPage.process.steps.implementation.title}
-                                p #{mainPage.process.steps.implementation.text}
+                                h6 IMPLEMENTATION
+                                p Developing software and a pilot study to check it
                         .step.test.animated.wow.fadeInRight.faster
                             .ico-wrap
                                 span.icon-test
                             .text-wrap
-                                h6 #{mainPage.process.steps.testing.title}
-                                p #{mainPage.process.steps.testing.text}
+                                h6 Testing
+                                p Checking applications for errors and bugs if there are any
                         .step.deployment.animated.wow.fadeInRight.faster
                             .ico-wrap
                                 span.icon-MAINTENANCE
                             .text-wrap
-                                h6 #{mainPage.process.steps.maintenance.title}
-                                p #{mainPage.process.steps.maintenance.text}
+                                h6 MAINTENANCE
+                                p Changing the existing functionality is a regular process
     section.technologies#technologies
         .container
             .row
-                h3 #{technologies.title}
+                h3 WE USE CUTTING EDGE TECHNOLOGIES
             .row.animate.wow.fadeInUp.fast
-                each i in technologies.list
+                each i in [{ title: 'TypeScript', icon: 'img16.png'}, { title: 'JS', icon: 'js.png'}, { title: 'Dart', icon: 'dart copy.png'}, { title: 'Angular', icon: 'img3.png'}, { title: 'Vue', icon: 'img9.png'}, { title: 'React Native', icon: 'img12.png'}, { title: 'Flutter', icon: 'img11.png'}, { title: 'NestJs', icon: 'nest.svg'}, { title: 'Redux', icon: 'img6.png'}, { title: 'RxJs', icon: 'img5.png'}, { title: 'Karma', icon: 'img13.png'}, { title: 'Jasmine', icon: 'img14.png'}, { title: 'Jest', icon: 'img15.png'}, { title: 'mongoDB', icon: 'img18-1.png'}, { title: 'MySQL', icon: 'img7.png'}, { title: 'HTML&CSS', icon: 'htmlcss.png'}, { title: 'Docker', icon: 'img8.png'}]
                     .col-3.col-md-4.col-lg-2
                         .icon
-                            img(src='/img/' + i.src, alt=i.alt)
-                            span #{i.alt}
+                            img(src='/img/' + i.icon, alt='i.alt')
+                            span #{i.title}
 
     section.about-us#about_us
       .container
         .row#about-team
           .header-section-wrapper
-            h3 #{aboutCompany.team.title}
+            h3 Management Team
         .row#team
-            each i in aboutCompany.team.content
+            each i in [{ name: 'Vladimir Loban', position: 'Co-founder & CTO', email: 'malito:info@jsdaddy.io', skype: 'skype:juncker8888', photo: 'VovaLoban' }, { name: 'Igor Nepipenko', position: 'Co-founder & CTO', email: 'malito:info@jsdaddy.io', skype: 'skype:sirnip86', photo: 'Igor' }]
                 .team.col-md-4.col-lg-3
                     .item-wrapper.animate.wow.zoomIn.fast
                         picture.photo-wrapper
-                            source( type="image/jxr", srcset='/img/' + i.photos.jxr, alt='i.alt')
-                            source(srcset='/img/' + i.photos.jp2, type="image/jp2", alt='i.alt')
-                            source(srcset='/img/' + i.photos.webp, type="image/webp", alt='i.alt')
-                            img(srcset='/img/' + i.photos.webp, alt='i.alt')
+                            source(srcset='/img/' + i.photo + '.jxr', type="image/jxr",  alt='item.alt')
+                            source(srcset='/img/' + i.photo + '.jp2', type="image/jp2", alt='item.alt')
+                            source(srcset='/img/' + i.photo + '.webp', type="image/webp", alt='item.alt')
+                            img(srcset='/img/' + i.photo + '.webp', alt='item.alt')
                         .name #{i.name}
                         .position #{i.position}
                         .soc-link
-                            a(href=i.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
-                                i(class='fa fa-linkedin-square')
-
+                            a(href=i.skype, target="_blank" text aria-label="skype" rel="noopener")
+                                i(class='fa fa-skype')
+                        .soc-link
+                            a(href=i.email, target="_blank" text aria-label="email" rel="noopener")
+                                i(class='fa fa-envelope-o')
+               
+                 
     section.advantages-wrapper
         .container
             .row#advandage
-                h3 #{mainPage.advantages.title}
+                h3 WHY SHOULD YOU CHOOSE US?
             .row
                 .advantages
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.tailorMade.image, alt="tailor")
+                            img(src="/img/" + 'ico-tailor.png', alt="mainPage.advantages.cases.tailorMade.image")
                         .advantages__item-text.tailer
-                            h6 #{mainPage.advantages.cases.tailorMade.title}
-                            p #{mainPage.advantages.cases.tailorMade.text}
+                            h6 Tailor made
+                            p By utilizing the latest up-to-date technologies such as Angular, our development company delivers exceptional custom software solutions according to your business requirements. Any difficulties or suggestions that may appear during the development process will be resolved and improved by our Angular developers.
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.integration.image, alt="integration")
+                            img(src="/img/" + 'ico-integration.png', alt="mainPage.advantages.cases.integration.image")
                         .advantages__item-text.integration
-                            h6 #{mainPage.advantages.cases.integration.title}
-                            p #{mainPage.advantages.cases.integration.text}
+                            h6 Integration
+                            p Our Angular developers can make your custom software to have integration with every known system or service you need. With an aid of JavaScript your business can enjoy the benefits of operating numerous services through one application.
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.support.image, alt="support")
+                            img(src="/img/" + 'ico-support.png', alt="mainPage.advantages.cases.support.image")
                         .advantages__item-text.support
-                            h6 #{mainPage.advantages.cases.support.title}
-                            p #{mainPage.advantages.cases.support.text}
+                            h6 Support
+                            p The major benefit you get with custom business applications is an efficient and reliable technical support plan. You will have full access to technical support of our Angular developers team that was involved in the development process of your application.
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.priceFormation.image, alt="Price")
+                            img(src="/img/" + 'ico-cost.png', alt="mainPage.advantages.cases.priceFormation.image")
                         .advantages__item-text.price
-                            h6 #{mainPage.advantages.cases.priceFormation.title}
-                            p #{mainPage.advantages.cases.priceFormation.text}
+                            h6 Cost-effectiveness
+                            p According to our research - Angular based applications give us ability to cut the cost near to 29% , comparing to other technologies that are produced on the market like React or Vue.js.
                     .advantages__item.animated.wow.fadeInLeft.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.maintenance.image, alt="maintenance")
+                            img(src="/img/" + 'ico-maintenance.png', alt="mainPage.advantages.cases.maintenance.image")
                         .advantages__item-text.maintenance
-                            h6 #{mainPage.advantages.cases.maintenance.title}
-                            p #{mainPage.advantages.cases.maintenance.text}
+                            h6 Maintenance
+                            p With custom Angular application development your JavaScript based software is maintained for as long as you require. With off-the-shelf software your business is at the mercy of the software development company you are purchasing from.
                     .advantages__item.animated.wow.fadeInRight.faster
                         .advantages__item-icon
-                            img(src="/img/" + mainPage.advantages.cases.quality.image, alt="quality")
+                            img(src="/img/" + 'ico-quality.png', alt="mainPage.advantages.cases.quality.image")
                         .advantages__item-text.quality
-                            h6 #{mainPage.advantages.cases.quality.title}
-                            p #{mainPage.advantages.cases.quality.text}
+                            h6 Quality
+                            p Our Angular development team creates stable and scalable JavaScript applications. Using test coverage is a part of our daily work. High solution quality is one of the things that we value the most for our clients.
 
 
     section.testimonials#testimonials
         .container
             .row.animate.wow.flipInX
-                h3 #{mainPage.testimonials.title}
+                h3 OUR CLIENTS SAY
             .row
                 .testimonials-wrapper
-                    each item in mainPage.testimonials.content
+                    each item in [{ name: 'Oleg Semiglazov', position: 'СТО, Uran Company', soc_link: 'https://www.linkedin.com/in/olegsemiglazov/', photo: 'client-photo-1', text: 'I had worked with JSDaddy for one year. During this period, they have provided consulting services in the field of IT and technical assessment of future employees. Distinctive qualities of this company are responsibility, professionalism, reliability and response rate. I recommend them.' }, { name: 'Yanis Onkes', position: 'СТО, Bazelevs Group', soc_link: 'https://www.linkedin.com/in/yanis-onkes/', photo: 'default-testimonials-photo', text: 'JSDaddy has provided an audit service in the field of IT for my company. About this service, I can say the following: professional, reliable, responsible and available any time of the day. I definitely recommend them.' }, { name: 'Kostiantyn Nikolaiev', position: 'CEO, Combo 21', soc_link: 'https://www.linkedin.com/in/kostiantynnikolaiev/', photo: 'kostiantyn-nikolaiev', text: 'Working with JSDaddy was really easy. Developers are highly professional and we were able to quickly setup dedicated team for our project, build development process based on best practices and finished project on expected dates. Great guys, would not hesitate to work with them again.' }, { name: 'Hong Qi Yu', position: 'CEO, Tokenize', soc_link: 'https://www.linkedin.com/in/hqy/', photo: 'hong-qi-yu', text: 'JSDaddy is a great team who is able to take the challenge to complete complex project in limited timeline.' }]
                         .item
                             picture.item__photo
-                                source( type="image/jxr", srcset='/img/' + item.photos.jxr, alt='item.alt')
-                                source(srcset='/img/' + item.photos.jp2, type="image/jp2", alt='item.alt')
-                                source(srcset='/img/' + item.photos.webp, type="image/webp", alt='item.alt')
-                                img(srcset='/img/' + item.photos.webp, alt='item.alt')
+                                source(srcset='/img/' + item.photo + '.jxr', type="image/jxr",  alt='item.alt')
+                                source(srcset='/img/' + item.photo + '.jp2', type="image/jp2", alt='item.alt')
+                                source(srcset='/img/' + item.photo + '.webp', type="image/webp", alt='item.alt')
+                                img(srcset='/img/' + item.photo + '.webp', alt='item.alt')
                             .item__name #{item.name}
-                            .item__position #{item.position}, #{item.company}
-                            a.item__linkedin.fa.fa-linkedin-square(href=item.profilelink, target="_blank" aria-label="linkedin" rel="noopener")
+                            .item__position #{item.position}
+                            a.item__linkedin.fa.fa-linkedin-square(href=item.soc_link, target="_blank" aria-label="linkedin" rel="noopener")
                             .item__quotes
                                 p #{item.text}
     .scrollup
