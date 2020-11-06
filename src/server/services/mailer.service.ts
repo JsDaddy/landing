@@ -5,7 +5,6 @@ import * as fs from "fs";
 import * as mustache from "mustache";
 import * as path from "path";
 import * as util from "util";
-import { MessageModel } from "../models/message.model";
 // tslint:disable-next-line: typedef
 const readFile = util.promisify(fs.readFile);
 const appendFile = util.promisify(fs.appendFile);
